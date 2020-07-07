@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/lecture-capture/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/lecture-capture/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/lec-rec-keynote/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/widening-participation/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/widening-participation/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/privacy/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/terms/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>/author/emily-nordmann/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+  </url>
+  
+</urlset>
