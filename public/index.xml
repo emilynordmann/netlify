@@ -5,12 +5,48 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Dr. Emily Nordmann</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/me_2018</url>
       <title>Dr. Emily Nordmann</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Level 1 Data Skills</title>
+      <link>/project/l1-data-skills/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/project/l1-data-skills/</guid>
+      <description>&lt;p&gt;The Level 1 Data Skills course is intended for first year undergraduate psychology students who have no prior experience in programming. The course covers intro to R, data wrangling, visualisation, and descriptive statistics, underpinned by a focus on reproducibility.&lt;/p&gt;
+&lt;p&gt;This book is part of the 
+&lt;a href=&#34;https://psyteachr.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PsyTeachR series&lt;/a&gt; from the School of Psychology, University of Glasgow. Our materials are open-source and have a 
+&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Creative Commons licence&lt;/a&gt; so you are free to reuse, remix, and adapt our work, with attribution.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://psyteachr.github.io/ug1-practical/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Level 1 Data Skills course book&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/PsyTeachR/ug1-practical&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MSc Conversion Data Skills &amp; Statistics</title>
+      <link>/project/msc-conv/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/project/msc-conv/</guid>
+      <description>&lt;p&gt;The MSc data skills and statistics book is intended for MSc Conversion course psychology students who have no prior experience in programming or statistics and who come from incredibly varied academic backgrounds. The course covers intro to R, data wrangling, visualisation, and descriptive and inferential statistics (correlation, t-test, chi-square, ANOVA, regression, power and effect size), underpinned by a focus on reproducibility.&lt;/p&gt;
+&lt;p&gt;This book is part of the 
+&lt;a href=&#34;https://psyteachr.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PsyTeachR series&lt;/a&gt; from the School of Psychology, University of Glasgow. Our materials are open-source and have a 
+&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Creative Commons licence&lt;/a&gt; so you are free to reuse, remix, and adapt our work, with attribution.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://psyteachr.github.io/msc-conv-odl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MSc Data Skills and Statistics course book&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/PsyTeachR/msc-conv-odl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Lecture capture &amp; widening participation: keynote excerpt</title>
@@ -43,6 +79,24 @@
 &lt;p&gt;Lecture capture isn’t a panacea by any means but there’s a socially progressive case to be made for it and it’s not an easy one to make because it involves admitting that recordings allow students to choose not to attend. What we need to do is highlight that many of those choices are for very good reasons.&lt;/p&gt;
 &lt;p&gt;To return to the pin I put in the example of Steph and disability provision, I don’t agree with the argument that students should have to request access to lecture recordings through disability because aside from generalised benefits like helping to support note-taking it means you miss out on all of the people for whom what’s wrong with their life doesn’t come with a diagnosis.&lt;/p&gt;
 &lt;p&gt;Yes, you could say that students could still ask for it if they wanted it and academics would probably agree but can you imagine how &lt;em&gt;humiliating&lt;/em&gt; that would be? “Dear Professor Smith, would it be ok if I record your lectures, you see, I’m the first person in my family to go to university and I’ve got no idea what I’m doing”. We have a responsibility to our students and I increasingly I think lecture recordings have become part of that responsibility.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Terms</title>
+      <link>/terms/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>/terms/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
