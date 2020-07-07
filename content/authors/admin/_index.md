@@ -2,7 +2,6 @@
 authors:
 - admin
 bio: I am a teaching-focused lecturer and conduct research into the relationship between learning, student engagement, and technology.
-  matter.
 education:
   courses:
   - course: PGCert in Teaching and Learning in Higher Education (e-learning)
