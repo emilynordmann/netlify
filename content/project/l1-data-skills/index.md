@@ -12,7 +12,7 @@ links:
 slides: example
 summary: Intro to R for first year undergraduate psychology students.
 tags:
-- #rstats
+- rstats
 title: Level 1 Data Skills
 url_code: ""
 url_pdf: ""

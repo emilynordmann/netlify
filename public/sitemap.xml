@@ -23,6 +23,16 @@
   </url>
   
   <url>
+    <loc>/tag/rstats/</loc>
+    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
     <lastmod>2020-07-07T12:29:43+01:00</lastmod>
   </url>
@@ -44,11 +54,6 @@
   
   <url>
     <loc>/post/lec-rec-keynote/</loc>
-    <lastmod>2020-07-07T12:29:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-07-07T12:29:43+01:00</lastmod>
   </url>
   

@@ -12,7 +12,7 @@ links:
 slides: example
 summary: Data skills and core statistics for MSc conversion course psychology students
 tags:
-- #rstats
+- rstats
 title: MSc Conversion Data Skills & Statistics
 url_code: ""
 url_pdf: ""

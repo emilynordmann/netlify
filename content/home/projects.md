@@ -27,7 +27,7 @@ subtitle = ""
   
   [[content.filter_button]]
     name = "#rstats"
-    tag = "#rstats"
+    tag = "rstats"
   
   [[content.filter_button]]
     name = "Other"

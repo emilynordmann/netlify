@@ -7,17 +7,17 @@
   name = "Blog"
   url = "#posts"
   weight = 20
-
-[[main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 30
   
 [[main]]
   name = "Open Educational Resources"
   url = "#projects"
-  weight = 40
+  weight = 30
 
+[[main]]
+  name = "Contact"
+  url = "#contact"
+  weight = 40
+  
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
  [[main]]
