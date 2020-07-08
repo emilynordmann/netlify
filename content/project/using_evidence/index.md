@@ -12,7 +12,7 @@ links:
 slides: example
 summary: An interactive activity to help students learn how to use evidence and improve citation placement
 tags:
-- study strategies
+- academic writing
 - other
 title: Using Evidence
 url_code: ""
@@ -26,3 +26,5 @@ First year students typically quickly learn to base their essays and reports on 
 You are free to reuse, remix and adapt these files without attribution, however, because even teaching-focused academics need to worry about impact, please let me know via e-mail or Twitter if you do!
 
 * [Download activity files](using_evidence.zip)
+
+*The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to [Black British Professionals in STEM](https://bbstem.co.uk/donations/) or [Pride in STEM](https://prideinstem.org/shop/) (currently by buying a badge).*

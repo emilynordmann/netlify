@@ -5,12 +5,36 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/me_2018</url>
       <title>Projects</title>
       <link>/project/</link>
     </image>
+    
+    <item>
+      <title>Slave Voyages Data Visualisation</title>
+      <link>/project/slave-voyages/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/project/slave-voyages/</guid>
+      <description>&lt;p&gt;This is a short tutorial on basic data visualisation in R covering scatterplots, boxplots, violin-plots, bar charts, and grouped data. It assumes basic R knowledge (e.g., how to run a function and load a package) but it does not assume any further programming ability.&lt;/p&gt;
+&lt;p&gt;This tutorial was the result of a request by for anti-racism curriculum materials. The data used is from the Slave Voyages project. The Trans-Atlantic Slave Trade Database comprises 36,000 individual slaving expeditions between 1514 and 1866. This dataset is horrifying and so is the history contained within the graphs you will produce.&lt;/p&gt;
+&lt;p&gt;This book is part of the 
+&lt;a href=&#34;https://psyteachr.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PsyTeachR series&lt;/a&gt; from the School of Psychology, University of Glasgow. Our materials are open-source and have a 
+&lt;a href=&#34;https://creativecommons.org/licenses/by/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Creative Commons licence&lt;/a&gt; so you are free to reuse, remix, and adapt our work, with attribution.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://emilynordmann.github.io/slavevoyagedata/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Intro to Data Viz book&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/emilynordmann/slavevoyagedata&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.slavevoyages.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Slave Voyages website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to 
+&lt;a href=&#34;https://bbstem.co.uk/donations/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Black British Professionals in STEM&lt;/a&gt; or 
+&lt;a href=&#34;https://prideinstem.org/shop/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pride in STEM&lt;/a&gt; (currently by buying a badge).&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to Study</title>
@@ -31,6 +55,9 @@
 &lt;li&gt;
 &lt;a href=&#34;how_to_study.pptx&#34;&gt;Download slides&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to 
+&lt;a href=&#34;https://bbstem.co.uk/donations/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Black British Professionals in STEM&lt;/a&gt; or 
+&lt;a href=&#34;https://prideinstem.org/shop/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pride in STEM&lt;/a&gt; (currently by buying a badge).&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -49,6 +76,9 @@
 &lt;li&gt;
 &lt;a href=&#34;https://github.com/PsyTeachR/ug1-practical&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to 
+&lt;a href=&#34;https://bbstem.co.uk/donations/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Black British Professionals in STEM&lt;/a&gt; or 
+&lt;a href=&#34;https://prideinstem.org/shop/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pride in STEM&lt;/a&gt; (currently by buying a badge).&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -67,6 +97,9 @@
 &lt;li&gt;
 &lt;a href=&#34;https://github.com/PsyTeachR/msc-conv-odl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to 
+&lt;a href=&#34;https://bbstem.co.uk/donations/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Black British Professionals in STEM&lt;/a&gt; or 
+&lt;a href=&#34;https://prideinstem.org/shop/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pride in STEM&lt;/a&gt; (currently by buying a badge).&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -81,6 +114,9 @@
 &lt;li&gt;
 &lt;a href=&#34;using_evidence.zip&#34;&gt;Download activity files&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to 
+&lt;a href=&#34;https://bbstem.co.uk/donations/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Black British Professionals in STEM&lt;/a&gt; or 
+&lt;a href=&#34;https://prideinstem.org/shop/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pride in STEM&lt;/a&gt; (currently by buying a badge).&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     

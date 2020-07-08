@@ -26,3 +26,5 @@ This book is part of the [PsyTeachR series](https://psyteachr.github.io/) from t
 
 * [Level 1 Data Skills course book](https://psyteachr.github.io/ug1-practical/)
 * [GitHub repository](https://github.com/PsyTeachR/ug1-practical)
+
+*The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to [Black British Professionals in STEM](https://bbstem.co.uk/donations/) or [Pride in STEM](https://prideinstem.org/shop/) (currently by buying a badge).*
