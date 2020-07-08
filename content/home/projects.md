@@ -30,8 +30,12 @@ subtitle = ""
     tag = "rstats"
   
   [[content.filter_button]]
-    name = "Other"
-    tag = "other"
+    name = "Academic Writing"
+    tag = "academic writing"
+  
+   [[content.filter_button]]
+    name = "Study Strategies"
+    tag = "study strategies"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.

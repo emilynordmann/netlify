@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: How to Study
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/emilynordmann
 slides: example
 summary: Introductory lecture for first year students explaining effective study strategies
 tags:

@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: West and West-Central Africa, c.1660 from Slave Voyages
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/emilynordmann
 slides: example
 summary: Intro to Data Visualisation in R using the Slave Voyages dataset
 tags:

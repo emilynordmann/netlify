@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: MSc Conversion Data Skills & Statistics
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/emilynordmann
 slides: example
 summary: Data skills and core statistics for MSc conversion course psychology students
 tags:

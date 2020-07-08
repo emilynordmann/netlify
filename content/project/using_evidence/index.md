@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: <span>Photo by <a href="https://unsplash.com/@nickmorrison?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nick Morrison</a> on <a href="https://unsplash.com/s/photos/writing?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/emilynordmann
 slides: example
 summary: An interactive activity to help students learn how to use evidence and improve citation placement
 tags:

@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: Level 1 Data Skills
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/emilynordmann
 slides: example
 summary: Intro to R for first year undergraduate psychology students.
 tags:
