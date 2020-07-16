@@ -27,7 +27,7 @@ This is the first in what I plan to be a weekly blog charting what I've been doi
 
 To give you some context, I am Year Lead for 1st year psychology at the University of Glasgow. Typically there's about 500 students on the course, with just under half of them registered on a psychology programme and half who take it as an elective. 
 
-In the old normal, they would have three hour-long lectures a week delivered by a team of lecturers on various strands of psychology. In addition to the lectures, there was a two-hour practical lab once every two weeks in which wthe focus is on small-group work academic writing, data skills, and programming using R. The assessment was a final exam (with an essay and MCQ component), a coursework essay, and a lab portfolio of small-stakes MCQs, R worksheets, and a group presentation.
+In the old normal, they would have three hour-long lectures a week delivered by a team of lecturers on various strands of psychology. In addition to the lectures, there was a two-hour practical lab once every two weeks in which the focus is on small-group work academic writing, data skills, and programming using R. The assessment was a final exam (with an essay and MCQ component), a coursework essay, and a lab portfolio of small-stakes MCQs, R worksheets, and a group presentation.
 
 ## Teamwork makes the dreamwork
 
