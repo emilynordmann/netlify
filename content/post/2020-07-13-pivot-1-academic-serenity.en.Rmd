@@ -23,12 +23,11 @@ projects: []
 
 This is the first in what I plan to be a weekly blog charting what I've been doing to redesign my courses for online/blended delivery. This isn't going to be heavy on pedagogical arguments or citations, if you want that please see our preprint ["10 Simple Rules for Supporting a Temporary online Pivot in Higher Education"](https://psyarxiv.com/qdh25/). Instead, this is literally going to be a blog about what I've been doing - recording videos, updating assessment information, checking reading lists. I am a teaching-focused lecturer with experience of fully online delivery and whose research expertise is lecture capture and  I still feel overwhelmed at the scale of the task in front of me so I figure that it might be helpful to others to read a concrete account of the nuts and bolts of what the pivot entails.
 
-## My courses
+## The course
 
-To give you some context about the courses I'm working on, I am Year Lead for 1st year psychology at the University of Glasgow. Typically there's about 500 students on the course, with just under half of them registered on a psychology programme and half who take it as an elective. 
+To give you some context, I am Year Lead for 1st year psychology at the University of Glasgow. Typically there's about 500 students on the course, with just under half of them registered on a psychology programme and half who take it as an elective. 
 
-In the old normal, they would have three hour-long lectures a week and a two-hour practical lab once every two weeks, in which we did lots of small-group work focused on academic writing, in addition to teaching data skills and programming using R. The assessment was a final exam (with an essay and MCQ component), a coursework essay, and a lab portfolio of small-stakes MCQs, R worksheets, and a group presentation.
-
+In the old normal, they would have three hour-long lectures a week delivered by a team of lecturers on various strands of psychology. In addition to the lectures, there was a two-hour practical lab once every two weeks in which wthe focus is on small-group work academic writing, data skills, and programming using R. The assessment was a final exam (with an essay and MCQ component), a coursework essay, and a lab portfolio of small-stakes MCQs, R worksheets, and a group presentation.
 
 ## Teamwork makes the dreamwork
 
@@ -69,4 +68,4 @@ This week I started with the assessment focused tasks because it's incredibly im
 * We set up a weekly catch-up with the Level 1 team. Not for any particular formal purpose but just to ensure that nothing comes as a surprise to anyone and that everyone has the opportunity to feedback on things as I work through the changes.
 * I transferred our Assessment Information Sheets to Sway rather than giving students pdfs. Sway is good for [accessibility purposes](https://www.quostar.com/blog/sway-for-office-365-overview/) and adapts the display for different devices whilst also allowing the reader to export a copy to pdf or Word if preferred. You can see an example of one of our assessment sheets [here](https://sway.office.com/RnxqSvogLgH0UEIn?ref=Link).
 
-Next week I will continue with the assessments (the former group presentation is going to require a creative solution). I hope that this blog is helpful to some of you, or at the least, reassuring that even those of us who spend their time squawking on twitter like we know what we're doing are really just trying to do things one step at a time.
+Next week I will continue with the assessments (the group presentation is going to require a creative solution). I hope that this blog is helpful to some of you, or at the least, reassuring that even those of us who spend their time squawking on twitter like we know what we're doing are really just trying to do things one step at a time whilst the wine is chilling.
