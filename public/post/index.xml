@@ -75,6 +75,68 @@
     </item>
     
     <item>
+      <title>Pivot 1: Academic Serenity</title>
+      <link>/post/pivot-1-known-unknowns/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/post/pivot-1-known-unknowns/</guid>
+      <description>
+
+
+&lt;blockquote&gt;
+&lt;p&gt;Grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is the first in what I plan to be a weekly blog charting what I’ve been doing to redesign my courses for online/blended delivery. This isn’t going to be heavy on pedagogical arguments or citations, if you want that please see our preprint &lt;a href=&#34;https://psyarxiv.com/qdh25/&#34;&gt;“10 Simple Rules for Supporting a Temporary online Pivot in Higher Education”&lt;/a&gt;. Instead, this is literally going to be a blog about what I’ve been doing - recording videos, updating assessment information, checking reading lists. I am a teaching-focused lecturer with experience of fully online delivery and whose research expertise is lecture capture and I still feel overwhelmed at the scale of the task in front of me so I figure that it might be helpful to others to read a concrete account of the nuts and bolts of what the pivot entails.&lt;/p&gt;
+&lt;div id=&#34;my-courses&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;My courses&lt;/h2&gt;
+&lt;p&gt;To give you some context about the courses I’m working on, I am Year Lead for 1st year psychology at the University of Glasgow. Typically there’s about 500 students on the course, with just under half of them registered on a psychology programme and half who take it as an elective.&lt;/p&gt;
+&lt;p&gt;In the old normal, they would have three hour-long lectures a week and a two-hour practical lab once every two weeks, in which we did lots of small-group work focused on academic writing, in addition to teaching data skills and programming using R. The assessment was a final exam (with an essay and MCQ component), a coursework essay, and a lab portfolio of small-stakes MCQs, R worksheets, and a group presentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;teamwork-makes-the-dreamwork&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Teamwork makes the dreamwork&lt;/h2&gt;
+&lt;p&gt;This is my blog and I will be writing about my experience but I want to make it clear up front that none of this is done alone. I’m lucky to have a fantastic team to work with at &lt;a href=&#34;https://twitter.com/UofGPsychology&#34;&gt;UofG Psychology&lt;/a&gt; and everything we’re doing is a result of extensive and ongoing team discussions and consultations with lecturers, tutors, GTAs and students.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;uncertainty&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Uncertainty&lt;/h2&gt;
+&lt;p&gt;Like most (all?) of us, I find the uncertainty about what life in September will look like and what will be possible (or sensible) to do incredibly difficult to process and extremely stressful. It’s like when I think about the size of the universe and the scale of it all short-circuits my brain.&lt;/p&gt;
+&lt;p&gt;Here’s the answer we’ve given to incoming and prospective students about what teaching will be like:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Like all universities, face-to-face teaching in 2020-2021 will depend on social distancing guidelines that the Scottish government has set in place. Our promise to you is that we will give you as much face-to-face contact and teaching as is possible. However, because we don’t yet know what specific guidelines will still be in place in September, it’s difficult to tell you right now exactly what will be possible. We know that this uncertainty is frustrating, believe us, we miss being in the classroom with our students so much.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Despite the uncertainty we want to give you as much concrete information as we can given what we know now, rather than promise things we may not be able to deliver. Level 1 Psychology lectures involve a lot of people in a confined space, so at this point it is very unlikely that lectures can take place in person for the first semester. As the situation evolves, and depending on guidelines, this may be required for the second semester as well. Instead, our lectures will be pre-recorded to allow you flexibility, but there will also be a live watch party (think Netflix Party but with less Tiger King) at the regular lecture time so you can make contact directly with your lecturers and peers, ask questions, take part in interactive activities, and importantly to help establish a routine.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is more difficult to give you an exact plan for labs and small-group teaching. Given that lab class sizes are smaller than lectures, for the second semester, we’re optimistic that we will be able to deliver them in person as normal. However, for the first semester the exact details of the social distancing guidelines mean we have to change how we teach labs temporarily. In both semesters you will receive labs led by a lecturer and one of our Graduate Teaching Assistants, one-to-one office hours and support, Peer-Assisted Learning (which are sessions run but students in other years to help you get support from students who have been through your course), and the opportunity to work with other students. You will learn all the content and skills and complete all the assessments that students in 2019-2020 did.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Our priority is giving you face-to-face contact to welcome you into the University community, and give you the student experience you deserve – making friends, talking to your lecturers, getting involved in community activities. We want to make sure you really feel like you are a part of Team UofG and so that is the type of contact we will prioritise. Depending on guidelines, we would really like to prioritise the use of campus space for things that make your university experience unique and special (like study groups, student societies, and getting to know staff and other students). How we do this will depend on the guidelines, but we want you to know what our priorities are.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But how to put that into action as course lead (and lecturer)? I’ve found it useful, and calming, to make a list of what I know and what I don’t know and structure the work I have to do in the summer around that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Things I know:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lectures will be delivered online&lt;/li&gt;
+&lt;li&gt;We cannot have a large in-person exam at the end of term&lt;/li&gt;
+&lt;li&gt;Some assessment guidance will need updated&lt;/li&gt;
+&lt;li&gt;The organisation of the VLE needs to 100% super tight and clear&lt;/li&gt;
+&lt;li&gt;Reading and course materials need to be available online and accessible&lt;/li&gt;
+&lt;li&gt;We are going to use Teams to communicate with our students&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This isn’t everything, but it’s a good chunk of concrete, actionable tasks and a positive starting point. I’ve started with the assessment focused tasks because it’s incredibly important that any changes are considered in light of the learning outcomes and that I think about what additional guidance they may need.&lt;/p&gt;
+&lt;p&gt;I still don’t know how many students are actually going to turn up, if there’s going to be a second wave or local lockdowns I’ll need to deal with, or what the distancing guidelines are going to be come September. But that’s where the serenity, courage and wisdom come in (and let’s be real, not a small amount of wine).&lt;/p&gt;
+&lt;p&gt;So here’s what I’ve done this week:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The end-of-term exam will remain but rather than being in a drafty gym hall, the essay component will be a 24-hour open book exam and the MCQ component will be a Moodle quiz that’s also available for 24-hours but timed so that students have 60-minutes to complete it from when it’s first started. I have updated the assessment information to reflect this in addition to the ILOs and assessment guidance as the expectations of an open-book exam are slightly different (i.e., it can be more focused evaluation and argument than rote-memorising citations).&lt;/li&gt;
+&lt;li&gt;Previously students completed 3 small-stakes MCQs (2% each) throughout the semester to encourage distributed practice. These remain in place but I have updated the assessment guidance and procedure to note that these quizzes will now be timed so that they can get used to the format before the bigger quiz for the end-of-term exam.&lt;/li&gt;
+&lt;li&gt;Started a conversation with our technicians and researchers about the best way to award credit for participating in online research. Previously this had been done manually by the researcher but now there will be much more research done online, we want to find a way to automate it.&lt;/li&gt;
+&lt;li&gt;Set up a weekly catch-up with my Level 1 team. Not for any particular formal purpose but just to ensure that nothing comes as a surprise to anyone and that everyone has the opportunity to feedback on things as I work through the changes.&lt;/li&gt;
+&lt;li&gt;Transferred our Assessment Information Sheets to Sway rather than giving students pdfs. Sway is good for &lt;a href=&#34;https://www.quostar.com/blog/sway-for-office-365-overview/&#34;&gt;accessibility purposes&lt;/a&gt; and adapts the display for different devices whilst also allowing the reader to export a copy to pdf or Word if preferred. You can see an example of one of our assessment sheets &lt;a href=&#34;https://sway.office.com/RnxqSvogLgH0UEIn?ref=Link&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next week I will continue with the assessments (the former group presentation is going to require a creative solution). I hope that this blog is helpful to some of you, or at the least, reassuring that even those of us who spend their time squawking on twitter like we know what we’re doing are really just trying to do things one step at a time.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Lecture capture &amp; widening participation: keynote excerpt</title>
       <link>/post/lec-rec-keynote/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
