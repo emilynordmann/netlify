@@ -2,7 +2,7 @@
 title: 'Pivot 1: Academic Serenity'
 author: Emily Nordmann
 date: '2020-07-13'
-slug: pivot-1-known-unknowns
+slug: pivot-1-academic-serenity
 categories: []
 tags:
   - pivot
@@ -17,7 +17,9 @@ image:
   preview_only: no
 projects: []
 ---
-> Grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference.
+> Grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference - *Reinhold Niebuhr*
+
+> Make a nice list, calm your pants where you can, and always have wine in the fridge - *Emily Nordmann*
 
 This is the first in what I plan to be a weekly blog charting what I've been doing to redesign my courses for online/blended delivery. This isn't going to be heavy on pedagogical arguments or citations, if you want that please see our preprint ["10 Simple Rules for Supporting a Temporary online Pivot in Higher Education"](https://psyarxiv.com/qdh25/). Instead, this is literally going to be a blog about what I've been doing - recording videos, updating assessment information, checking reading lists. I am a teaching-focused lecturer with experience of fully online delivery and whose research expertise is lecture capture and  I still feel overwhelmed at the scale of the task in front of me so I figure that it might be helpful to others to read a concrete account of the nuts and bolts of what the pivot entails.
 
@@ -34,7 +36,7 @@ This is my blog and I will be writing about my experience but I want to make it 
 
 ## Uncertainty
 
-Like most (all?) of us, I find the uncertainty about what life in September will look like and what will be possible (or sensible) to do incredibly difficult to process and extremely stressful. It's like when I think about the size of the universe and the scale of it all short-circuits my brain. 
+Like most (all?) of us, I find the uncertainty about what life in September will look like and what will be possible (or sensible) difficult and stressful to process. It's like when I think about the size of the universe and the scale of it all short-circuits my brain. 
 
 Here's the answer we've given to incoming and prospective students about what teaching will be like:
 
@@ -57,16 +59,14 @@ But how to put that into action as course lead (and lecturer)? I've found it use
 * Reading and course materials need to be available online and accessible
 * We are going to use Teams to communicate with our students
 
-This isn't everything, but it's a good chunk of concrete, actionable tasks and a positive starting point. I've started with the assessment focused tasks because it's incredibly important that any changes are considered in light of the learning outcomes and that I think about what additional guidance they may need.
+This isn't everything, but it's a good chunk of concrete, actionable tasks and a positive starting point. I still don't know how many students are actually going to turn up, if there's going to be a second wave or local lockdowns I'll need to deal with, or what the distancing guidelines are going to be come September. But that's where the serenity, courage and wisdom come in (and let's be real, not a small amount of wine).
 
-I still don't know how many students are actually going to turn up, if there's going to be a second wave or local lockdowns I'll need to deal with, or what the distancing guidelines are going to be come September. But that's where the serenity, courage and wisdom come in (and let's be real, not a small amount of wine).
-
-So here's what I've done this week:
+This week I started with the assessment focused tasks because it's incredibly important that any changes are considered in light of the learning outcomes and that I think about what additional guidance they may need.
 
 * The end-of-term exam will remain but rather than being in a drafty gym hall, the essay component will be a 24-hour open book exam and the MCQ component will be a Moodle quiz that's also available for 24-hours but timed so that students have 60-minutes to complete it from when it's first started. I have updated the assessment information  to reflect this in addition to the ILOs and assessment guidance as the expectations of an open-book exam are slightly different (i.e., it can be more focused evaluation and argument than rote-memorising citations).
 * Previously students completed 3 small-stakes MCQs (2% each) throughout the semester to encourage distributed practice. These remain in place but I have updated the assessment guidance and procedure to note that these quizzes will now be timed so that they can get used to the format before the bigger quiz for the end-of-term exam.
-* Started a conversation with our technicians and researchers about the best way to award credit for participating in online research. Previously this had been done manually by the researcher but now there will be much more research done online, we want to find a way to automate it.
-* Set up a weekly catch-up with my Level 1 team. Not for any particular formal purpose but just to ensure that nothing comes as a surprise to anyone and that everyone has the opportunity to feedback on things as I work through the changes.
-* Transferred our Assessment Information Sheets to Sway rather than giving students pdfs. Sway is good for [accessibility purposes](https://www.quostar.com/blog/sway-for-office-365-overview/) and adapts the display for different devices whilst also allowing the reader to export a copy to pdf or Word if preferred. You can see an example of one of our assessment sheets [here](https://sway.office.com/RnxqSvogLgH0UEIn?ref=Link).
+* I started a conversation with our technicians and researchers about the best way to award credit for participating in online research. Previously this had been done manually by the researcher but now there will be much more research done online, we want to find a way to automate it.
+* We set up a weekly catch-up with the Level 1 team. Not for any particular formal purpose but just to ensure that nothing comes as a surprise to anyone and that everyone has the opportunity to feedback on things as I work through the changes.
+* I transferred our Assessment Information Sheets to Sway rather than giving students pdfs. Sway is good for [accessibility purposes](https://www.quostar.com/blog/sway-for-office-365-overview/) and adapts the display for different devices whilst also allowing the reader to export a copy to pdf or Word if preferred. You can see an example of one of our assessment sheets [here](https://sway.office.com/RnxqSvogLgH0UEIn?ref=Link).
 
 Next week I will continue with the assessments (the former group presentation is going to require a creative solution). I hope that this blog is helpful to some of you, or at the least, reassuring that even those of us who spend their time squawking on twitter like we know what we're doing are really just trying to do things one step at a time.
