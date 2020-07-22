@@ -18,7 +18,11 @@ url_video: ""
 
 I like to think of myself as fairly good when it comes to inclusive practice, but the Black Lives Matter movement forced me to reflect on what I am doing beyond LGBTQ inclusivity and I came up short. In particular, I had to confront the fact that as the person who gives the history of psychology lecture to 1st years what I was giving them was largely the history of white Western men. 
 
-I am still in the process of updating my lecture but I also wanted to rework the essay to give students the opportunity to take a more critical look at the history of psychology that is usually presented in class and in their textbook. The full essay details are available below, but here's the summary:
+I am still in the process of updating my lecture but I also wanted to rework the essay to give students the opportunity to take a more critical look at the history of psychology that is usually presented in class and in their textbook.
+
+Huge thanks to [Chiara Horlin](https://twitter.com/aussieweegie), [Helena Paterson](https://twitter.com/PatersonHelena), and [Wil Toivo](https://twitter.com/wtoivo1) from UofG Psychology for their input and advice on the questions and resources.
+
+The full essay details are available below, but here's the summary:
 
 > The history of psychology is often presented as a list of facts, figures, and names; a chronological timeline of the progression of our field and the notable events and people that have shaped what we know as psychology in the present day. Such timelines can give the impression that the history presented is objective and apolitical, that it is merely the account of one thing after another as it happened. 
 
@@ -31,8 +35,6 @@ I am still in the process of updating my lecture but I also wanted to rework the
 >    * Women in psychology
 >    * The replication crisis
 >    * Psychology and government policy
-
-Huge thanks and recognition to Chiara Horlin, [Helena Paterson](https://twitter.com/PatersonHelena), and [Wil Toivo](https://twitter.com/wtoivo1) from UofG Psychology for their input and advice on the questions and resources.
 
 You are free to reuse, remix and adapt these this work without attribution, however, because even teaching-focused academics need to worry about impact, please let me know via e-mail or Twitter if you do!
 
