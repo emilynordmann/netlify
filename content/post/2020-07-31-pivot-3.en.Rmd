@@ -21,9 +21,11 @@ projects: []
 
 This week I finished working through the assessment information for both my Level 1 course and my MSc Research Methods courses. The latter was fairly quick as that course was already delivered both online and offline and the assessments (R worksheets, pre-registration, quant report write-up) lend themselves easily to online assessment.
 
-The only thing really of note for the interested pivot reader from this work was the update to the MCQ assessments for Level 1. Last year they were given three small-stakes MCQ assessments (each worth 2% of their grade) throughout the semester, to encourage them to study and keep up with the lecture content (as well as retrieval practice being good for learning). This year we've added in PeerWise, where they are also required to write one MCQ of their own. As I'm sure you've experienced, writing good MCQs is no easy task and to write challenging distractors requires you to understand the question you've set fully, so it's a great learning activity and it also means they build up a huge bank of MCQs to revise from come exam time.
+The only thing really of note for the interested pivot reader from this work was the update to the MCQ assessments for Level 1. Last year they were given three small-stakes MCQ assessments (each worth 2% of their grade) throughout the semester, to encourage them to study and keep up with the lecture content (as well as retrieval practice being good for learning). This year we've added in [PeerWise](https://peerwise.cs.auckland.ac.nz/)*, where they are also required to write one MCQ of their own. As I'm sure you've experienced, writing good MCQs is no easy task and to write challenging distractors requires you to understand the question you've set fully, so it's a great learning activity and it also means they build up a huge bank of MCQs to revise from come exam time.
 
 The decision to introduce this was nothing to do with the pivot, the School of Biology used it previously and it was extremely popular and requested by our class reps. The reason it's in this blog is because if you're looking for an  activity to promote engagement through the semester, it's a great choice. If you'd like more info, see our [assessment information](https://sway.office.com/RnxqSvogLgH0UEIn?ref=Link) and [support](https://sway.office.com/XWwc4wd1Hcm38jkc?ref=Link).
+
+* When I went to retrieve the link for PeerWise it was currently offline, here's hoping it comes back!
 
 # Watch party
 
@@ -43,6 +45,6 @@ What this means for my book is that I have had to rip it apart and put it back t
 
 I also need to do this for the MSc data skills book - at the moment there is a f2f and an ODL version but I will combine them into one modality-neutral copy. Again, why I didn't do this before now is a mystery.
 
-The next step with our data skills work is updating the instructions for how to access R. Previously students would have used the on-campus computers or installed on their laptops. To avoid any issues with installation and system requirements, we're hopefully getting access to RStudio Pro which runs through a browser. This is a great move, although it does mean updating a lot of set-up instructions.
+The next step with our data skills work is updating the instructions for how to access R. Previously students would have used the on-campus computers or installed on their laptops. To avoid any issues with installation and system requirements, we're hopefully getting access to [RStudio Pro]https://rstudio.com/products/rstudio-server-pro/ which runs through a browser. This is a great move, although it does mean updating a lot of set-up instructions.
 
 Finally, I also got a haircut, which means I can actually start recording, although I'm still a week or so from having anything to say.
