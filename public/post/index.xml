@@ -5,12 +5,41 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/me_2018</url>
       <title>Blog Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Pivot 3: Party</title>
+      <link>/post/pivot-3/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/post/pivot-3/</guid>
+      <description>
+
+
+&lt;p&gt;This week I finished working through the assessment information for both my Level 1 course and my MSc Research Methods courses. The latter was fairly quick as that course was already delivered both online and offline and the assessments (R worksheets, pre-registration, quant report write-up) lend themselves easily to online assessment.&lt;/p&gt;
+&lt;p&gt;The only thing really of note for the interested pivot reader from this work was the update to the MCQ assessments for Level 1. Last year they were given three small-stakes MCQ assessments (each worth 2% of their grade) throughout the semester, to encourage them to study and keep up with the lecture content (as well as retrieval practice being good for learning). This year we’ve added in PeerWise, where they are also required to write one MCQ of their own. As I’m sure you’ve experienced, writing good MCQs is no easy task and to write challenging distractors requires you to understand the question you’ve set fully, so it’s a great learning activity and it also means they build up a huge bank of MCQs to revise from come exam time.&lt;/p&gt;
+&lt;p&gt;The decision to introduce this was nothing to do with the pivot, the School of Biology used it previously and it was extremely popular and requested by our class reps. The reason it’s in this blog is because if you’re looking for an activity to promote engagement through the semester, it’s a great choice. If you’d like more info, see our &lt;a href=&#34;https://sway.office.com/RnxqSvogLgH0UEIn?ref=Link&#34;&gt;assessment information&lt;/a&gt; and &lt;a href=&#34;https://sway.office.com/XWwc4wd1Hcm38jkc?ref=Link&#34;&gt;support&lt;/a&gt;.&lt;/p&gt;
+&lt;div id=&#34;watch-party&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Watch party&lt;/h1&gt;
+&lt;p&gt;The most calming thing I did this week was to do a test run of how we intend on running the lectures. Essentially, we’re going to try something akin to a Netflix Party. The lectures will be pre-recorded and chunked into ~15 minute videos, with a max of 40 minutes of didactic pre-recorded content. However, at the usual lecture time, we’re going to have a watch party whereby there will be a Zoom call and everyone will watch the chunks together. In-between the chunks, the lecturer will do interactive activities with the class - polls, discussion, Q&amp;amp;A. The type of interaction with depend on the size and the level of the class but hopefully you get the idea.&lt;/p&gt;
+&lt;p&gt;The rationale behind this approach was to try and balance staff and student workload and to balance what we know works for online with concerns about student engagement. The lectures are pre-recorded to allow for flexible asynchronous engagement, however, there’s also a synchronous event to promote engagement with the lecturer and to help students form a routine which I am particularly concerned about with new 1st years. The 15-minute chunks are better for online but the total run-time of 40 minutes is more realistic for workload than asking everyone to completely rewrite and restructure their lectures. Instead, the workload is channelled towards increasing engagement and active learning.&lt;/p&gt;
+&lt;p&gt;The test run was really to test the tech and whether video sharing over Zoom would work. I tried several different methods, either streaming my video or playing a local copy and all of them worked fine. This is of course going to be hugely dependent on staff broadband speeds and bandwidth so I’ve come up with &lt;a href=&#34;https://gla-my.sharepoint.com/:w:/g/personal/emily_nordmann_glasgow_ac_uk/EXB_1AXHTfZNpBxmvg_lrjcBXbVQc2pFXKmWVDO5pS1coA?e=KWhQGr&#34;&gt;high and low bandwidth solutions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am 100% aware that this approach doesn’t work for everyone. Some students may not have the bandwidth (although we’re going to offer study space and access to tech to try and address this), some may not be able to make the synchronous session. That’s why the lectures are provided asynchronously as well, why the watch party will be recorded, why there’s also going to be a Teams channel where the lecturer will engage with the class. I don’t believe that perfect is possible (with anything but particularly with this) and I think we should focus on the fact that the old normal was incredibly far from inclusive and flexible and it’s huge progress for HE that inclusivity is being considered at scale for the first time. If anyone does have a solution that works for absolutely every student, I’ll buy it from you for 3 magic beans.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;whats-in-a-name&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;What’s in a name?&lt;/h1&gt;
+&lt;p&gt;The final thing I did this week was to start to edit our &lt;a href=&#34;https://psyteachr.github.io/ug1-practical/&#34;&gt;data skills books&lt;/a&gt; for teaching R. The old Level 1 book was organised by Lab (Lab 1, Lab 2, Lab 3 etc.) and the sub-chapter headings were pre-class activities and in-class activities. In the old normal they had a 2 hour lab every two weeks, in the new normal, a lot of it will be asynchronous but they will have a 30-minute synchronous session every week.&lt;/p&gt;
+&lt;p&gt;What this means for my book is that I have had to rip it apart and put it back together again. I’ve removed any reference to pre-class and in-class and I’ve renamed the chapters to reflect the content (e.g., Loading data) rather than location they would be completed in. Why I didn’t do this originally I’m not sure. Importantly, the changes I’ve made have been modality neutral so that I don’t have to go back next year and change it again, e.g., “in this pre-class activity you will…” has become “in this chapter you will…” so it works regardless of how it is delivered.&lt;/p&gt;
+&lt;p&gt;I also need to do this for the MSc data skills book - at the moment there is a f2f and an ODL version but I will combine them into one modality-neutral copy. Again, why I didn’t do this before now is a mystery.&lt;/p&gt;
+&lt;p&gt;The next step with our data skills work is updating the instructions for how to access R. Previously students would have used the on-campus computers or installed on their laptops. To avoid any issues with installation and system requirements, we’re hopefully getting access to RStudio Pro which runs through a browser. This is a great move, although it does mean updating a lot of set-up instructions.&lt;/p&gt;
+&lt;p&gt;Finally, I also got a haircut, which means I can actually start recording, although I’m still a week or so from having anything to say.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Pivot 2: Academic, heal thyself</title>
