@@ -9,7 +9,7 @@ summary: Introductory lecture for first year students explaining effective study
 tags:
 - study strategies
 - other
-title: How to Study
+title: How to Study 2020
 url_code: ""
 url_pdf: ""
 url_slides: "https://osf.io/5kvfb/"
