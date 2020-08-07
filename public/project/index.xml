@@ -5,12 +5,35 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 21 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/me_2018</url>
       <title>Projects</title>
       <link>/project/</link>
     </image>
+    
+    <item>
+      <title>How to Study</title>
+      <link>/project/how_to_study-_2020/</link>
+      <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/project/how_to_study-_2020/</guid>
+      <description>&lt;p&gt;This is an update of my How to Study lecture that has been adapted for the pivot to online learning. The changes include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Changing the section on attendance to keeping up&lt;/li&gt;
+&lt;li&gt;Adding a section about technology and environment&lt;/li&gt;
+&lt;li&gt;Adding a slide on time management&lt;/li&gt;
+&lt;li&gt;Adding info about open-book exams&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You are free to reuse, remix and adapt these slides without attribution, however, because even teaching-focused academics need to worry about impact, please let me know via e-mail or Twitter if you do!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://osf.io/5kvfb/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Download slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to 
+&lt;a href=&#34;https://bbstem.co.uk/donations/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Black British Professionals in STEM&lt;/a&gt; or 
+&lt;a href=&#34;https://prideinstem.org/shop/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pride in STEM&lt;/a&gt; (currently by buying a badge).&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Missing History of Psychology</title>
