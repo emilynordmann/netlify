@@ -5,12 +5,40 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Blog Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 07 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/me_2018</url>
       <title>Blog Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Lec Rec impact</title>
+      <link>/post/lec-rec-impact/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/lec-rec-impact/</guid>
+      <description>
+
+
+&lt;p&gt;List of institutions linking to lecture capture guides from Nordmann et al. (2020).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.aber.ac.uk/e-learning/2019/03/14/using-lecture-capture-effectively-tips-for-staff-and-students/&#34;&gt;University of Aberystwyth, UK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cdn.auckland.ac.nz/assets/auckland/staff/learning-teaching/LectureCapture/Staff%20guide%20to%20lecture%20capture%20at%20UoA%20v2%2025.2.pdf&#34;&gt;University of Auckland, New Zealand&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://canvas.bham.ac.uk/courses/21228/pages/panopto-lecture-capture&#34;&gt;University of Birmingham&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cilt.uct.ac.za/sites/default/files/image_tool/images/83/LC%20Guide%20dark.pdf&#34;&gt;University of Cape Town South Africa&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.uis.cam.ac.uk/service/teaching-and-learning/lc-oev/students/downloads/lcstudentguide/view&#34;&gt;University of Cambridge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sleguidance.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=115802123&#34;&gt;City University London, UK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://celt.wp.derby.ac.uk/engaging-students-to-use-lecture-recordings-effectively-2/&#34;&gt;University of Derby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ed.ac.uk/files/atoms/files/using_lecture_recording.pdf&#34;&gt;University of Edinburgh, UK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[Hull York Medical School, UK](&lt;a href=&#34;https://howto.hyms.ac.uk/knowledge-base/using-lecture-recordings-a-guide-for-students/&#34; class=&#34;uri&#34;&gt;https://howto.hyms.ac.uk/knowledge-base/using-lecture-recordings-a-guide-for-students/&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;University of Glasgow (external link pending)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.imperial.ac.uk/students/success-guide/ug/effective-study/in-class-and-in-lectures/using-lecture-recordings/&#34;&gt;Imperial College London, UK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://intranet.royalholloway.ac.uk/staff/teaching/e-learning/tools-services/lecture-recording-services-at-royal-holloway.aspx&#34;&gt;Royal Holloway, University of London, UK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blogs.lse.ac.uk/lti/2018/01/23/impact-and-student-use-of-lecture-recording/&#34;&gt;London School of Economics, UK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.librarydevelopment.group.shef.ac.uk/understanding/using_lecture_recordings.pdf&#34;&gt;University of Sheffield&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Pivot 4: Hitting the road</title>
