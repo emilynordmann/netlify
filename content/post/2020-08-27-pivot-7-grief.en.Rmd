@@ -1,0 +1,48 @@
+---
+title: 'Pivot 7: Grief'
+author: Emily Nordmann
+date: '2020-08-27'
+slug: pivot-7-grief
+categories:
+  - Pivot
+tags:
+  - pivot
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-08-27T19:08:12+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Last Saturday we were supposed to be in London for the West End production of Sister Act, with Whoopi Goldberg reprising the lead role and Jennifer Saunders as Mother Superior. I genuinely love Jennifer Saunders more than I love my own mother, and my wife, who is a choral conductor^1^, counts Sister Act amongst her favourite films. Just after the scene where [Mary Clarence leads the choir for the first time](https://www.youtube.com/watch?v=37hkxf5RaXc), I looked over and realised Kathleen was crying. Now, this isn't unusual. We discuss, feel, and express our emotions as freely, frequently, and strongly as is dictated by the Lesbian Code of Conduct so we cry at the TV most days. What was unusual is that we normally cry in sync^2^ and I was still dry-eyed. We talked about it afterwards and she said that it normally makes her cry anyway because it's about community choirs being good for people and conductors being good leaders and that's her *thing* but that this time it had packed an extra punch because it was a reminder of how much she misses being in the room with her choir. And that, dear reader, made me cry at the time and again whilst typing this because I viscerally get what she's feeling because I feel the same grief about my own teaching.
+
+I have two firm beliefs about 2020-2021 
+
+1. Online learning is not only educationally powerful and effective but it can provide a full, rich, positive student experience in which meaningful lasting connections can be made.
+2. I am going to feel a deep personal loss for as long as this goes on.
+
+And this is very much about the personal. Pedagogically, now that I have hit my stride with designing the teaching materials, my course might be better than its ever been. The structure is better, the signposting is better, I've chucked out any resource that isn't fully open-access, the synchronous sessions are entirely focused on active learning and group-work, and community is threaded through the core of our entire programme. If you're a UofG student reading this, honestly, we've got your back and I'm so proud to be part of the team that's pulling this off.
+
+But at that personal level, being at the front of that lecture hall gives me life. I love my job. I love teaching. Lectures get a bad rap because they're so easy to do badly but for me a great lecture is like nothing else for both sides of the podium. I need a break as much as anyone but I miss teaching during the summer. I'm going to miss seeing their faces when I tell them something that blows their minds. I'm going to miss the nervous laughter in lecture 1 of 1st year when they're not sure if they're allowed to laugh at my jokes turn into the confident laughter of a team that's comfortable with each other. I'm going to miss when they desperately try to hide that they're hungover in the labs. I'm going to miss overhearing their patter about their weekends. I'm going to miss the look of the gaybys when they realise *she's one of us*.
+
+It's personal because it's got nothing to do with the quality of education we're providing or the experience the students themselves will have. All of this will still happen. Minds will be blown, jokes will be laughed at, hangovers will be hidden, gaybys will be represented. But I'm not going to be in the room to see it and feel it with whatever magic of our chemistry it is that makes being in the same room with other humans feel good. 
+
+I have two firm beliefs about how I/we handle this grief (and this is where I imagine some of you reading this will disagree):
+
+1. It's important that we allow ourselves and others on our teams to feel and express this grief. Some people won't feel it, for some, not being in a lecture hall is going to be a relief, but for those who do, recognise that it is separate to how hard they're working to pivot their teaching online and to their beliefs about the efficacy of online learning.
+
+2. We should be mindful that our grief does not frame our interactions with students and that it is not part of the narrative of 2020-2021. Yes, they're adults blah blah blah. But they're adults who are dealing with their own stuff and even in the most egalitarian classroom there's still a power differential between students and teachers that means it's problematic for them to be aware of my personal feelings. I don't want them to feel like they can't come to me with problems for fear of upsetting me, that's not my role in their lives.
+
+At the crux of this is that as I've said, their education isn't going to suffer, and by mixing our entirely valid grief in with the pedagogical narrative, we risk that narrative becoming one of deficit, which does a disservice to the massive amount of work being put in to create engaging and effective online courses. They're not there for my entertainment and my feels, I'm there to teach them. And I am going to teach them well. I am also going to drink wine and cry to my friends and my wife occasionally, and that's also fine.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bMRSqakdwsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+^1^ [Kathleen](https://www.kathleencronie.com/) is the Musical Director of [Loud and Proud](http://loudandproudchoir.org/), Scotland's LGBT choir based in Edinburgh. They're great, she's great, you should check them out.  
+
+^2^ Being a lesbian is hilarious
