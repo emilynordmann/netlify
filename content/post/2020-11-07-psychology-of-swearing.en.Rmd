@@ -265,5 +265,5 @@ wordcloud(words = swears_woman$words, max.words = 90, min.freq = 1)
 ## Word cloud - non-binary
 
 ```{r, echo = FALSE, fig.align="center", warning = FALSE, message = FALSE}
-#wordcloud(words = swears_other$words, max.words = 90, min.freq = 1)
+wordcloud(words = swears_other$words, max.words = 90, min.freq = 1)
 ```

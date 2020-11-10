@@ -47,9 +47,9 @@
 &lt;/div&gt;
 &lt;div id=&#34;relationship-between-age-and-vocabulary&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Relationship between age and vocabulary&lt;/h2&gt;
-&lt;p&gt;The correlation between age and animals is r = -0.3, p = 0.124.&lt;/p&gt;
-&lt;p&gt;The correlation between age and swears is r = -0.51, p = 0.012.&lt;/p&gt;
-&lt;p&gt;The correlation between swears and animals is r = 0.55, p = 0.004.&lt;/p&gt;
+&lt;p&gt;The correlation between age and animals is r = -0.14, p = 0.43.&lt;/p&gt;
+&lt;p&gt;The correlation between age and swears is r = -0.13, p = 0.43.&lt;/p&gt;
+&lt;p&gt;The correlation between swears and animals is r = 0.47, p = 0.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2020-11-07-psychology-of-swearing.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;vocabulary-scores-by-gender&#34; class=&#34;section level2&#34;&gt;
@@ -66,13 +66,17 @@
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;center&#34;&gt;Man&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;14.67&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;15.20&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;center&#34;&gt;Woman&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;17.17&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;18.21&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;Nonbinary&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;22.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;center&#34;&gt;Other&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;15.00&lt;/td&gt;
 &lt;/tr&gt;
@@ -93,13 +97,17 @@
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;center&#34;&gt;Man&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;8.67&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;9.60&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;center&#34;&gt;Woman&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;8.92&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;9.56&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;Nonbinary&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;15.50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;center&#34;&gt;Other&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;9.00&lt;/td&gt;
 &lt;/tr&gt;
@@ -131,6 +139,7 @@
 &lt;/div&gt;
 &lt;div id=&#34;word-cloud---non-binary&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Word cloud - non-binary&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-11-07-psychology-of-swearing.en_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
