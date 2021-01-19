@@ -17,6 +17,9 @@ image:
 projects: []
 ---
 
+This is the winning entry to our Drag Racer competition by UofG psychology student [Ellie Brownlie](https://twitter.com/E_Brownlie).
+
+
 ## Intro
 
 **See final section, *Beauty fades, data vis is forever! (Summary)*, for full summary.**
