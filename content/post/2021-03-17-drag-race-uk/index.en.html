@@ -1,0 +1,164 @@
+---
+title: Drag Race UK
+author: Emily Nordmann
+date: '2021-03-17'
+slug: drag-race-uk
+categories: []
+tags:
+  - rstats
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-03-17T20:58:32Z'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>This analysis uses the package rtweet to collect tweets containing the #DragRaceUK hashtag - there is a good tutorial <a href="https://rtweet.info/">here</a> if you want more information.</p>
+<p>First, load the relevant packages, download the tweets, and clean it up a little.</p>
+<pre class="r"><code>library(rtweet)
+library(tidytext)
+library(tidyverse)
+library(gridExtra)
+library(lubridate)
+
+# get tweets with the #DragRaceUK and #Team hashtags
+
+tweets &lt;- search_tweets(&quot;#DragRaceUK OR #TeamLawrence OR #TeamBimini OR #TeamEllie OR #TeamTayce&quot;, n = 18000, include_rts = FALSE)
+
+dat &lt;- tweets %&gt;%
+  mutate(text = str_replace_all(text, &quot;[^\x01-\x7F]&quot;, &quot;&quot;),
+         text = str_replace_all(text, &quot;#DragRaceUK&quot;, &quot;&quot;),
+         text = str_replace_all(text, &quot;DragRace&quot;, &quot;&quot;),
+         text = str_replace_all(text, &quot;dragrace&quot;, &quot;&quot;),
+         text = str_replace_all(text, &quot;\\.|[[:digit:]]+&quot;, &quot;&quot;),
+         text = str_replace_all(text, &quot;https|amp|tco&quot;, &quot;&quot;))%&gt;%
+  select(created_at, text)%&gt;%
+  mutate(tweet = row_number())</code></pre>
+<p>Now, use tidy text tools to separate the words.</p>
+<pre class="r"><code># create tidy text
+
+dat_token &lt;- dat %&gt;%  
+  unnest_tokens(word, text) %&gt;%
+  anti_join(stop_words, by = &quot;word&quot;)
+
+# convert tidy text back to wide so that all in lower case etc.
+
+dat_lower &lt;- dat_token %&gt;%
+  group_by(tweet) %&gt;%
+  summarise(text = str_c(word, collapse = &quot; &quot;))</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre class="r"><code># add in column to say if each queen mentioned in tweet
+
+dat_lower &lt;- dat_lower %&gt;% 
+  mutate(lawrence = case_when(str_detect(text, &quot;.lawrence&quot;) ~ TRUE, TRUE ~ FALSE),
+         ellie = case_when(str_detect(text, &quot;.ellie&quot;) ~ TRUE, TRUE ~ FALSE),
+         tayce = case_when(str_detect(text, &quot;.tayce&quot;) ~ TRUE, TRUE ~ FALSE),
+         bimini = case_when(str_detect(text, &quot;.bimini&quot;) ~ TRUE, TRUE ~ FALSE)
+  )
+
+# create tidy text with the mention columns
+
+dat_mentions &lt;- dat_lower %&gt;%  
+  unnest_tokens(word, text) %&gt;%
+  anti_join(stop_words, by = &quot;word&quot;)</code></pre>
+<p>The first plot looks at the raw number of tweets that mention each Queen. This isn’t a perfect measure because it relies upon people on Twitter spelling the names correctly and people on the internet can’t spell.</p>
+<pre class="r"><code>dat_token %&gt;%
+  filter(word %in% c(&quot;lawrence&quot;, &quot;bimini&quot;, &quot;tayce&quot;, &quot;ellie&quot;))%&gt;%
+  count(word, sort = TRUE) %&gt;%
+  head(20) %&gt;%
+  mutate(word = str_to_title(word),
+         word = reorder(word, n))%&gt;%
+  ggplot(aes(x = word, y = n, fill = word)) +
+  geom_col(show.legend = FALSE) +
+  coord_flip()+
+  scale_y_continuous(name = &quot;Number of tweets&quot;)+
+  scale_x_discrete(name = &quot;Queens&quot;) +
+  theme_minimal() +
+  scale_fill_viridis_d()</code></pre>
+<p><img src="/post/2021-03-17-drag-race-uk/index.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>dat_token %&gt;%
+  filter(word %in% c(&quot;teamlawrence&quot;, &quot;teambimini&quot;, &quot;teamtayce&quot;, &quot;teamellie&quot;))%&gt;%
+  count(word, sort = TRUE) %&gt;%
+  head(20) %&gt;%
+  mutate(word = str_to_title(word),
+         word = reorder(word, n))%&gt;%
+  ggplot(aes(x = word, y = n, fill = word)) +
+  geom_col(show.legend = FALSE) +
+  coord_flip()+
+  scale_y_continuous(name = &quot;Number of tweets&quot;)+
+  scale_x_discrete(name = &quot;Queens&quot;) +
+  theme_minimal() +
+  scale_fill_viridis_d()</code></pre>
+<p><img src="/post/2021-03-17-drag-race-uk/index.en_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<p>The next lot of code runs a sentiment analysis on the tweets that each Queen is mentioned in. Sentiment analyses using existing ratings of words (e.g., if they’re positive or negative) to give you a sense of whether the queen is being mentioned in a tweet that is overall positive or negative in tone. Again it’s not perfect, it can’t cope with slang (e.g., it will think that a sickening death drop is a bad thing), but it does have face validity.</p>
+<pre class="r"><code># do a sentiment analysis for each queen
+
+bimini &lt;- dat_mentions %&gt;%
+  filter(bimini == &quot;TRUE&quot;)%&gt;%
+  inner_join(get_sentiments(&quot;bing&quot;))%&gt;%
+  count(index = tweet, sentiment) %&gt;%
+  spread(sentiment, n, fill = 0) %&gt;%
+  mutate(sentiment = positive - negative)%&gt;%
+  mutate(queen = &quot;bimini&quot;)
+
+lawrence &lt;- dat_mentions %&gt;%
+  filter(lawrence == &quot;TRUE&quot;)%&gt;%
+  inner_join(get_sentiments(&quot;bing&quot;))%&gt;%
+  count(index = tweet, sentiment) %&gt;%
+  spread(sentiment, n, fill = 0) %&gt;%
+  mutate(sentiment = positive - negative)%&gt;%
+  mutate(queen = &quot;lawrence&quot;)
+
+tayce &lt;- dat_mentions %&gt;%
+  filter(tayce == &quot;TRUE&quot;)%&gt;%
+  inner_join(get_sentiments(&quot;bing&quot;))%&gt;%
+  count(index = tweet, sentiment) %&gt;%
+  spread(sentiment, n, fill = 0) %&gt;%
+  mutate(sentiment = positive - negative)%&gt;%
+  mutate(queen = &quot;tayce&quot;)
+
+ellie &lt;- dat_mentions %&gt;%
+  filter(ellie == &quot;TRUE&quot;)%&gt;%
+  inner_join(get_sentiments(&quot;bing&quot;))%&gt;%
+  count(index = tweet, sentiment) %&gt;%
+  spread(sentiment, n, fill = 0) %&gt;%
+  mutate(sentiment = positive - negative)%&gt;%
+  mutate(queen = &quot;ellie&quot;)
+
+# combine sentiment analysis for each queen into one tibble and then calculate total positive, negative
+# and overall sentiment scores for each queen
+
+dat_sentiment &lt;- bind_rows(lawrence, ellie, bimini, tayce) %&gt;%
+  group_by(queen) %&gt;%
+  summarise(positive = sum(positive),
+            negative = sum(negative),
+            overall = sum(sentiment))%&gt;%
+  gather(positive:overall, key = type, value = score)%&gt;%
+  mutate(type = factor(type, levels = c(&quot;positive&quot;, &quot;negative&quot;, &quot;overall&quot;)))%&gt;%
+  mutate(queen = factor(queen, levels = c(&quot;lawrence&quot;, &quot;ellie&quot;, &quot;bimini&quot;, &quot;tayce&quot;)))
+
+# display table of sentiment scores
+
+tbl &lt;- dat_sentiment %&gt;%
+  spread(type, score)%&gt;%
+  arrange(desc(overall))
+
+grid.table(tbl)</code></pre>
+<p><img src="/post/2021-03-17-drag-race-uk/index.en_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code># create plot of the sentiment scores by each queen, ordered by overall score
+
+ggplot(dat_sentiment, aes(x = type, y = score, fill = type)) +
+  stat_identity(geom = &quot;bar&quot;, position = &quot;dodge&quot;, show.legend = FALSE)+
+  facet_wrap(~ queen, ncol = 3)+
+  coord_flip()+
+  scale_fill_manual(values = c(&quot;positive&quot; = &quot;green&quot;, &quot;negative&quot; = &quot;red&quot;, &quot;overall&quot; = &quot;blue&quot;))</code></pre>
+<p><img src="/post/2021-03-17-drag-race-uk/index.en_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
