@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: I am a teaching-focused lecturer and conduct research into the relationship between learning, student engagement, and technology.
+bio: I am a teaching-focused Senior lecturer and conduct research into the relationship between learning, student engagement, and technology.
 education:
   courses:
   - course: PGCert in Teaching and Learning in Higher Education (e-learning)
@@ -18,7 +18,7 @@ email: "emily.nordmann@glasgow.ac.uk"
 organizations:
 - name: University of Glasgow
   url: ""
-role: Lecturer in Psychology
+role: Senior Lecturer in Psychology
 social:
 - icon: envelope
   icon_pack: fas
@@ -39,6 +39,6 @@ user_groups:
 - Visitors
 ---
 
-I am a teaching-focused Lecturer in the [School of Psychology](https://www.gla.ac.uk/schools/psychology/) at the University of Glasgow, where I joined in November 2018. I teach research methods, individual differences and #rstats. More generally, my expertise is in first year course design and leadership. I strongly believe in the principles of open science and strive to incorporate them into both my teaching and my research design.
+I am a teaching-focused Senior Lecturer in the [School of Psychology](https://www.gla.ac.uk/schools/psychology/) at the University of Glasgow, where I joined in November 2018. I teach research methods, individual differences and #rstats. More generally, my expertise is in first year course design and leadership. I strongly believe in the principles of open science and strive to incorporate them into both my teaching and my research design.
 
 My research predominantly focuses on the relationship between technology and learning, in particular, lecture capture and how it can be used as an effective study tool and the impact on students from widening participation backgrounds. Since the disruption of COVID-19, my work has pivoted (pun intended) to supporting staff and students with a transition to online learning.
