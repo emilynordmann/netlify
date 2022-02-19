@@ -1,0 +1,334 @@
+---
+title: This is your thesis
+author: ''
+date: '2021-11-24'
+slug: this-is-your-thesis
+subtitle: 'For Kathleen'
+lastmod: '2021-11-24T00:01:44Z'
+featured: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+library(tidyverse)
+library(tidytext)
+library(readtext)
+library(igraph)
+library(ggraph)
+library(wordcloud)
+ 
+options(scipen = 999)
+
+pride <- c("#613915", "#000000", "#FF0018", "#FFA52C", "#FFFF41", "#008018", "#0000F9", "#86007D")
+
+trans <- c("#73D7EE","#73D7EE", "#FFAFC7", "#FFFFFF")
+
+
+ch1 <- readtext("chapters/chapter_1.pdf")
+ch2 <- readtext("chapters/chapter_2.pdf")
+ch3 <- readtext("chapters/chapter_3.pdf")
+ch4 <- readtext("chapters/chapter_4.pdf")
+ch5 <- readtext("chapters/chapter_5.pdf")
+ch6 <- readtext("chapters/chapter_6.pdf")
+ch7 <- readtext("chapters/chapter_7.pdf")
+ch8 <- readtext("chapters/chapter_8.pdf")
+
+thesis_all <- bind_rows(ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8)
+
+thesis <- thesis_all %>%
+    unnest_tokens(output = word, input = text)
+
+chapter_names <- as_labeller(c("chapter_1.pdf" = "Chapter 1",
+                               "chapter_2.pdf" = "Chapter 2",
+                               "chapter_3.pdf" = "Chapter 3",
+                               "chapter_4.pdf" = "Chapter 4",
+                               "chapter_5.pdf" = "Chapter 5",
+                               "chapter_6.pdf" = "Chapter 6",
+                               "chapter_7.pdf" = "Chapter 7",
+                               "chapter_8.pdf" = "Chapter 8"))
+```
+
+```{r}
+custom_stop <-tibble(word =  c("id", "1"))
+
+
+
+tidy_thesis <- thesis %>%
+  anti_join(stop_words) %>%
+  anti_join(custom_stop)
+
+full_count <- thesis %>% count()
+
+unique_words <- thesis %>% 
+  group_by(word) %>%
+  count() %>%
+  nrow()
+
+words_per_chapter <- thesis %>%
+  group_by(doc_id) %>%
+  count() %>%
+  rename(words = n)
+
+unique_words <- thesis %>% 
+  group_by(doc_id, word) %>%
+  count() %>%
+  ungroup(word) %>%
+  count()%>%
+  rename(unique = n) %>%
+  inner_join(words_per_chapter) %>%
+  mutate(prop_unique = (unique/words)*100) %>%
+  ungroup()
+
+unique_total <- unique_words %>%
+  summarise(total = sum(unique))
+
+
+```
+
+Dear Kathleen,
+
+This is your thesis. As interpreted by a nerd.
+
+Your thesis has `r full_count$n[1]` words in total. Don't freak out if this is different to something you wrote on an official form, R will count every word in every table and footnote. What matters is that it is `r full_count$n[1] - 52000` words longer than your wife's thesis.
+
+<br>
+
+```{r}
+thesis %>%
+  group_by(doc_id) %>%
+  count() %>%
+  ggplot(aes(x = doc_id, y = n)) +
+  geom_bar(stat = "identity", fill = pride, colour = "black") +
+  theme_minimal() +
+  labs(title = "Word count by chapter", x = "Chapter", y = "Words") +
+  scale_x_discrete(labels = c("1", "2", "3", "4", "5", "6", "7", "8"))
+```
+
+<br>
+
+In your thesis you used `r unique_total$total[1]` unique words and numbers. But which chapter had the highest proportion of unique words?
+
+<br>
+
+```{r}
+unique_words %>%
+  ggplot(aes(x = doc_id, y = prop_unique)) +
+  geom_bar(stat = "identity", fill = pride, colour = "black") +
+  theme_minimal() +
+  labs(title = "Percentage of unique words by chapter", x = "Chapter", y = "Percent") +
+  scale_x_discrete(labels = c("1", "2", "3", "4", "5", "6", "7", "8")) +
+  scale_y_continuous(breaks = seq(from = 0, to = 30, by = 5))
+```
+
+```{r}
+reorder_within <- function(x, by, within, fun = mean, sep = "___", ...) {
+  new_x <- paste(x, within, sep = sep)
+  stats::reorder(new_x, by, FUN = fun)
+}
+
+#' @rdname reorder_within
+#' @export
+scale_x_reordered <- function(..., sep = "___") {
+  reg <- paste0(sep, ".+$")
+  ggplot2::scale_x_discrete(labels = function(x) gsub(reg, "", x), ...)
+}
+
+
+#' @rdname reorder_within
+#' @export
+scale_y_reordered <- function(..., sep = "___") {
+  reg <- paste0(sep, ".+$")
+  ggplot2::scale_y_discrete(labels = function(x) gsub(reg, "", x), ...)
+}
+```
+
+Chapter 1 would win at Scrabble.
+
+<br>
+
+But what are all those words? Here are the top words used per chapter, excluding "stop words" which are common function words like "and", "the", "it", etc.
+
+<br>
+
+```{r}
+tidy_thesis %>%
+  group_by(doc_id, word) %>%
+  count() %>%
+  arrange(-n) %>%
+  ungroup(word) %>%
+  mutate(rank = row_number()) %>%
+  filter(rank <= 5) %>%
+  arrange(doc_id) %>%
+  ggplot(aes(x = reorder_within(word, n, doc_id), y = n, fill = doc_id)) +
+  geom_bar(stat = "identity", show.legend = F, colour = "black") +
+  scale_x_reordered() +
+  facet_wrap(~doc_id, scales = "free", nrow = 4, labeller = chapter_names) +
+  coord_flip() +
+  theme_minimal() +
+  scale_fill_manual(values = pride) +
+  labs(title = "Top five words used per chapter", x = NULL, y = NULL)
+
+```
+
+<br>
+
+If you're so nerdily inclined, you can also look at bigrams, pairs of consecutive words (excluding stop words).
+
+<br>
+
+```{r}
+thesis_bigrams <- thesis_all %>%
+  unnest_tokens(bigram, text, token = "ngrams", n = 2)
+
+bigrams_separated <- thesis_bigrams %>%
+  separate(bigram, c("word1", "word2"), sep = " ")
+
+bigrams_filtered <- bigrams_separated %>%
+  filter(!word1 %in% stop_words$word) %>%
+  filter(!word2 %in% stop_words$word)
+
+# new bigram counts:
+bigram_counts <- bigrams_filtered %>% 
+  count(word1, word2, sort = TRUE) %>%
+  ungroup()
+
+bigrams_united <- bigrams_filtered %>%
+  unite(bigram, word1, word2, sep = " ")
+
+bigram_tf_idf <- bigrams_united %>%
+  count(doc_id, bigram) %>%
+  bind_tf_idf(bigram, doc_id, n) %>%
+  arrange(desc(tf_idf))
+
+bigrams_united %>%
+  group_by(doc_id, bigram) %>%
+  count() %>%
+  arrange(-n) %>%
+  ungroup(bigram) %>%
+  mutate(rank = row_number()) %>%
+  filter(rank <= 5) %>%
+  arrange(doc_id) %>%
+  ggplot(aes(x = reorder_within(bigram, n, doc_id), y = n, fill = doc_id)) +
+  geom_bar(stat = "identity", show.legend = F, colour = "black") +
+  scale_x_reordered() +
+  facet_wrap(~doc_id, scales = "free", nrow = 4, labeller = chapter_names) +
+  coord_flip() +
+  theme_minimal() +
+  scale_fill_manual(values = pride) +
+  labs(title = "Top five bigrams used per chapter", x = NULL, y = NULL)
+
+
+```
+
+<br>
+
+Honestly, I'm not completely sure that this graph is at all useful, but it looks nice doesn't it?
+
+<br>
+
+```{r}
+# filter for only relatively common combinations
+bigram_graph <- bigram_counts %>%
+  filter(n > 20) %>%
+  graph_from_data_frame()
+
+a <- grid::arrow(type = "closed", length = unit(.15, "inches"))
+
+set.seed(12042018)
+
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                 arrow = a, end_cap = circle(.07, 'inches')) +
+  geom_node_point(color = "lightblue", size = 5) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()
+```
+
+<br>
+
+Who doesn't love a word cloud? Here's your top 50 words of the entire thesis (excluding stop words).
+
+<br>
+
+```{r}
+tidy_thesis %>%
+  anti_join(stop_words) %>%
+  count(word) %>%
+  with(wordcloud(word, n, max.words = 50))
+```
+
+<br>
+
+What about the most positive and negative words?
+
+<br>
+
+```{r}
+library(reshape2)
+
+tidy_thesis %>%
+  inner_join(get_sentiments("bing")) %>%
+  count(word, sentiment, sort = TRUE) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(colors = c("gray20", "#F446FF"),
+                   max.words = 50)
+```
+
+<br>
+
+Finally, because I love you, a pie chart.
+
+LOOK HOW HARD IT IS TO READ.
+
+<br>
+
+```{r}
+
+ggplot(words_per_chapter, aes(x = "", 
+                      y = words, 
+                      fill = doc_id)) +
+  geom_bar(width = 1, stat="identity") + 
+  coord_polar("y", start = 0) +
+  theme(
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text.x = element_blank()
+  ) +
+  theme_void() +
+  scale_fill_manual(name = "", labels = chapter_names, values = pride) +
+  labs(title = "Word count by chapter")
+
+```
+
+<br>
+
+Here's a clearer one.
+
+<br>
+
+```{r}
+proud <- tibble(feeling = c("Pride", "Love", "Admiration"), 
+                n = c(1,1,1))
+
+ggplot(proud, aes(x = "", 
+                      y = n, 
+                      fill = feeling)) +
+  geom_bar(width = 1, stat="identity") + 
+  coord_polar("y", start = 0) +
+  theme(
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text.x = element_blank()
+  ) +
+  theme_void() + 
+  labs(title = "What I feel when I look at you", fill = NULL) +
+  scale_fill_viridis_d()
+
+```
