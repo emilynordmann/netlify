@@ -1,0 +1,1051 @@
+---
+title: Personality and individual differences
+author: ''
+date: '2022-04-13'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-04-13T13:31:28+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,fig.path = "static")
+```
+
+## Introduction
+
+At the request of participants, this analysis is a summary of the results of a study conducted on personality and individual differences in the School of Psychology and Neuroscience, University of Glasgow, January - March 2022. This study was conducted as part of course requirements for our first year undergraduate course PSYCH1002. Students chose one personality trait and one demographic variable upon which to write a report/poster. It is important to note therefore that there were no formal hypotheses associated with the data collection and consequently no formal statistical tests will be presented.
+
+Finally, it is not possible to request additional analyses and because of the student project nature of the research, the results will not be written up further.
+
+Dr. Emily Nordmann
+1st Year Lead
+School of Psychology and Neuroscience, University of Glasgow
+
+## Personality measures
+
+The study used the [Big Five Inventory 2 (BFI-2, Soto and John, 2017)](https://www.colby.edu/psych/wp-content/uploads/sites/50/2013/08/Soto_John_2017.pdf) to measure personality. The BFI-2 has five personality traits which are listed below with their facets:
+
+* Extraversion (sociability, assertiveness, energy level)
+* Agreeableness (compassion, respectfulness, trust)
+* Conscientiousness (organisation, productiveness, responsibility)
+* Negative emotionality (anxiety, depression, emotional volatility)
+* Open-mindedness (intellectual curiosity, aesthetic sensitivity, creative imagination)
+
+The score for each personality trait was calculated as the mean of all items relating to that trait. Each trait had 12 items that participants rated on a scale of 1-5. Each facet had four associated items. Only participants who answered all questions are included in the analysis.
+
+## Sample context and limitations
+
+Students on PSYCH1002 were encouraged to first take part in the study as participants to help their understanding of the survey, therefore, approximately 500 of the participants were 1st year students at the University of Glasgow, a prestigious, English-speaking institution.
+
+Additionally, as part of the project requirements, students were required to recruit more participants using social media, therefore the remaining sample will also be heavily over-represented by university students. However, we did not collect information regarding each participant's employment, socioeconomic status, education, ethnicity, location, or primary language, therefore no absolute conclusions can be drawn about the make-up of the sample on these variables although it is safe to assume that it is not broadly representative of the full population. 
+
+```{r}
+library(tidyverse)
+library(kableExtra)
+library(plotly)
+
+# read in data but skip rows 2 and 3
+col_names <- names(read_csv("big5_data.csv", n_max = 0))
+dat <- read_csv("big5_data.csv", col_names = col_names, skip = 3) %>%
+  filter(Progress == 100, # only keep data from participants who progressed to end of survey
+         DistributionChannel != "preview")  # Remove Emily's preview data
+
+# read in scoring and codebook data
+scoring <- read_csv("scoring.csv")
+codebook <- read_csv("code_book.csv")
+
+# create dataset of just big 5 data then join with codebook and scoring
+big5 <- select(dat, ResponseId, Q4_1:Q4_60) %>%
+  pivot_longer(cols = Q4_1:Q4_60, names_to = "item", values_to = "response") %>%
+  inner_join(codebook, by = "item") %>%
+  inner_join(scoring, by = c("response", "direction"))
+
+# create dataset that just has demographic questions
+
+demographic <- select(dat, ResponseId, 
+                      "age" = Q6, 
+                      "gender" = Q7, 
+                      "sexual_orientation" = Q8, 
+                      "siblings" = Q9, 
+                      "birth_order" = Q10, 
+                      "neurodivergent" = Q11,
+                      "team_name" = Q14) %>%
+  mutate(gender = factor(gender, labels = c("Man", "Woman", "Non-binary", "Prefer not to say")),
+         sexual_orientation = factor(sexual_orientation, labels = c("Straight/ Heterosexual", "Bisexual/pansexual", "Gay or Lesbian", "Asexual", "Other", "Prefer not to say")),
+         birth_order = factor(birth_order),
+         neurodivergent = factor(neurodivergent, labels = c("Neurotypical", "Diagnosed", "Seeking diagnosis", "Not seeking diagnosis", "Prefer not to say")),
+         team_name = factor(team_name))
+
+# get rid of objects we don't need
+rm(dat, scoring, codebook)
+
+all_dat <- inner_join(big5, demographic, by = "ResponseId")
+
+
+trait_scores <- all_dat %>%
+  group_by(ResponseId, trait, age, gender, sexual_orientation, siblings, birth_order, neurodivergent) %>%
+  summarise(mean_score = mean(score)) %>%
+  ungroup()
+
+facet_scores <- all_dat %>%
+  group_by(ResponseId, trait, facet, age, gender, sexual_orientation, siblings, birth_order, neurodivergent) %>%
+  summarise(mean_score = mean(score)) %>%
+  ungroup()
+```
+
+```{r}
+trait_scores %>%
+  select(ResponseId, age, gender, sexual_orientation, siblings, birth_order, neurodivergent) %>%
+  distinct() %>%
+  group_by(gender) %>%
+  summarise(mean_age = mean(age, na.rm = TRUE),
+            sd_age = sd(age, na.rm = TRUE),
+            number = n()) %>%
+  ungroup() %>%
+  mutate(percent = number/sum(number)*100) %>%
+  kable(digits = 2, caption = "Gender and age stats for full sample") %>%
+  kable_classic()
+```
+
+## Trait scores (overall)
+
+```{r}
+theme_set(theme_minimal())
+
+trait_scores %>%
+  group_by(trait) %>%
+  summarise(mean = mean(mean_score),
+            median = median(mean_score),
+            sd = sd(mean_score),
+            min = min(mean_score),
+            max = max(mean_score)) %>%
+  kable(digits = 2, caption = "Descriptive statistics for mean trait scores for overall sample (min = 1, max = 5)") %>%
+  kable_classic()
+```
+
+Across all participants, conscientiousness and extraversion are normally distributed, whilst agreeableness, negative emotionality, and open-mindedness all show evidence of a negative skew (i.e., there are fewer participants with very low scores).
+
+
+```{r}
+trait_scores %>%
+  ggplot(aes(x = mean_score, fill = trait)) +
+  geom_histogram(boundary = 1, binwidth = .25, colour = "black") +
+  facet_wrap(~trait) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Distribution of mean trait scores across all participants", x = NULL)
+```
+
+## Facet scores (overall)
+
+### Agreeableness facets
+
+```{r}
+facet_scores %>%
+  filter(trait == "agreeableness") %>%
+  group_by(facet) %>%
+  summarise(mean = mean(mean_score),
+            median = median(mean_score),
+            sd = sd(mean_score),
+            min = min(mean_score),
+            max = max(mean_score)) %>%
+  kable(digits = 2, caption = "Descriptive statistics for agreeableness facet scores for overall sample (min = 1, max = 5)") %>%
+  kable_classic()
+
+facet_scores %>%
+  filter(trait == "agreeableness") %>%
+  ggplot(aes(x = mean_score, fill = facet)) +
+  geom_histogram(boundary = 1, binwidth = .25, colour = "black") +
+  facet_wrap(~facet, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Distribution of agreeableness facet scores across all participants", x = NULL)
+```
+
+### Conscientiousness facets
+
+```{r}
+facet_scores %>%
+  filter(trait == "conscientiousness") %>%
+  group_by(facet) %>%
+  summarise(mean = mean(mean_score),
+            median = median(mean_score),
+            sd = sd(mean_score),
+            min = min(mean_score),
+            max = max(mean_score)) %>%
+  kable(digits = 2, caption = "Descriptive statistics for conscientiousness facet scores for overall sample (min = 1, max = 5)") %>%
+  kable_classic()
+
+facet_scores %>%
+  filter(trait == "conscientiousness") %>%
+  ggplot(aes(x = mean_score, fill = facet)) +
+  geom_histogram(boundary = 1, binwidth = .25, colour = "black") +
+  facet_wrap(~facet, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Distribution of conscientiousness facet scores across all participants", x = NULL)
+```
+
+### Extraversion facets
+
+```{r}
+facet_scores %>%
+  filter(trait == "extraversion") %>%
+  group_by(facet) %>%
+  summarise(mean = mean(mean_score),
+            median = median(mean_score),
+            sd = sd(mean_score),
+            min = min(mean_score),
+            max = max(mean_score)) %>%
+  kable(digits = 2, caption = "Descriptive statistics for extraversion facet scores for overall sample (min = 1, max = 5)") %>%
+  kable_classic()
+
+facet_scores %>%
+  filter(trait == "extraversion") %>%
+  ggplot(aes(x = mean_score, fill = facet)) +
+  geom_histogram(boundary = 1, binwidth = .25, colour = "black") +
+  facet_wrap(~facet, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Distribution of extraversion facet scores across all participants", x = NULL)
+```
+
+### Negative emotionality facets
+
+```{r}
+facet_scores %>%
+  filter(trait == "neg_emotionality") %>%
+  group_by(facet) %>%
+  summarise(mean = mean(mean_score),
+            median = median(mean_score),
+            sd = sd(mean_score),
+            min = min(mean_score),
+            max = max(mean_score)) %>%
+  kable(digits = 2, caption = "Descriptive statistics for negative emotionality facet scores for overall sample (min = 1, max = 5)") %>%
+  kable_classic()
+
+facet_scores %>%
+  filter(trait == "neg_emotionality") %>%
+  ggplot(aes(x = mean_score, fill = facet)) +
+  geom_histogram(boundary = 1, binwidth = .25, colour = "black") +
+  facet_wrap(~facet, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Distribution of negative emotionality facet scores across all participants", x = NULL)
+```
+
+### Open-mindedness facets
+
+```{r}
+facet_scores %>%
+  filter(trait == "open_minded") %>%
+  group_by(facet) %>%
+  summarise(mean = mean(mean_score),
+            median = median(mean_score),
+            sd = sd(mean_score),
+            min = min(mean_score),
+            max = max(mean_score)) %>%
+  kable(digits = 2, caption = "Descriptive statistics for open minded facet scores for overall sample (min = 1, max = 5)") %>%
+  kable_classic()
+
+facet_scores %>%
+  filter(trait == "open_minded") %>%
+  ggplot(aes(x = mean_score, fill = facet)) +
+  geom_histogram(boundary = 1, binwidth = .25, colour = "black") +
+  facet_wrap(~facet, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Distribution of open minded facet scores across all participants", x = NULL)
+```
+
+## Individual differences
+
+Below, trait scores are analysed according to their relationship with different demographic groups. It is worth noting that because these analyses are presented separately by demographic variable, there are likely confounds or interactions that are not accounted for. For example, the non-binary sample has a lower mean age than either men or women and given the relationship between age and several of the traits and facets, some of the results for non-binary are likely to be confounded by age. That is, with the analysis that is presented in this document, you cannot definitively conclude if any differences are attributable to gender or age, or a combination of the two.
+
+## Age
+
+### Trait scores
+
+```{r}
+trait_scores %>%
+filter(age >= 18,
+       age <=80) %>%
+  ggplot(aes(x = age, y = mean_score, colour = trait)) +
+  geom_jitter() +
+  geom_smooth(colour = "black") +
+  facet_wrap(~trait) +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_x_continuous(breaks = seq(20, 80, 10)) +
+  guides(colour = "none") +
+  labs(title = "Relationship between age and mean trait scores",
+       subtitle = "Participants age 18 - 80",
+       x = "Age", y = NULL)
+```
+
+### Facet scores
+
+#### Agreeableness
+
+```{r}
+facet_scores %>%
+  filter(age >= 18,
+       age <=80,
+       trait == "agreeableness") %>%
+  ggplot(aes(x = age, y = mean_score, colour = facet)) +
+  geom_jitter() +
+  geom_smooth(colour = "black") +
+  facet_wrap(~facet) +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_x_continuous(breaks = seq(20, 80, 10)) +
+  guides(colour = "none") +
+  labs(title = "Relationship between age and agreeableness facet scores",
+       subtitle = "Participants age 18 - 80",
+       x = "Age", y = NULL)
+```
+
+#### Conscientiousness
+
+```{r}
+facet_scores %>%
+  filter(age >= 18,
+       age <=80,
+       trait == "conscientiousness") %>%
+  ggplot(aes(x = age, y = mean_score, colour = facet)) +
+  geom_jitter() +
+  geom_smooth(colour = "black") +
+  facet_wrap(~facet) +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_x_continuous(breaks = seq(20, 80, 10)) +
+  guides(colour = "none") +
+  labs(title = "Relationship between age and conscientiousness facet scores",
+       subtitle = "Participants age 18 - 80",
+       x = "Age", y = NULL)
+```
+
+#### Extraversion
+
+```{r}
+facet_scores %>%
+  filter(age >= 18,
+       age <=80,
+       trait == "extraversion") %>%
+  ggplot(aes(x = age, y = mean_score, colour = facet)) +
+  geom_jitter() +
+  geom_smooth(colour = "black") +
+  facet_wrap(~facet) +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_x_continuous(breaks = seq(20, 80, 10)) +
+  guides(colour = "none") +
+  labs(title = "Relationship between age and extraversion facet scores",
+       subtitle = "Participants age 18 - 80",
+       x = "Age", y = NULL)
+```
+
+#### Negative emotionality
+
+```{r}
+facet_scores %>%
+  filter(age >= 18,
+       age <=80,
+       trait == "neg_emotionality") %>%
+  ggplot(aes(x = age, y = mean_score, colour = facet)) +
+  geom_jitter() +
+  geom_smooth(colour = "black") +
+  facet_wrap(~facet) +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_x_continuous(breaks = seq(20, 80, 10)) +
+  guides(colour = "none") +
+  labs(title = "Relationship between age and negative emotionality facet scores",
+       subtitle = "Participants age 18 - 80",
+       x = "Age", y = NULL)
+```
+
+## Gender
+
+Participants were given the following options:
+
+* Man
+* Woman
+* If you describe your gender with another term, please list this here
+* Prefer not to say
+
+For the purposes of analysis, participants who described their gender with another term were categorised under the non-binary umbrella term. Those who responded prefer not to say or who did not complete the question have been removed from the below analyses for brevity.
+
+Finally, the following analyses are only presented at the trait rather than facet level due to the number of groups and the distributions are shown in proportions rather than raw counts because of difference sample sizes in each group.
+
+```{r}
+trait_scores %>%
+  select(ResponseId, gender) %>%
+  distinct() %>%
+  group_by(gender) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(percent = n/sum(n)*100) %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary")) %>%
+  kable(digits = 2, caption = "Sample size by gender. Percent = % of full sample") %>%
+  kable_classic()
+```
+
+### All traits
+
+```{r}
+trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary")) %>%
+  group_by(trait, gender) %>%
+  summarise(mean = mean(mean_score)) %>%
+  pivot_wider(names_from = "gender", values_from = "mean")%>%
+  kable(digits = 2, caption = "Mean trait scores by gender (min = 1, max = 5)") %>%
+  kable_classic()
+```
+
+### Agreeableness
+
+Women report slightly higher agreeableness scores than men or non-binary people although the distributions are all very similar. 
+
+```{r}
+gender_agree <- trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "agreeableness") %>%
+  group_by(trait, gender) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "agreeableness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = gender)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = gender_agree, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ gender, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Agreeableness scores by gender", x = "Mean agreeableness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Conscientiousness
+
+Non-binary people report lower conscientiousness scores than women or men. Women report slightly higher conscientiousness scores than men.  
+
+```{r}
+gender_conscientiousness <- trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "conscientiousness") %>%
+  group_by(trait, gender) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "conscientiousness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = gender)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = gender_conscientiousness, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ gender, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Conscientiousness scores by gender", x = "Mean conscientiousness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Extraversion
+
+Non-binary people report lower extraversion scores than men or women, whose distributions are very similar. 
+
+```{r}
+gender_extaversion <- trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "extraversion") %>%
+  group_by(trait, gender) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "extraversion") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = gender)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = gender_extaversion, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ gender, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Extraversion scores by gender", x = "Mean extraversion score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Negative emotionality
+
+Non-binary people report higher negative emotionality scores than women, who in turn report higher negative emotionality scores than men. 
+
+```{r}
+gender_neg <- trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "neg_emotionality") %>%
+  group_by(trait, gender) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "neg_emotionality") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = gender)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = gender_neg, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ gender, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Negative emotionality scores by gender", x = "Mean negative emotionality score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Open-mindedness
+
+Non-binary people report higher open-mindedness scores than women and men, who have very similar distributions.
+
+```{r}
+gender_open <- trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "open_minded") %>%
+  group_by(trait, gender) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(gender %in% c("Man", "Woman", "Non-binary"),
+         trait == "open_minded") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = gender)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = gender_open, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ gender, nrow = 3) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Open-mindedness scores by gender", x = "Mean open-mindedness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+
+## Sexual orientation
+
+Participants are given the following options:
+
+* Straight/heterosexual
+* Gay or lesbian
+* Bisexual/pansexual
+* Asexual
+* If you describe your sexual orientation with another term, please list this here
+Pr* er not to say
+
+For the purposes of analysis, those who described their sexual orientation with another term, responded prefer not to say or who did not complete the question have been removed from the below analyses for brevity.
+
+There is a disproportionately large number of asexual participants compared to estimates for the population (~1%). One of the student groups for the project specifically aimed to study asexual people and undertook an extremely successful recruitment drive. I am very proud of them for the effort they went to for a 1st year project.
+
+```{r}
+trait_scores %>%
+  select(ResponseId, sexual_orientation) %>%
+  distinct() %>%
+  group_by(sexual_orientation) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(percent = n/sum(n)*100) %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other")) %>%
+  arrange(desc(percent)) %>%
+  kable(digits = 2, caption = "Sample size by sexual orientation Percent = % of full sample") %>%
+  kable_classic()
+```
+
+### All traits
+
+```{r}
+trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other")) %>%
+  group_by(trait, sexual_orientation) %>%
+  summarise(mean = mean(mean_score)) %>%
+  pivot_wider(names_from = "sexual_orientation", values_from = "mean")%>%
+  kable(digits = 2, caption = "Mean trait scores by sexual orientation (min = 1, max = 5)") %>%
+  kable_classic()
+```
+
+
+### Agreeableness
+
+Heterosexual participants report slightly higher agreeableness scores than bisexual/pansexual, gay or lesbian, or asexual participants, although the difference is relatively minor and the distributions are all quite similar. 
+
+```{r}
+sexual_agree <- trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "agreeableness") %>%
+  group_by(trait, sexual_orientation) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "agreeableness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = sexual_orientation)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = sexual_agree, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ sexual_orientation, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Agreeableness scores by sexual_orientation", x = "Mean agreeableness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Conscientiousness
+
+Heterosexual participants report higher conscientiousness scores than gay or lesbian or asexual participants, who in turn report higher scores than bisexual particpants. 
+
+```{r}
+sexual_conscientiousness <- trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "conscientiousness") %>%
+  group_by(trait, sexual_orientation) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "conscientiousness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = sexual_orientation)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = sexual_conscientiousness, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ sexual_orientation, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Conscientiousness scores by sexual orientation", x = "Mean conscientiousness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Extraversion
+
+Heterosexual people report higher extraversion scores than gay or lesbian and bisexual/pansexual people, who in turn report higher extraversion scores than asexual people.
+
+```{r}
+sexual_extaversion <- trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "extraversion") %>%
+  group_by(trait, sexual_orientation) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "extraversion") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = sexual_orientation)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = sexual_extaversion, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ sexual_orientation, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Extraversion scores by sexual orientation", x = "Mean extraversion score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Negative emotionality
+
+Bisexual/pansexual people reported higher negative emotionality followed by gay or lesbian then asexual people. Heterosexual participants report the lowest negative emotionality.
+
+```{r}
+gender_neg <- trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "neg_emotionality") %>%
+  group_by(trait, sexual_orientation) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "neg_emotionality") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = sexual_orientation)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = gender_neg, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ sexual_orientation, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Negative emotionality scores by sexual orientation", x = "Mean negative emotionality score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Open-mindedness
+
+Heterosexual participants reported the lowest open-mindedness followed by gay or lesbian and then bisexual/pansexual and asexual people, the latter two groups being extremely similar in distribution and mean scores.
+
+```{r}
+sexual_open <- trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "open_minded") %>%
+  group_by(trait, sexual_orientation) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!sexual_orientation %in% c("Prefer not to say", NA, "Other"),
+         trait == "open_minded") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = sexual_orientation)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = sexual_open, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ sexual_orientation, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Open-mindedness scores by sexual orientation", x = "Mean open-mindedness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+
+## Neurodiversity
+
+Participants were given the following definition and options:
+
+Neurodivergent is an umbrella term for an evolving list of diagnoses that reflect different neurotypes. Usually referring to autism, ADHD, and specific learning differences like dyslexia, dyspraxia, dyscalculia and more. Do you identify as neurodivergent?
+
+* No
+* Yes currently diagnosed
+* Yes seeking diagnosis
+* Yes but not seeking/sought diagnosis
+* Prefer not to say
+
+For the purposes of analysis, those who  responded prefer not to say or who did not complete the question have been removed from the below analyses for brevity. Anyone who responded to any of the "yes" options above was categorised as neurodivergent. Anyone who responded "no" was categorised as neurotypical.
+
+Additionally, we did not collect data on which neurotype participants identified as and it would be reasonable to predict that personality profiles may differ between e.g., autistic people and those with ADHD, therefore this is a limitation of the study.
+
+```{r}
+trait_scores %>%
+  select(ResponseId, neurodivergent) %>%
+  distinct() %>%
+  group_by(neurodivergent) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(percent = n/sum(n)*100) %>%
+  filter(!neurodivergent %in% c("Prefer not to say", NA)) %>%
+  arrange(desc(percent)) %>%
+  kable(digits = 2, caption = "Sample size by neurodivergent status. Percent = % of full sample") %>%
+  kable_classic()
+```
+
+```{r}
+trait_scores <- trait_scores %>%
+  filter(!neurodivergent %in% c("Prefer not to say", NA)) %>%
+  mutate(neuro_status = case_when(neurodivergent == "Neurotypical" ~ "Neurotypical", 
+                                  TRUE ~ "Neurodivergent"))
+```
+
+
+### All traits
+
+```{r}
+trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA)) %>%
+  group_by(trait, neuro_status) %>%
+  summarise(mean = mean(mean_score)) %>%
+  pivot_wider(names_from = "neuro_status", values_from = "mean")%>%
+  kable(digits = 2, caption = "Mean trait scores by neurodivergent status (min = 1, max = 5)") %>%
+  kable_classic()
+```
+
+
+### Agreeableness
+
+Mean agreeableness scores are very similar although the distribution of neurodivergent agreeableness scores is shifted to the left (i.e., lower scores).
+
+```{r}
+neuro_agree <- trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "agreeableness") %>%
+  group_by(trait, neuro_status) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "agreeableness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = neuro_status)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = neuro_agree, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ neuro_status, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Agreeableness scores by neurodivergent status", x = "Mean agreeableness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Conscientiousness
+
+Neurotypical participants reported higher conscientiousness scores than neurodivergent participants.
+
+```{r}
+neuro_conscientiousness <- trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "conscientiousness") %>%
+  group_by(trait, neuro_status) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "conscientiousness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = neuro_status)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = neuro_conscientiousness, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ neuro_status, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Conscientiousness scores by neurodivergent status", x = "Mean conscientiousness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Extraversion
+
+Neurotypical participants reported higher extraversion scores than neurodivergent participants. 
+
+```{r}
+neuro_extaversion <- trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "extraversion") %>%
+  group_by(trait, neuro_status) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "extraversion") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = neuro_status)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = neuro_extaversion, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ neuro_status, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Extraversion scores by neurodivergent status", x = "Mean extraversion score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Negative emotionality
+
+Neurodivergent participants reported higher negative emotionality scores than neurotypical participants. 
+
+```{r}
+neuro_neg <- trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "neg_emotionality") %>%
+  group_by(trait, neuro_status) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "neg_emotionality") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = neuro_status)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = neuro_neg, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ neuro_status, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Negative emotionality scores by neurodivergent status", x = "Mean negative emotionality score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Open-mindedness
+
+Neurodivergent participants reported higher open-mindedness scores than neurotypical participants. 
+
+```{r}
+neuro_open <- trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "open_minded") %>%
+  group_by(trait, neuro_status) %>%
+  summarise(mean = mean(mean_score))
+
+trait_scores %>%
+  filter(!neuro_status %in% c("Prefer not to say", NA, "Other"),
+         trait == "open_minded") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = neuro_status)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = neuro_open, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ neuro_status, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Open-mindedness scores by neurodivergent status", x = "Mean open-mindedness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+## Birth order
+
+Participants were asked how many siblings they have and their birth order. For the purpose of this analysis, participants are categorised as only-children, first-born, middle-born, and last-born. Participants who failed to answer either or both of the sibling and birth order question were removed from this analysis.
+
+Please note that there are a number of variables which may mediate the relationship between birth order and personality that we did not collect data on. For example, the age between siblings, whether one grew up living with one's siblings, and whether siblings were full-siblings, half-siblings, step-siblings, or adopted siblings are all likely to impact the relationship but we do not have data on these factors.
+
+```{r}
+
+birth_order <- trait_scores %>%
+  drop_na(siblings, birth_order) %>%
+  mutate(birth_order = as.numeric(birth_order),
+         siblings = as.numeric(siblings), 
+         last_born = birth_order-siblings) %>%
+  mutate(birth_order_recoded = case_when(siblings == 0 ~ "Only child",
+                                        birth_order == 1 ~ "First-born",
+                                        last_born == 1 ~ "Last-born",
+                                         TRUE ~ "Middle-born")) %>%
+  mutate(birth_order_recoded = factor(birth_order_recoded,
+                                      levels = c("Only child", "First-born", "Middle-born", "Last-born")))
+```
+
+```{r}
+birth_order %>%
+  select(ResponseId, birth_order_recoded) %>%
+  distinct() %>%
+  group_by(birth_order_recoded) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(percent = n/sum(n)*100) %>%
+  filter(!birth_order_recoded %in% c("Prefer not to say", NA)) %>%
+  arrange(desc(percent)) %>%
+  kable(digits = 2, caption = "Sample size by birth order. Percent = % of full sample") %>%
+  kable_classic()
+```
+
+
+### All traits
+
+```{r}
+birth_order %>%
+  group_by(trait, birth_order_recoded) %>%
+  summarise(mean = mean(mean_score)) %>%
+  pivot_wider(names_from = "birth_order_recoded", values_from = "mean")%>%
+  kable(digits = 2, caption = "Mean trait scores by birth order (min = 1, max = 5)") %>%
+  kable_classic()
+```
+
+
+### Agreeableness
+
+Only children report slightly lower agreeableness scores than those with siblings although the distributions and mean scores are all very similar.
+
+```{r}
+birth_agree <- birth_order %>%
+  filter(trait == "agreeableness") %>%
+  group_by(trait, birth_order_recoded) %>%
+  summarise(mean = mean(mean_score))
+
+birth_order %>%
+  filter(trait == "agreeableness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = birth_order_recoded)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = birth_agree, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ birth_order_recoded, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Agreeableness scores by birth order", x = "Mean agreeableness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Conscientiousness
+
+The distributions and mean scores for conscientiousness are all very similar. 
+
+```{r}
+birth_conscientiousness <- birth_order %>%
+  filter(trait == "conscientiousness") %>%
+  group_by(trait, birth_order_recoded) %>%
+  summarise(mean = mean(mean_score))
+
+birth_order %>%
+  filter(trait == "conscientiousness") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = birth_order_recoded)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = birth_conscientiousness, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ birth_order_recoded, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Conscientiousness scores by birth order", x = "Mean conscientiousness score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+
+```
+
+### Extraversion
+
+The distributions and mean scores for extraversion are all very similar. 
+
+```{r}
+birth_extra <- birth_order %>%
+  filter(trait == "extraversion") %>%
+  group_by(trait, birth_order_recoded) %>%
+  summarise(mean = mean(mean_score))
+
+birth_order %>%
+  filter(trait == "extraversion") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = birth_order_recoded)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = birth_extra, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ birth_order_recoded, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Extraversion scores by birth order", x = "Mean extraversion score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Negative emotionality
+
+Only children reported slightly higher negative emotionality than those with siblings, for whom the distributions were all very similar.
+
+```{r}
+birth_neg <- birth_order %>%
+  filter(trait == "neg_emotionality") %>%
+  group_by(trait, birth_order_recoded) %>%
+  summarise(mean = mean(mean_score))
+
+birth_order %>%
+  filter(trait == "neg_emotionality") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = birth_order_recoded)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = birth_neg, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ birth_order_recoded, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Negative emotionality scores by birth order", x = "Mean negative emotionality score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+
+```
+
+### Open-mindedness
+
+Only children reported higher open-mindedness than those with siblings, for whom the distributions were all very similar.
+
+```{r}
+birth_open <- birth_order %>%
+  filter(trait == "open_minded") %>%
+  group_by(trait, birth_order_recoded) %>%
+  summarise(mean = mean(mean_score))
+
+birth_order %>%
+  filter(trait == "open_minded") %>%
+  ggplot(aes(x = mean_score, y = stat(density*width), fill = birth_order_recoded)) +
+  geom_histogram(colour = "black", binwidth = .25) +
+  geom_vline(data = birth_open, aes(xintercept = mean), linetype = "dashed", size=1.5) +
+  facet_wrap(~ birth_order_recoded, nrow = 4) +
+  guides(fill = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Open-mindedness scores by birth order", x = "Mean negative emotionality score", y = NULL,
+       subtitle = "Dashed line = mean score for group") 
+```
+
+## Conclusions
+
+Please treat the analysis presented in this document with due caution before drawing any conclusions. Separating each demographic variable means that we cannot account for any confounds or interactions that are extremely likely to be present in the data.  Combined with the lack of inferential statistical analysis, these data should be viewed as providing an exploratory descriptive view of personality and individual differences for this specific sample, rather than being generalisable to the wider population.
