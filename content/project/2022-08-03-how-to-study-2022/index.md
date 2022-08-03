@@ -1,11 +1,11 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "2022 08 03 How to Study 2022"
+title: "How to Study 2022"
 summary: ""
-authors: []
+authors: ["Emily Nordmann"]
 tags: []
-categories: []
+categories: ["Study Strategies"]
 date: 2022-08-03T16:32:32+01:00
 
 # Optional external URL for project (replaces project detail page).
@@ -39,3 +39,26 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 ---
+
+This is the 2022 update to my How to Study lecture. This introductory lecture is given to first year students in week 1 of term. The main focus of the lecture is on developing effective study strategies and to demystify some of the hidden curriculum.
+
+Topics covered include:
+
+* How to take notes
+* What to do before, during, and after lectures
+* How to use lecture recordings
+* How to send an e-mail
+* Which study strategies are effective and which are not
+
+The 2022 updates partially involves returning to some pre-covid wording about in-person lectures and lecture recordings, but it also takes account of how our practice has changed following the lessons learned from the pivot to online. In particular, for my lectures intend to keep the structure I developed for my [watch parties](https://journal.aldinhe.ac.uk/index.php/jldhe/article/view/696), that is, I'm not returning to my original 50-minute lecture, I am keeping the chunks and the quizzes and the breaks. 
+
+* [Download the slides](https://osf.io/k2h9x)
+
+You are free to reuse, remix and adapt these slides without attribution, however, like any academic I occasionally need to prove my worth, so please let me know via e-mail or Twitter if you do!
+
+
+*The purpose of Open Educational Resources is to reduce unnecessary financial burden on students and to help share good practice. I make as many of my teaching materials open access as I can for these reasons, however, if you have found them helpful and are in a position to do so, please consider making a donation to [Black British Professionals in STEM](https://bbstem.co.uk/donations/) or [Pride in STEM](https://prideinstem.org/shop/) (currently by buying a badge).*
+
+
+
+
