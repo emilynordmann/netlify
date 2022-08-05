@@ -50,7 +50,7 @@ Topics covered include:
 * How to send an e-mail
 * Which study strategies are effective and which are not
 
-The 2022 updates partially involves returning to some pre-covid wording about in-person lectures and lecture recordings, but it also takes account of how our practice has changed following the lessons learned from the pivot to online. In particular, for my lectures intend to keep the structure I developed for my [watch parties](https://journal.aldinhe.ac.uk/index.php/jldhe/article/view/696), that is, I'm not returning to my original 50-minute lecture, I am keeping the chunks and the quizzes and the breaks. 
+The 2022 updates partially involve returning to some pre-covid wording about in-person lectures and lecture recordings, but also takes account of how our practice has changed following the lessons learned from the pivot to online. In particular, for my lectures, I intend to keep the structure I developed for my [watch parties](https://journal.aldinhe.ac.uk/index.php/jldhe/article/view/696), that is, I'm not returning to my original 50-minute lecture, I am keeping the chunks and the quizzes and the breaks. 
 
 * [Download the slides](https://osf.io/k2h9x)
 
