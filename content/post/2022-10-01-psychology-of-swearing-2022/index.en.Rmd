@@ -19,15 +19,13 @@ projects: []
 ---
 
 ```{r setup, include=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.path = "static")
 library(tidyverse)
 library(wordcloud)
 library(tidytext)
 library(lsr)
 library(gridExtra)
 library(ggforce)
-library(afex)
-library(emmeans)
 dat <- read_csv("data.csv")
 ```
 
