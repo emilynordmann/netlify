@@ -17,7 +17,7 @@ image:
 projects: []
 ---
 
-There’s an overwhelming amount of discussion about student uses of ChatGPT that is mainly concerned with academic misconduct. Whilst I understand that it’s a huge problem (and one I am grappling with for my own assignments), I also think it's useful to have more examples of how we in the teaching and learning community can use tools like ChatGPT to help make our lives a little easier so this is the first in what will (probably, if I have time) be a series of blog posts on how I have been using ChatGPT to help design some teaching materials for next year. 
+There’s an overwhelming amount of discussion about student uses of ChatGPT that is mainly concerned with academic misconduct. Whilst I understand that it’s a huge problem (and one I am grappling with for my own assignments), I also think it's useful to have more examples of how we in the teaching and learning community can use tools like ChatGPT to help make our lives a little easier. So, this is the first in what will (probably, if I have time) be a series of blog posts on how I have been using ChatGPT to help design some teaching materials for next year. 
 
 For context, I am course lead for a large (700 students) first year introductory psychology course. There are three lectures a week that cover theory and concepts and then practical labs in which students work in smaller groups. In the first semester the labs focus on academic writing and using evidence to support their first substantive piece of coursework which is an essay on the history of psychology, and they also learn data skills and the programming language R. In the second semester, they design a research project in small groups and write a registered report as their coursework, in addition to continuing their data skills and R adventures.
 
@@ -43,7 +43,7 @@ I’ve been using ChatGPT to help me write code to simulate datasets that have t
 
 I’ve found this hugely time-saving although the above example gives an overly simplistic impression of the process. For each simulated dataset I had a back-and-forth of multiple prompts and I’ve learned a lot about how to get it to do what I want, for example, even simple things like I now know to specify that I want lower-case variable names. I always check that the data does actually have the properties I specified and sometimes play around with the values but for the most case, it’s been pretty close to what I had in mind. 
 
-What I’ve found most useful is that it has allowed me to try out several different datasets. For the first semester I’ve settled on the Stroop effect, corsi blocks, and a belonging questionnaire (I have been choosing from experiments and surveys available on the wonderful [PsyToolkit]( https://www.psytoolkit.org/)), but I also experimented with a lexical-decision task and a need for cognition scale before I decided these didn’t quite fit what I wanted them to learn about data skills. 
+What I’ve found most useful is that it has allowed me to try out several different datasets. For the first semester I’ve settled on the Stroop effect, corsi blocks, and a belonging questionnaire (I have been choosing from experiments and surveys available on the wonderful [PsyToolkit]( https://www.psytoolkit.org/)). But, I also experimented with a lexical-decision task and a need for cognition scale before I decided these didn’t quite fit what I wanted them to learn about data skills. 
 
 In the case of data simulation, using ChatGPT has given me the opportunity to pick the best possible dataset for what I’m trying to teach, rather than being constrained by the time it would take to find or simulate it myself. I’ve also used it to teach myself more about how to perform data simulation in R. For the most part, I’ve understood the code it has produced, it’s just not been quite familiar enough to me to do it off the top of my head, but there have been a couple of times where it’s given me something I haven’t done before.
 
@@ -58,7 +58,7 @@ What ChatGPT hasn’t done is generate any of the ideas for me. I’ve used my k
 
 ## Practice testing
 
-We try to integrate practice testing throughout all our data skills materials using the webexercises package so I have also been using ChatGPT to help me create multiple-choice and fill-in-the-blank questions. I’ve done this to generate theoretical questions, for example:
+We try to integrate practice testing throughout all our data skills materials using the [webexercises](https://psyteachr.github.io/webexercises/) package so I have also been using ChatGPT to help me create multiple-choice and fill-in-the-blank questions. I’ve done this to generate theoretical questions, for example:
 
 ![](images/gpt5.png)
 
