@@ -95,7 +95,7 @@ That's a lot better. Let's try fixing the other issue:
 
 It's better but I still don't like it as the balance of historical and current sources that's right will depend on the essay. It feels unlikely I'll get it to get this one right and will edit it myself.
 
-But, as a base from which to start edit this is incredibly helpful. There's loads of rubric examples out there but the beauty of using ChatGPT is that I've been able to shape these examples to make the starting point by giving it the essay questions, the number of criteria I want and the categories to group them into.
+But, as a base from which to start edit this is incredibly helpful. There's loads of rubric examples out there but the beauty of using ChatGPT is that I've been able to shape these examples to make the starting point more relevant to me by giving it the essay questions, the number of criteria I want and the categories to group them into.
 
 As with my attempts to use it for [data simulation and writing MCQs](https://www.emilynordmann.com/post/using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/), I've simplified the process I underwent here. I used the regenerate option quite a few times and some of them were better than others. The final rubric I use next year is going to be a combination of bits of the old rubric I wrote myself that were working well, along with some edited adaptions from several versions ChatGPT produced, and I'm also going to ask the teaching team to review it before we release it to students.
 
