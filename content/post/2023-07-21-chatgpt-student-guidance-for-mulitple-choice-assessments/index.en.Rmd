@@ -23,7 +23,7 @@ Part 2: [Using ChatGPT to create teaching materials: marking criteria & rubrics]
 
 The last two blogs I've focused on how I have been using ChatGPT to help me create teaching materials, there's likely more coming on that but for this blog I am going to take a detour into what I've been working on for student guidance.
 
-I'd like to state something accidentally being taken too seriously, I hope this is already clear but it's worth saying out loud - whilst I am hopefully an expert in learning and teaching, I am not an expert in generative AI, I just have [techno-joy](https://www.youtube.com/watch?v=TKQzqwn-jIM&t) and have been playing around and musing.
+I'd like to state something before accidentally being taken too seriously, I hope this is already clear but it's worth saying out loud - whilst I am hopefully an expert in learning and teaching, I am not an expert in generative AI, I just have [techno-joy](https://www.youtube.com/watch?v=TKQzqwn-jIM&t) and have been playing around and musing.
 
 When trying to create guidance for my students, I had two underlying ideas guiding my approach:
 
