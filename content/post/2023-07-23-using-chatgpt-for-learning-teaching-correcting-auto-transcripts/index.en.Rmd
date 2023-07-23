@@ -1,0 +1,207 @@
+---
+title: 'Using ChatGPT for learning & teaching: Correcting auto-transcripts'
+author: Emily Nordmann
+date: '2023-07-23'
+slug: using-chatgpt-for-learning-teaching-correcting-auto-transcripts
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2023-07-23T16:02:09+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+Alongside Wil Tovio and Rachel O'Neill, I've written before in the
+[Times
+Higher](https://www.timeshighereducation.com/campus/new-rules-lecture-transcripts-give-academics-impossible-choice)
+about the problems that requiring academics to produce corrected
+captions introduces. If you don't do it, you disadvantage a wide range
+of students and effectively ruin the education of those who are d/Deaf
+and hard-of-hearing. If you do, you put a much higher workload burden on
+any lecturer with a non-standard English accent, those with poorer
+quality recording equipment, and let's honest, those who just care a bit
+more. I say all of this whilst recognising my own privilege: most
+recording software generally picks up what I am saying accurately and
+through both work and personal means, I invested in a high-quality mic
+at the start of covid.
+
+## Correcting transcripts
+
+But anyway. It just occurred to me that one use of ChatGPT that falls
+under the category "let's make the admin associated with teaching
+easier" is that we might be able to use it to edit transcriptions for
+us. And for once, I actually have the means to evaluate how it's done in
+the form of an original automated-transcription, the corrected version a
+human spent hours on, and the audio. The video in question was a
+walkthrough of a data skills tutorial in R, and platforms like Zoom and
+Echo360 tend to struggle with the technical terminology.
+
+I downloaded the original transcript as a .txt file from Echo360 and put
+the following prompt into ChatGPT. I've got a paid subscription and
+access to GPT4.0 but I chose to use GPT3.5 as that's the one most people
+have access to.
+
+> Act like an expert in the programming language R. I have recorded a
+> lecture which is a walkthrough video of a tutorial in R. The learning
+> outcomes are: Be able to reshape data between long and wide formats;
+> Separate, change, reorder, and rename columns; Use pipes to chain
+> together functions. Recording software has automatically transcribed
+> the recording but there are many errors. Below is the transcript,
+> correct the transcription errors.
+
+The full transcript is much longer than ChatGPT can take in one response
+so you either have to do it bit by bit, or tell it you're going to split
+the document and not to proceed until you tell it you're finished. For
+the purposes of this tutorial, I just copied and pasted what I thought
+would fit.
+
+Once it produced the corrected transcript I then asked:
+
+> Tell me what you changed and give me the original and the corrected
+> version so I can easily compare them.
+
+It gave me a list of 7 changes it had made, I won't list them all but
+how did it do?
+
+-   **Original**: "So now that we have looked that in and will open up a
+    new a junk..."\
+-   **Corrected by ChatGPT:** "So now that we have loaded that in, let's
+    open up a new chunk..."\
+-   **Corrected by human:** "So now that we have locked that in, I will
+    open up a new a chunk"
+
+The human got it right but the ChatGPT version makes total sense in
+context and listening to the audio, you could sensibly conclude either
+word was spoken.
+
+-   **Original**: "Let's compare this to a version of this table, but in
+    completely tiny format"
+-   **Corrected by ChatGPT**: "Let's compare this to a version of this
+    table but in a completely tidy format"\
+-   **Corrected by human:** "Let's compare this to a version of this
+    table, but in completely tidy format."
+
+ChatGPT and the human produced the same correction.
+
+-   **Original**:"...we now have three columns here where each column is
+    its own variable one just four items, one just for the price per
+    item and one just for the total price, and they are distinguished by
+    this for scoring here."\
+-   **Corrected by ChatGPT**: "...we now have three columns here: one
+    just for items, one just for the price per item, and one just for
+    the total price, and they are distinguished by this 'year' column."\
+-   **Corrected by human:** "we now have three columns here where each
+    column is its own variable one just for items, one just for the
+    price per item and one just for the total price, and they are
+    distinguished by this fourth column here - year.
+
+ChatGPT has removed a few words "here each column is its own variable"
+which in this case doesn't really affect the overall meaning in the
+context of the wider section but if it's going to do that you'd want to
+make sure you're checking each correction.
+
+It also didn't pick up all the errors
+
+## The whole truth and nothing but the truth
+
+Whilst it gave me 7 corrections, I could see that it had made more than
+the initial list it gave so I followed up:
+
+> These aren't all the changes, tell me everything you changed
+
+And it then produced a list of 18 changes, apologising for the
+oversight. So I probed further:
+
+> Is this a complete list of all changes now or are there more?
+
+It then gave me an additional extra change. Hmmm. The text file dumps
+the transcription into one big block of text, but Echo360 also gives the
+option to download the .VTT file that has it line-by-line with
+timestamps e.g.:
+
+> 00:00:21.110 --\> 00:00:24.680 \<v Speaker 0\>So as usual, we're going
+> to start off by creating
+
+> NOTE CONF {"raw":[100,100,100,52,93,100,100,100,100,100]} 00:00:24.680
+> --\> 00:00:27.860 \<v Speaker 0\>a new project for this chapter so
+> that we can
+
+> NOTE CONF {"raw":[100,100,94,100,100,100,100,100,100,100]}
+> 00:00:27.860 --\> 00:00:29.570 \<v Speaker 0\>work through things
+> together.
+
+I thought that maybe chunking the text a bit would help it be able to
+identify the changes but all it did was render the correction completely
+useless. Splitting up the text with the time stamps appears to stop it
+being able to parse it properly which is interesting in a way that makes
+me realise I've got no idea what's going on under the hood.
+
+## No single truth
+
+My internet acted up and I couldn't access the chat I saved the
+back-and-forth I was having for this blog so I redid the prompt in a new
+chat, with the same prompt and section of the script (I think, I'll be
+honest, I just selected a bunch of text I thought wasn't longer that it
+could cope with each time so my first attempt may have been a little
+more or less than the second).
+
+This time it gave me 33 changes. Some of them were the same, some of
+them were different. Which is not surprising because that's how ChatGPT
+works, it's all prediction and you can use the regenerate response
+option to get a slightly different version if you're not happy with
+whatever it has produced. But in the context of transcription, it's a
+really useful reminder that it isn't "correcting" it, it's doing what it
+normally does which is predicting what word should come next. It doesn't
+have the source audio, it's not doing what an underpaid human would be
+doing, instead it's making a best guess.
+
+It's possible that had I initially asked it "give me a complete list of
+all changes, leave nothing out", it wouldn't have missed any. But also,
+it is well-known that you can "trick" ChatGPT into thinking it's wrong
+just by telling it that it is:
+
+![](images/Screenshot%202023-07-23%20172451.png)
+
+So it could be that my follow-up prompts insisting it had missed
+something resulted in it making up new prompts to satisfy the monkey at
+its typerwriter. :In a nutshell, you can't use ChatGPT to verify what
+ChatGPT has produced. The snake will eat it's own tail.
+
+## Evaluation
+
+The question is then, given all these issues, is this any use? The edits
+it produced on my first attempt were really very impressive and reading
+through the edited transcript, it all made sense. That said, it wasn't a
+one-to-one transcript, in some cases it had removed some words or
+slightly changed the phrasing - it didn't really alter the meaning but
+it's important to recognise it's not "correcting" words and it doesn't
+have access to the audio. Additionally, it's very difficult to get it to
+tell you everything it changed so you absolutely couldn't use this
+without verifying it.
+
+However, the amount it got right would hugely cut-down on the time it
+takes to correct a transcript and it was certainly still a lot better
+than the automated transcript, so one possible option could be to take
+the original, run it through ChatGPT, and then get a human to correct
+the ChatGPT version. That way, you make the workload more manageable,
+but you still have human eyes on it.
+
+Another consideration is privacy. If you upload your transcripts, you're
+essentially giving OpenAI your lecture to help train its LLM [unless you
+change the default
+settings](https://openai.com/blog/new-ways-to-manage-your-data-in-chatgpt).
+Whether you care about that is up to you, but make a conscious choice.
+
+And finally, none of this changes the fact that the problem with the
+workload involved with transcription will still be higher for people
+working in their second language and those who have regional accents and
+that academic workload modelling is a complete joke.
