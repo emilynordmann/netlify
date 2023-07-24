@@ -127,7 +127,7 @@ oversight. So I probed further:
 It then gave me an additional extra change. Hmmm. The text file dumps
 the transcription into one big block of text, but Echo360 also gives the
 option to download the .VTT file that has it line-by-line with
-timestamps e.g.:
+time-stamps e.g.:
 
 > 00:00:21.110 --\> 00:00:24.680 \<v Speaker 0\>So as usual, we're going
 > to start off by creating
@@ -160,7 +160,7 @@ whatever it has produced. But in the context of transcription, it's a
 really useful reminder that it isn't "correcting" it, it's doing what it
 normally does which is predicting what word should come next. It doesn't
 have the source audio, it's not doing what an underpaid human would be
-doing, instead it's making a best guess.
+doing.
 
 It's possible that had I initially asked it "give me a complete list of
 all changes, leave nothing out", it wouldn't have missed any. But also,
@@ -171,8 +171,8 @@ just by telling it that it is:
 
 So it could be that my follow-up prompts insisting it had missed
 something resulted in it making up new prompts to satisfy the monkey at
-its typerwriter. In a nutshell, you can't use ChatGPT to verify what
-ChatGPT has produced. The snake will eat it's own tail.
+its typewriter. In a nutshell, you can't use ChatGPT to verify what
+ChatGPT has produced. The snake will eat its own tail.
 
 More worryingly, in additional attempts both with 3.5 and GPT4.0, it
 started editing more than you'd want for a transcription correction. For
@@ -225,7 +225,7 @@ Additionally it didn't get everything right (e.g., 2 and 4 aren't right
 but I suppose they're no more wrong than the original automated
 transcript so it is at least not changing things that aren't wrong).
 
-![](images/Screenshot 2023-07-24 083018.png)
+![](images/Screenshot%202023-07-24%20083018.png)
 
 ## Is this any use?
 
@@ -258,6 +258,15 @@ a balance you're happy with because in the long-run it will still save
 huge amounts of time. However, if I had a single video, I'm not sure I
 would currently bother as it probably takes enough work to get it right
 than it does just to do it manually.
+
+This blog feels like a stream-of-consciousness but what this process has
+done is change the way I would approach using ChatGPT to edit anything.
+I'm currently working on guidance for essay writing for students and I
+think my experience here has taught me that I wouldn't ask it to edit
+anything directly but instead to give suggestions alongside the
+original. For the purposes of transcription correction, that process
+makes it time-consuming but for an essay or any other piece of writing,
+it would ensure you're making active choices.
 
 Another consideration is privacy. If you upload your transcripts, you're
 essentially giving OpenAI your lecture to help train its LLM [unless you
