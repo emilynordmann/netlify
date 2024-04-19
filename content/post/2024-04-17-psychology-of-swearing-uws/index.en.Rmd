@@ -1,19 +1,19 @@
 ---
-title: Psychology of Swearing UWS
+title: "Psychology of Swearing UWS"
 author: ''
-date: '2024-04-17'
-slug: psychology-of-swearing-uws
+date: "2024-04-17"
+slug: "psychology-of-swearing-uws"
 categories: []
 tags: []
 subtitle: ''
 summary: ''
 authors: []
-lastmod: '2024-04-17T13:31:37+01:00'
-featured: no
+lastmod: "2024-04-17T13:31:37+01:00"
+featured: false
 image:
   caption: ''
   focal_point: ''
-  preview_only: no
+  preview_only: false
 projects: []
 ---
 
@@ -34,8 +34,8 @@ dat2 <- rename(dat,
               age = `Age (in whole years)`,
               gender = Gender,
               letter = `Please write as many words as you can beginning with the letter "A".`, 
-              animal = `Please write down as many different types of animal as you can.`,
-              swears = `Please write down as many swear words as you can.`) %>%
+              animal = 5,
+              swears = 6) %>%
   select(-Timestamp) %>%
   mutate(subject = row_number()) %>%
   mutate(age = as.numeric(age),
