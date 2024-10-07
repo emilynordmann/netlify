@@ -1,202 +1,174 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-11-07T10:25:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-11-07T10:25:45+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2024-04-17T13:31:37+01:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2020-11-07T10:25:45+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2024-04-17T13:31:37+01:00</lastmod>
+  </url><url>
+    <loc>/post/psychology-of-swearing-uws/</loc>
+    <lastmod>2024-04-17T13:31:37+01:00</lastmod>
+  </url><url>
+    <loc>/post/psychology-of-swearing-mic/</loc>
+    <lastmod>2024-03-20T13:51:11+00:00</lastmod>
+  </url><url>
+    <loc>/post/psychology-of-swearing-feb-2024/</loc>
+    <lastmod>2024-02-27T15:34:18+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2023-08-01T21:20:56+01:00</lastmod>
+  </url><url>
+    <loc>/tag/chatgpt/</loc>
+    <lastmod>2023-08-01T21:20:56+01:00</lastmod>
+  </url><url>
+    <loc>/category/chatgpt/</loc>
+    <lastmod>2023-08-01T21:20:56+01:00</lastmod>
+  </url><url>
+    <loc>/post/chatgpt-student-guidance-for-essays/</loc>
+    <lastmod>2023-08-01T21:20:56+01:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-08-01T21:20:56+01:00</lastmod>
+  </url><url>
+    <loc>/post/using-chatgpt-for-learning-teaching-correcting-auto-transcripts/</loc>
+    <lastmod>2023-07-23T16:02:09+01:00</lastmod>
+  </url><url>
+    <loc>/post/chatgpt-student-guidance-for-mulitple-choice-assessments/</loc>
+    <lastmod>2023-07-21T07:33:53+01:00</lastmod>
+  </url><url>
+    <loc>/post/using-chatgpt-for-teaching-marking-criteria-rubrics/</loc>
+    <lastmod>2023-07-02T17:10:14+01:00</lastmod>
+  </url><url>
+    <loc>/post/using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/</loc>
+    <lastmod>2023-06-12T09:37:19+01:00</lastmod>
+  </url><url>
+    <loc>/post/psychology-of-swearing-2022/</loc>
+    <lastmod>2022-10-01T15:25:44+01:00</lastmod>
+  </url><url>
+    <loc>/category/talks/</loc>
+    <lastmod>2022-10-01T15:25:44+01:00</lastmod>
+  </url><url>
+    <loc>/post/2022-08-23-flexible-submission-windows/</loc>
+    <lastmod>2022-08-23T10:49:42+01:00</lastmod>
+  </url><url>
+    <loc>/authors/</loc>
+    <lastmod>2022-08-03T16:32:32+01:00</lastmod>
+  </url><url>
+    <loc>/author/emily-nordmann/</loc>
+    <lastmod>2022-08-03T16:32:32+01:00</lastmod>
+  </url><url>
+    <loc>/project/2022-08-03-how-to-study-2022/</loc>
+    <lastmod>2022-08-03T16:32:32+01:00</lastmod>
+  </url><url>
+    <loc>/project/</loc>
+    <lastmod>2022-08-03T16:32:32+01:00</lastmod>
+  </url><url>
+    <loc>/category/study-strategies/</loc>
+    <lastmod>2022-08-03T16:32:32+01:00</lastmod>
+  </url><url>
+    <loc>/post/2022-04-13-personality-and-individual-differences/</loc>
+    <lastmod>2022-04-13T13:31:28+01:00</lastmod>
+  </url><url>
+    <loc>/post/this-is-your-thesis/</loc>
+    <lastmod>2021-11-24T00:01:44+00:00</lastmod>
+  </url><url>
+    <loc>/post/drag-race-uk/</loc>
+    <lastmod>2021-03-17T20:58:32+00:00</lastmod>
+  </url><url>
+    <loc>/tag/rstats/</loc>
+    <lastmod>2021-03-17T20:58:32+00:00</lastmod>
+  </url><url>
+    <loc>/post/drag-racer/</loc>
+    <lastmod>2021-01-19T10:12:50+00:00</lastmod>
+  </url><url>
     <loc>/post/psychology-of-swearing/</loc>
     <lastmod>2020-11-07T10:25:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/swearing/</loc>
     <lastmod>2020-11-07T10:25:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-11-07T10:25:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/talks/</loc>
-    <lastmod>2020-11-07T10:25:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/category/pivot/</loc>
     <lastmod>2020-08-27T19:08:12+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/pivot/</loc>
     <lastmod>2020-08-27T19:08:12+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/pivot-7-grief/</loc>
     <lastmod>2020-08-27T19:08:12+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/pivot-6/</loc>
     <lastmod>2020-08-21T12:33:21+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/pivot-5/</loc>
     <lastmod>2020-08-14T09:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/lec-rec-impact/</loc>
     <lastmod>2020-08-11T15:28:50+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/how_to_study-_2020/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/other/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/pivot-4/</loc>
     <lastmod>2020-08-05T17:48:34+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
-    <lastmod>2020-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/study-strategies/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/pivot-3/</loc>
     <lastmod>2020-07-31T09:10:59+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/pivot-2/</loc>
     <lastmod>2020-07-21T20:38:21+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/academic-writing/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/missing_history/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/pivot-1-academic-serenity/</loc>
     <lastmod>2020-07-13T22:07:30+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/lecture-capture/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/lecture-capture/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/rstats/</loc>
-    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/slave-voyages/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/how_to_study/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/l1-data-skills/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/msc-conv/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/using_evidence/</loc>
     <lastmod>2020-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/category/lecture-capture/</loc>
     <lastmod>2020-07-07T12:29:43+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/lec-rec-keynote/</loc>
     <lastmod>2020-07-07T12:29:43+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/widening-participation/</loc>
     <lastmod>2020-07-07T12:29:43+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/category/widening-participation/</loc>
     <lastmod>2020-07-07T12:29:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/privacy/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/terms/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/emily-nordmann/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication_types/</loc>
   </url>
-  
 </urlset>
