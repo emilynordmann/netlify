@@ -19,7 +19,7 @@ projects: []
 
 I shared this guide on [Writing Good Multiple Choice Test Questions](https://cft.vanderbilt.edu/guides-sub-pages/writing-good-multiple-choice-test-questions/) on social media and the first response I got on both LinkedIn and BlueSky was whether MCQs hold up in the age of AI. As first year lead for many years, this is a problem I've put a huge amount of thought into, so if you're interested in all those thoughts, buckle up.
 
-I am assuming that the long-form version of the question "do MCQs hold up in the age of AI?" is really "do online open-book MCQs hold up in the age of AI?" And the answer to that question is quite categorically no but let me take a little detour about what we did when we moved online for covid because it also serves as a defence of MCQs, which is honestly the real point of this post.
+I am assuming that the long-form version of the question "do MCQs hold up in the age of AI?" is really "does the academic integrity of online open-book MCQs hold up in the age of AI?" And the answer to that question is quite categorically no but let me take a little detour about what we did when we moved online for covid because it also serves as a defence of MCQs, which is honestly the real point of this post.
 
 # High stakes MCQ exams
 
