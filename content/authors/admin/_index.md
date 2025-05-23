@@ -18,20 +18,21 @@ email: "emily.nordmann@glasgow.ac.uk"
 organizations:
 - name: University of Glasgow
   url: ""
-role: Senior Lecturer in Psychology
+role: Senior Lecturer in Psychology, Associate Dean of Learning and Teaching
 social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'
-- icon: twitter
+- icon: linkedin
   icon_pack: fab
-  link: https://twitter.com/emilynordmann
+  link: https://www.linkedin.com/in/emily-nordmann-b2476967/
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.co.uk/citations?user=-7Y95XAAAAAJ&hl
 - icon: github
   icon_pack: fab
   link: https://github.com/emilynordmann
+  
 superuser: true
 title: Emily Nordmann
 user_groups:
@@ -39,12 +40,10 @@ user_groups:
 - Visitors
 ---
 
-I am a teaching-focused Senior Lecturer and the Deputy Director Education for the [School of Psychology and Neuroscience](https://www.gla.ac.uk/schools/psychology/) at the University of Glasgow. My [research](https://scholar.google.co.uk/citations?user=-7Y95XAAAAAJ&hl=en) predominantly focuses on lecture capture, how it can be used as an effective study tool by students and the impact on students from widening participation backgrounds as well as those with disabilities and neurodivergent conditions. In all my work, I draw on theories of learning from cognitive science and self-regulation, as well as theories of belonging and self-efficacy. 
+Dr. Emily Nordmann is Associate Dean for Learning and Teaching at the University of Glasgow. Her [research](https://scholar.google.co.uk/citations?user=-7Y95XAAAAAJ&hl=en) predominantly focuses on lecture capture, how it can be used as an effective study tool by students and the impact on students from widening participation backgrounds as well as those with disabilities and neurodivergent conditions. In all her work, she draw on theories of learning from cognitive science and self-regulation, as well as theories of belonging and self-efficacy.
 
-My leadership roles have centered around supporting those on the learning, teaching, and scholarship track and I am centre head for the Pedagogy and Education Research Unit in the School of Psychology and Neuroscience, as well as the lead of the College of MVLS LTS Network.
+Emily’s leadership roles have centred around supporting those on the learning, teaching, and scholarship track. She is currently lead of the College of MVLS LTS Network and previously founded and led the Pedagogy and Education Research Unit in the School of Psychology and Neuroscience. 
 
-My teaching is varied although centres on cognitive psychology and beginner data skills in R. I am also Year Lead for our Level 1 undergraduate cohort, an admin role that I have held for the majority of my career and that has informed my research practice greatly. 
-
-Finally, I am a vocal advocate of open science and open educational resources and strive to incorporate them into both my teaching and my research design. As a member of the [PsyTeachR](https://psyteachr.github.io/) team I have authored several open-access data skills books and tutorials.
+Emily’s teaching is varied although centres on cognitive psychology and beginner data skills in R and she is a vocal advocate of open science and open educational resources where as a member of the [PsyTeachR](https://psyteachr.github.io/) team she has authored several open-access data skills books and tutorials.
 
 
