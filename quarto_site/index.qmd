@@ -1,0 +1,10 @@
+---
+title: "index"
+format: html
+---
+
+Professor Emily Nordmann is Associate Dean for Learning and Teaching and a Professor of Evidence-Informed Education at the University of Glasgow. Her research predominantly focuses on lecture capture, how it can be used as an effective study tool by students and the impact on students from widening participation backgrounds as well as those with disabilities and neurodivergent conditions. In all her work, she draw on theories of learning from cognitive science and self-regulation, as well as theories of belonging and self-efficacy.
+
+Emily’s leadership roles have centred around supporting those on the learning, teaching, and scholarship track. She is currently lead of the College of MVLS LTS Network and previously founded and led the Pedagogy and Education Research Unit in the School of Psychology and Neuroscience.
+
+Emily’s teaching is varied although centres on cognitive psychology and beginner data skills in R and she is a vocal advocate of open science and open educational resources where as a member of the PsyTeachR team she has authored several open-access data skills books and tutorials.

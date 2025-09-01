@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Emily Nordmann"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: post.qmd
+        text: Blog
+
+format:
+  html:
+    toc: true
+    theme: cosmo
+
+execute:
+  freeze: auto
+
+resources:
+  - "static/**"
+  - "images/**"
+  - "files/**"
