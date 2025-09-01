@@ -1,0 +1,25 @@
+/* general spacing */
+main.content { margin-top: 1rem; }
+
+/* profile card on the left */
+.avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 0 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+.profile-card { font-size: 1rem; }
+.profile-card .no-top { margin-top: 0; }
+
+.icons a {
+  font-size: 1.4rem;
+  margin-right: .6rem;
+  text-decoration: none;
+}
+
+/* make icon links readable on all themes */
+.icons a:link, .icons a:visited { color: inherit; }

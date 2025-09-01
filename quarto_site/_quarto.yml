@@ -3,23 +3,27 @@ project:
   output-dir: _site
 
 website:
-  title: "Emily Nordmann"
+  title: "Prof. Emily Nordmann"
+  site-url: "https://www.emilynordmann.com/"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: post.qmd
-        text: Blog
+      - text: "Blog"
+        href: post.qmd
+      - text: "Contact"
+        href: contact.qmd
+      - text: "CV"
+        href: files/cv.pdf
 
 format:
   html:
-    toc: true
     theme: cosmo
+    toc: false
+    css: styles.css
 
 execute:
   freeze: auto
 
+# copy over common asset folders if you have them
 resources:
-  - "static/**"
   - "images/**"
   - "files/**"
