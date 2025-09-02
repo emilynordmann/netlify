@@ -7,13 +7,15 @@ format:
   html:
     code-fold: true
     code-summary: "Show code"
+    toc: true
+    toc-location: left
 execute:
   warning: false
   message: false
 ---
 
 
-I was immediately obsessed when I saw the Tidy Tuesday theme was Scottish Munros - so far we have climbed 58/282 so far. As I assume is the case for the majority of baggers, we use  [walkhighlands](https://www.walkhighlands.co.uk/) for all our munro info and routes. walkhighlands is one of the unequivocally wonderful bits of the internet and I can't believe it's free. We [donate](https://www.walkhighlands.co.uk/donate.shtml) to keep it going, and if you're a bagger who uses it often, I'd encourage you to do the same. When I saw the Tidy Tuesday dataset, I knew I wanted to try and combine the provided data from the Database of British and Irish Hills with what's available on walkhighlands.  
+I was immediately obsessed when I saw the Tidy Tuesday theme was [Scottish Munros](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-08-19/readme.md) - so far we have climbed 58/282 so far. As I assume is the case for the majority of baggers, we use  [walkhighlands](https://www.walkhighlands.co.uk/) for all our munro info and routes. walkhighlands is one of the unequivocally wonderful bits of the internet and I can't believe it's free. We [donate](https://www.walkhighlands.co.uk/donate.shtml) to keep it going, and if you're a bagger who uses it often, I'd encourage you to do the same. When I saw the Tidy Tuesday dataset, I knew I wanted to try and combine the provided data from the [Database of British and Irish Hills v18.2](https://www.hills-database.co.uk/) with what's available on walkhighlands.  
 
 Because I've made certain career choices, my day-to-day activity now involves a lot less coding and a lot more admin and I realised I was starting to lose some of my R so this has been a nice excuse to refresh. I'm gearing up for another semester of teaching R to students in the age of AI and it has been interesting to reflect on how I'm using AI myself. Pleasingly, many of the solutions to the many problems I had to solve came from my knowledge of Munros and Gaelic. AI sometimes provided the code but it's a nice reminder it can only provide the answers to questions you know to ask.
 
@@ -275,7 +277,7 @@ library(flextable)
 
 walkhighlands <- read_csv("walkhighlands.csv")
 
-head(walkhighlands) |>
+head(walkhighlands, 2) |>
   flextable()
 ```
 
