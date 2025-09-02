@@ -1,0 +1,7 @@
+{
+  "name": "quarto-site",
+  "private": true,
+  "devDependencies": {
+    "@quarto/netlify-plugin-quarto": "^0.0.5"
+  }
+}
