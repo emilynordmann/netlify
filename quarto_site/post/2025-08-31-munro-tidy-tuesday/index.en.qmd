@@ -29,7 +29,7 @@ The reason I wanted to use walkhighlands data is that it has a bunch of route in
 -   Total ascent  of route (not just of each individual Munro)
 -   Route descriptions
 
-I contacted walkhighlands to ask permission to share what I've done and they said yes because they're lovely. I've still decided not to include the code I used for web scraping so I don't inadvertently cause them any issues and so I'll just describe roughly what I did instead.
+I contacted walkhighlands to ask permission to share what I've done and they said yes because they're lovely. I've still decided not to include the code I used for web scraping so I don't inadvertently cuse them any issues and so I'll just describe roughly what I did instead.
 
 The approach was to first scrape walkhighlands for the list of Munros, the region in which they are located, and their height from the [Munro A-Z page](https://www.walkhighlands.co.uk/munros/munros-a-z). Then it took one route for each munro (the first listed), the min and max estimated walk time, distance in km, total ascent in metres, and used regex to look for certain words that describe walk features that might be of interest (scramble, exposed, arete, river, spate, bog). walkhighlands also provides a Grade rating for each walk as well as a bog factor, however, these are represented as images, and try as I (well, AI) might, I could not get it to parse this information.
 
@@ -258,9 +258,6 @@ walkhighlands <- dplyr::rows_patch(
 
 # clean up
 rm(pb, munros_az_links, az_url, pg_az, munros_sample, missing)
-
-write_csv(x = walkhighlands, file = "walkhighlands.csv")
-
 ```
 
 Here's what the walkhighlands data looks like.
