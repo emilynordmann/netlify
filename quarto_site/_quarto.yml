@@ -1,11 +1,9 @@
 project:
   type: website
   output-dir: _site
-  
-title: "Emily Nordmann"
 
 website:
-  
+  title: "Emily Nordmann"
   site-url: "https://www.emilynordmann.com/"
   navbar:
     left:

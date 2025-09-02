@@ -595,7 +595,7 @@ shape_values <- c(
 
 p <- ggplot() +
   geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(57, 58.6)) +
+  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
   geom_jitter(data = munros_coords, 
              aes(x = longitude, 
                  y = latitude, 
@@ -877,7 +877,7 @@ shape_values <- c(
 
 p2 <- ggplot() +
   geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(57, 58.6)) +
+  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
   geom_jitter(data = munros_coords, 
              aes(x = longitude, 
                  y = latitude, 
