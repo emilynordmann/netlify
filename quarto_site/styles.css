@@ -26,7 +26,7 @@ main.content { margin-top: 1rem; }
 
 /* Increase base font size for body text */
 body {
-  font-size: 20px; /* default ~16px, increase as needed */
+  font-size: 18px; /* default ~16px, increase as needed */
   line-height: 1.6;
 }
 

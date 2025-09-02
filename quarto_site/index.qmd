@@ -1,5 +1,5 @@
 ---
-title: "Emily Nordmann"
+title: "Professor Emily Nordmann"
 page-layout: full
 ---
 
@@ -7,7 +7,6 @@ page-layout: full
 ::: {.g-col-12 .g-col-md-4}
 
 <div class="profile-card">
-<h2 class="no-top">Professor Emily Nordmann</h2>
 <p>Associate Dean of Learning and Teaching</p>
 <p>University of Glasgow</p>
 
