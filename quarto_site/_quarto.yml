@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Prof. Emily Nordmann"
+  title: "Emily Nordmann"
   site-url: "https://www.emilynordmann.com/"
   navbar:
     left:
@@ -16,9 +16,12 @@ website:
 
 format:
   html:
-    theme: cosmo
     toc: false
     css: styles.css
+    theme:
+      light: cosmo    # current light theme
+      dark: slate    # or darkly, slate, etc.
+    toggle: true
 
 execute:
   freeze: auto

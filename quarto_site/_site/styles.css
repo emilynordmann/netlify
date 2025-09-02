@@ -23,3 +23,15 @@ main.content { margin-top: 1rem; }
 
 /* make icon links readable on all themes */
 .icons a:link, .icons a:visited { color: inherit; }
+
+/* Increase base font size for body text */
+body {
+  font-size: 18px; /* default ~16px, increase as needed */
+  line-height: 1.6;
+}
+
+/* Slightly larger headings for better hierarchy */
+h1, .h1 { font-size: 2.2rem; }
+h2, .h2 { font-size: 1.8rem; }
+h3, .h3 { font-size: 1.5rem; }
+
