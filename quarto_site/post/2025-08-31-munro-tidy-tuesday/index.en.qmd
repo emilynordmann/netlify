@@ -29,236 +29,15 @@ The reason I wanted to use walkhighlands data is that it has a bunch of route in
 -   Total ascent  of route (not just of each individual Munro)
 -   Route descriptions
 
-I contacted walkhighlands to ask permission to share what I've done and they said yes because they're lovely. I've still decided not to include the code I used for web scraping so I don't inadvertently cuse them any issues and so I'll just describe roughly what I did instead.
+I contacted walkhighlands to ask permission to share what I've done and they said yes because they're lovely. I've still decided not to include the code I used for web scraping so I don't inadvertently cause them any issues and so I'll just describe roughly what I did instead.
 
 The approach was to first scrape walkhighlands for the list of Munros, the region in which they are located, and their height from the [Munro A-Z page](https://www.walkhighlands.co.uk/munros/munros-a-z). Then it took one route for each munro (the first listed), the min and max estimated walk time, distance in km, total ascent in metres, and used regex to look for certain words that describe walk features that might be of interest (scramble, exposed, arete, river, spate, bog). walkhighlands also provides a Grade rating for each walk as well as a bog factor, however, these are represented as images, and try as I (well, AI) might, I could not get it to parse this information.
 
 ![](wh_grade.png)
 
-An important note for those of you who are familiar with walkhighlands, as highlighted, I included one route per munro - the first one listed. This can make a big difference to the walk, for example, which route you take up Ben Nevis significantly changes the fear factor and technicality. Text mining is also a blunt tool and only looks at whether a word is contained in the walk report rather than its context -  a route that reads "there is no scrambling required" would still have been included in the "scramble" category.
+An important note for those of you who are familiar with walkhighlands, as highlighted, I included one route per munro - the first one listed. This can make a big difference to the walk, for example, which route you take up Ben Nevis significantly changes the fear factor and technicality. Text mining is also a blunt tool and only looks at whether a word is contained in the walk report rather than its context -  a route that reads "there is no scrambling required" would still have been included in the "scramble" category and exposure can relate to the weather or heights.
 
 It took a long time to get the AI to provide code that worked and there were a number of issues - at one point it was matching the route to the wrong Munro, then it didn't return all Munros, then it was missing a bunch of routes. I had to manually create a file of some routes to load in because I could not find a solution as to why these handful were failing. Because I  could not have done any of this type of scraping without AI, I really have no idea why it works and why it didn't. This is intellectually unsatisfying but also, the idea you'd be willing to trust this black box of "knowledge" to something more serious than an obsessive deep dive into your favorite mountains is madness.
-
-
-```{r eval = FALSE, echo=FALSE}
-# ============================================================
-# Walkhighlands Munro route scrape (first route per Munro)
-# Robust UTF-8 reader, multi-pass link search, and .shtml+# fix
-# ============================================================
-
-
-library(tidyverse)
-library(rvest)
-library(xml2)
-library(fuzzyjoin)
-library(progress)
-library(ggthemes)
-library(waffle)
-library(ggrain)
-library(treemap)
-library(ggridges)
-library(flextable)
-
-# ---------------- Utilities ----------------
-
-# Read with UTF-8 and a light retry (helps with transient fetch hiccups)
-read_html_utf8 <- function(url, tries = 3, sleep_min = 0.2, sleep_max = 0.6) {
-  for (i in seq_len(tries)) {
-    out <- try(read_html(url, encoding = "UTF-8"), silent = TRUE)
-    if (!inherits(out, "try-error")) return(out)
-    Sys.sleep(runif(1, sleep_min, sleep_max))
-  }
-  stop("Failed to read HTML after retries: ", url)
-}
-
-# Keep only genuine route pages; drop site chrome
-# Accept .shtml at end, or followed by ?query or #fragment
-is_route_href <- function(href) {
-  str_detect(href, "(?i)\\.shtml($|[?#])") &&
-    !str_detect(href, "(?i)(about|advertis|cookie|privacy|shortlist|forum)\\.shtml")
-}
-
-# ---------------- 1) Munro A–Z ----------------
-
-az_url <- "https://www.walkhighlands.co.uk/munros/munros-a-z"
-pg_az  <- read_html_utf8(az_url)
-
-munros_az_links <-
-  html_elements(pg_az, "table") |>
-  map_dfr(function(tab) {
-    rows <- html_elements(tab, "tr")
-    if (length(rows) > 1) rows <- rows[-1]
-    map_dfr(rows, function(tr) {
-      a <- html_element(tr, "td:nth-child(1) a")
-      tibble(
-        munro      = a |> html_text2(),
-        region     = html_element(tr, "td:nth-child(2)") |> html_text2(),
-        altitude_m = html_element(tr, "td:nth-child(3)") |> html_text2() |> readr::parse_number(),
-        munro_url  = a |> html_attr("href") |> rvest::url_absolute(az_url)
-      )
-    })
-  }) |>
-  distinct()
-
-# ---------------- 2) Find the first route link (multi-pass) ----------------
-
-get_first_route_link <- function(munro_page_url) {
-  pg <- read_html_utf8(munro_page_url)
-
-  # Helper: return first eligible link (title + absolute URL) from a node set
-  pick_first <- function(nodes) {
-    if (length(nodes) == 0) return(NULL)
-    hrefs <- html_attr(nodes, "href") |> rvest::url_absolute(munro_page_url)
-    keep  <- vapply(hrefs, is_route_href, logical(1))
-    if (!any(keep)) return(NULL)
-    i <- which(keep)[1]
-    list(title = html_text2(nodes[[i]]), url = hrefs[i])
-  }
-
-  # Primary: within the "Detailed route" section (between this h2 and the next h2)
-  h2 <- html_element(
-    pg,
-    xpath = "//h2[contains(translate(normalize-space(.),
-            'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),
-            'detailed route')]"
-  )
-
-  if (!inherits(h2, "xml_missing") && length(h2) > 0) {
-    scope <- html_elements(
-      h2,
-      xpath = "following-sibling::*[preceding-sibling::h2[1]
-              [contains(translate(normalize-space(.),
-              'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),
-              'detailed route')]]"
-    )
-    cand <- pick_first(html_elements(scope, xpath = ".//a[@href]"))
-    if (!is.null(cand)) return(tibble(first_route_title = cand$title, first_route_url = cand$url))
-
-    # Fallback A: anywhere after the h2 in document order
-    cand <- pick_first(html_elements(h2, xpath = "following::a[@href]"))
-    if (!is.null(cand)) return(tibble(first_route_title = cand$title, first_route_url = cand$url))
-  }
-
-  # Fallback B: anywhere on the page
-  cand <- pick_first(html_elements(pg, xpath = "//a[@href]"))
-  if (!is.null(cand)) return(tibble(first_route_title = cand$title, first_route_url = cand$url))
-
-  tibble(first_route_title = NA_character_, first_route_url = NA_character_)
-}
-
-# ---------------- 3) Parse a route page (flags, time, distance, ascent) ----------------
-
-extract_flags_time_distance <- function(route_url) {
-  if (is.na(route_url) || !nzchar(route_url)) {
-    return(tibble(
-      scramble = NA, exposed = NA, spate = NA, river = NA, arete = NA, bog = NA,
-      time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
-      ascent = NA_real_
-    ))
-  }
-
-  pg  <- read_html_utf8(route_url)
-  txt <- html_text2(pg)
-
-  tm <- stringr::str_match(txt, "Time\\s*([0-9]+\\.?[0-9]*)\\s*(?:-|–|to)?\\s*([0-9]+\\.?[0-9]*)?")
-  time_min <- suppressWarnings(as.numeric(tm[, 2]))
-  time_max <- suppressWarnings(as.numeric(ifelse(!is.na(tm[, 3]), tm[, 3], tm[, 2])))
-
-  km_str <- stringr::str_match(txt, "(?i)Distance\\s*([0-9]+\\.?[0-9]*)\\s*km")[, 2]
-  mi_str <- stringr::str_match(txt, "(?i)Distance[^\\n]*?\\(\\s*([0-9]+\\.?[0-9]*)\\s*miles?\\s*\\)")[, 2]
-  if (is.na(mi_str)) mi_str <- stringr::str_match(txt, "(?i)Distance\\s*([0-9]+\\.?[0-9]*)\\s*miles?")[, 2]
-  km_val <- suppressWarnings(as.numeric(km_str))
-  if (is.na(km_val) && !is.na(mi_str)) km_val <- suppressWarnings(as.numeric(mi_str)) * 1.60934
-
-  # --- total ascent (m) ---
-  asc_str <- stringr::str_match(txt, "(?i)Ascent\\s*([0-9,\\.]+)\\s*m")[, 2]
-  ascent <- suppressWarnings(readr::parse_number(asc_str))
-
-  # --- flags ---
-  bog_hits_total <- stringr::str_count(txt, stringr::regex("\\bbog\\w*", ignore_case = TRUE))
-  bog_flag <- bog_hits_total > 1  # TRUE only if 'bog*' occurs more than once
-
-  tibble(
-    scramble = stringr::str_detect(txt, stringr::regex("\\bscrambl\\w*", ignore_case = TRUE)),
-    exposed  = stringr::str_detect(txt, stringr::regex("\\bexposed\\b|\\bexposure\\b", ignore_case = TRUE)),
-    spate    = stringr::str_detect(txt, stringr::regex("\\bspate\\b|\\bin\\s+spate\\b", ignore_case = TRUE)),
-    river    = stringr::str_detect(txt, stringr::regex("\\brivers?\\b", ignore_case = TRUE)),
-    arete    = stringr::str_detect(txt, stringr::regex("\\bar(?:e|ê)te\\b", ignore_case = TRUE)),
-    bog      = bog_flag,
-    time_hours_min = time_min,
-    time_hours_max = time_max,
-    distance_km    = km_val,
-    ascent       = ascent
-  )
-}
-
-# ---------------- 4) Scrape all Munros ----------------
-
-set.seed(1)
-munros_sample <- munros_az_links
-
-pb <- progress_bar$new(
-  total = nrow(munros_sample),
-  format = "Scrape [:bar] :current/:total (:percent) eta: :eta"
-)
-
-walkhighlands <-
-  purrr::pmap_dfr(
-    list(munros_sample$munro, munros_sample$region, munros_sample$altitude_m, munros_sample$munro_url),
-    \(m_name, m_region, m_alt, m_url) {
-      pb$tick()
-      Sys.sleep(runif(1, 0.2, 0.6))  # polite delay
-
-      fr <- tryCatch(
-        get_first_route_link(m_url),
-        error = \(e) tibble(first_route_title = NA_character_, first_route_url = NA_character_)
-      )
-
-      ft <- tryCatch(
-        extract_flags_time_distance(fr$first_route_url),
-        error = \(e) tibble(
-          scramble = NA, exposed = NA, spate = NA, river = NA, arete = NA, bog = NA,
-          time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
-          ascent = NA_real_
-        )
-      )
-
-      tibble(
-        munro              = m_name,
-        region             = m_region,
-        height             = m_alt,
-        first_route_title  = fr$first_route_title,
-        first_route_url    = fr$first_route_url,
-        scramble           = ft$scramble,
-        exposed            = ft$exposed,
-        spate              = ft$spate,
-        bog                = ft$bog,
-        river              = ft$river,
-        arete              = ft$arete,
-        time_hours_min     = ft$time_hours_min,
-        time_hours_max     = ft$time_hours_max,
-        distance_km        = ft$distance_km,
-        ascent           = ft$ascent
-      )
-    }
-  )
-
-# join with the missing routes collated manually
-
-missing <- read_csv(
-  "missing_routes.csv",
-  locale = readr::locale(encoding = "latin1")   # or "UTF-8" if you prefer
-)
-
-walkhighlands <- dplyr::rows_patch(
-  x  = walkhighlands,
-  y  = missing,
-  unmatched = "ignore"
-)
-
-# clean up
-rm(pb, munros_az_links, az_url, pg_az, munros_sample, missing)
-```
 
 Here's what the walkhighlands data looks like.
 
@@ -354,6 +133,8 @@ After this cleaning, because multiple Munros have the same name, I needed to joi
 
 My AI-fuelled discovery was `fuzzyjoin` which allows you to set a tolerance level for the join and pick a best match. I've never needed this before but it provided itself to be extremely useful - with a bit of trial and error I set a tolerance of 10m and manually checked the output to ensure everything had lined up correctly.
 
+**UPDATE**: Because walkhighlands are great (honestly go and give them some money), they have updated the heights based on the DoBIH data so they now match (is this impact?).
+
 ```{r}
 
 # 0) Choose a tolerance in metres (use Inf if you want “nearest regardless”)
@@ -399,15 +180,17 @@ candidates <- fuzzy_full_join(
   )
 
 # 3) Reduce to one nearest match per row on each side, preserving FULL-join behaviour
-best_for_left  <- candidates %>% group_by(row_id_x) %>% slice_min(height_diff, with_ties = FALSE) %>% ungroup()
-best_for_right <- candidates %>% group_by(row_id_y) %>% slice_min(height_diff, with_ties = FALSE) %>% ungroup()
+best_for_left  <- candidates %>% 
+  group_by(row_id_x) %>% 
+  slice_min(height_diff, with_ties = FALSE) %>% 
+  ungroup()
+best_for_right <- candidates %>% 
+  group_by(row_id_y) %>% 
+  slice_min(height_diff, with_ties = FALSE) %>% 
+  ungroup()
 
-joined_dat <- bind_rows(best_for_left, best_for_right) %>%
+munro_dat <- bind_rows(best_for_left, best_for_right) %>%
   distinct(row_id_x, row_id_y, .keep_all = TRUE) %>%
-  select(munro_wh, munro_dobih, 
-         munro_key_wh, munro_key_dobih,
-         height_wh, height_dobih, height_diff, region,
-         xcoord:grid_ref, scramble:distance_km, ascent, spate, bog, first_route_title)%>%
   mutate(
     site_key = coalesce(grid_ref, paste0(xcoord, "_", ycoord)),
     munro_wh_clean = str_replace(munro_wh, "\\s*\\([^)]*\\)$", "")  # drop "(Loch Mullardoch)" etc.
@@ -418,7 +201,7 @@ joined_dat <- bind_rows(best_for_left, best_for_right) %>%
   mutate(munro_wh = munro_wh_clean) %>%
   select(-munro_wh_clean) |>
   mutate(time = (time_hours_min + time_hours_max) / 2) |>
-  select(-munro_dobih:-munro_key_dobih) |>
+  select(-munro_dobih,-munro_key_dobih) |>
   rename(munro = munro_wh)|>
   mutate(scramble_exposed = case_when(
     scramble & exposed ~ "Both",
@@ -434,17 +217,12 @@ joined_dat <- bind_rows(best_for_left, best_for_right) %>%
     !spate & bog ~ "Boggy",
     TRUE ~ "Neither"
   )) |>
-  mutate(scramble_exposed = factor(scramble_exposed,
-                                   levels = c("Neither", "Scramble", "Exposed", "Both")))|>
   mutate(wet = factor(wet,
                                    levels = c("Neither", "Large river", "Boggy", "Both")))
 
 
 
 rm(x,y, best_for_left, best_for_right, candidates, tol_m)
-
-write_csv(x = joined_dat, file = "combined_data.csv")
-
 ```
 
 I also created some manual colour scales on a nature theme:
@@ -482,43 +260,16 @@ nature_13 <- c(
 )
 ```
 
+## Routes vs Munros
 
-## Height differences
+For some of the analyses later on, it makes more sense to do the analysis by route rather than by individual mountains - one route can have multiple Munros and the time, distance, and total ascent is for the entire route, not individually.
 
-Now we are cooking. First I wanted to look into the height differences between walkhighlands and Database of British and Irish Hills a little more.
-
+There are 282 Munros, but these are covered by 161 walkhighlands routes.
 
 ```{r}
-# 1. Extract the Munros with largest discrepancies
-outliers <- joined_dat %>%
-  filter(height_diff >3) %>%
-  select(munro, height_diff) %>%
-  mutate(
-    x_pos = c(2, 2, 4.5, 5.9),
-    y_pos = c(45, 75, 95, 125),  
-    y_arrow = 5                  
-  )
-
-# 2. Plot with arrows + horizontal text
-ggplot(joined_dat, aes(height_diff)) +
-  geom_histogram(boundary = 0, colour = "black", fill = "steelblue") +
-  scale_x_continuous(breaks = seq(0, 8, 1)) +
-  labs(title = "walkhighlands vs DoBIH heights",
-       subtitle = "wh measurements are always larger",
-       y = "Count",
-       x = "Difference in metres") +
-  theme_minimal(base_size = 14) +
-  geom_segment(data = outliers,
-               aes(x = height_diff, xend = height_diff,
-                   y = y_arrow, yend = y_pos),
-               arrow = arrow(length = unit(0.2, "cm")),
-               colour = "black") +
-  # text labels off to the right
-  geom_text(data = outliers,
-            aes(x = x_pos, y = y_pos + 10,
-                label = munro),
-            hjust = 0, size = 4)
-
+route_dat <-munro_dat |>
+  select(first_route_title, region, time_hours_min:deer_fence, time, scramble_exposed, wet) |>
+  unique()
 ```
 
 ## Scrambling and exposure
@@ -528,7 +279,7 @@ I have a reasonably bad fear of heights so anything that mentions scrambling or 
 Big thank you to [Jessica Moore](https://bsky.app/profile/jessimoore.bsky.social/post/3lwxw4fw5ys23) for the inspiration for this one.
 
 ```{r}
-ggplot(joined_dat, 
+ggplot(munro_dat, 
        aes(height_dobih, scramble_exposed, fill = scramble_exposed)) +
   geom_density_ridges(quantile_lines = TRUE, quantile_fun = mean,
                       vline_linetype = "dashed",
@@ -552,8 +303,8 @@ For locating the scary munros, I decided that an interactive plotly map was call
 Have I mentioned that I dislike heights and exposure?
 
 ```{r}
-munros_map <- joined_dat %>%
-  select(munro, xcoord, ycoord, height_dobih, scramble_exposed, wet) %>%
+munros_map <- munro_dat %>%
+  select(munro, region, xcoord, ycoord, height_dobih, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park) %>%
   na.omit()
 
 # Convert OSGB36 coordinates to sf object
@@ -623,17 +374,64 @@ ggplotly(p, tooltip = "text")
 
 I also thought it would be fun to look into regional differences. The munros vary massively in character depending on where you are in the country (you can imagine hobbits living in Cairngorms whilst Skye would be home to dragons), but how is this reflected in the walk features?
 
+Which Munros are in which region is taken from the [walkhighlands A-Z](https://www.walkhighlands.co.uk/munros/munros-a-z) but I've had a few people ask since posting this, so here's an easy to read map.
+
+```{r}
+p3 <- ggplot() +
+  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
+  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_jitter(data = munros_coords, 
+             aes(x = longitude, 
+                 y = latitude, 
+                 colour = region,
+                 text = munro), 
+             size = 1,
+             height = .05,
+             width = .05) + 
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  scale_colour_manual(values = nature_13) +
+  labs(title = "Munros by region",
+       colour = NULL) +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),      
+    axis.ticks = element_blank(),     
+    axis.title = element_blank(),     
+    panel.grid = element_blank(),     
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(p3, tooltip = "text")
+```
+
+And here's the counts for how many Munros and routes are in each region. It's highly correlated, but the ranks do change a little.
+
+```{r}
+munro_region <- munro_dat |>
+  count(region, sort = TRUE) |>
+  rename("munros" = "n") 
+
+route_region <- route_dat |>
+  count(region, sort = TRUE) |>
+  rename("routes" = "n")
+
+inner_join(munro_region, route_region) |>
+  flextable()
+```
+
 Which region has the tallest Munros?
 
 ```{r}
 
-region_height <- joined_dat |>
+region_height <- munro_dat |>
   group_by(region) |>
   summarise(avg_height = mean(height_dobih, na.rm = TRUE), .groups = "drop") |>
   slice_max(avg_height, n = 5)
 
 ggplot(
-  semi_join(joined_dat, region_height, by = "region"),
+  semi_join(munro_dat, region_height, by = "region"),
   aes(
     x = height_dobih,
     y = fct_reorder(region, height_dobih, .fun = mean, .desc = FALSE),
@@ -664,18 +462,20 @@ ggplot(
   )
 ```
 
-Which region has the longest walks on average by distance?
+Which region has the longest routes on average by distance?
+
+This plot uses the route data although I am pleased that the order remains the same if you use the munro data (because I only realised I should do it by route after I shared this publicly).
 
 ```{r}
 
 # Top 5 regions by mean distance
-region_distance <- joined_dat |>
+region_distance <- route_dat |>
   group_by(region) |>
   summarise(avg_distance = mean(distance_km, na.rm = TRUE), .groups = "drop") |>
   slice_max(avg_distance, n = 5)
 
 # Keep only those regions in the raw data
-top_dat <- semi_join(joined_dat, region_distance, by = "region")
+top_dat <- semi_join(route_dat, region_distance, by = "region")
 
 
 ggplot(
@@ -710,17 +510,19 @@ ggplot(
     )
 ```
 
-Which region has the most ascent?
+Which region has the most ascent per route?
+
+Again the order doesn't change if you use routes or munros as the data (the exact values do slightly but not the rank).
 
 ```{r}
 # Top 5 regions by mean distance
-region_ascent <- joined_dat |>
+region_ascent <- munro_dat |>
   group_by(region) |>
   summarise(avg_ascent = mean(ascent, na.rm = TRUE), .groups = "drop") |>
   slice_max(avg_ascent, n = 5)
 
 # Keep only those regions in the raw data
-top_ascent <- semi_join(joined_dat, region_ascent, by = "region")
+top_ascent <- semi_join(munro_dat, region_ascent, by = "region")
 
 
 ggplot(
@@ -757,12 +559,12 @@ ggplot(
 
 And finally, where do you get the most bang for your buck? 
 
-Ullapool
+Ullapool.
 
 
 ```{r}
 
-joined_dat |>
+munro_dat |>
   count(region, first_route_title, name = "n") |>
   group_by(region) |>
   summarise(avg_count = mean(n), .groups = "drop") |>
@@ -784,8 +586,9 @@ joined_dat |>
 
 As you would expect, total ascent correlates strongly with total time, but there are some points of interest. Bidein a' Choire Sheasgaich and Lurg Mhòr have the longest estimated walk time but their remoteness means that they're an outlier in terms of the amount of ascent you'd expect for that time. The Fisherfield 6 claim the prize for most ascent by some distance but are bang on in terms of the ascent/time relationship. Meall Buidhe wins the award for being the quickest munro to bag, with the least ascent.
 
+
 ```{r}
-ggplot(joined_dat, aes(x = ascent, y = time)) +
+ggplot(route_dat, aes(x = ascent, y = time)) +
   geom_jitter(height = .05, width = .05) +
   scale_x_continuous(breaks = seq(500, 2500, 250)) +
   scale_y_continuous(breaks = seq(0, 20, 2)) +
@@ -823,17 +626,17 @@ ggplot(joined_dat, aes(x = ascent, y = time)) +
     legend.position.inside = c(0.9, .2),
     legend.text = element_text(size = 10)  
   )
-
 ```
+
 
 And here's an interactive version of that plot that adds in scrambling and exposure because had I mentioned, I am scared of heights. 
 
 ```{r}
-p1 <- ggplot(joined_dat, aes(x = ascent, y = time)) +
+p1 <- ggplot(route_dat, aes(x = ascent, y = time)) +
   geom_jitter(aes(shape = scramble_exposed, 
                  colour = scramble_exposed,
-                 text = munro), 
-             size = 1, width = .1, height = .1) +
+                 text = first_route_title), 
+             size = 1) +
   scale_x_continuous(breaks = seq(500,2500, 250)) +
   scale_y_continuous(breaks = seq(0,20,2)) +
   scale_shape_manual(values = shape_values) +
@@ -902,11 +705,50 @@ p2 <- ggplot() +
 ggplotly(p2, tooltip = "text")
 ```
 
+
 I may have become a bit obsessed.
 
 I must stop.
 
 But if you have any other suggestions for analysis....just ask.
+
+
+
+```{r echo =FALSE, eval=FALSE}
+## Requests
+
+# Non- natural features
+
+for_sandie <- munros_coords |>
+  pivot_longer(cols = toilet:car_park, names_to = "feature", values_to = "present")
+
+p4 <- ggplot() +
+  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
+  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_jitter(data = for_sandie, 
+             aes(x = longitude, 
+                 y = latitude, 
+                 colour = feature,
+                 text = munro), 
+             size = 1) + 
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  scale_colour_manual(values = nature_5) +
+  labs(title = "Non-natural features",
+              subtitle = "Walk descriptions that reference:",
+       colour = "Route mentions") +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),      
+    axis.ticks = element_blank(),     
+    axis.title = element_blank(),     
+    panel.grid = element_blank(),     
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(p4, tooltip = "text")
+```
 
 
 

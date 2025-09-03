@@ -1,283 +1,283 @@
-munro,region,height,first_route_title,first_route_url,scramble,exposed,spate,bog,river,arete,time_hours_min,time_hours_max,distance_km,ascent
-A' Bhuidheanach Bheag,Cairngorms,936,Càrn na Caim and A' Bhuidheanach Bheag from Drumochter,https://www.walkhighlands.co.uk/cairngorms/carn-na-caim.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6,19,824
-A' Chailleach (Fannichs),Ullapool,997,Sgùrr Breac and a' Chailleach from near Braemore,https://www.walkhighlands.co.uk/ullapool/sgurrbreac.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,16,1127
-A' Chailleach (Monadhliath),Cairngorms,930,"The Monadhliath Munros: a' Chailleach, Càrn Sgulain and Càrn Dearg from Glen Banchor",https://www.walkhighlands.co.uk/cairngorms/monadhliath.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,8,10,24.5,946
-A' Chralaig,Kintail,1120,a' Chralaig and Mullach Fraoch Choire from Cluanie,https://www.walkhighlands.co.uk/kintail/Achralaig.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,14.5,1150
-A' Ghlas-bheinn,Kintail,918,a' Ghlas Bheinn and the Falls of Glomach from Morvich,https://www.walkhighlands.co.uk/kintail/Aghlasbheinn.shtml,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,7,9,21,1196
-A' Mhaighdean,Ullapool,967,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,12,18,29,2254
-A' Mharconaich,Cairngorms,975,Beinn Udlamain and Sgàirneach Mhòr,http://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,15.75,783
-Am Basteir,Isle of Skye,934,Am Basteir via the Bealach Basteir from Sligachan,https://www.walkhighlands.co.uk/skye/ambasteir.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,6,7,14,1175
-Am Bodach,Fort William,1032,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,9,12,16,1676
-Am Faochagach,Ullapool,954,Am Faochagach from the Dirrie Mòr,https://www.walkhighlands.co.uk/ullapool/amfaochagach.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,5,6,14,700
-An Caisteal,Loch Lomond,995,An Caisteal and Beinn a' Chròin from Glen Falloch,https://www.walkhighlands.co.uk/lochlomond/an-caisteal.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,5.5,7,14,1045
-An Coileachan,Ullapool,923,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,24.75,1435
-An Gearanach,Fort William,982,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,9,12,16,1676
-An Riabhachan,Loch Ness,1129,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,11,14,29,1826
-An Sgarsoch,Cairngorms,1006,An Scarsoch and Càrn an Fhìdhleir from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/an-sgarsoch.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,11,12,42,1059
-An Socach (Affric),Loch Ness,921,Sgùrr nan Ceathreamhnan Munros from Alltbeithe,https://www.walkhighlands.co.uk/lochness/Ceathreamhnan.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,20,1484
-An Socach (Braemar),Cairngorms,944,An Socach from Glen Clunie,https://www.walkhighlands.co.uk/cairngorms/an-socach.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6,15.75,655
-An Socach (Mullardoch),Loch Ness,1069,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,11,14,29,1826
-An Stùc,Perthshire,1118,Circuit of Coire nan Cat,https://www.walkhighlands.co.uk/perthshire/meall-garbh.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,7,8,16.5,1230
-Aonach Air Chrith,Kintail,1021,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,26.75,1818
-Aonach Beag (Alder),Cairngorms,1116,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,8,9,18.5,1110
-Aonach Beag (Nevis Range),Fort William,1234,Aonach Beag and Aonach Mòr from Glen Nevis,https://www.walkhighlands.co.uk/fortwilliam/aonachmor.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,16.5,1430
-Aonach Meadhoin,Kintail,1001,Sgùrr a Bhealaich Dheirg and the Brothers of Kintail,https://www.walkhighlands.co.uk/kintail/Brothersridge.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,10,1274
-Aonach Mòr,Fort William,1221,Aonach Beag and Aonach Mòr from Glen Nevis,https://www.walkhighlands.co.uk/fortwilliam/aonachmor.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,16.5,1430
-Beinn a' Bhùird,Cairngorms,1197,Ben Avon,http://www.walkhighlands.co.uk/cairngorms/ben-avon.shtml,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,8,10,33.5,1000
-Beinn a' Chaorainn (Cairngorms),Cairngorms,1082,Beinn a' Chaorainn and Beinn Bhreac from Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/beinn-a-chaorainn.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,8,10,29,878
-Beinn a' Chaorainn (Glen Spean),Fort William,1050,Beinn a' Chaorainn & Beinn Teallach from Glen Spean,https://www.walkhighlands.co.uk/fortwilliam/beinnachaorainn.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6,8,16,1172
-Beinn a' Chlachair,Fort William,1087,"Beinn a' Chlachair, Geal Chàrn & Creag Pitridh from Loch Laggan",https://www.walkhighlands.co.uk/fortwilliam/beinn-a-chlachair.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,26,1275
-Beinn a' Chlèibh,Argyll,916,Ben Lui and Beinn a' Chlèibh from Glen Lochay,https://www.walkhighlands.co.uk/argyll/ben-lui.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,5,7,10,1078
-Beinn a' Chochuill,Argyll,980,Beinn Eunaich and Beinn a' Chochuill from near Dalmally,https://www.walkhighlands.co.uk/argyll/beinn-eunaich.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5.5,6.5,13.5,1221
-Beinn a' Chreachain,Argyll,1081,Beinn Achaladair and Beinn a' Chreachain from Achaladair Farm,https://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,7,9,21.5,1266
-Beinn a' Chròin,Loch Lomond,942,An Caisteal and Beinn a' Chròin from Glen Falloch,https://www.walkhighlands.co.uk/lochlomond/an-caisteal.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,5.5,7,14,1045
-Beinn Achaladair,Argyll,1038,Beinn Achaladair and Beinn a' Chreachain from Achaladair Farm,https://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,7,9,21.5,1266
-Beinn an Dòthaidh,Argyll,1004,Beinn Achaladair and Beinn a' Chreachain,http://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,7,9,21.5,1266
-Beinn Bheoil,Cairngorms,1019,"Ben Alder via the Long Leachas, with Beinn Bheoil",https://www.walkhighlands.co.uk/cairngorms/ben-alder.shtml,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,7,8,17,1021
-Beinn Bhreac,Cairngorms,931,Beinn a' Chaorainn and Beinn Bhreac from Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/beinn-a-chaorainn.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,8,10,29,878
-Beinn Bhrotain,Cairngorms,1157,Beinn Bhrotain and Monadh Mòr from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/beinn-bhrotain.shtml,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,9,11,29,1505
-Beinn Bhuidhe,Argyll,948,Beinn Bhuidhe via Glen Fyne,https://www.walkhighlands.co.uk/argyll/beinn-bhuidhe.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,7,8,21.5,955
-Beinn Chabhair,Loch Lomond,933,Beinn Chabhair from Inverarnan,https://www.walkhighlands.co.uk/lochlomond/beinn-chabhair.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6.5,13,948
-Beinn Dearg (Blair Atholl),Perthshire,1008,"Beinn Dearg from the Old Bridge of Tilt, Blair Atholl",https://www.walkhighlands.co.uk/perthshire/beinn-dearg.shtml,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,7,9,29,990
-Beinn Dearg (Ullapool),Ullapool,1084,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,9,11,27,1569
-Beinn Dòrain,Argyll,1076,Beinn Achaladair and Beinn a' Chreachain,http://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,7,9,21.5,1266
-Beinn Dubhchraig,Argyll,978,Ben Oss and Beinn Dubhchraig from Dalrigh,https://www.walkhighlands.co.uk/argyll/ben-oss.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,8,17,1230
-Beinn Èibhinn,Cairngorms,1102,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,8,9,18.5,1110
-Beinn Eunaich,Argyll,989,Beinn Eunaich and Beinn a' Chochuill from near Dalmally,https://www.walkhighlands.co.uk/argyll/beinn-eunaich.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5.5,6.5,13.5,1221
-Beinn Fhada,Kintail,1032,Beinn Fhada from Morvich,https://www.walkhighlands.co.uk/kintail/Beinnfhada.shtml,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,6,7,16.75,1234
-Beinn Fhionnlaidh,Argyll,959,"Beinn Fhionnlaidh from Elleric, Glen Creran",https://www.walkhighlands.co.uk/argyll/beinn-fhionnlaidh.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,5,6,14.5,980
-Beinn Fhionnlaidh (Càrn Eige),Loch Ness,1005,"Càrn Eige, Mam Sodhail and Beinn Fhionnlaidh from Glen Affric",https://www.walkhighlands.co.uk/lochness/carn-eige.shtml,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,10,13,28,1727
-Beinn Ghlas,Perthshire,1103,Ben Lawers and Beinn Ghlas,https://www.walkhighlands.co.uk/perthshire/ben-lawers.shtml,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,4,6,11,942
-Beinn Heasgarnich,Perthshire,1078,Beinn Heasgarnich and Creag Mhòr from Glen Lochay,https://www.walkhighlands.co.uk/perthshire/beinn-heasgarnich.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,9,11,25.75,1470
-Beinn Ìme,Loch Lomond,1011,Beinn Ìme and Beinn Narnain from Arrochar,https://www.walkhighlands.co.uk/lochlomond/beinn-ime.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,13.5,1325
-Beinn Iutharn Mhòr,Cairngorms,1045,Beinn Iutharn Mhòr and Càrn Bhac from Inverey,https://www.walkhighlands.co.uk/cairngorms/beinn-iutharn-mhor.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,9,10,32,983
-Beinn Liath Mhòr,Torridon,926,Beinn Liath Mhòr from Achnashellach,https://www.walkhighlands.co.uk/torridon/Beinnliathmhor.shtml,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,7,8,15.25,1054
-Beinn Liath Mhòr Fannaich,Ullapool,954,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,24.75,1435
-Beinn Mhanach,Argyll,953,Beinn Mhanach via the Auch Gleann,https://www.walkhighlands.co.uk/argyll/beinn-mhanach.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,6.5,7.5,23.5,920
-Beinn Mheadhoin,Cairngorms,1182,Beinn Mheadhoin from Coire Cas via the Shelter Stone,https://www.walkhighlands.co.uk/cairngorms/beinn-mheadhoin.shtml,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,8,9,19,1560
-Beinn na Lap,Fort William,937,Beinn na Lap from Corrour Station,https://www.walkhighlands.co.uk/fortwilliam/beinn-na-lap.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,3,5,10,562
-Beinn nan Aighenan,Fort William,960,Beinn nan Aighenan from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/beinn-nan-aighenan.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,15.75,1320
-Beinn Narnain,Loch Lomond,926,Beinn Ìme and Beinn Narnain from Arrochar,https://www.walkhighlands.co.uk/lochlomond/beinn-ime.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,13.5,1325
-Beinn Sgritheall,Kintail,974,Beinn Sgritheall from Arnisdale,https://www.walkhighlands.co.uk/kintail/Beinnsgritheall.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,4,6,10,1095
-Beinn Sgulaird,Argyll,937,Beinn Sgulaird from Loch Creran,https://www.walkhighlands.co.uk/argyll/beinn-sgulaird.shtml,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,6,8,13,1240
-Beinn Tarsuinn,Ullapool,937,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,12,18,29,2254
-Beinn Teallach,Fort William,915,Beinn a' Chaorainn & Beinn Teallach from Glen Spean,https://www.walkhighlands.co.uk/fortwilliam/beinnachaorainn.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6,8,16,1172
-Beinn Tulaichean,Loch Lomond,946,Cruach Àrdrain and Beinn Tulaichean from Inverlochlarig,https://www.walkhighlands.co.uk/lochlomond/cruach-ardrain.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,12.5,1019
-Beinn Udlamain,Cairngorms,1010,Beinn Udlamain and Sgàirneach Mhòr from Drumochter Pass,https://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,15.75,783
-Ben Alder,Cairngorms,1148,"Ben Alder via the Long Leachas, with Beinn Bheòil",https://www.walkhighlands.co.uk/cairngorms/ben-alder.shtml,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,7,8,17,1021
-Ben Avon,Cairngorms,1171,Ben Avon via Gleann an-Slugain (Deeside),https://www.walkhighlands.co.uk/cairngorms/ben-avon.shtml,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,8,10,33.5,1000
-Ben Challum,Argyll,1025,Ben Challum from Kirkton Farm,https://www.walkhighlands.co.uk/argyll/ben-challum.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,7,11.5,910
-Ben Chonzie,Perthshire,931,Ben Chonzie from Glen Lednock,https://www.walkhighlands.co.uk/perthshire/ben-chonzie.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,4,5,12.5,712
-Ben Cruachan,Argyll,1126,Ben Cruachan and Stob Dàimh circuit,https://www.walkhighlands.co.uk/argyll/ben-cruachan.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,8,9,13.75,1376
-Ben Hope,Sutherland,927,Ben Hope from Strathmore,https://www.walkhighlands.co.uk/sutherland/ben-hope.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,4,6,7.5,946
-Ben Klibreck,Sutherland,961,Ben Klibreck from Strath Vagastie,https://www.walkhighlands.co.uk/sutherland/ben-klibreck.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,7,14.25,930
-Ben Lawers,Perthshire,1214,Ben Lawers and Beinn Ghlas,https://www.walkhighlands.co.uk/perthshire/ben-lawers.shtml,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,4,6,11,942
-Ben Lomond,Loch Lomond,974,Ben Lomond from Rowardennan,https://www.walkhighlands.co.uk/lochlomond/ben-lomond.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,4.5,5.5,12,990
-Ben Lui,Argyll,1130,Ben Lui and Beinn a' Chlèibh from Glen Lochay,https://www.walkhighlands.co.uk/argyll/ben-lui.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,5,7,10,1078
-Ben Macdui,Cairngorms,1309,Ben Macdui and Cairngorm from the ski centre,https://www.walkhighlands.co.uk/cairngorms/macdui-cairngorm.shtml,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,6,8,17.5,932
-Ben More,Loch Lomond,1174,Ben More and Stob Binnein from Benmore Farm,https://www.walkhighlands.co.uk/lochlomond/ben-more.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,12,1335
-Ben More (Mull),Isle of Mull,966,Ben More from Dhiseig,https://www.walkhighlands.co.uk/mull/ben-more-mull.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6.5,9.25,945
-Ben More Assynt,Ullapool,998,Ben More Assynt and Conival from Inchnadamph,https://www.walkhighlands.co.uk/ullapool/benmoreassynt.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,8.5,10,17.25,1077
-Ben Nevis,Fort William,1345,Ben Nevis via the Mountain Path,https://www.walkhighlands.co.uk/fortwilliam/bennevis.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,7,9,17,1352
-Ben Oss,Argyll,1029,Ben Oss and Beinn Dubhchraig from Dalrigh,https://www.walkhighlands.co.uk/argyll/ben-oss.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,8,17,1230
-Ben Starav,Fort William,1078,Ben Starav and Glas Bheinn Mhòr from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/benstarav.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,8,9,16,1423
-Ben Vane,Loch Lomond,915,Ben Vane from Inveruglas,https://www.walkhighlands.co.uk/lochlomond/ben-vane.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,4.5,6.5,11,930
-Ben Vorlich (Loch Earn),Perthshire,985,Ben Vorlich and Stùc a' Chròin from Ardvorlich,https://www.walkhighlands.co.uk/perthshire/ben-vorlich.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,14.5,1145
-Ben Vorlich (Loch Lomond),Loch Lomond,943,Ben Vorlich from Inveruglas via Loch Sloy,https://www.walkhighlands.co.uk/lochlomond/ben-vorlich-lomond.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6.5,13.5,945
-Ben Wyvis,Loch Ness,1046,Ben Wyvis from near Garbat,https://www.walkhighlands.co.uk/lochness/Benwyvis.shtml,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,4.5,5.5,14,935
-Bidean nam Bian,Fort William,1150,Bidean nam Bian via Coire nan Lochain and the Lost Valley,https://www.walkhighlands.co.uk/fortwilliam/bideannambian.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,11,1316
-Bidein a' Choire Sheasgaich,Torridon,945,"Lurg Mhòr and Bidein a' Choire Sheasgaich, from Attadale via Bendronaig Lodge",https://www.walkhighlands.co.uk/torridon/bideinachoiresheasgaich.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,16,16,38,1530
-Bidein a' Ghlas Thuill (An Teallach),Ullapool,1062,"An Teallach traverse, Dundonnell",https://www.walkhighlands.co.uk/ullapool/anteallach.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,9,10,20,1415
-Binnein Beag,Fort William,943,Sgùrr Èilde Mòr and Binnein Beag from Kinlochleven,https://www.walkhighlands.co.uk/fortwilliam/sgurreildemor.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,20,1582
-Binnein Mòr,Fort William,1130,Binnein Mòr and Na Gruagaichean,https://www.walkhighlands.co.uk/fortwilliam/binneinmor.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,9,14,1336
-Blà Bheinn,Isle of Skye,928,Blà Bheinn via the normal route from Loch Slapin,https://www.walkhighlands.co.uk/skye/blabheinn.shtml,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6,8,990
-Braeriach,Cairngorms,1296,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,13,13,36,1820
-Bràigh Coire Chruinn-bhalgain,Perthshire,1070,Beinn a' Ghlò from Loch Moraig,https://www.walkhighlands.co.uk/perthshire/beinn-a-ghlo.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,8,10,22,1239
-Broad Cairn,Cairngorms,998,"Creag an Dubh Loch and Broad Cairn, Glenmuick",https://www.walkhighlands.co.uk/cairngorms/creag-an-dubh-loch.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,7,8,23,813
-Bruach na Frìthe,Isle of Skye,958,Am Basteir,https://www.walkhighlands.co.uk/skye/ambasteir.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,6,7,14,1175
-Bynack More,Cairngorms,1090,Bynack More from Glenmore Lodge,https://www.walkhighlands.co.uk/cairngorms/bynackmore.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6.5,7.5,22.5,756
-Cairn Bannoch,Cairngorms,1012,Creag an Dubh-loch,https://www.walkhighlands.co.uk/cairngorms/creag-an-dubh-loch.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,7,8,23,813
-Cairn Gorm,Cairngorms,1245,Ben Macdui and Cairngorm from the ski centre,https://www.walkhighlands.co.uk/cairngorms/macdui-cairngorm.shtml,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,6,8,17.5,932
-Cairn of Claise,Cairngorms,1064,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6.5,7.5,19.25,891
-Cairn Toul,Cairngorms,1291,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,13,13,36,1820
-Càrn a' Chlamain,Perthshire,963,Càrn a' Chlamain from Glen Tilt,https://www.walkhighlands.co.uk/perthshire/carn-a-chlamain.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,7,9,26,930
-Càrn a' Choire Bhòidheach,Cairngorms,1118,"White Mounth Munros, Glen Muick",https://www.walkhighlands.co.uk/cairngorms/white-mounth.shtml,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,9,11,29,1228
-Càrn a' Ghèoidh,Cairngorms,975,The Cairnwell Munros,https://www.walkhighlands.co.uk/cairngorms/cairnwell.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6,13,595
-Càrn a' Mhàim,Cairngorms,1037,Càrn a'Mhàim from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/carn-a-mhaim.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,6,7,22.5,648
-Càrn an Fhìdhleir (Càrn Ealar),Cairngorms,994,An Scarsoch and Càrn an Fhìdhleir from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/an-sgarsoch.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,11,12,42,1059
-Càrn an Rìgh,Perthshire,1029,Glas Tulaichean and Càrn an Rìgh from the Spittal of Glenshee,https://www.walkhighlands.co.uk/perthshire/glas-tulaichean.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,27,1085
-Càrn an t-Sagairt Mòr,Cairngorms,1047,Lochnagar,https://www.walkhighlands.co.uk/cairngorms/lochnagar.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,6,7,19,930
-Càrn an Tuirc,Cairngorms,1019,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6.5,7.5,19.25,891
-Càrn Aosda,Cairngorms,917,The Cairnwell Munros,https://www.walkhighlands.co.uk/cairngorms/cairnwell.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6,13,595
-Càrn Bhac,Cairngorms,946,Beinn Iutharn Mhòr and Càrn Bhac from Inverey,https://www.walkhighlands.co.uk/cairngorms/beinn-iutharn-mhor.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,9,10,32,983
-Càrn Dearg (Corrour),Fort William,941,Càrn Dearg and Sgòr Gaibhre from Corrour Station,https://www.walkhighlands.co.uk/fortwilliam/sgor-gaibhre.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,8,21.75,973
-Càrn Dearg (Loch Pattack),Cairngorms,1034,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,8,9,18.5,1110
-Càrn Dearg (Monadhliath),Cairngorms,945,"The Monadhliath Munros: a' Chailleach, Càrn Sgulain and Càrn Dearg from Glen Banchor",https://www.walkhighlands.co.uk/cairngorms/monadhliath.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,8,10,24.5,946
-Càrn Eige,Loch Ness,1183,"Càrn Eige, Mam Sodhail and Beinn Fhionnlaidh from Glen Affric",https://www.walkhighlands.co.uk/lochness/carn-eige.shtml,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,10,13,28,1727
-Càrn Ghluasaid,Kintail,957,Sgùrr nan Conbhairean from Loch Cluanie,https://www.walkhighlands.co.uk/kintail/sgurrnanconbhairean.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,7,8,17.5,1260
-Càrn Gorm,Perthshire,1029,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,8,17.5,1330
-Càrn Liath (Beinn a' Ghlò),Perthshire,975,Beinn a' Ghlò from Loch Moraig,https://www.walkhighlands.co.uk/perthshire/beinn-a-ghlo.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,8,10,22,1239
-Càrn Liath (Creag Meagaidh),Fort William,1006,Creag Meagaidh Munros circuit,https://www.walkhighlands.co.uk/fortwilliam/creagmeagaidh.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,21,1080
-Càrn Mairg,Perthshire,1042,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,8,17.5,1330
-Càrn Mòr Dearg,Fort William,1220,Ben Nevis via the Càrn Mòr Dearg Arête,https://www.walkhighlands.co.uk/fortwilliam/carnmordeargarete.shtml,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,10,11,17.5,1506
-Càrn na Caim,Cairngorms,941,Càrn na Caim and A' Bhuidheanach Bheag from Drumochter,https://www.walkhighlands.co.uk/cairngorms/carn-na-caim.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6,19,824
-Càrn nan Gabhar,Perthshire,1121,Beinn a' Ghlò from Loch Moraig,https://www.walkhighlands.co.uk/perthshire/beinn-a-ghlo.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,8,10,22,1239
-Càrn nan Gobhar (Loch Mullardoch),Loch Ness,992,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,11,14,29,1826
-Càrn nan Gobhar (Strathfarrar),Loch Ness,992,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,10,25,1567
-Càrn Sgulain,Cairngorms,920,"The Monadhliath Munros: a' Chailleach, Càrn Sgulain and Càrn Dearg from Glen Banchor",https://www.walkhighlands.co.uk/cairngorms/monadhliath.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,8,10,24.5,946
-Chno Dearg,Fort William,1046,Chno Dearg and Stob Coire Sgriodain from Fersit,https://www.walkhighlands.co.uk/fortwilliam/chnodearg.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6,7,13.5,915
-Ciste Dhubh,Kintail,979,Ciste Dhubh and Am Bathach from the Cluanie Inn,https://www.walkhighlands.co.uk/kintail/Cistedhubh.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,7,12.5,1040
-Cona' Mheall,Ullapool,978,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,9,11,27,1569
-Conival,Ullapool,987,Ben More Assynt and Conival from Inchnadamph,https://www.walkhighlands.co.uk/ullapool/benmoreassynt.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,8.5,10,17.25,1077
-Creag a'Mhàim,Kintail,947,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,26.75,1818
-Creag Leacach,Cairngorms,987,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6.5,7.5,19.25,891
-Creag Meagaidh,Fort William,1130,Creag Meagaidh Munros circuit,https://www.walkhighlands.co.uk/fortwilliam/creagmeagaidh.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,21,1080
-Creag Mhòr (Glen Lochay),Perthshire,1047,Beinn Heasgarnich and Creag Mhòr from Glen Lochay,https://www.walkhighlands.co.uk/perthshire/beinn-heasgarnich.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,9,11,25.75,1470
-Creag Mhòr (Meall na Aighean),Perthshire,981,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,8,17.5,1330
-Creag nan Dàmh,Kintail,918,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,26.75,1818
-Creag Pitridh,Fort William,924,"Beinn a' Chlachair, Geal Chàrn & Creag Pitridh from Loch Laggan",https://www.walkhighlands.co.uk/fortwilliam/beinn-a-chlachair.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,26,1275
-Creise,Fort William,1100,Meall a'Bhùiridh and Creise from the White Corries ski centre,https://www.walkhighlands.co.uk/fortwilliam/creise.shtml,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,5,7,10.5,1093
-Cruach Àrdrain,Loch Lomond,1046,Cruach Àrdrain and Beinn Tulaichean from Inverlochlarig,https://www.walkhighlands.co.uk/lochlomond/cruach-ardrain.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,12.5,1019
-Derry Cairngorm,Cairngorms,1155,Ben Macdui and Derry Cairngorm from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/ben-macdui.shtml,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,9,11,29,1068
-Driesh,Angus,947,Driesh and Mayar from Glen Doll,https://www.walkhighlands.co.uk/angus/mayar-driesh.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,4.5,5.5,14.5,835
-Druim Shionnach,Kintail,987,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,26.75,1818
-Eididh nan Clach Geala,Ullapool,927,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,9,11,27,1569
-Fionn Bheinn,Torridon,933,Fionn Bheinn from Achnasheen,https://www.walkhighlands.co.uk/torridon/Fionnbheinn.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6,12,807
-Gairich,Fort William,919,Sgùrr Mòr,https://www.walkhighlands.co.uk/fortwilliam/sgurr-mor.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,9,11,24,1510
-Garbh Chioch Mhòr,Fort William,1013,Sgùrr na Cìche Munros from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurrnaciche.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,10,12,26,1523
-Geal chàrn (Laggan),Fort William,1049,"Beinn a' Chlachair, Geal Chàrn & Creag Pitridh from Loch Laggan",https://www.walkhighlands.co.uk/fortwilliam/beinn-a-chlachair.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,26,1275
-Geal Chàrn (Monadhliath),Cairngorms,926,Geal Chàrn from Garva Bridge,https://www.walkhighlands.co.uk/cairngorms/geal-charn.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,5,6,12.5,625
-Geal-chàrn (Alder),Cairngorms,1132,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,8,9,18.5,1110
-Geal-chàrn (Drumochter),Cairngorms,917,Beinn Udlamain and Sgàirneach Mhòr,http://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,15.75,783
-Glas Bheinn Mhòr,Fort William,997,Ben Starav and Glas Bheinn Mhòr from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/benstarav.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,8,9,16,1423
-Glas Maol,Cairngorms,1068,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6.5,7.5,19.25,891
-Glas Tulaichean,Perthshire,1051,Glas Tulaichean and Càrn an Rìgh from the Spittal of Glenshee,https://www.walkhighlands.co.uk/perthshire/glas-tulaichean.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,27,1085
-Gleouraich,Fort William,1035,Gleouraich & Spidean Mialach,https://www.walkhighlands.co.uk/fortwilliam/spideanmialach.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,7,12,1130
-Gulvain,Fort William,987,Gulvain via Gleann Fionnlighe,https://www.walkhighlands.co.uk/fortwilliam/gulvain.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,21,1228
-Inaccessible Pinnacle,Isle of Skye,986,Sgùrr Dearg and the approach to the Inn Pinn,https://www.walkhighlands.co.uk/skye/innpinn.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,6,8,8,1065
-Ladhar Bheinn,Fort William,1020,"Ladhar Bheinn circuit via Aonach Sgoilite, from Inverie",https://www.walkhighlands.co.uk/fortwilliam/ladhar-bheinn.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,9,12,22.5,1399
-Lochnagar,Cairngorms,1156,Lochnagar from Spittal of Glenmuick,https://www.walkhighlands.co.uk/cairngorms/lochnagar.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,6,7,19,930
-Luinne Bheinn,Fort William,939,Luinne Bheinn and Meall Buidhe from Inverie,https://www.walkhighlands.co.uk/fortwilliam/luinne-bheinn.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,11,13,27,1586
-Lurg Mhòr,Torridon,986,"Lurg Mhòr and Bidein a' Choire Sheasgaich, from Attadale via Bendronaig Lodge",https://www.walkhighlands.co.uk/torridon/bideinachoiresheasgaich.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,16,16,38,1530
-Màm Sodhail,Loch Ness,1181,"Càrn Eige, Màm Sodhail and Beinn Fhionnlaidh from Glen Affric",https://www.walkhighlands.co.uk/lochness/carn-eige.shtml,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,10,13,28,1727
-Maoile Lunndaidh,Torridon,1007,Maoile Lunndaidh from Achnashellach,https://www.walkhighlands.co.uk/torridon/maoilelunndaidh.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,11,26,1005
-Maol Chean-dearg,Torridon,933,Maol Chean-dearg from Coulags,https://www.walkhighlands.co.uk/torridon/Maolcheandearg.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,5,7,14,932
-Maol chinn-dearg,Kintail,981,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,26.75,1818
-Mayar,Angus,928,Driesh and Mayar from Glen Doll,https://www.walkhighlands.co.uk/angus/mayar-driesh.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,4.5,5.5,14.5,835
-Meall a' Bhùiridh,Fort William,1108,Meall a' Bhùiridh and Creise from the White Corries ski centre,https://www.walkhighlands.co.uk/fortwilliam/creise.shtml,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,5,7,10.5,1093
-Meall a' Choire Lèith,Perthshire,926,Meall Corranaich and Meall a' Choire Lèith from the Lairig an Lochain,https://www.walkhighlands.co.uk/perthshire/meall-corranaich.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6,9.5,740
-Meall a' Chrasgaidh,Ullapool,934,Sgùrr nan Clach Geala ridge,https://www.walkhighlands.co.uk/ullapool/sgurrnanclachgeala.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,7,9,18,1153
-Meall Buidhe (Glen Lyon),Perthshire,932,Meall Buidhe from Loch an Dàimh,https://www.walkhighlands.co.uk/perthshire/meall-buidhe.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,2.5,3.5,8.5,551
-Meall Buidhe (Knoydart),Fort William,946,Luinne Bheinn and Meall Buidhe from Inverie,https://www.walkhighlands.co.uk/fortwilliam/luinne-bheinn.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,11,13,27,1586
-Meall Chuaich,Cairngorms,951,Meall Chuaich from near Dalwhinnie,https://www.walkhighlands.co.uk/cairngorms/meall-chuaich.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,4,5,14,614
-Meall Corranaich,Perthshire,1069,Meall Corranaich and Meall a' Choire Lèith from the Lairig an Lochain,https://www.walkhighlands.co.uk/perthshire/meall-corranaich.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,6,9.5,740
-Meall Dearg (Aonach Eagach),Fort William,953,The Aonach Eagach ridge from Glencoe,https://www.walkhighlands.co.uk/fortwilliam/aonacheagach.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,8,9,9.5,1100
-Meall Garbh (Ben Lawers),Perthshire,1118,Circuit of Coire nan Cat,https://www.walkhighlands.co.uk/perthshire/meall-garbh.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,7,8,16.5,1230
-Meall Garbh (Càrn Mairg),Perthshire,968,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,8,17.5,1330
-Meall Ghaordaidh,Perthshire,1039,Meall Ghaordaidh from Glen Lochay,https://www.walkhighlands.co.uk/perthshire/meall-ghaordaidh.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,4,6,9.5,895
-Meall Glas,Loch Lomond,959,Sgiath Chùil and Meall Glas from Glen Dochart,https://www.walkhighlands.co.uk/lochlomond/meall-glas.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,15.5,1182
-Meall Gorm,Ullapool,949,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,24.75,1435
-Meall Greigh,Perthshire,1001,Circuit of Coire nan Cat,https://www.walkhighlands.co.uk/perthshire/meall-garbh.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,7,8,16.5,1230
-Meall na Teanga,Fort William,918,Sròn a' Choire Ghairbh & Meall na Teanga,https://www.walkhighlands.co.uk/fortwilliam/lochlochymunros.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,9,19,1258
-Meall nan Ceapraichean,Ullapool,977,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,9,11,27,1569
-Meall nan Eun,Fort William,928,Stob Coir an Albannaich and Meall nan Eun from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/stobcoiranalbannaich.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,18,1327
-Meall nan Tarmachan,Perthshire,1044,The Tarmachan Ridge,https://www.walkhighlands.co.uk/perthshire/meall-nan-tarmachan.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,5,7,13,783
-Monadh Mòr,Cairngorms,1113,Beinn Bhrotain and Monadh Mòr from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/beinn-bhrotain.shtml,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,9,11,29,1505
-Moruisg,Torridon,928,Moruisg and Sgùrr nan Ceannaichean from Glen Carron,https://www.walkhighlands.co.uk/torridon/Moruisg.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6,7,12,978
-Mount Keen,Angus,939,"Mount Keen from Invermark, Glen Esk",https://www.walkhighlands.co.uk/angus/mount-keen.shtml,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,5,6,17.5,681
-Mullach an Rathain (Liathach),Torridon,1023,"Liathach traverse, Glen Torridon",https://www.walkhighlands.co.uk/torridon/Liathach.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,8,10,11.5,1326
-Mullach Clach a' Bhlàir,Cairngorms,1019,Mullach Clach a' Bhlàir from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/mullach-clach-a-bhlair.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6.5,7.5,21.75,870
-Mullach Coire Mhic Fhearchair,Ullapool,1019,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,12,18,29,2254
-Mullach Fraoch-choire,Kintail,1102,a' Chralaig and Mullach Fraoch Choire from Cluanie,https://www.walkhighlands.co.uk/kintail/Achralaig.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,14.5,1150
-Mullach na Dheiragain,Loch Ness,982,Sgùrr nan Ceathreamhnan Munros from Alltbeithe,https://www.walkhighlands.co.uk/lochness/Ceathreamhnan.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,20,1484
-Mullach nan Coirean,Fort William,939,"Stob Bàn and Mullach nan Coirean from Polldubh, Glen Nevis",https://www.walkhighlands.co.uk/fortwilliam/stobban.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6,8,13,1155
-Na Gruagaichean,Fort William,1056,Binnein Mòr and Na Gruagaichean,https://www.walkhighlands.co.uk/fortwilliam/binneinmor.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,9,14,1336
-Ruadh Stac Mòr,Ullapool,918,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,12,18,29,2254
-Ruadh-stac Mòr (Beinn Eighe),Torridon,1010,Beinn Eighe via Coire Mhic Fhearchair,https://www.walkhighlands.co.uk/torridon/Beinneighe.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,7,9,18,1116
-Sàil Chaorainn,Kintail,1002,Sgùrr nan Conbhairean from Loch Cluanie,https://www.walkhighlands.co.uk/kintail/sgurrnanconbhairean.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,7,8,17.5,1260
-Sàileag,Kintail,956,Sgùrr a Bhealaich Dheirg and the Brothers of Kintail,https://www.walkhighlands.co.uk/kintail/Brothersridge.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,10,1274
-Schiehallion,Perthshire,1083,Schiehallion from the Braes of Foss,https://www.walkhighlands.co.uk/perthshire/schiehallion.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,4,6,10,731
-Seana Bhràigh,Ullapool,926,Seana Bhràigh from Inverlael,https://www.walkhighlands.co.uk/ullapool/seana-bhraigh.shtml,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,9,10,27,1095
-Sgàirneach Mhòr,Cairngorms,991,Beinn Udlamain and Sgàirneach Mhòr from Drumochter Pass,https://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,15.75,783
-Sgiath Chùil,Loch Lomond,921,Sgiath Chùil and Meall Glas from Glen Dochart,https://www.walkhighlands.co.uk/lochlomond/meall-glas.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,15.5,1182
-Sgòr an Lochain Uaine,Cairngorms,1258,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,13,13,36,1820
-Sgòr Gaibhre,Fort William,955,Càrn Dearg and Sgòr Gaibhre from Corrour Station,https://www.walkhighlands.co.uk/fortwilliam/sgor-gaibhre.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,8,21.75,973
-Sgòr Gaoith,Cairngorms,1118,Sgòr Gaoith from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/sgor-gaoith.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,14,913
-Sgòr na h-Ulaidh,Fort William,994,Sgòr na h-Ulaidh and Meall Ligiche from Glen Coe,https://www.walkhighlands.co.uk/fortwilliam/sgornaulaidh.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,7,9,15.5,1292
-Sgòrr Dhearg (Beinn a' Bheithir),Fort William,1024,Beinn a' Bheithir via Schoolhouse Ridge,https://www.walkhighlands.co.uk/fortwilliam/beinnabheithir.shtml,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,7,9,15.5,1387
-Sgòrr Dhònuill (Beinn a' Bheithir),Fort William,1001,Beinn a' Bheithir via Schoolhouse Ridge,https://www.walkhighlands.co.uk/fortwilliam/beinnabheithir.shtml,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,7,9,15.5,1387
-Sgòrr nam Fiannaidh (Aonach Eagach),Fort William,967,The Aonach Eagach ridge from Glencoe,https://www.walkhighlands.co.uk/fortwilliam/aonacheagach.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,8,9,9.5,1100
-Sgòrr Ruadh,Torridon,962,Sgòrr Ruadh from Achnashellach,https://www.walkhighlands.co.uk/torridon/Sgorrruadh.shtml,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,6.5,7,16,931
-Sgùrr a' Bhealaich Dheirg,Kintail,1036,Sgùrr a Bhealaich Dheirg and the Brothers of Kintail,https://www.walkhighlands.co.uk/kintail/Brothersridge.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,10,1274
-Sgùrr a' Chaorachain,Torridon,1053,Sgùrr a' Chaorachain and Sgùrr Chòinnich from Achnashellach,https://www.walkhighlands.co.uk/torridon/Sgurrchoinnich.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,7,8,20.5,1251
-Sgùrr a' Choire Ghlais,Loch Ness,1083,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,10,25,1567
-Sgùrr a' Ghreadaidh,Isle of Skye,973,Sgùrr a Ghreadaidh and Sgùrr a Mhadaidh via An Dorus,https://www.walkhighlands.co.uk/skye/sgurraghreadaidh.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,6,8,9.5,997
-Sgùrr a' Mhadaidh,Isle of Skye,918,Sgùrr a Ghreadaidh and Sgùrr a Mhadaidh via An Dorus,https://www.walkhighlands.co.uk/skye/sgurraghreadaidh.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,6,8,9.5,997
-Sgùrr a' Mhàim,Fort William,1099,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,9,12,16,1676
-Sgùrr a' Mhaoraich,Fort William,1027,Sgùrr a'Mhaoraich from Loch Cuaich,https://www.walkhighlands.co.uk/fortwilliam/sgurramhaoraich.shtml,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,5,7,14,1077
-Sgùrr Alasdair,Isle of Skye,992,Sgùrr Alasdair via the Great Stone Chute,https://www.walkhighlands.co.uk/skye/sgurralasdair.shtml,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6,9.5,992
-Sgùrr an Doire Leathain,Kintail,1010,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,26.75,1818
-Sgùrr an Lochain,Kintail,1004,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,26.75,1818
-Sgùrr Bàn,Ullapool,989,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,12,18,29,2254
-Sgùrr Breac,Ullapool,999,Sgùrr Breac and a' Chailleach from near Braemore,https://www.walkhighlands.co.uk/ullapool/sgurrbreac.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,16,1127
-Sgùrr Chòinnich,Torridon,999,Sgùrr a' Chaorachain and Sgùrr Chòinnich from Achnashellach,https://www.walkhighlands.co.uk/torridon/Sgurrchoinnich.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,7,8,20.5,1251
-Sgùrr Chòinnich Mòr,Fort William,1094,The Grey Corries ridge,https://www.walkhighlands.co.uk/fortwilliam/greycorries.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,9,10,21.5,1544
-Sgùrr Dubh Mòr,Isle of Skye,944,Southern Cuillin and Coire Ghrunnda,https://www.walkhighlands.co.uk/skye/sgurrnaneag.shtml,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,7,11,15,1159
-Sgùrr Èilde Mòr,Fort William,1010,Sgùrr Èilde Mòr and Binnein Beag from Kinlochleven,https://www.walkhighlands.co.uk/fortwilliam/sgurreildemor.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,20,1582
-Sgùrr Fhuar-thuill,Loch Ness,1049,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,10,25,1567
-Sgùrr Fhuaran,Kintail,1067,Five Sisters of Kintail traverse,https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,15,1385
-Sgùrr Fiona (An Teallach),Ullapool,1060,"An Teallach traverse, Dundonnell",https://www.walkhighlands.co.uk/ullapool/anteallach.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,9,10,20,1415
-Sgùrr Mhic Chòinnich,Isle of Skye,948,Sgùrr Mhic Chòinnich from Coire Lagan,https://www.walkhighlands.co.uk/skye/sgurr-mhic-choinnich.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,5,6,11,950
-Sgùrr Mòr,Ullapool,1110,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,24.75,1435
-Sgùrr Mòr (Beinn Alligin),Torridon,986,Beinn Alligin ridge traverse,https://www.walkhighlands.co.uk/torridon/Beinnalligin.shtml,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,7,8,10.5,1190
-Sgùrr Mòr (Loch Cuaich),Fort William,1003,Sgùrr Mòr and Sgùrr an Fhuarain from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurr-mor.shtml,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,9,11,24,1510
-Sgùrr na Banachdich,Isle of Skye,965,Sgùrr na Banachdich via Coire nan Eich,https://www.walkhighlands.co.uk/skye/sgurrnabanachdich.shtml,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,5,7,7.5,936
-Sgùrr na Càrnach,Kintail,1002,Five Sisters of Kintail traverse,https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,15,1385
-Sgùrr na Cìche,Fort William,1040,Sgùrr na Cìche Munros from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurrnaciche.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,10,12,26,1523
-Sgùrr na Ciste Duibhe,Kintail,1027,Five Sisters of Kintail traverse,https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,15,1385
-Sgùrr na Lapaich,Loch Ness,1150,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,11,14,29,1826
-Sgùrr na Ruaidhe,Loch Ness,993,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,10,25,1567
-Sgùrr na Sgìne,Kintail,945,"The Saddle via the Forcan Ridge, and Sgùrr na Sgìne",https://www.walkhighlands.co.uk/kintail/Thesaddle.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,7,9,14,1440
-Sgùrr nan Ceathreamhnan,Loch Ness,1151,Sgùrr nan Ceathreamhnan Munros from Alltbeithe,https://www.walkhighlands.co.uk/lochness/Ceathreamhnan.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,9,11,20,1484
-Sgùrr nan Clach Geala,Ullapool,1093,Sgùrr nan Clach Geala ridge,https://www.walkhighlands.co.uk/ullapool/sgurrnanclachgeala.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,7,9,18,1153
-Sgùrr nan Coireachan (Glen Dessary),Fort William,953,Sgùrr na Cìche Munros from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurrnaciche.shtml,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,10,12,26,1523
-Sgùrr nan Coireachan (Glenfinnan),Fort William,956,Sgùrr Thuilm & Sgùrr nan Coireachan,https://www.walkhighlands.co.uk/fortwilliam/sgurrthuilm.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,9,12,23.5,1428
-Sgùrr nan Conbhairean,Kintail,1109,Sgùrr nan Conbhairean from Loch Cluanie,https://www.walkhighlands.co.uk/kintail/sgurrnanconbhairean.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,7,8,17.5,1260
-Sgùrr nan Each,Ullapool,923,Sgùrr nan Clach Geala ridge,https://www.walkhighlands.co.uk/ullapool/sgurrnanclachgeala.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,7,9,18,1153
-Sgùrr nan Eag,Isle of Skye,924,Southern Cuillin and Coire Ghrunnda,https://www.walkhighlands.co.uk/skye/sgurrnaneag.shtml,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,7,11,15,1159
-Sgùrr nan Gillean,Isle of Skye,964,Sgùrr nan Gillean via the Southeast Ridge (Tourist Route),https://www.walkhighlands.co.uk/skye/sgurrnangillean.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,5,7,12,985
-Sgùrr Thuilm,Fort William,963,Sgùrr Thuilm & Sgùrr nan Coireachan,https://www.walkhighlands.co.uk/fortwilliam/sgurrthuilm.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,9,12,23.5,1428
-Slioch,Torridon,981,Slioch from Kinlochewe,https://www.walkhighlands.co.uk/torridon/Slioch.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,9,19,1144
-Spidean a' Choire Lèith (Liathach),Torridon,1055,"Liathach traverse, Glen Torridon",https://www.walkhighlands.co.uk/torridon/Liathach.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,8,10,11.5,1326
-Spidean Coire nan Clach (Beinn Eighe),Torridon,993,Beinn Eighe via Coire Mhic Fhearchair,https://www.walkhighlands.co.uk/torridon/Beinneighe.shtml,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,7,9,18,1116
-Spidean Mialach,Fort William,996,Gleouraich & Spidean Mialach,https://www.walkhighlands.co.uk/fortwilliam/spideanmialach.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,5,7,12,1130
-Sròn a' Choire Ghairbh,Fort William,937,Sròn a' Choire Ghairbh & Meall na Teanga,https://www.walkhighlands.co.uk/fortwilliam/lochlochymunros.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,7,9,19,1258
-Stob a' Choire Mheadhoin,Fort William,1106,The Easains ridge from near Fersit,https://www.walkhighlands.co.uk/fortwilliam/easains.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,8,16.5,1172
-Stob a' Choire Odhair,Argyll,945,Stob Ghabhar & Stob a' Choire Odhair from Victoria Bridge,https://www.walkhighlands.co.uk/argyll/stob-ghabhar.shtml,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,8,9,16,1239
-Stob Bàn (Grey Corries),Fort William,977,Stob Bàn (Grey Corries) from above Corriechoille,https://www.walkhighlands.co.uk/fortwilliam/stob-ban-grey-corries.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,18,852
-Stob Bàn (Mamores),Fort William,999,"Stob Bàn and Mullach nan Coirean from Polldubh, Glen Nevis",https://www.walkhighlands.co.uk/fortwilliam/stobban.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6,8,13,1155
-Stob Binnein,Loch Lomond,1165,Ben More and Stob Binnein from Benmore Farm,https://www.walkhighlands.co.uk/lochlomond/ben-more.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,8,12,1335
-Stob Choire Claurigh,Fort William,1177,The Grey Corries ridge,https://www.walkhighlands.co.uk/fortwilliam/greycorries.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,9,10,21.5,1544
-Stob Coir an Albannaich,Fort William,1044,Stob Coir an Albannaich and Meall nan Eun from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/stobcoiranalbannaich.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,18,1327
-Stob Coire a' Chàirn,Fort William,981,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,9,12,16,1676
-Stob Coire an Laoigh,Fort William,1116,The Grey Corries ridge,https://www.walkhighlands.co.uk/fortwilliam/greycorries.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,9,10,21.5,1544
-Stob Coire Easain,Fort William,1115,The Easains ridge from near Fersit,https://www.walkhighlands.co.uk/fortwilliam/easains.shtml,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,7,8,16.5,1172
-Stob Coire Raineach (Buachaille Etive Beag),Fort William,925,Buachaille Etive Beag,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivebeag.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6,8,900
-Stob Coire Sgreamhach,Fort William,1072,Bidean nam Bian range via Coire nan Lochain and the Lost Valley,https://www.walkhighlands.co.uk/fortwilliam/bideannambian.shtml,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,7,9,11,1316
-Stob Coire Sgriodain,Fort William,979,Chno Dearg and Stob Coire Sgriodain from Fersit,https://www.walkhighlands.co.uk/fortwilliam/chnodearg.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,6,7,13.5,915
-Stob Daimh,Argyll,998,Ben Cruachan and Stob Daimh circuit,https://www.walkhighlands.co.uk/argyll/ben-cruachan.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,8,9,13.75,1376
-Stob Dearg (Buachaille Etive Mòr),Fort William,1021,Buachaille Etive Mòr ridge from Altnafeadh,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivemor.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,7,9,13,1110
-Stob Dubh (Buachaille Etive Beag),Fort William,956,Buachaille Etive Beag,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivebeag.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6,8,900
-Stob Ghabhar,Argyll,1090,Stob Ghabhar & Stob a' Choire Odhair from Victoria Bridge,https://www.walkhighlands.co.uk/argyll/stob-ghabhar.shtml,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,8,9,16,1239
-Stob na Bròige (Buachaille Etive Mòr),Fort William,956,Buachaille Etive Mòr ridge from Altnafeadh,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivemor.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,7,9,13,1110
-Stob Poite Coire Àrdair,Fort William,1054,Creag Meagaidh Munros circuit,https://www.walkhighlands.co.uk/fortwilliam/creagmeagaidh.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,8,10,21,1080
-Stùc a' Chròin,Perthshire,975,Ben Vorlich and Stùc a' Chròin from Ardvorlich,https://www.walkhighlands.co.uk/perthshire/ben-vorlich.shtml,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,6,7,14.5,1145
-Stùcd an Lochain,Perthshire,960,Stuchd an Lochain from Loch an Dàimh,https://www.walkhighlands.co.uk/perthshire/stuchd-an-lochain.shtml,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,3.5,4.5,8.5,726
-The Cairnwell,Cairngorms,933,The Cairnwell Munros,https://www.walkhighlands.co.uk/cairngorms/cairnwell.shtml,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,5,6,13,595
-The Devil's Point,Cairngorms,1004,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,13,13,36,1820
-The Saddle,Kintail,1010,"The Saddle via the Forcan Ridge, and Sgùrr na Sgìne",https://www.walkhighlands.co.uk/kintail/Thesaddle.shtml,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,7,9,14,1440
-Toll Creagach,Loch Ness,1054,Toll Creagach and Tom a' Chòinich from Glen Affric,https://www.walkhighlands.co.uk/lochness/Tollcreagach.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,6,8,16.5,1096
-Tolmount,Cairngorms,958,Tolmount and Tom Buidhe via Loch Callater,https://www.walkhighlands.co.uk/cairngorms/tolmount.shtml,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,8,10,26.5,841
-Tom a' Chòinich,Loch Ness,1112,Toll Creagach and Tom a' Chòinich from Glen Affric,https://www.walkhighlands.co.uk/lochness/Tollcreagach.shtml,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,6,8,16.5,1096
-Tom Buidhe,Cairngorms,957,Tolmount and Tom Buidhe via Loch Callater,https://www.walkhighlands.co.uk/cairngorms/tolmount.shtml,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,8,10,26.5,841
-Tom na Gruagaich (Beinn Alligin),Torridon,922,Beinn Alligin ridge traverse,https://www.walkhighlands.co.uk/torridon/Beinnalligin.shtml,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,7,8,10.5,1190
+munro,region,height,first_route_title,first_route_url,time_hours_min,time_hours_max,distance_km,ascent,scramble,exposed,spate,bog,river,arete,toilet,bothy,pub,car_park,deer_fence
+A' Bhuidheanach Bheag,Cairngorms,936,Càrn na Caim and A' Bhuidheanach Bheag from Drumochter,https://www.walkhighlands.co.uk/cairngorms/carn-na-caim.shtml,5,6,19,824,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+A' Chailleach (Fannichs),Ullapool,997,Sgùrr Breac and a' Chailleach from near Braemore,https://www.walkhighlands.co.uk/ullapool/sgurrbreac.shtml,6,8,16,1127,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+A' Chailleach (Monadhliath),Cairngorms,930,"The Monadhliath Munros: a' Chailleach, Càrn Sgulain and Càrn Dearg from Glen Banchor",https://www.walkhighlands.co.uk/cairngorms/monadhliath.shtml,8,10,24.5,946,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+A' Chralaig,Kintail,1120,a' Chralaig and Mullach Fraoch Choire from Cluanie,https://www.walkhighlands.co.uk/kintail/Achralaig.shtml,6,8,14.5,1150,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+A' Ghlas-bheinn,Kintail,918,a' Ghlas Bheinn and the Falls of Glomach from Morvich,https://www.walkhighlands.co.uk/kintail/Aghlasbheinn.shtml,7,9,21,1196,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+A' Mhaighdean,Ullapool,967,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,12,18,29,2254,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+A' Mharconaich,Cairngorms,975,Beinn Udlamain and Sgàirneach Mhòr,http://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,6,7,15.75,783,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Am Basteir,Isle of Skye,934,Am Basteir via the Bealach Basteir from Sligachan,https://www.walkhighlands.co.uk/skye/ambasteir.shtml,6,7,14,1175,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Am Bodach,Fort William,1032,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,9,12,16,1676,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Am Faochagach,Ullapool,954,Am Faochagach from the Dirrie Mòr,https://www.walkhighlands.co.uk/ullapool/amfaochagach.shtml,5,6,14,700,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+An Caisteal,Loch Lomond,995,An Caisteal and Beinn a' Chròin from Glen Falloch,https://www.walkhighlands.co.uk/lochlomond/an-caisteal.shtml,5.5,7,14,1045,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+An Coileachan,Ullapool,923,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,9,11,24.75,1435,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+An Gearanach,Fort William,982,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,9,12,16,1676,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+An Riabhachan,Loch Ness,1129,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,11,14,29.2,1820,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+An Sgarsoch,Cairngorms,1006,An Scarsoch and Càrn an Fhìdhleir from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/an-sgarsoch.shtml,11,12,42,1059,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+An Socach (Affric),Loch Ness,921,Sgùrr nan Ceathreamhnan Munros from Alltbeithe,https://www.walkhighlands.co.uk/lochness/Ceathreamhnan.shtml,9,11,20,1484,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE
+An Socach (Braemar),Cairngorms,944,An Socach from Glen Clunie,https://www.walkhighlands.co.uk/cairngorms/an-socach.shtml,5,6,15.75,655,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+An Socach (Mullardoch),Loch Ness,1069,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,11,14,29.2,1820,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+An Stùc,Perthshire,1117,Circuit of Coire nan Cat,https://www.walkhighlands.co.uk/perthshire/meall-garbh.shtml,7,8,16.5,1230,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Aonach Air Chrith,Kintail,1021,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,9,11,26.75,1818,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Aonach Beag (Alder),Cairngorms,1116,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,8,9,18.5,1110,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Aonach Beag (Nevis Range),Fort William,1234,Aonach Beag and Aonach Mòr from Glen Nevis,https://www.walkhighlands.co.uk/fortwilliam/aonachmor.shtml,8,10,16.5,1430,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Aonach Meadhoin,Kintail,1001,Sgùrr a Bhealaich Dheirg and the Brothers of Kintail,https://www.walkhighlands.co.uk/kintail/Brothersridge.shtml,6,8,10,1274,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Aonach Mòr,Fort William,1221,Aonach Beag and Aonach Mòr from Glen Nevis,https://www.walkhighlands.co.uk/fortwilliam/aonachmor.shtml,8,10,16.5,1430,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn a' Bhùird,Cairngorms,1197,Ben Avon,http://www.walkhighlands.co.uk/cairngorms/ben-avon.shtml,8,10,33.5,1000,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+Beinn a' Chaorainn (Cairngorms),Cairngorms,1082,Beinn a' Chaorainn and Beinn Bhreac from Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/beinn-a-chaorainn.shtml,8,10,29,878,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn a' Chaorainn (Glen Spean),Fort William,1050,Beinn a' Chaorainn & Beinn Teallach from Glen Spean,https://www.walkhighlands.co.uk/fortwilliam/beinnachaorainn.shtml,6,8,16,1172,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Beinn a' Chlachair,Fort William,1087,"Beinn a' Chlachair, Geal Chàrn & Creag Pitridh from Loch Laggan",https://www.walkhighlands.co.uk/fortwilliam/beinn-a-chlachair.shtml,8,10,26,1275,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn a' Chlèibh,Argyll,916,Ben Lui and Beinn a' Chlèibh from Glen Lochay,https://www.walkhighlands.co.uk/argyll/ben-lui.shtml,5,7,10,1078,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn a' Chochuill,Argyll,980,Beinn Eunaich and Beinn a' Chochuill from near Dalmally,https://www.walkhighlands.co.uk/argyll/beinn-eunaich.shtml,5.5,6.5,13.5,1221,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn a' Chreachain,Argyll,1081,Beinn Achaladair and Beinn a' Chreachain from Achaladair Farm,https://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,7,9,21.5,1266,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn a' Chròin,Loch Lomond,942,An Caisteal and Beinn a' Chròin from Glen Falloch,https://www.walkhighlands.co.uk/lochlomond/an-caisteal.shtml,5.5,7,14,1045,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Achaladair,Argyll,1038,Beinn Achaladair and Beinn a' Chreachain from Achaladair Farm,https://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,7,9,21.5,1266,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn an Dòthaidh,Argyll,1004,Beinn Achaladair and Beinn a' Chreachain,http://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,7,9,21.5,1266,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn Bheoil,Cairngorms,1019,"Ben Alder via the Long Leachas, with Beinn Bheoil",https://www.walkhighlands.co.uk/cairngorms/ben-alder.shtml,7,8,17,1021,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Beinn Bhreac,Cairngorms,931,Beinn a' Chaorainn and Beinn Bhreac from Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/beinn-a-chaorainn.shtml,8,10,29,878,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Bhrotain,Cairngorms,1157,Beinn Bhrotain and Monadh Mòr from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/beinn-bhrotain.shtml,9,11,29,1505,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Bhuidhe,Argyll,948,Beinn Bhuidhe via Glen Fyne,https://www.walkhighlands.co.uk/argyll/beinn-bhuidhe.shtml,7,8,21.5,955,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn Chabhair,Loch Lomond,933,Beinn Chabhair from Inverarnan,https://www.walkhighlands.co.uk/lochlomond/beinn-chabhair.shtml,5,6.5,13,948,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn Dearg (Blair Atholl),Perthshire,1008,"Beinn Dearg from the Old Bridge of Tilt, Blair Atholl",https://www.walkhighlands.co.uk/perthshire/beinn-dearg.shtml,7,9,29,990,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE
+Beinn Dearg (Ullapool),Ullapool,1084,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,9,11,27,1569,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Dòrain,Argyll,1076,Beinn Achaladair and Beinn a' Chreachain,http://www.walkhighlands.co.uk/argyll/beinn-achaladair.shtml,7,9,21.5,1266,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn Dubhchraig,Argyll,978,Ben Oss and Beinn Dubhchraig from Dalrigh,https://www.walkhighlands.co.uk/argyll/ben-oss.shtml,7,8,17,1230,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Èibhinn,Cairngorms,1102,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,8,9,18.5,1110,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Beinn Eunaich,Argyll,989,Beinn Eunaich and Beinn a' Chochuill from near Dalmally,https://www.walkhighlands.co.uk/argyll/beinn-eunaich.shtml,5.5,6.5,13.5,1221,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Fhada,Kintail,1032,Beinn Fhada from Morvich,https://www.walkhighlands.co.uk/kintail/Beinnfhada.shtml,6,7,16.75,1234,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Fhionnlaidh,Argyll,959,"Beinn Fhionnlaidh from Elleric, Glen Creran",https://www.walkhighlands.co.uk/argyll/beinn-fhionnlaidh.shtml,5,6,14.5,980,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Fhionnlaidh (Càrn Eige),Loch Ness,1005,"Càrn Eige, Mam Sodhail and Beinn Fhionnlaidh from Glen Affric",https://www.walkhighlands.co.uk/lochness/carn-eige.shtml,10,13,28,1727,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Ghlas,Perthshire,1103,Ben Lawers and Beinn Ghlas,https://www.walkhighlands.co.uk/perthshire/ben-lawers.shtml,4,6,11,942,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Heasgarnich,Perthshire,1078,Beinn Heasgarnich and Creag Mhòr from Glen Lochay,https://www.walkhighlands.co.uk/perthshire/beinn-heasgarnich.shtml,9,11,25.75,1470,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Beinn Ìme,Loch Lomond,1011,Beinn Ìme and Beinn Narnain from Arrochar,https://www.walkhighlands.co.uk/lochlomond/beinn-ime.shtml,6,7,13.5,1325,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Iutharn Mhòr,Cairngorms,1045,Beinn Iutharn Mhòr and Càrn Bhac from Inverey,https://www.walkhighlands.co.uk/cairngorms/beinn-iutharn-mhor.shtml,9,10,32,983,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Liath Mhòr,Torridon,926,Beinn Liath Mhòr from Achnashellach,https://www.walkhighlands.co.uk/torridon/Beinnliathmhor.shtml,7,8,15.25,1054,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Liath Mhòr Fannaich,Ullapool,954,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,9,11,24.75,1435,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Mhanach,Argyll,953,Beinn Mhanach via the Auch Gleann,https://www.walkhighlands.co.uk/argyll/beinn-mhanach.shtml,6.5,7.5,23.5,920,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Mheadhoin,Cairngorms,1182,Beinn Mheadhoin from Coire Cas via the Shelter Stone,https://www.walkhighlands.co.uk/cairngorms/beinn-mheadhoin.shtml,8,9,19,1560,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn na Lap,Fort William,937,Beinn na Lap from Corrour Station,https://www.walkhighlands.co.uk/fortwilliam/beinn-na-lap.shtml,3,5,10,562,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn nan Aighenan,Fort William,960,Beinn nan Aighenan from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/beinn-nan-aighenan.shtml,7,9,15.75,1320,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Narnain,Loch Lomond,926,Beinn Ìme and Beinn Narnain from Arrochar,https://www.walkhighlands.co.uk/lochlomond/beinn-ime.shtml,6,7,13.5,1325,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Sgritheall,Kintail,974,Beinn Sgritheall from Arnisdale,https://www.walkhighlands.co.uk/kintail/Beinnsgritheall.shtml,4,6,10,1095,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Sgulaird,Argyll,937,Beinn Sgulaird from Loch Creran,https://www.walkhighlands.co.uk/argyll/beinn-sgulaird.shtml,6,8,13,1240,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Beinn Tarsuinn,Ullapool,937,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,12,18,29,2254,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Beinn Teallach,Fort William,915,Beinn a' Chaorainn & Beinn Teallach from Glen Spean,https://www.walkhighlands.co.uk/fortwilliam/beinnachaorainn.shtml,6,8,16,1172,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Beinn Tulaichean,Loch Lomond,946,Cruach Àrdrain and Beinn Tulaichean from Inverlochlarig,https://www.walkhighlands.co.uk/lochlomond/cruach-ardrain.shtml,6,7,12.5,1019,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Beinn Udlamain,Cairngorms,1010,Beinn Udlamain and Sgàirneach Mhòr from Drumochter Pass,https://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,6,7,15.75,783,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ben Alder,Cairngorms,1148,"Ben Alder via the Long Leachas, with Beinn Bheòil",https://www.walkhighlands.co.uk/cairngorms/ben-alder.shtml,7,8,17,1021,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Ben Avon,Cairngorms,1171,Ben Avon via Gleann an-Slugain (Deeside),https://www.walkhighlands.co.uk/cairngorms/ben-avon.shtml,8,10,33.5,1000,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+Ben Challum,Argyll,1025,Ben Challum from Kirkton Farm,https://www.walkhighlands.co.uk/argyll/ben-challum.shtml,5,7,11.5,910,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Ben Chonzie,Perthshire,931,Ben Chonzie from Glen Lednock,https://www.walkhighlands.co.uk/perthshire/ben-chonzie.shtml,4,5,12.5,712,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ben Cruachan,Argyll,1126,Ben Cruachan and Stob Dàimh circuit,https://www.walkhighlands.co.uk/argyll/ben-cruachan.shtml,8,9,13.75,1376,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Ben Hope,Sutherland,927,Ben Hope from Strathmore,https://www.walkhighlands.co.uk/sutherland/ben-hope.shtml,4,6,7.5,946,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Klibreck,Sutherland,962,Ben Klibreck from Strath Vagastie,https://www.walkhighlands.co.uk/sutherland/ben-klibreck.shtml,5,7,14.25,930,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ben Lawers,Perthshire,1214,Ben Lawers and Beinn Ghlas,https://www.walkhighlands.co.uk/perthshire/ben-lawers.shtml,4,6,11,942,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Lomond,Loch Lomond,974,Ben Lomond from Rowardennan,https://www.walkhighlands.co.uk/lochlomond/ben-lomond.shtml,4.5,5.5,12,990,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Lui,Argyll,1130,Ben Lui and Beinn a' Chlèibh from Glen Lochay,https://www.walkhighlands.co.uk/argyll/ben-lui.shtml,5,7,10,1078,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Ben Macdui,Cairngorms,1309,Ben Macdui and Cairngorm from the ski centre,https://www.walkhighlands.co.uk/cairngorms/macdui-cairngorm.shtml,6,8,17.5,932,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben More,Loch Lomond,1174,Ben More and Stob Binnein from Benmore Farm,https://www.walkhighlands.co.uk/lochlomond/ben-more.shtml,6,8,12,1335,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ben More (Mull),Isle of Mull,966,Ben More from Dhiseig,https://www.walkhighlands.co.uk/mull/ben-more-mull.shtml,5,6.5,9.25,945,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ben More Assynt,Ullapool,998,Ben More Assynt and Conival from Inchnadamph,https://www.walkhighlands.co.uk/ullapool/benmoreassynt.shtml,8.5,10,17.25,1077,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Nevis,Fort William,1345,Ben Nevis via the Mountain Path,https://www.walkhighlands.co.uk/fortwilliam/bennevis.shtml,7,9,17,1352,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Oss,Argyll,1029,Ben Oss and Beinn Dubhchraig from Dalrigh,https://www.walkhighlands.co.uk/argyll/ben-oss.shtml,7,8,17,1230,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Starav,Fort William,1078,Ben Starav and Glas Bheinn Mhòr from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/benstarav.shtml,8,9,16,1423,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ben Vane,Loch Lomond,915,Ben Vane from Inveruglas,https://www.walkhighlands.co.uk/lochlomond/ben-vane.shtml,4.5,6.5,11,930,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Vorlich (Loch Earn),Perthshire,985,Ben Vorlich and Stùc a' Chròin from Ardvorlich,https://www.walkhighlands.co.uk/perthshire/ben-vorlich.shtml,6,7,14.5,1145,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ben Vorlich (Loch Lomond),Loch Lomond,943,Ben Vorlich from Inveruglas via Loch Sloy,https://www.walkhighlands.co.uk/lochlomond/ben-vorlich-lomond.shtml,5,6.5,13.5,945,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Ben Wyvis,Loch Ness,1046,Ben Wyvis from near Garbat,https://www.walkhighlands.co.uk/lochness/Benwyvis.shtml,4.5,5.5,14,935,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Bidean nam Bian,Fort William,1150,Bidean nam Bian via Coire nan Lochain and the Lost Valley,https://www.walkhighlands.co.uk/fortwilliam/bideannambian.shtml,7,9,11,1316,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Bidein a' Choire Sheasgaich,Torridon,945,"Lurg Mhòr and Bidein a' Choire Sheasgaich, from Attadale via Bendronaig Lodge",https://www.walkhighlands.co.uk/torridon/bideinachoiresheasgaich.shtml,16,16,38,1530,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+Bidein a' Ghlas Thuill (An Teallach),Ullapool,1062,"An Teallach traverse, Dundonnell",https://www.walkhighlands.co.uk/ullapool/anteallach.shtml,9,10,20,1415,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Binnein Beag,Fort William,943,Sgùrr Èilde Mòr and Binnein Beag from Kinlochleven,https://www.walkhighlands.co.uk/fortwilliam/sgurreildemor.shtml,9,11,20,1582,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Binnein Mòr,Fort William,1130,Binnein Mòr and Na Gruagaichean,https://www.walkhighlands.co.uk/fortwilliam/binneinmor.shtml,7,9,14,1336,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Blà Bheinn,Isle of Skye,928,Blà Bheinn via the normal route from Loch Slapin,https://www.walkhighlands.co.uk/skye/blabheinn.shtml,5,6,8,990,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Braeriach,Cairngorms,1296,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,13,13,36,1820,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Bràigh Coire Chruinn-bhalgain,Perthshire,1070,Beinn a' Ghlò from Loch Moraig,https://www.walkhighlands.co.uk/perthshire/beinn-a-ghlo.shtml,8,10,22,1239,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Broad Cairn,Cairngorms,998,"Creag an Dubh Loch and Broad Cairn, Glenmuick",https://www.walkhighlands.co.uk/cairngorms/creag-an-dubh-loch.shtml,7,8,23,813,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Bruach na Frìthe,Isle of Skye,958,Am Basteir,https://www.walkhighlands.co.uk/skye/ambasteir.shtml,6,7,14,1175,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Bynack More,Cairngorms,1090,Bynack More from Glenmore Lodge,https://www.walkhighlands.co.uk/cairngorms/bynackmore.shtml,6.5,7.5,22.5,756,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Cairn Bannoch,Cairngorms,1012,Creag an Dubh-loch,https://www.walkhighlands.co.uk/cairngorms/creag-an-dubh-loch.shtml,7,8,23,813,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Cairn Gorm,Cairngorms,1245,Ben Macdui and Cairngorm from the ski centre,https://www.walkhighlands.co.uk/cairngorms/macdui-cairngorm.shtml,6,8,17.5,932,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Cairn of Claise,Cairngorms,1064,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,6.5,7.5,19.25,891,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Cairn Toul,Cairngorms,1291,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,13,13,36,1820,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Càrn a' Chlamain,Perthshire,963,Càrn a' Chlamain from Glen Tilt,https://www.walkhighlands.co.uk/perthshire/carn-a-chlamain.shtml,7,9,26,930,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn a' Choire Bhòidheach,Cairngorms,1110,"White Mounth Munros, Glen Muick",https://www.walkhighlands.co.uk/cairngorms/white-mounth.shtml,9,11,29,1228,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Càrn a' Ghèoidh,Cairngorms,975,The Cairnwell Munros,https://www.walkhighlands.co.uk/cairngorms/cairnwell.shtml,5,6,13,595,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn a' Mhàim,Cairngorms,1037,Càrn a'Mhàim from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/carn-a-mhaim.shtml,6,7,22.5,648,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn an Fhìdhleir (Càrn Ealar),Cairngorms,994,An Scarsoch and Càrn an Fhìdhleir from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/an-sgarsoch.shtml,11,12,42,1059,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Càrn an Rìgh,Perthshire,1029,Glas Tulaichean and Càrn an Rìgh from the Spittal of Glenshee,https://www.walkhighlands.co.uk/perthshire/glas-tulaichean.shtml,8,10,27,1085,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Càrn an t-Sagairt Mòr,Cairngorms,1047,Lochnagar,https://www.walkhighlands.co.uk/cairngorms/lochnagar.shtml,6,7,19,930,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn an Tuirc,Cairngorms,1019,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,6.5,7.5,19.25,891,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Càrn Aosda,Cairngorms,915,The Cairnwell Munros,https://www.walkhighlands.co.uk/cairngorms/cairnwell.shtml,5,6,13,595,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn Bhac,Cairngorms,946,Beinn Iutharn Mhòr and Càrn Bhac from Inverey,https://www.walkhighlands.co.uk/cairngorms/beinn-iutharn-mhor.shtml,9,10,32,983,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn Dearg (Corrour),Fort William,941,Càrn Dearg and Sgòr Gaibhre from Corrour Station,https://www.walkhighlands.co.uk/fortwilliam/sgor-gaibhre.shtml,7,8,21.75,973,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Càrn Dearg (Loch Pattack),Cairngorms,1034,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,8,9,18.5,1110,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Càrn Dearg (Monadhliath),Cairngorms,945,"The Monadhliath Munros: a' Chailleach, Càrn Sgulain and Càrn Dearg from Glen Banchor",https://www.walkhighlands.co.uk/cairngorms/monadhliath.shtml,8,10,24.5,946,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Càrn Eige,Loch Ness,1183,"Càrn Eige, Mam Sodhail and Beinn Fhionnlaidh from Glen Affric",https://www.walkhighlands.co.uk/lochness/carn-eige.shtml,10,13,28,1727,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn Ghluasaid,Kintail,957,Sgùrr nan Conbhairean from Loch Cluanie,https://www.walkhighlands.co.uk/kintail/sgurrnanconbhairean.shtml,7,8,17.5,1260,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Càrn Gorm,Perthshire,1029,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,7,8,17.5,1330,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Càrn Liath (Beinn a' Ghlò),Perthshire,975,Beinn a' Ghlò from Loch Moraig,https://www.walkhighlands.co.uk/perthshire/beinn-a-ghlo.shtml,8,10,22,1239,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Càrn Liath (Creag Meagaidh),Fort William,1006,Creag Meagaidh Munros circuit,https://www.walkhighlands.co.uk/fortwilliam/creagmeagaidh.shtml,8,10,21,1080,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Càrn Mairg,Perthshire,1042,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,7,8,17.5,1330,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Càrn Mòr Dearg,Fort William,1220,Ben Nevis via the Càrn Mòr Dearg Arête,https://www.walkhighlands.co.uk/fortwilliam/carnmordeargarete.shtml,10,11,17.5,1506,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+Càrn na Caim,Cairngorms,941,Càrn na Caim and A' Bhuidheanach Bheag from Drumochter,https://www.walkhighlands.co.uk/cairngorms/carn-na-caim.shtml,5,6,19,824,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Càrn nan Gabhar,Perthshire,1121,Beinn a' Ghlò from Loch Moraig,https://www.walkhighlands.co.uk/perthshire/beinn-a-ghlo.shtml,8,10,22,1239,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Càrn nan Gobhar (Loch Mullardoch),Loch Ness,992,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,11,14,29.2,1820,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn nan Gobhar (Strathfarrar),Loch Ness,992,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,7,10,25,1567,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Càrn Sgulain,Cairngorms,920,"The Monadhliath Munros: a' Chailleach, Càrn Sgulain and Càrn Dearg from Glen Banchor",https://www.walkhighlands.co.uk/cairngorms/monadhliath.shtml,8,10,24.5,946,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Chno Dearg,Fort William,1046,Chno Dearg and Stob Coire Sgriodain from Fersit,https://www.walkhighlands.co.uk/fortwilliam/chnodearg.shtml,6,7,13.5,915,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ciste Dhubh,Kintail,979,Ciste Dhubh and Am Bathach from the Cluanie Inn,https://www.walkhighlands.co.uk/kintail/Cistedhubh.shtml,5,7,12.5,1040,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Cona' Mheall,Ullapool,978,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,9,11,27,1569,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Conival,Ullapool,987,Ben More Assynt and Conival from Inchnadamph,https://www.walkhighlands.co.uk/ullapool/benmoreassynt.shtml,8.5,10,17.25,1077,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Creag a'Mhàim,Kintail,947,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,9,11,26.75,1818,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Creag Leacach,Cairngorms,987,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,6.5,7.5,19.25,891,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Creag Meagaidh,Fort William,1128,Creag Meagaidh Munros circuit,https://www.walkhighlands.co.uk/fortwilliam/creagmeagaidh.shtml,8,10,21,1080,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Creag Mhòr (Glen Lochay),Perthshire,1047,Beinn Heasgarnich and Creag Mhòr from Glen Lochay,https://www.walkhighlands.co.uk/perthshire/beinn-heasgarnich.shtml,9,11,25.75,1470,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Creag Mhòr (Meall na Aighean),Perthshire,981,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,7,8,17.5,1330,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Creag nan Dàmh,Kintail,918,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,9,11,26.75,1818,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Creag Pitridh,Fort William,924,"Beinn a' Chlachair, Geal Chàrn & Creag Pitridh from Loch Laggan",https://www.walkhighlands.co.uk/fortwilliam/beinn-a-chlachair.shtml,8,10,26,1275,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Creise,Fort William,1100,Meall a'Bhùiridh and Creise from the White Corries ski centre,https://www.walkhighlands.co.uk/fortwilliam/creise.shtml,5,7,10.5,1093,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Cruach Àrdrain,Loch Lomond,1046,Cruach Àrdrain and Beinn Tulaichean from Inverlochlarig,https://www.walkhighlands.co.uk/lochlomond/cruach-ardrain.shtml,6,7,12.5,1019,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Derry Cairngorm,Cairngorms,1155,Ben Macdui and Derry Cairngorm from the Linn of Dee,https://www.walkhighlands.co.uk/cairngorms/ben-macdui.shtml,9,11,29,1068,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE
+Driesh,Angus,947,Driesh and Mayar from Glen Doll,https://www.walkhighlands.co.uk/angus/mayar-driesh.shtml,4.5,5.5,14.5,835,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Druim Shionnach,Kintail,987,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,9,11,26.75,1818,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Eididh nan Clach Geala,Ullapool,927,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,9,11,27,1569,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Fionn Bheinn,Torridon,933,Fionn Bheinn from Achnasheen,https://www.walkhighlands.co.uk/torridon/Fionnbheinn.shtml,5,6,12,807,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Gairich,Fort William,919,Sgùrr Mòr,https://www.walkhighlands.co.uk/fortwilliam/sgurr-mor.shtml,9,11,24,1510,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Garbh Chioch Mhòr,Fort William,1013,Sgùrr na Cìche Munros from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurrnaciche.shtml,10,12,26,1523,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Geal chàrn (Laggan),Fort William,1049,"Beinn a' Chlachair, Geal Chàrn & Creag Pitridh from Loch Laggan",https://www.walkhighlands.co.uk/fortwilliam/beinn-a-chlachair.shtml,8,10,26,1275,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Geal Chàrn (Monadhliath),Cairngorms,926,Geal Chàrn from Garva Bridge,https://www.walkhighlands.co.uk/cairngorms/geal-charn.shtml,5,6,12.5,625,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Geal-chàrn (Alder),Cairngorms,1132,"Aonach Beag, Geal Chàrn, Beinn Èibhinn and Càrn Dearg from Culra",https://www.walkhighlands.co.uk/cairngorms/aonach-beag.shtml,8,9,18.5,1110,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Geal-chàrn (Drumochter),Cairngorms,917,Beinn Udlamain and Sgàirneach Mhòr,http://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,6,7,15.75,783,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Glas Bheinn Mhòr,Fort William,997,Ben Starav and Glas Bheinn Mhòr from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/benstarav.shtml,8,9,16,1423,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Glas Maol,Cairngorms,1068,Glas Maol Munros from the Cairnwell Pass,https://www.walkhighlands.co.uk/cairngorms/glas-maol.shtml,6.5,7.5,19.25,891,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Glas Tulaichean,Perthshire,1051,Glas Tulaichean and Càrn an Rìgh from the Spittal of Glenshee,https://www.walkhighlands.co.uk/perthshire/glas-tulaichean.shtml,8,10,27,1085,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Gleouraich,Fort William,1035,Gleouraich & Spidean Mialach,https://www.walkhighlands.co.uk/fortwilliam/spideanmialach.shtml,5,7,12,1130,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Gulvain,Fort William,987,Gulvain via Gleann Fionnlighe,https://www.walkhighlands.co.uk/fortwilliam/gulvain.shtml,7,9,21,1228,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Inaccessible Pinnacle,Isle of Skye,986,Sgùrr Dearg and the approach to the Inn Pinn,https://www.walkhighlands.co.uk/skye/innpinn.shtml,6,8,8,1065,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Ladhar Bheinn,Fort William,1020,"Ladhar Bheinn circuit via Aonach Sgoilite, from Inverie",https://www.walkhighlands.co.uk/fortwilliam/ladhar-bheinn.shtml,9,12,22.5,1399,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+Lochnagar,Cairngorms,1156,Lochnagar from Spittal of Glenmuick,https://www.walkhighlands.co.uk/cairngorms/lochnagar.shtml,6,7,19,930,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Luinne Bheinn,Fort William,939,Luinne Bheinn and Meall Buidhe from Inverie,https://www.walkhighlands.co.uk/fortwilliam/luinne-bheinn.shtml,11,13,27,1586,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE
+Lurg Mhòr,Torridon,986,"Lurg Mhòr and Bidein a' Choire Sheasgaich, from Attadale via Bendronaig Lodge",https://www.walkhighlands.co.uk/torridon/bideinachoiresheasgaich.shtml,16,16,38,1530,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+Màm Sodhail,Loch Ness,1181,"Càrn Eige, Màm Sodhail and Beinn Fhionnlaidh from Glen Affric",https://www.walkhighlands.co.uk/lochness/carn-eige.shtml,10,13,28,1727,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Maoile Lunndaidh,Torridon,1007,Maoile Lunndaidh from Achnashellach,https://www.walkhighlands.co.uk/torridon/maoilelunndaidh.shtml,8,11,26,1005,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Maol Chean-dearg,Torridon,933,Maol Chean-dearg from Coulags,https://www.walkhighlands.co.uk/torridon/Maolcheandearg.shtml,5,7,14,932,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Maol chinn-dearg,Kintail,981,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,9,11,26.75,1818,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Mayar,Angus,928,Driesh and Mayar from Glen Doll,https://www.walkhighlands.co.uk/angus/mayar-driesh.shtml,4.5,5.5,14.5,835,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Meall a' Bhùiridh,Fort William,1108,Meall a' Bhùiridh and Creise from the White Corries ski centre,https://www.walkhighlands.co.uk/fortwilliam/creise.shtml,5,7,10.5,1093,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Meall a' Choire Lèith,Perthshire,926,Meall Corranaich and Meall a' Choire Lèith from the Lairig an Lochain,https://www.walkhighlands.co.uk/perthshire/meall-corranaich.shtml,5,6,9.5,740,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall a' Chrasgaidh,Ullapool,934,Sgùrr nan Clach Geala ridge,https://www.walkhighlands.co.uk/ullapool/sgurrnanclachgeala.shtml,7,9,18,1153,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall Buidhe (Glen Lyon),Perthshire,932,Meall Buidhe from Loch an Dàimh,https://www.walkhighlands.co.uk/perthshire/meall-buidhe.shtml,2.5,3.5,8.5,551,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall Buidhe (Knoydart),Fort William,946,Luinne Bheinn and Meall Buidhe from Inverie,https://www.walkhighlands.co.uk/fortwilliam/luinne-bheinn.shtml,11,13,27,1586,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE
+Meall Chuaich,Cairngorms,951,Meall Chuaich from near Dalwhinnie,https://www.walkhighlands.co.uk/cairngorms/meall-chuaich.shtml,4,5,14,614,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Meall Corranaich,Perthshire,1069,Meall Corranaich and Meall a' Choire Lèith from the Lairig an Lochain,https://www.walkhighlands.co.uk/perthshire/meall-corranaich.shtml,5,6,9.5,740,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall Dearg (Aonach Eagach),Fort William,953,The Aonach Eagach ridge from Glencoe,https://www.walkhighlands.co.uk/fortwilliam/aonacheagach.shtml,8,9,9.5,1100,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Meall Garbh (Ben Lawers),Perthshire,1123,Circuit of Coire nan Cat,https://www.walkhighlands.co.uk/perthshire/meall-garbh.shtml,7,8,16.5,1230,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall Garbh (Càrn Mairg),Perthshire,968,Càrn Mairg circuit from Invervar,https://www.walkhighlands.co.uk/perthshire/carn-mairg.shtml,7,8,17.5,1330,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Meall Ghaordaidh,Perthshire,1039,Meall Ghaordaidh from Glen Lochay,https://www.walkhighlands.co.uk/perthshire/meall-ghaordaidh.shtml,4,6,9.5,895,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall Glas,Loch Lomond,959,Sgiath Chùil and Meall Glas from Glen Dochart,https://www.walkhighlands.co.uk/lochlomond/meall-glas.shtml,7,9,15.5,1182,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Meall Gorm,Ullapool,949,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,9,11,24.75,1435,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Meall Greigh,Perthshire,1001,Circuit of Coire nan Cat,https://www.walkhighlands.co.uk/perthshire/meall-garbh.shtml,7,8,16.5,1230,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall na Teanga,Fort William,918,Sròn a' Choire Ghairbh & Meall na Teanga,https://www.walkhighlands.co.uk/fortwilliam/lochlochymunros.shtml,7,9,19,1258,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Meall nan Ceapraichean,Ullapool,977,Beinn Dearg Munros circuit from Inverlael,https://www.walkhighlands.co.uk/ullapool/beinndearg.shtml,9,11,27,1569,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Meall nan Eun,Fort William,928,Stob Coir an Albannaich and Meall nan Eun from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/stobcoiranalbannaich.shtml,7,9,18,1327,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Meall nan Tarmachan,Perthshire,1044,The Tarmachan Ridge,https://www.walkhighlands.co.uk/perthshire/meall-nan-tarmachan.shtml,5,7,13,783,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Monadh Mòr,Cairngorms,1113,Beinn Bhrotain and Monadh Mòr from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/beinn-bhrotain.shtml,9,11,29,1505,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Moruisg,Torridon,928,Moruisg and Sgùrr nan Ceannaichean from Glen Carron,https://www.walkhighlands.co.uk/torridon/Moruisg.shtml,6,7,12,978,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Mount Keen,Angus,939,"Mount Keen from Invermark, Glen Esk",https://www.walkhighlands.co.uk/angus/mount-keen.shtml,5,6,17.5,681,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Mullach an Rathain (Liathach),Torridon,1023,"Liathach traverse, Glen Torridon",https://www.walkhighlands.co.uk/torridon/Liathach.shtml,8,10,11.5,1326,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Mullach Clach a' Bhlàir,Cairngorms,1019,Mullach Clach a' Bhlàir from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/mullach-clach-a-bhlair.shtml,6.5,7.5,21.75,870,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Mullach Coire Mhic Fhearchair,Ullapool,1018,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,12,18,29,2254,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Mullach Fraoch-choire,Kintail,1102,a' Chralaig and Mullach Fraoch Choire from Cluanie,https://www.walkhighlands.co.uk/kintail/Achralaig.shtml,6,8,14.5,1150,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Mullach na Dheiragain,Loch Ness,982,Sgùrr nan Ceathreamhnan Munros from Alltbeithe,https://www.walkhighlands.co.uk/lochness/Ceathreamhnan.shtml,9,11,20,1484,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE
+Mullach nan Coirean,Fort William,939,"Stob Bàn and Mullach nan Coirean from Polldubh, Glen Nevis",https://www.walkhighlands.co.uk/fortwilliam/stobban.shtml,6,8,13,1155,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Na Gruagaichean,Fort William,1056,Binnein Mòr and Na Gruagaichean,https://www.walkhighlands.co.uk/fortwilliam/binneinmor.shtml,7,9,14,1336,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Ruadh Stac Mòr,Ullapool,918,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,12,18,29,2254,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Ruadh-stac Mòr (Beinn Eighe),Torridon,1010,Beinn Eighe via Coire Mhic Fhearchair,https://www.walkhighlands.co.uk/torridon/Beinneighe.shtml,7,9,18,1116,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sàil Chaorainn,Kintail,1002,Sgùrr nan Conbhairean from Loch Cluanie,https://www.walkhighlands.co.uk/kintail/sgurrnanconbhairean.shtml,7,8,17.5,1260,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sàileag,Kintail,956,Sgùrr a Bhealaich Dheirg and the Brothers of Kintail,https://www.walkhighlands.co.uk/kintail/Brothersridge.shtml,6,8,10,1274,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Schiehallion,Perthshire,1083,Schiehallion from the Braes of Foss,https://www.walkhighlands.co.uk/perthshire/schiehallion.shtml,4,6,10,731,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Seana Bhràigh,Ullapool,926,Seana Bhràigh from Inverlael,https://www.walkhighlands.co.uk/ullapool/seana-bhraigh.shtml,9,10,27,1095,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Sgàirneach Mhòr,Cairngorms,991,Beinn Udlamain and Sgàirneach Mhòr from Drumochter Pass,https://www.walkhighlands.co.uk/cairngorms/beinn-udlamain.shtml,6,7,15.75,783,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgiath Chùil,Loch Lomond,921,Sgiath Chùil and Meall Glas from Glen Dochart,https://www.walkhighlands.co.uk/lochlomond/meall-glas.shtml,7,9,15.5,1182,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Sgòr an Lochain Uaine,Cairngorms,1258,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,13,13,36,1820,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Sgòr Gaibhre,Fort William,955,Càrn Dearg and Sgòr Gaibhre from Corrour Station,https://www.walkhighlands.co.uk/fortwilliam/sgor-gaibhre.shtml,7,8,21.75,973,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgòr Gaoith,Cairngorms,1118,Sgòr Gaoith from Glen Feshie,https://www.walkhighlands.co.uk/cairngorms/sgor-gaoith.shtml,6,7,14,913,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgòr na h-Ulaidh,Fort William,994,Sgòr na h-Ulaidh and Meall Ligiche from Glen Coe,https://www.walkhighlands.co.uk/fortwilliam/sgornaulaidh.shtml,7,9,15.5,1292,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgòrr Dhearg (Beinn a' Bheithir),Fort William,1024,Beinn a' Bheithir via Schoolhouse Ridge,https://www.walkhighlands.co.uk/fortwilliam/beinnabheithir.shtml,7,9,15.5,1387,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+Sgòrr Dhònuill (Beinn a' Bheithir),Fort William,1001,Beinn a' Bheithir via Schoolhouse Ridge,https://www.walkhighlands.co.uk/fortwilliam/beinnabheithir.shtml,7,9,15.5,1387,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+Sgòrr nam Fiannaidh (Aonach Eagach),Fort William,967,The Aonach Eagach ridge from Glencoe,https://www.walkhighlands.co.uk/fortwilliam/aonacheagach.shtml,8,9,9.5,1100,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgòrr Ruadh,Torridon,962,Sgòrr Ruadh from Achnashellach,https://www.walkhighlands.co.uk/torridon/Sgorrruadh.shtml,6.5,7,16,931,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr a' Bhealaich Dheirg,Kintail,1036,Sgùrr a Bhealaich Dheirg and the Brothers of Kintail,https://www.walkhighlands.co.uk/kintail/Brothersridge.shtml,6,8,10,1274,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr a' Chaorachain,Torridon,1053,Sgùrr a' Chaorachain and Sgùrr Chòinnich from Achnashellach,https://www.walkhighlands.co.uk/torridon/Sgurrchoinnich.shtml,7,8,20.5,1251,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Sgùrr a' Choire Ghlais,Loch Ness,1083,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,7,10,25,1567,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr a' Ghreadaidh,Isle of Skye,973,Sgùrr a Ghreadaidh and Sgùrr a Mhadaidh via An Dorus,https://www.walkhighlands.co.uk/skye/sgurraghreadaidh.shtml,6,8,9.5,997,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr a' Mhadaidh,Isle of Skye,918,Sgùrr a Ghreadaidh and Sgùrr a Mhadaidh via An Dorus,https://www.walkhighlands.co.uk/skye/sgurraghreadaidh.shtml,6,8,9.5,997,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr a' Mhàim,Fort William,1099,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,9,12,16,1676,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr a' Mhaoraich,Fort William,1027,Sgùrr a'Mhaoraich from Loch Cuaich,https://www.walkhighlands.co.uk/fortwilliam/sgurramhaoraich.shtml,5,7,14,1077,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Alasdair,Isle of Skye,992,Sgùrr Alasdair via the Great Stone Chute,https://www.walkhighlands.co.uk/skye/sgurralasdair.shtml,5,6,9.5,992,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+Sgùrr an Doire Leathain,Kintail,1010,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,9,11,26.75,1818,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr an Lochain,Kintail,1004,South Glen Shiel Ridge walk,https://www.walkhighlands.co.uk/kintail/Glenshielridge.shtml,9,11,26.75,1818,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Bàn,Ullapool,989,"The Fisherfield 6, from Shenavall",https://www.walkhighlands.co.uk/ullapool/fisherfield-6.shtml,12,18,29,2254,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Sgùrr Breac,Ullapool,999,Sgùrr Breac and a' Chailleach from near Braemore,https://www.walkhighlands.co.uk/ullapool/sgurrbreac.shtml,6,8,16,1127,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Chòinnich,Torridon,999,Sgùrr a' Chaorachain and Sgùrr Chòinnich from Achnashellach,https://www.walkhighlands.co.uk/torridon/Sgurrchoinnich.shtml,7,8,20.5,1251,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Sgùrr Chòinnich Mòr,Fort William,1094,The Grey Corries ridge,https://www.walkhighlands.co.uk/fortwilliam/greycorries.shtml,9,10,21.5,1544,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Dubh Mòr,Isle of Skye,944,Southern Cuillin and Coire Ghrunnda,https://www.walkhighlands.co.uk/skye/sgurrnaneag.shtml,7,11,15,1159,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Èilde Mòr,Fort William,1010,Sgùrr Èilde Mòr and Binnein Beag from Kinlochleven,https://www.walkhighlands.co.uk/fortwilliam/sgurreildemor.shtml,9,11,20,1582,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr Fhuar-thuill,Loch Ness,1049,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,7,10,25,1567,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr Fhuaran,Kintail,1067,Five Sisters of Kintail traverse,https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml,8,10,15,1385,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr Fiona (An Teallach),Ullapool,1060,"An Teallach traverse, Dundonnell",https://www.walkhighlands.co.uk/ullapool/anteallach.shtml,9,10,20,1415,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Mhic Chòinnich,Isle of Skye,948,Sgùrr Mhic Chòinnich from Coire Lagan,https://www.walkhighlands.co.uk/skye/sgurr-mhic-choinnich.shtml,5,6,11,950,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Mòr,Ullapool,1110,Sgùrr Mòr and the eastern Fannichs,https://www.walkhighlands.co.uk/ullapool/fannichs.shtml,9,11,24.75,1435,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr Mòr (Beinn Alligin),Torridon,986,Beinn Alligin ridge traverse,https://www.walkhighlands.co.uk/torridon/Beinnalligin.shtml,7,8,10.5,1190,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Sgùrr Mòr (Loch Cuaich),Fort William,1003,Sgùrr Mòr and Sgùrr an Fhuarain from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurr-mor.shtml,9,11,24,1510,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr na Banachdich,Isle of Skye,965,Sgùrr na Banachdich via Coire nan Eich,https://www.walkhighlands.co.uk/skye/sgurrnabanachdich.shtml,5,7,7.5,936,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr na Càrnach,Kintail,1002,Five Sisters of Kintail traverse,https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml,8,10,15,1385,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr na Cìche,Fort William,1040,Sgùrr na Cìche Munros from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurrnaciche.shtml,10,12,26,1523,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Sgùrr na Ciste Duibhe,Kintail,1027,Five Sisters of Kintail traverse,https://www.walkhighlands.co.uk/kintail/Fivesisters.shtml,8,10,15,1385,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr na Lapaich,Loch Ness,1150,The Loch Mullardoch Munros circuit,https://www.walkhighlands.co.uk/lochness/mullardoch-munros.shtml,11,14,29.2,1820,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr na Ruaidhe,Loch Ness,993,Circuit of the Strathfarrar Munros,https://www.walkhighlands.co.uk/lochness/strathfarrar-munros.shtml,7,10,25,1567,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Sgùrr na Sgìne,Kintail,945,"The Saddle via the Forcan Ridge, and Sgùrr na Sgìne",https://www.walkhighlands.co.uk/kintail/Thesaddle.shtml,7,9,14,1440,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr nan Ceathreamhnan,Loch Ness,1151,Sgùrr nan Ceathreamhnan Munros from Alltbeithe,https://www.walkhighlands.co.uk/lochness/Ceathreamhnan.shtml,9,11,20,1484,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE
+Sgùrr nan Clach Geala,Ullapool,1093,Sgùrr nan Clach Geala ridge,https://www.walkhighlands.co.uk/ullapool/sgurrnanclachgeala.shtml,7,9,18,1153,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr nan Coireachan (Glen Dessary),Fort William,953,Sgùrr na Cìche Munros from Loch Arkaig,https://www.walkhighlands.co.uk/fortwilliam/sgurrnaciche.shtml,10,12,26,1523,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Sgùrr nan Coireachan (Glenfinnan),Fort William,956,Sgùrr Thuilm & Sgùrr nan Coireachan,https://www.walkhighlands.co.uk/fortwilliam/sgurrthuilm.shtml,9,12,23.5,1428,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Sgùrr nan Conbhairean,Kintail,1109,Sgùrr nan Conbhairean from Loch Cluanie,https://www.walkhighlands.co.uk/kintail/sgurrnanconbhairean.shtml,7,8,17.5,1260,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr nan Each,Ullapool,923,Sgùrr nan Clach Geala ridge,https://www.walkhighlands.co.uk/ullapool/sgurrnanclachgeala.shtml,7,9,18,1153,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr nan Eag,Isle of Skye,924,Southern Cuillin and Coire Ghrunnda,https://www.walkhighlands.co.uk/skye/sgurrnaneag.shtml,7,11,15,1159,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+Sgùrr nan Gillean,Isle of Skye,964,Sgùrr nan Gillean via the Southeast Ridge (Tourist Route),https://www.walkhighlands.co.uk/skye/sgurrnangillean.shtml,5,7,12,985,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sgùrr Thuilm,Fort William,963,Sgùrr Thuilm & Sgùrr nan Coireachan,https://www.walkhighlands.co.uk/fortwilliam/sgurrthuilm.shtml,9,12,23.5,1428,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Slioch,Torridon,981,Slioch from Kinlochewe,https://www.walkhighlands.co.uk/torridon/Slioch.shtml,8,9,19,1144,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Spidean a' Choire Lèith (Liathach),Torridon,1055,"Liathach traverse, Glen Torridon",https://www.walkhighlands.co.uk/torridon/Liathach.shtml,8,10,11.5,1326,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Spidean Coire nan Clach (Beinn Eighe),Torridon,993,Beinn Eighe via Coire Mhic Fhearchair,https://www.walkhighlands.co.uk/torridon/Beinneighe.shtml,7,9,18,1116,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Spidean Mialach,Fort William,996,Gleouraich & Spidean Mialach,https://www.walkhighlands.co.uk/fortwilliam/spideanmialach.shtml,5,7,12,1130,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Sròn a' Choire Ghairbh,Fort William,937,Sròn a' Choire Ghairbh & Meall na Teanga,https://www.walkhighlands.co.uk/fortwilliam/lochlochymunros.shtml,7,9,19,1258,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob a' Choire Mheadhoin,Fort William,1106,The Easains ridge from near Fersit,https://www.walkhighlands.co.uk/fortwilliam/easains.shtml,7,8,16.5,1172,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob a' Choire Odhair,Argyll,945,Stob Ghabhar & Stob a' Choire Odhair from Victoria Bridge,https://www.walkhighlands.co.uk/argyll/stob-ghabhar.shtml,8,9,16,1239,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob Bàn (Grey Corries),Fort William,977,Stob Bàn (Grey Corries) from above Corriechoille,https://www.walkhighlands.co.uk/fortwilliam/stob-ban-grey-corries.shtml,6,7,18,852,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Stob Bàn (Mamores),Fort William,999,"Stob Bàn and Mullach nan Coirean from Polldubh, Glen Nevis",https://www.walkhighlands.co.uk/fortwilliam/stobban.shtml,6,8,13,1155,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob Binnein,Loch Lomond,1165,Ben More and Stob Binnein from Benmore Farm,https://www.walkhighlands.co.uk/lochlomond/ben-more.shtml,6,8,12,1335,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Choire Claurigh,Fort William,1177,The Grey Corries ridge,https://www.walkhighlands.co.uk/fortwilliam/greycorries.shtml,9,10,21.5,1544,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Coir an Albannaich,Fort William,1044,Stob Coir an Albannaich and Meall nan Eun from Glen Etive,https://www.walkhighlands.co.uk/fortwilliam/stobcoiranalbannaich.shtml,7,9,18,1327,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Coire a' Chàirn,Fort William,981,The Ring of Steall,https://www.walkhighlands.co.uk/fortwilliam/ringofsteall.shtml,9,12,16,1676,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob Coire an Laoigh,Fort William,1116,The Grey Corries ridge,https://www.walkhighlands.co.uk/fortwilliam/greycorries.shtml,9,10,21.5,1544,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Coire Easain,Fort William,1115,The Easains ridge from near Fersit,https://www.walkhighlands.co.uk/fortwilliam/easains.shtml,7,8,16.5,1172,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Coire Raineach (Buachaille Etive Beag),Fort William,925,Buachaille Etive Beag,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivebeag.shtml,5,6,8,900,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob Coire Sgreamhach,Fort William,1072,Bidean nam Bian range via Coire nan Lochain and the Lost Valley,https://www.walkhighlands.co.uk/fortwilliam/bideannambian.shtml,7,9,11,1316,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob Coire Sgriodain,Fort William,979,Chno Dearg and Stob Coire Sgriodain from Fersit,https://www.walkhighlands.co.uk/fortwilliam/chnodearg.shtml,6,7,13.5,915,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Daimh,Argyll,998,Ben Cruachan and Stob Daimh circuit,https://www.walkhighlands.co.uk/argyll/ben-cruachan.shtml,8,9,13.75,1376,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Stob Dearg (Buachaille Etive Mòr),Fort William,1021,Buachaille Etive Mòr ridge from Altnafeadh,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivemor.shtml,7,9,13,1110,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Dubh (Buachaille Etive Beag),Fort William,956,Buachaille Etive Beag,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivebeag.shtml,5,6,8,900,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob Ghabhar,Argyll,1090,Stob Ghabhar & Stob a' Choire Odhair from Victoria Bridge,https://www.walkhighlands.co.uk/argyll/stob-ghabhar.shtml,8,9,16,1239,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Stob na Bròige (Buachaille Etive Mòr),Fort William,956,Buachaille Etive Mòr ridge from Altnafeadh,https://www.walkhighlands.co.uk/fortwilliam/buachailleetivemor.shtml,7,9,13,1110,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stob Poite Coire Àrdair,Fort William,1054,Creag Meagaidh Munros circuit,https://www.walkhighlands.co.uk/fortwilliam/creagmeagaidh.shtml,8,10,21,1080,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Stùc a' Chròin,Perthshire,975,Ben Vorlich and Stùc a' Chròin from Ardvorlich,https://www.walkhighlands.co.uk/perthshire/ben-vorlich.shtml,6,7,14.5,1145,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Stùcd an Lochain,Perthshire,960,Stuchd an Lochain from Loch an Dàimh,https://www.walkhighlands.co.uk/perthshire/stuchd-an-lochain.shtml,3.5,4.5,8.5,726,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+The Cairnwell,Cairngorms,933,The Cairnwell Munros,https://www.walkhighlands.co.uk/cairngorms/cairnwell.shtml,5,6,13,595,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+The Devil's Point,Cairngorms,1004,Cairn Toul and Braeriach traverse,https://www.walkhighlands.co.uk/cairngorms/cairn-toul.shtml,13,13,36,1820,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+The Saddle,Kintail,1010,"The Saddle via the Forcan Ridge, and Sgùrr na Sgìne",https://www.walkhighlands.co.uk/kintail/Thesaddle.shtml,7,9,14,1440,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Toll Creagach,Loch Ness,1054,Toll Creagach and Tom a' Chòinich from Glen Affric,https://www.walkhighlands.co.uk/lochness/Tollcreagach.shtml,6,8,16.5,1096,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Tolmount,Cairngorms,958,Tolmount and Tom Buidhe via Loch Callater,https://www.walkhighlands.co.uk/cairngorms/tolmount.shtml,8,10,26.5,841,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Tom a' Chòinich,Loch Ness,1112,Toll Creagach and Tom a' Chòinich from Glen Affric,https://www.walkhighlands.co.uk/lochness/Tollcreagach.shtml,6,8,16.5,1096,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Tom Buidhe,Cairngorms,957,Tolmount and Tom Buidhe via Loch Callater,https://www.walkhighlands.co.uk/cairngorms/tolmount.shtml,8,10,26.5,841,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Tom na Gruagaich (Beinn Alligin),Torridon,922,Beinn Alligin ridge traverse,https://www.walkhighlands.co.uk/torridon/Beinnalligin.shtml,7,8,10.5,1190,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
