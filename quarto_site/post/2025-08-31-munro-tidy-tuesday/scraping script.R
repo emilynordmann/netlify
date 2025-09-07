@@ -8,11 +8,7 @@ library(rvest)
 library(xml2)
 library(fuzzyjoin)
 library(progress)
-library(ggthemes)
-library(waffle)
 library(ggrain)
-library(treemap)
-library(ggridges)
 library(flextable)
 
 # ---------------- Utilities ----------------
@@ -222,7 +218,49 @@ walkhighlands <- dplyr::rows_patch(
   unmatched = "ignore"
 )
 
-# clean up
-rm(pb, munros_az_links, az_url, pg_az, munros_sample, missing)
+## ---------------- 4b) Add 'most climbed' and 'by rating' ----------------
+# Scrape: https://www.walkhighlands.co.uk/munros/most-climbed
+mc_url <- "https://www.walkhighlands.co.uk/munros/most-climbed"
+pg_mc  <- read_html_utf8(mc_url)
 
-write_csv(walkhighlands, file = "walkhighlands.csv")
+most_climbed <-
+  html_elements(pg_mc, "table tr") |>
+  (\(rows) if (length(rows) > 1) rows[-1] else rows)() |>
+  map_dfr(function(tr) {
+    name_node <- html_element(tr, "td:nth-child(2) a")   # col 2 = Mountain (link)
+    count_td  <- html_element(tr, "td:nth-child(3)")     # col 3 = Ascents
+    tibble(
+      munro   = name_node |> html_text2(),
+      ascents = count_td  |> html_text2() |> readr::parse_number()
+    )
+  }) |>
+  dplyr::filter(!is.na(munro), nzchar(munro)) |>
+  distinct(munro, .keep_all = TRUE)
+
+# Scrape: https://www.walkhighlands.co.uk/munros/munros-by-rating
+rt_url <- "https://www.walkhighlands.co.uk/munros/munros-by-rating"
+pg_rt  <- read_html_utf8(rt_url)
+
+munro_ratings <-
+  html_elements(pg_rt, "table tr") |>
+  (\(rows) if (length(rows) > 1) rows[-1] else rows)() |>
+  map_dfr(function(tr) {
+    name_node <- html_element(tr, "td:nth-child(2) a")   # col 2 = Mountain (link)
+    rate_td   <- html_element(tr, "td:nth-child(3)")     # col 3 = Rating
+    tibble(
+      munro  = name_node |> html_text2(),
+      rating = rate_td   |> html_text2() |> readr::parse_number()
+    )
+  }) |>
+  dplyr::filter(!is.na(munro), nzchar(munro)) |>
+  distinct(munro, .keep_all = TRUE)
+
+# Join both onto the main table
+walkhighlands <- walkhighlands |>
+  left_join(most_climbed, by = "munro") |>
+  left_join(munro_ratings, by = "munro")
+
+# clean up new objs
+rm(mc_url, pg_mc, most_climbed, rt_url, pg_rt, munro_ratings)
+
+write_csv(x = walkhighlands, file = "walkhighlands.csv")
