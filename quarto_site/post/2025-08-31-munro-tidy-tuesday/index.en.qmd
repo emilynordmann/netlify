@@ -51,7 +51,8 @@ library(flextable)
 walkhighlands <- read_csv("walkhighlands.csv")
 
 head(walkhighlands, 2) |>
-  flextable()
+  flextable()|>
+  autofit()
 ```
 
 
@@ -444,7 +445,8 @@ route_region <- route_dat |>
   rename("routes" = "n")
 
 inner_join(munro_region, route_region) |>
-  flextable()
+  flextable()|>
+  autofit()
 ```
 
 ### Tallest Munros
@@ -498,7 +500,8 @@ munro_dat |>
   summarise(avg_height = mean(height_dobih, na.rm = TRUE), .groups = "drop") |>
   arrange(desc(avg_height)) |>
   flextable() |>
-  colformat_double(digits = 0)
+  colformat_double(digits = 0)|>
+  autofit()
 ```
 
 ### Longest routes
@@ -559,7 +562,8 @@ route_dat |>
   summarise(avg_distance = mean(distance_km, na.rm = TRUE), .groups = "drop") |>
   arrange(desc(avg_distance)) |>
   flextable() |>
-  colformat_double(digits = 2)
+  colformat_double(digits = 2)|>
+  autofit()
 ```
 
 ### Most ascent
@@ -619,7 +623,8 @@ route_dat |>
   summarise(avg_ascent = mean(ascent, na.rm = TRUE), .groups = "drop") |>
   arrange(desc(avg_ascent)) |>
   flextable() |>
-  colformat_double(digits = 0)
+  colformat_double(digits = 0)|>
+  autofit()
 ```
 
 ### Munros per route
@@ -713,7 +718,8 @@ munro_dat |>
             "no. munros" = n(),.groups = "drop") |>
   arrange(desc(avg_rating)) |>
   flextable() |>
-  colformat_double(digits = 2)
+  colformat_double(digits = 2)|>
+  autofit()
 ```
 
 ### Ascents by rating
@@ -1047,7 +1053,8 @@ route_dat |>
   arrange(desc(route_rating)) |>
   select(route = first_route_title, region, route_rating) |>
   slice(1:5) |>
-  flextable()
+  flextable()|>
+  autofit()
 ```
 
 
@@ -1066,7 +1073,8 @@ route_dat |>
   arrange(desc(route_rating)) |>
   select(route = first_route_title, region, route_rating) |>
   slice(1:5) |>
-  flextable()
+  flextable()|>
+  autofit()
 ```
 
 
@@ -1086,7 +1094,8 @@ route_dat |>
   arrange(route_rating) |>
   select(route = first_route_title, region, route_rating) |>
   slice(1:5) |>
-  flextable()
+  flextable()|>
+  autofit()
 ```
 
 
