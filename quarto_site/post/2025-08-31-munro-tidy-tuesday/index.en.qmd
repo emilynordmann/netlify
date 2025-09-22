@@ -329,7 +329,7 @@ Have I mentioned that I dislike heights and exposure?
 
 ```{r}
 munros_map <- munro_dat %>%
-  select(munro, region, xcoord, ycoord, height_dobih, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park) %>%
+  select(munro, region, xcoord, ycoord, height_dobih, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park, wood) %>%
   na.omit()
 
 # Convert OSGB36 coordinates to sf object
@@ -903,6 +903,76 @@ p2 <- ggplot() +
 ggplotly(p2, tooltip = "text")
 ```
 
+## Woodland
+
+I've been fortunate enough to go hiking in Switzerland and Albania this year and it has did highlight to me how bare the Munros often are, thanks to destrctuive logging and farming practices.
+
+```{r}
+wood_plot <- ggplot() +
+  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
+  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_jitter(data = filter(munros_coords, wood == TRUE), 
+             aes(x = longitude, 
+                 y = latitude, 
+                 text = munro, colour = "#355E3B"), 
+             size = 1) + 
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  labs(title = "Routes that mention woodland") +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),      
+    axis.ticks = element_blank(),     
+    axis.title = element_blank(),     
+    panel.grid = element_blank(),     
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(wood_plot, tooltip = "text")
+```
+
+
+```{r}
+munro_dat |>
+  count(region, wood) |>
+  group_by(region) |>
+  mutate(percent = janitor::round_half_up(n/sum(n)*100,0)) |>
+  filter(wood == TRUE) |>
+  ungroup() |>
+  arrange(desc(percent)) |>
+  select(-wood, -n) |>
+  flextable() |>
+  set_caption(caption = "Percent of routes that mention woodland")
+
+# 10 greens for manual scales (light → dark)
+greens_10 <- grDevices::colorRampPalette(
+  c("#00441b", "#006d2c", "#238b45", "#41ab5d", "#74c476")
+)(10)
+
+
+munro_dat |>
+  count(region, wood) |>
+  group_by(region) |>
+  mutate(percent = janitor::round_half_up(n / sum(n) * 100, 0)) |>
+  filter(wood) |>
+  ungroup() |>
+  mutate(region = forcats::fct_reorder(region, percent, .desc = FALSE)) |>
+  ggplot(aes(x = region, y = percent, fill = region)) +
+  geom_col() +
+  scale_fill_manual(values = rev(greens_10)) +
+  guides(fill = "none") +
+  coord_flip() +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
+  theme_economist() +
+  labs(x = NULL, y = NULL,
+       title = "Percent of routes that mention woodland by region")
+
+```
+
+
+
+
 ## Non-natural features
 
 With the usual caveats about the limits of text mining, here's some maps showing route descriptions that mention non-natural features (bothy, deer fence (because they're scary), pub, toilet). Some of these are more useful than others. 
@@ -1028,6 +1098,36 @@ pub_plot <- ggplot() +
   )
 
 ggplotly(pub_plot, tooltip = "text")
+```
+
+
+### Car parks
+
+```{r}
+car_plot <- ggplot() +
+  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
+  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_jitter(data = filter(munros_coords, car_park == TRUE), 
+             aes(x = longitude, 
+                 y = latitude, 
+                 colour = pub,
+                 text = munro), 
+             size = 1) + 
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  labs(title = "Routes that mention a car park") +
+  guides(colour = "none") +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),      
+    axis.ticks = element_blank(),     
+    axis.title = element_blank(),     
+    panel.grid = element_blank(),     
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(car_plot, tooltip = "text")
 ```
 
 

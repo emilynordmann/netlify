@@ -8,7 +8,11 @@ library(rvest)
 library(xml2)
 library(fuzzyjoin)
 library(progress)
+library(ggthemes)
+library(waffle)
 library(ggrain)
+library(treemap)
+library(ggridges)
 library(flextable)
 
 # ---------------- Utilities ----------------
@@ -104,6 +108,8 @@ extract_flags_time_distance <- function(route_url) {
   if (is.na(route_url) || !nzchar(route_url)) {
     return(tibble(
       scramble = NA, exposed = NA, spate = NA, river = NA, arete = NA, bog = NA,
+      toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
+      wood = NA,
       time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
       ascent = NA_real_
     ))
@@ -130,6 +136,11 @@ extract_flags_time_distance <- function(route_url) {
   bog_hits_total <- stringr::str_count(txt, stringr::regex("\\bbog\\w*", ignore_case = TRUE))
   bog_flag <- bog_hits_total > 1  # TRUE only if 'bog*' occurs more than once
   
+  wood_flag <- stringr::str_detect(
+    txt,
+    stringr::regex("\\bforest\\b|\\bwoodland\\b|\\bwoods?\\b", ignore_case = TRUE)
+  )
+  
   tibble(
     scramble = stringr::str_detect(txt, stringr::regex("\\bscrambl\\w*", ignore_case = TRUE)),
     exposed  = stringr::str_detect(txt, stringr::regex("\\bexposed\\b|\\bexposure\\b", ignore_case = TRUE)),
@@ -137,6 +148,7 @@ extract_flags_time_distance <- function(route_url) {
     river    = stringr::str_detect(txt, stringr::regex("\\brivers?\\b", ignore_case = TRUE)),
     arete    = stringr::str_detect(txt, stringr::regex("\\bar(?:e|ê)te\\b", ignore_case = TRUE)),
     bog      = bog_flag,
+    wood     = wood_flag,
     toilet     = stringr::str_detect(txt, stringr::regex("\\btoilet\\b", ignore_case = TRUE)),
     bothy      = stringr::str_detect(txt, stringr::regex("\\bbothy\\b", ignore_case = TRUE)),
     pub        = stringr::str_detect(txt, stringr::regex("\\bpub\\b", ignore_case = TRUE)),
@@ -175,6 +187,8 @@ walkhighlands <-
         extract_flags_time_distance(fr$first_route_url),
         error = \(e) tibble(
           scramble = NA, exposed = NA, spate = NA, river = NA, arete = NA, bog = NA,
+          toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
+          wood = NA,
           time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
           ascent = NA_real_
         )
@@ -200,7 +214,8 @@ walkhighlands <-
         bothy              = ft$bothy,
         pub                = ft$pub,
         car_park           = ft$car_park,
-        deer_fence         = ft$deer_fence
+        deer_fence         = ft$deer_fence,
+        wood               = ft$wood
       )
     }
   )
@@ -218,7 +233,7 @@ walkhighlands <- dplyr::rows_patch(
   unmatched = "ignore"
 )
 
-## ---------------- 4b) Add 'most climbed' and 'by rating' ----------------
+# ---------------- 4b) Add 'most climbed' and 'by rating' ----------------
 # Scrape: https://www.walkhighlands.co.uk/munros/most-climbed
 mc_url <- "https://www.walkhighlands.co.uk/munros/most-climbed"
 pg_mc  <- read_html_utf8(mc_url)
@@ -260,7 +275,9 @@ walkhighlands <- walkhighlands |>
   left_join(most_climbed, by = "munro") |>
   left_join(munro_ratings, by = "munro")
 
-# clean up new objs
-rm(mc_url, pg_mc, most_climbed, rt_url, pg_rt, munro_ratings)
+# clean up
+rm(pb, munros_az_links, az_url, pg_az, munros_sample, missing,
+   mc_url, pg_mc, most_climbed, rt_url, pg_rt, munro_ratings)
 
-write_csv(x = walkhighlands, file = "walkhighlands.csv")
+write_csv(walkhighlands, file = "walkhighlands.csv")
+

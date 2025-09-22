@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Emily Nordmann">
+<meta name="dcterms.date" content="2025-09-17">
 
-<title>Emily Nordmann - Blog</title>
+<title>Emily Nordmann - Supporting positive behaviour</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +70,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -140,7 +82,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Emily Nordmann</span>
     </a>
   </div>
@@ -151,15 +93,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./post.html" aria-current="page"> 
+    <a class="nav-link" href="../../post.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
+    <a class="nav-link" href="../../contact.html"> 
 <span class="menu-text">Contact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./files/cv.pdf"> 
+    <a class="nav-link" href="../../files/cv.pdf"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -180,14 +122,26 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">Supporting positive behaviour</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Emily Nordmann </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 17, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -197,210 +151,44 @@ window.Quarto = {
 </header>
 
 
+<p>I was grateful to have the opportunity to attend the <a href="https://www.holyroodinsight.com/conferences-and-events/relationships-and-behaviour-in-schools-scotland/">Positive Relationships and Behaviour in Schools Scotland Conference</a> in Edinburgh yesterday. My reason for attending is that as Convenor of Transitions Working Group and in partnership with our Student Conduct Team, we’re undertaking work to address an increase in behavioural issues we’ve seen over the last few years. Particularly in our pre-honours classes, we’ve had more and more colleagues report students being disruptive, refusing to engage, and making unreasonable demands. We know we’re not the only ones, we know that the causes are as complex as they are varied, and we also know that blaming young people or generational differences is as unhelpful as it is inaccurate. But we also know that it’s not something we can put our head in the sand about and that for both staff and student wellbeing, we need to address it.</p>
+<p>Given that the issues are concenrated (although I hasten to add not exclusive to) first year, it is important to me that we know what’s happening in schools to help better understand where our students are coming from, that our approaches align, and that schools and universities work in partnership. Whilst there were no easy answers, I did find the conference reassuring and I have a better sense of what we have to do, and why, so consider this blog me working through the thinking of my key takeaways.</p>
+<section id="the-impact-of-covid" class="level2">
+<h2 class="anchored" data-anchor-id="the-impact-of-covid">The impact of covid</h2>
+<p>Gordon West highlighted the <a href="https://www.gov.scot/publications/behaviour-scottish-schools-research-report-2023/">Behaviour in Scottish Schools Research (BISSR) 2023</a> which found a significant increase in both low level disruption and more serious incidents of violence and aggression. However, he also made the very good point that previous iterations of the survey were conducted in 2012 and 2016 and that there was already and upward trend and that whilst some of the 2023 increase could be explained by covid and lockdown, there is a seven year gap between the 2023 and 2016 survey and so part of the increase is simply that there is a longer time period between surveys. I am not aware of any directly analagous work in HE although I would be surprised if the trends are not the same.</p>
+</section>
+<section id="process-matters" class="level2">
+<h2 class="anchored" data-anchor-id="process-matters">Process matters</h2>
+<p>A common theme was the importance of having a clear mechanism and process to report incidents. The focus wasn’t on being punitive but rather that it is easier to figure out what the cause of behavioural problems might be if you have the right data to spot patterns. One of the examples given was that if you have reporting that includes the time of the incident, you can spot that a child who is being disruptive at a certain point each day which might indicate that they are having trouble with a particular transition. Louise Pirie also made the point that targeting and reporting predictable common issues and everyday disruptions can help prevent more serious issues from arising through early intervention.</p>
+<p>As it relates to HE, this very much aligns with the work we’re going in trying to standardise reporting of low-level behavioral concerns. A student who is disruptive and refuses to engage in a single class because they’re having a bad day is very different to a student who is disruptive in every class they attend but because HE teaching is so spread out, without clear reporting mechanisms and joined-up data, we can’t pick up on this stuff.</p>
+</section>
+<section id="behaviour-as-communication" class="level2">
+<h2 class="anchored" data-anchor-id="behaviour-as-communication">Behaviour as communication</h2>
+<p>Directly related to the need to report was the theme of behaviour as communication - i.e., that all behaviour is the child/student trying to tell us something, intentionally or not. This could be that they don’t understand what is expected of them, that they have a disability or neurodivergence that is causing difficulties or not being adjusted for, or it could be cultural differences in the understanding of what’s expected in any given classroom setting. The reason that this is related to the need for clear reporting mechanism is as already stated, that data regarding patterns of behaviour makes it easier to identify what the underlying communication might be. It also reinforces that the process must be about support and development, rather than punishing poor behaviour.</p>
+</section>
+<section id="consequences" class="level2">
+<h2 class="anchored" data-anchor-id="consequences">Consequences</h2>
+<p>There were a number of references to the need for consequences. Gordon West presented the Scottish Advisory Group on Relationships and Behaviour in Schools Action Plan to ensure safe and consistent environments in schools. Action 2 was “Identify good practice in evidence-based relationships and behavior approaches, including consequences” whilst Louise Pirie spoken about needing clear consequences with application guidance and Stuart Clark highlighted the need for consequences to be highly predictable and offer an incentive to improve.</p>
+<p>The focus of these discussion was not about taking a punitive approach but rather making sure that there is no ambiguity for either staff or students, that there are specific consequences with fair escalation, and that these expectations are written down so that everyone knows what’s expected and what happens if those expectations are not met.</p>
+<p>For the HE context, we need to think through the consequences beyond reporting. For example, we are already required for disability reasons to provide lecture material in an alternative format (e.g., slides and recordings), a potential consequence for a student who is continually disruptive to the planned delivery of the class might be that they may only engage through the alternative format (i.e., asynchronous and self-directed learning).I am not sure this is necessarily the right answer but a really strong message was students learn very quickly when there are actually no consequences, so we need to think through our response in advance.</p>
+</section>
+<section id="dont-forget-about-the-95" class="level2">
+<h2 class="anchored" data-anchor-id="dont-forget-about-the-95">Don’t forget about the 95%</h2>
+<p>Another strong theme was the importance of ensuring that we don’t focus on the ones being disruptive to the detriment of the overwhelming majority who are following the rules and I know I have been guilty of this in the past. When you have one or two extremely difficult cases that cause a lot of upset, it’s hard not to just focus on them. As it relates to managing classroom behaviour, this point was also related to the UN Convention on the Human Rights of the Child in that whilst we need to be mindful of how we’re dealing with disruptive students, the other students in the room have a right to a safe environment and access to their education and so not dealing with it isn’t an option.</p>
+<p>Stuart Clark spoke about the 95/5 Rule – what is excellent behaviour for almost all in a specific school setting? What are the highest standards 95-99% of learners could normally meet? And how do we then respond flexibly to the 1-5%? I think this translate quite well to HE in that we’re essentially saying that we want to be explicit and clear about our expectations whilst recognising that not all students can be held to those standards for a variety of reasons related to inclusion.</p>
+</section>
+<section id="catch-a-child-being-good" class="level2">
+<h2 class="anchored" data-anchor-id="catch-a-child-being-good">Catch a child being good</h2>
+<p>This one broke my heart. In a session on children with emotional needs, Kimberley Roan McVeigh asked the question “When was the last time we”caught” a young person being good?“. As Level 1 lead, I used to send my class emails about their attendance/engagement via Moodle logs but everyone got an email, not just the ones that were flagged, this is part of the the text the ones who were above average got:</p>
+<blockquote class="blockquote">
+<p>We know that engagement in the first few weeks of term is highly predictive of achievement and wellbeing, I know you have had a lot going on so well done for working through everything. I also know that often when students just get on and do the work that you often feel like it’s not seen, so this is just to say that I see you and I see the effort you’re putting in.</p>
+</blockquote>
+<p>And it made me think about what else we can do to not just monitor and manage disruptive behaviour, but to actively reward good behaviour. We may think that we shouldn’t need to do this in HE and that this should be left in high school, but I think that world hasn’t existed for a very long time.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1758063600000" data-listing-file-modified-sort="1758549306831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1353">
-<div class="thumbnail">
-<p><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external"></a></p><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">Supporting positive behaviour</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">I was grateful to have the opportunity to attend the Positive Relationships and Behaviour in Schools Scotland Conference in Edinburgh yesterday. My reason for attending is…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">
-<div class="listing-date">
-September 17, 2025
-</div>
-<div class="listing-author">
-Emily Nordmann
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1756594800000" data-listing-file-modified-sort="1757315726000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="42" data-listing-word-count-sort="8364">
-<div class="thumbnail">
-<p><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external"></a></p><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">
-<p class="card-img-top"><img src="post\2025-08-31-munro-tidy-tuesday\wh_grade.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">Munro Tidy Tuesday</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">I was immediately obsessed when I saw the Tidy Tuesday theme was Scottish Munros - we have climbed 58/282 so far. As I assume is the case for the majority of baggers, we use …</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">
-<div class="listing-date">
-August 31, 2025
-</div>
-<div class="listing-author">
-Emily Nordmann
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1742947200000" data-listing-file-modified-sort="1756762491000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1840">
-<div class="thumbnail">
-<p><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external"></a></p><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">
-<p class="card-img-top"><img src="post\2025-03-26-supporting-scholarship-in-yourself-and-others\images\291646002_10103756675309971_1065449788018260080_n.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">Supporting scholarship in yourself and others</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">Today I visited Queen Mary University London where I met with the Teaching and Scholarship staff at the School of Biological and Behavioural Sciences. I was asked to talk…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">
-<div class="listing-date">
-March 26, 2025
-</div>
-<div class="listing-author">
-Emily Nordmann
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1733875200000" data-listing-file-modified-sort="1756762453000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1148">
-<div class="thumbnail">
-<p><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external"></a></p><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">
-<p class="card-img-top"><img src="post\2024-12-11-from-peru-with-love\images\DSC00049.JPG"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">From PERU, with love</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">Today was my last official event as Centre Head for the Pedagogy and Education Research Unit (PERU), and I wanted to take the opportunity to talk about why I think…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">
-<div class="listing-date">
-December 11, 2024
-</div>
-<div class="listing-author">
-Emily Nordmann
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1729897200000" data-listing-file-modified-sort="1756762405000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1438">
-<div class="thumbnail">
-<p><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external"></a></p><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">MCQs in the age of AI</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">I shared this guide on Writing Good Multiple Choice Test Questions on social media and the first response I got on both LinkedIn and BlueSky was whether MCQs hold up in the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">
-<div class="listing-date">
-October 26, 2024
-</div>
-<div class="listing-author">
-Emily Nordmann
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="chatgpt" data-listing-date-sort="1690844400000" data-listing-file-modified-sort="1756762368000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2243">
-<div class="thumbnail">
-<p><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external"></a></p><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">ChatGPT: Student guidance for essays</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">Part 1: Using ChatGPT to create teaching materials: Data simulation &amp; MCQs</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">
-<div class="listing-date">
-August 1, 2023
-</div>
-<div class="listing-author">
-Emily Nordmann
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1661209200000" data-listing-file-modified-sort="1756762318000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="997">
-<div class="thumbnail">
-<p><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external"></a></p><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">Flexible Submission Windows</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">Like many, the number of extension requests on my course increased over the last two years. This is not a “OH THOSE BLOODY STUDENTS” post. I don’t blame students for any of…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">
-<div class="listing-date">
-August 23, 2022
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
