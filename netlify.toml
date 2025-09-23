@@ -1,11 +1,3 @@
 [build]
-command = "quarto render"
+command = "echo 'no build'"
 publish = "_site"
-
-[[plugins]]
-package = "netlify-plugin-r"     # installs R on Netlify build image
-
-[[plugins]]
-package = "@quarto/netlify-plugin-quarto"
-  [plugins.inputs]
-  version = "latest"
