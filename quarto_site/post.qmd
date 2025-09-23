@@ -1,8 +1,0 @@
----
-title: "Blog"
-listing:
-  contents: post
-  type: default
-  sort: "date desc"
-  filter-ui: false
----
