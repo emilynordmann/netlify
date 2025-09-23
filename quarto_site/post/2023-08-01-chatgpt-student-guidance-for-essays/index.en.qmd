@@ -3,10 +3,6 @@ title: 'ChatGPT: Student guidance for essays'
 author: Emily Nordmann
 date: '2023-08-01'
 slug: chatgpt-student-guidance-for-essays
-categories:
-  - chatgpt
-tags:
-  - chatgpt
 ---
 
 Part 1: [Using ChatGPT to create teaching materials: Data simulation & MCQs](https://www.emilynordmann.com/post/using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/)

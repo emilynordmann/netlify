@@ -1,7 +1,8 @@
 ---
 title: Flexible Submission Windows
 date: '2022-08-23'
-description: ''
+author: Emily Nordmann
+slug: flexible-submission
 ---
 
 
