@@ -6,5 +6,7 @@
 Thumbs.db
 /public/
 /resources/
-/.quarto/
+_site/
+.quarto/
+.quarto-cache/
 **/*.quarto_ipynb
