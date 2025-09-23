@@ -1,6 +1,11 @@
 [build]
-  base = "quarto_site"
-  publish = "_site"
+command = "quarto render"
+publish = "_site"
 
 [[plugins]]
-  package = "@quarto/netlify-plugin-quarto"
+package = "netlify-plugin-r"     # installs R on Netlify build image
+
+[[plugins]]
+package = "@quarto/netlify-plugin-quarto"
+  [plugins.inputs]
+  version = "latest"
