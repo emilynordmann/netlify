@@ -1,0 +1,1184 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-174149266-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Emily Nordmann">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Part 1: Using ChatGPT to create teaching materials: Data simulation &amp; MCQs
+Part 2: Using ChatGPT to create teaching materials: marking criteria &amp; rubrics
+Part 3: ChatGPT: Student guidance for multiple-choice assessments">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/chatgpt-student-guidance-for-essays/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174149266-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-174149266-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png">
+
+  <link rel="canonical" href="/post/chatgpt-student-guidance-for-essays/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@emilynordmann">
+  <meta property="twitter:creator" content="@emilynordmann">
+  
+  <meta property="og:site_name" content="Dr. Emily Nordmann">
+  <meta property="og:url" content="/post/chatgpt-student-guidance-for-essays/">
+  <meta property="og:title" content="ChatGPT: Student guidance for essays | Dr. Emily Nordmann">
+  <meta property="og:description" content="Part 1: Using ChatGPT to create teaching materials: Data simulation &amp; MCQs
+Part 2: Using ChatGPT to create teaching materials: marking criteria &amp; rubrics
+Part 3: ChatGPT: Student guidance for multiple-choice assessments"><meta property="og:image" content="/img/me_2018">
+  <meta property="twitter:image" content="/img/me_2018"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2023-08-01T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2023-08-01T21:20:56&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/chatgpt-student-guidance-for-essays/"
+  },
+  "headline": "ChatGPT: Student guidance for essays",
+  
+  "datePublished": "2023-08-01T00:00:00Z",
+  "dateModified": "2023-08-01T21:20:56+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Emily Nordmann"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dr. Emily Nordmann",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Part 1: Using ChatGPT to create teaching materials: Data simulation \u0026amp; MCQs\nPart 2: Using ChatGPT to create teaching materials: marking criteria \u0026amp; rubrics\nPart 3: ChatGPT: Student guidance for multiple-choice assessments"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>ChatGPT: Student guidance for essays | Dr. Emily Nordmann</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Dr. Emily Nordmann</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Dr. Emily Nordmann</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Open Educational Resources</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>ChatGPT: Student guidance for essays</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Aug 1, 2023
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/chatgpt/">chatgpt</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<p>Part 1: <a href="https://www.emilynordmann.com/post/using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/">Using ChatGPT to create teaching materials: Data simulation &amp; MCQs</a></p>
+<p>Part 2: <a href="https://www.emilynordmann.com/post/using-chatgpt-for-teaching-marking-criteria-rubrics/">Using ChatGPT to create teaching materials: marking criteria &amp; rubrics</a></p>
+<p>Part 3: <a href="https://www.emilynordmann.com/post/chatgpt-student-guidance-for-mulitple-choice-assessments/">ChatGPT: Student guidance for multiple-choice assessments</a></p>
+<p>Part 4: <a href="https://www.emilynordmann.com/post/using-chatgpt-for-learning-teaching-correcting-auto-transcripts/">Using ChatGPT for learning &amp; teaching: Correcting auto-transcripts</a></p>
+<p>You could argue that these blogs are an exercise in procrastination and if you spend any time with me in real life, you’ll be questioning why I’m writing all these whilst constantly moaning about workload. If I’m completely honest they are part-procrastination, but, genuinely, I’m much further along than if I hadn’t spent the time on these blogs as the process of writing has helped shaped my thoughts.</p>
+<p>I’ve been working on the guidance for my Level 1 essay and in some ways, writing guidance for MCQs was more problematic in that ChatGPT can get them all right very quickly. But in other ways, what is and is not academic misconduct was so clear with MCQs and it’s so much harder to draw the lines in the sand when it comes to an essay and provide good advice on how students can and should use AI. I’m so much less sure of myself with the essay guidance. I’ve structured it under three subheadings although this may well change between now and September (and feedback and ideas are most welcome!). I think it’s starting to look ok but my sense of unease remains.</p>
+<div id="what-use-of-ai-would-be-regarded-as-academic-misconduct-for-this-assessment" class="section level2">
+<h2>What use of AI would be regarded as academic misconduct for this assessment?</h2>
+<blockquote>
+<p>Using AI to write any part of your essay for you from scratch is academic misconduct and if we suspect you have used it in this way, we will report you for academic misconduct.</p>
+</blockquote>
+<blockquote>
+<p>An easy rule of thumb to follow for the essay is do not copy and paste anything from an AI into your essay. This doesn’t avoid every problem, and there are exceptions to the rule, but if you want a simple rule to follow, that’s a good starting point.</p>
+</blockquote>
+<blockquote>
+<p>Use AI to help you refine and edit your essay, do not use it to write the essay. When in doubt, come and ask talk to us in office hours - you will not get in trouble for asking how to do things right!</p>
+</blockquote>
+<p>It’s all shades of grey but I wanted to provide as much clarity as I could. The “don’t copy and paste” rule isn’t perfect but it probably works well enough to give the right idea. By explicitly noting they may not be sure and could reach out for help, I also wanted to highlight that this isn’t an exact art and it’s not wrong for them to have questions.</p>
+</div>
+<div id="how-can-i-use-ai-to-help-support-my-learning-for-this-assessment" class="section level2">
+<h2>How can I use AI to help support my learning for this assessment?</h2>
+<blockquote>
+<p>You can use specific AI tools to help with your literature search (but do not use ChatGPT for this! See below for more info):</p>
+</blockquote>
+<blockquote>
+<p>Tools like <a href="https://elicit.org/search">Elicit</a> or <a href="https://www.connectedpapers.com/">Connected Papers</a> can find relevant papers without perfect keyword match, summarise takeaways from the paper specific to your question, and extract key information from the papers. It’s not academic misconduct to use Elicit because you still have to read the papers, understand the information, and integrate it into your essay.</p>
+</blockquote>
+<blockquote>
+<p>You can use tools like ChatGPT to get feedback and use it to help you refine and edit (but not write!) your essay. For example, you can use it to get feedback on your draft essay plan. This is a good use of AI because you’re using it to get feedback but you’re playing an absolutely active role in the creation of your essay.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example prompt</strong>: Act as an expert psychology tutor. I am a first year undergraduate psychology student and have to write an essay on the question [give it your essay question]. Here is the marking criteria [give it the marking criteria]. And here is a draft structure I have written to plan my essay [give it your essay plan]. I want you to give me feedback on how I can improve my essay plan, but before you give any feedback, ask me up to 5 questions about my plan and use my answers to inform your feedback.</p>
+</blockquote>
+<blockquote>
+<p>You can also use it to give you feedback on your draft essay before you submit it. As with using it for feedback on your plan, this is a good use of AI because you’re using it in an active way and any changes to your essay will be your own work, you’re just getting direction form it.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example prompt</strong>: Act as an expert psychology tutor. am a first year undergraduate psychology student and have to write an essay on the question [give it your essay question]. Here is the marking criteria [give it the marking criteria]. Give me feedback on my essay for each of the marking criteria.</p>
+</blockquote>
+<p>To test out using it for feedback I got ChatGPT to write me a draft essay plan and essay and then I fed the snake it’s own tail and asked for feedback in a new chat window. The feedback it produced was not always up to what a human would produce (although let’s face it, that depends on the human) and there’s a need to urge caution but as a <em>supplement</em> rather than a replacement, I think this would be a useful form of formative feedback - here’s an example of the feedback it gave aligned with the marking criteria:</p>
+<blockquote>
+<p>3.2 Ensure that the essay has a logical structure and that the paragraphs flow together to form a coherent narrative: The structure of your essay is good, with an introduction, main body, and conclusion. The narrative flow between paragraphs is generally effective, but there are a few places where transitions could be smoother. Additionally, some paragraphs may be too long or too short, affecting the overall coherence of the essay. Consider reorganizing and editing for better flow and readability.</p>
+</blockquote>
+<p>It is quite general but I would prefer general to overly specific and the important thing here is that ChatGPT isn’t doing any of their work, they still have to action the feedback. I would also be really interested to know if there’s a difference in how students respond to AI vs human feedback - I would imagine they’d be more likely to assume the human was right but also coming from an AI probably strips the feedback of its emotion which might make them more likely to process it? Interesting times ahead.</p>
+<p>I also wanted to address the use of ChatGPT for editing. Most of my thoughts on this came out of trying to use it for <a href="https://www.emilynordmann.com/post/using-chatgpt-for-learning-teaching-correcting-auto-transcripts/">correcting auto-transcripts</a> where I really struggled to get it to do exactly what I wanted. My key concern here is students giving it their essay and then whether they wanted it to or not, ChatGPT editing the entire thing and changing the meaning of what they’ve written and stripping their writing of any individuality. I want them to make active, conscious choices and to learn from the editing process not just take what it gives them without thinking.</p>
+<blockquote>
+<p>Finally, you can use it to help you proof-read and edit. Be very careful to ask it to provide you with line-by-line changes with the comparison so that you can see what it has changed and why, because it means you’re making an active choice and it will also help you learn about how to improve your writing.</p>
+</blockquote>
+<blockquote>
+<p>Before you use AI for editing, remember that it is important that you develop your own voice as a writer and if you constantly use AI to edit you’ll end up with a bland, generic writing style. If everyone does this we’re going to end up with a world written in beige. Don’t be beige. Also remember that just because the AI suggests an edit, doesn’t mean it is better than what you’ve written! Even with the below prompts it may edit more than you ask it to - if it does this and edits huge paragraphs rather than individual sentences, ignore it and click regenerate response - you want it to give you the edits line-by-line so that you can compare them and choose the ones you think are actually an improvement.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example prompt</strong>: Act as an expert academic writing tutor. I have written an undergraduate university essay and I would like you to review it with regards to spelling, grammar, concise writing, APA formatting, and academic tone. Provide suggestions for edits I can make sentence-by-sentence. Provide the original and your edited suggestion so that I can compare them. Explain why you have suggested the edit [give it your essay]:</p>
+</blockquote>
+<blockquote>
+<p><strong>Example prompt if English is not your first language</strong>: Act as an expert academic writing tutor. My first language is [your first language]. I have written an undergraduate university essay and I would like you to review it with regards to ensuring that the writing follows the grammar rules and conventions of British English. Provide suggestions for edits I can make sentence-by-sentence. Provide the original and your edited suggestion so that I can compare them. Explain why you have suggested the edit [give it your essay]</p>
+</blockquote>
+<p>I am terrified that I am pointing them towards a tool that will potentially harm their development as writers, either because they will blindly copy and paste and end up changing the meaning of what they intended, or that we’ll end up in a world where everyone has the same generic A-corrected writing.</p>
+<p>But, abstinence as a policy isn’t going to work - if we don’t guide them they’re going to do it anyway, my logic here is that at least this way I can make them aware of the potential pitfalls.</p>
+<p>I am also very likely romanticising the need to develop an individual writing voice based on my own feelings about writing. As I write this I’ve got George Orwell’s <a href="https://sites.duke.edu/scientificwriting/orwells-6-rules/">rules for writing</a> swirling around in my head, the fact that I know them by heart should tell me I might have crossed the line into wanky academic. Maybe losing some individuality is the price we pay for massively improving the clarity of most people’s writing (I vehemently don’t believe this but I feel like I should at least provide the other side of the argument)?.</p>
+</div>
+<div id="what-are-the-limitations-of-using-ai-for-this-assessment-and-what-should-i-be-careful-of-aside-from-academic-misconduct" class="section level2">
+<h2>What are the limitations of using AI for this assessment and what should I be careful of aside from academic misconduct?</h2>
+<p>In addition to the above caveats, I have a standard heading about limitations to try and get them thinking more critically about AI and not just focus on the issue of misconduct.</p>
+<blockquote>
+<p>Do not use AI tools like ChatGPT to do your research. Use tools like Scopus, Web of Science, Google Scholar, ad Elicit and read the papers yourself. The reasons for this are that:
+a) if you rely on AI summaries you won’t develop the depth of understanding you need at university level and your essay will be shallow
+b) reading papers helps you develop an academic tone in your writing
+c) sometimes it tells you things that are simply wrong, including making up references that don’t exist
+d) it doesn’t have access to the most recent research.</p>
+</blockquote>
+<blockquote>
+<p>If you use it for feedback, it may give you advice that isn’t very good and if you’re not super careful about ensuring you’ve given it all the guidance from the labs and your tutor, it may end up telling you to do something that contradicts what we’ve told you to do. If you do use AI to help refine your structure, we’d strongly encourage you to come to office hours or GTA sessions to check you’re on the right track.</p>
+</blockquote>
+<blockquote>
+<p>AI writing is frequently formulaic, uninspiring, and often doesn’t have the right tone.</p>
+</blockquote>
+<blockquote>
+<p>When you ask it to suggest edits for your work, you have to be really careful to review its suggestions because sometimes it will change the core meaning of what you’ve written rather than just correcting the grammar or tone. Always ask it to give you suggestions sentence-by-sentence and if it doesn’t do this, try changing the prompt or regenerate the response until it does. Remember that your version might be better than than the AI - trust yourself!</p>
+</blockquote>
+<blockquote>
+<p>Another use case we’ve seen is using AI to correct your references into APA formatting, but having tried this, it didn’t do a very good job so we’d suggest using a reference manager like Zotero instead if you want something to help automate that process (although you still need to check them).</p>
+</blockquote>
+<p>Is this the best approach? I’m not sure. But I am fairly sure that right now, at scale, honesty and transparency is the only tool we’ve got that’s of any use. I know that some students will abuse it, and some will likely take my guidance to abuse it even more effectively. But I have always believed that we shouldn’t design learning &amp; teaching around the lowest common denominator and that the overwhelming majority of students want to, and do, do things as intended so we should give them what information we do have whilst we’re still figuring it out on our side.</p>
+<p>God I hope I’m right.</p>
+<hr />
+<p>About halfway through writing this blog I got the song “Walk through the fire” from the Buffy musical stuck in my head like the millennial I am so let’s end with that.</p>
+<p><em>Will this do a thing to change it?</em>
+<em>Am I leading them to danger?</em>
+<em>Are we all too far gone to care?</em></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5iyM6nDt5g8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/chatgpt/">chatgpt</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://emilynordmann.netlify.app//post/chatgpt-student-guidance-for-essays/&amp;text=ChatGPT:%20Student%20guidance%20for%20essays" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://emilynordmann.netlify.app//post/chatgpt-student-guidance-for-essays/&amp;t=ChatGPT:%20Student%20guidance%20for%20essays" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=ChatGPT:%20Student%20guidance%20for%20essays&amp;body=https://emilynordmann.netlify.app//post/chatgpt-student-guidance-for-essays/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://emilynordmann.netlify.app//post/chatgpt-student-guidance-for-essays/&amp;title=ChatGPT:%20Student%20guidance%20for%20essays" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=ChatGPT:%20Student%20guidance%20for%20essays%20https://emilynordmann.netlify.app//post/chatgpt-student-guidance-for-essays/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/emily-nordmann/avatar_hucc8d31354869aa2199fe02abdfec0d91_167220_270x270_fill_q90_lanczos_center.jpg" alt="Emily Nordmann">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="/">Emily Nordmann</a></h5>
+        <h6 class="card-subtitle">Senior Lecturer in Psychology, Associate Dean of Learning and Teaching</h6>
+        <p class="card-text">I am a teaching-focused Senior lecturer and conduct research into the relationship between learning, student engagement, and technology.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/emily-nordmann-b2476967/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.uk/citations?user=-7Y95XAAAAAJ&amp;hl" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/emilynordmann" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo="emilynordmann/netlify"
+        issue-term="pathname"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.341e58d06db179e1d53f3322b6883f4c.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
