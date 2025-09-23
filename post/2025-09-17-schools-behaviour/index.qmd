@@ -1,0 +1,52 @@
+---
+title: Supporting positive behaviour
+author: Emily Nordmann
+date: '2025-09-23'
+slug: schools-behaviour
+---
+
+I was grateful to have the opportunity to attend the [Positive Relationships and Behaviour in Schools Scotland Conference](https://www.holyroodinsight.com/conferences-and-events/relationships-and-behaviour-in-schools-scotland/) in Edinburgh last week. My reason for attending is that as Convenor of Transitions Working Group and in partnership with our Student Conduct Team, we're undertaking work to address an increase in behavioural issues we've seen over the last few years through our revised [Code of Expected Behaviour](https://www.gla.ac.uk/myglasgow/apg/policies/uniregs/regulations2025-26/feesandgeneral/studentsupportandconductmatters/reg37/). Particularly in our pre-honours classes, we've had more and more colleagues report students being disruptive, refusing to engage, and making unreasonable demands. We know we're not the only ones, we know that the causes are as complex as they are varied, we also know that blaming young people or generational differences is as unhelpful as it is inaccurate, and we know that those students are still the overwhelming minority. But we also know that it's not something we can put our head in the sand about and that for both staff and student wellbeing, we need to address it.
+
+Given that the issues are concentrated (although I hasten to add not exclusive to) first year, it is important to me that we know what's happening in schools to help better understand where our students are coming from, that our approaches align, and that schools and universities work in partnership. Whilst there were no easy answers, I did find the conference reassuring and I have a better sense of what we have to do, and why, so consider this blog me working through the thinking of my key takeaways.
+
+![](images/clipboard-3554642922.png)
+
+## The impact of covid
+
+Gordon West highlighted the [Behaviour in Scottish Schools Research (BISSR) 2023](https://www.gov.scot/publications/behaviour-scottish-schools-research-report-2023/) which found a significant increase in both low level disruption and more serious incidents of violence and aggression. However, he also made the very good point that previous iterations of the survey were conducted in 2012 and 2016 and that there was already and upward trend and that whilst some of the 2023 increase could be explained by covid and lockdown, there is a seven year gap between the 2023 and 2016 survey and so part of the increase is simply that there is a longer time period between surveys. I am not aware of any directly analogous work in HE although I would be surprised if the trends are not the same.
+
+## Process matters
+
+A common theme was the importance of having a clear mechanism and process to report incidents. The focus wasn't on being punitive but rather that it is easier to figure out what the cause of behavioural problems might be if you have the right data to spot patterns. One of the examples given was that if you have reporting that includes the time of the incident, you can spot that a child is being disruptive at a certain point each day and this might indicate that they are having trouble with a particular transition. Louise Pirie also made the point that targeting and reporting predictable common issues and everyday disruptions can help prevent more serious issues from arising through early intervention.
+
+As it relates to HE, this very much aligns with the work we're going in trying to standardise reporting of low-level behavioral concerns. A student who is disruptive and refuses to engage in a single class because they're having a bad day is very different to a student who is disruptive in every class they attend but because HE teaching is so spread out, without clear reporting mechanisms and joined-up data, we can't pick up on this stuff.
+
+## Behaviour as communication
+
+Directly related to the need to report was the theme of behaviour as communication - i.e., that all behaviour is the child/student trying to tell us something, intentionally or not. This could be that they don't understand what is expected of them, that they have a disability or neurodivergence that is causing difficulties or not being adjusted for, or it could be cultural differences in the understanding of what's expected in any given classroom setting. The reason that this is related to the need for clear reporting mechanism is as already stated, that data regarding patterns of behaviour makes it easier to identify what the underlying communication might be. It also reinforces that the process must be about support and development, rather than punishing poor behaviour.
+
+## Consequences
+
+There were a number of references to the need for consequences. Gordon West presented the Scottish Advisory Group on Relationships and Behaviour in Schools Action Plan to ensure safe and consistent environments in schools. Action 2 is "Identify good practice in evidence-based relationships and behavior approaches, including consequences" whilst Louise Pirie spoken about needing clear consequences with application guidance and Stuart Clark highlighted the need for consequences to be highly predictable and offer an incentive to improve.
+
+The focus of these discussion was not about taking a punitive approach but rather making sure that there is no ambiguity for either staff or students, that there are specific consequences with fair escalation, and that these expectations are written down so that everyone knows what's expected and what happens if those expectations are not met.
+
+For the HE context, we need to think through the consequences beyond reporting. For example, we are already required for disability reasons to provide lecture material in an alternative format (e.g., slides and recordings), a potential consequence for a student who is continually disruptive to the planned delivery of the class might be that they may only engage through the alternative format (i.e., asynchronous and self-directed learning). I am not sure this is necessarily the right answer but a really strong message was students learn very quickly when there are actually no consequences, so we need to think through our response in advance.
+
+## Don't forget about the 95%
+
+Another strong theme was the importance of ensuring that we don't focus on the ones being disruptive to the detriment of the overwhelming majority who are following the rules and I know I have been guilty of this in the past. When you have one or two extremely difficult cases that cause a lot of upset, it's hard not to see anything other than the problems. As it relates to managing classroom behaviour, this point was also related to the [UN Convention on Rights of the Child](https://www.unicef.org.uk/what-we-do/un-convention-child-rights/) in that whilst we need to be mindful of how we're dealing with disruptive students, the other students in the room have a right to a safe environment and access to their education and so not dealing with it isn't an option.
+
+Stuart Clark spoke about the 95/5 Rule -- what is excellent behaviour for almost all in a specific school setting? What are the highest standards 95-99% of learners could normally meet? And how do we then respond flexibly to the 1-5%? I think this translates quite well to HE in that we're essentially saying that we want to be explicit and clear about our expectations whilst recognising that not all students can be held to those standards for a variety of reasons related to inclusion.
+
+## Catch a child being good
+
+This one broke my heart. In a session on children with emotional needs, Kimberley Roan McVeigh asked the question "When was the last time we"caught" a young person being good?". As Level 1 lead, I used to send my class emails about their attendance/engagement via Moodle logs but everyone got an email, not just the ones that were flagged, this is part of the the text the ones who were above average got:
+
+> We know that engagement in the first few weeks of term is highly predictive of achievement and wellbeing, I know you have had a lot going on so well done for working through everything. I also know that often when students just get on and do the work that you often feel like it's not seen, so this is just to say that I see you and I see the effort you're putting in.
+
+The feedback I got about this email was so clear and consistent - many of them said it was the only time someone had told them they were doing a good job. And it made me think about what else we can do to not just monitor and manage disruptive behaviour, but to actively reward good behaviour. We may think that we shouldn't need to do this in HE and that this should be left in high school, but I think that world hasn't existed for a very long time.
+
+## Teachers deserve a pay rise
+
+And finally, a statement I don't think anyone will disagree with. I was speaking to one of the other delegates and explaining why I was there given I work in HE and I was describing some of the worst, and most upsetting incidents we've had to deal with and I realised she was waiting for me to get to the truly bad bit. Everything I described as shocking to me as an HE educator she'd experienced many times before. Give them a pay rise (and some psychological support).

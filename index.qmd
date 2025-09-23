@@ -1,0 +1,40 @@
+---
+title: "Professor Emily Nordmann"
+page-layout: full
+---
+
+::: {.grid .gap-4}
+::: {.g-col-12 .g-col-md-4}
+
+<div class="profile-card">
+<p>Associate Dean of Learning and Teaching</p>
+<p>University of Glasgow</p>
+
+<img src="images/headshot_2025.jpg" class="avatar" alt="Headshot of Emily Nordmann" />
+
+
+<p class="icons">
+<a href="mailto:emily.nordmann@glasgow.ac.uk" aria-label="Email"><i class="bi bi-envelope"></i></a>
+<a href="https://www.linkedin.com/in/emilynordmann/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://scholar.google.co.uk/citations?user=-7Y95XAAAAAJ&hl" aria-label="Google Scholar"><i class="bi bi-google"></i></a>
+<a href="https://github.com/emilynordmann" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</p>
+</div>
+
+:::
+::: {.g-col-12 .g-col-md-8}
+
+## Biography
+
+I am Associate Dean for Learning and Teaching and 
+Professor of Evidence-Informed Education at the University of Glasgow. My research predominantly focuses on lecture capture, how it can be used as an effective study tool by students and the impact on students from widening participation backgrounds as well as those with disabilities and neurodivergent conditions. In all my work, I draw on theories of learning from cognitive science and self-regulation, as well as theories of belonging and self-efficacy.
+
+My leadership roles have centred around supporting those on the learning, teaching, and scholarship track. I am currently lead of the College of MVLS LTS Network and previously founded and led the Pedagogy and Education Research Unit in the School of Psychology and Neuroscience.
+
+I am based in the School of Psychology and Neuroscience. My teaching is varied although centres on cognitive psychology and beginner data skills in R and I am a vocal advocate of open science and open educational resources where as a member of the PsyTeachR team I has authored several open-access data skills books and tutorials.
+
+
+:::
+:::
+
+
