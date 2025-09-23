@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Emily Nordmann"
+  site-url: "https://www.emilynordmann.com/"
+  navbar:
+    left:
+      - text: "Blog"
+        href: post.qmd
+      - text: "Contact"
+        href: contact.qmd
+      - text: "CV"
+        href: files/cv.pdf
+
+format:
+  html:
+    toc: false
+    css: styles.css
+    theme:
+      light: cosmo
+      dark: slate
+    toggle: true           # adds the dark/light switch in the navbar
+
+# Global execution defaults
+execute:
+  freeze: auto
+  warning: false           # hide warnings site-wide (you can override per chunk)
+  message: false           # hide messages site-wide (you can override per chunk)
+
+# Site-wide metadata and assets
+lang: en
+date-format: long
+resources:
+  - "images/**"
+  - "files/**"
