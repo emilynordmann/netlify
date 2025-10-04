@@ -1,5 +1,7 @@
 ---
 title: "Corbetts"
+author: Emily Nordmann
+date: '2025-10-04'
 format:
   html:
     code-fold: true
