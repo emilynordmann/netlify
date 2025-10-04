@@ -221,6 +221,22 @@ nature_13 <- c(
   "#FFD700"   # Sun yellow
 )
 
+nature_11 <- c(
+  "#355E3B",  # Pine green
+  "#6B8E23",  # Moss
+  "#8B5A2B",  # Earth brown
+  "#D2B48C",  # Sand
+  "#87CEEB",  # Sky blue
+  "#4682B4",  # Loch blue
+  "#7D7D7D",  # Granite grey
+  "#A9A9A9",  # Slate grey
+  "#8E6C88",  # Heather purple
+  "#E07B39",  # Sunset orange
+  "#FFD700"   # Sun yellow
+)
+
+
+
 nature_19 <- c(
   "#355E3B",  # Pine green
   "#6B8E23",  # Moss
@@ -476,7 +492,8 @@ combined_dat |>
   labs(x = "Hll type", 
        y = "Percent", 
        fill = NULL, 
-       title = "Percent of Munro and Corbett routes that mention pathless") +
+       title = "Percent of routes that mention pathless",
+       subtitle = "Munro vs Corbett") +
   theme(
     legend.position = "inside",
     legend.position.inside = c(0.9, 0.85),
@@ -682,28 +699,16 @@ ggplot(route_dat_combined, aes(x = distance_km, fill = type)) +
 Which region has the highest and lowest rated Corbetts (by user rating)? The bottom three are the same for [the Munros](https://www.emilynordmann.com/post/2025-08-31-munro-tidy-tuesday/index.en#user-ratings) but the top three are a little different - for Munros Isle of Skye, Torridon, and Fort William took the podium whereas Ullapool and Sutherland claim their place for Corbetts.
 
 ```{r}
-region_rating_top <- corbett_dat |>
+region_rating <- corbett_dat |>
   group_by(region) |>
   summarise(avg_rating = mean(rating, na.rm = TRUE), 
             n = n(),
             .groups = "drop") |>
-  filter(n >= 5)|>
-  slice_max(avg_rating, n = 3)
+  filter(n >= 5)
 
-# bottom 3
-
-region_rating_bottom <- corbett_dat |>
-  group_by(region) |>
-  summarise(avg_rating = mean(rating, na.rm = TRUE), 
-            n = n(),
-            .groups = "drop") |>
-  filter(n >= 5)|>
-  slice_min(avg_rating, n = 3)
-
-region_top_bottom <-bind_rows(region_rating_top, region_rating_bottom)
 
 ggplot(
-  semi_join(corbett_dat, region_top_bottom, by = "region"),
+  semi_join(corbett_dat, region_rating, by = "region"),
   aes(
     x = rating,
     y = fct_reorder(region, rating, .fun = mean, .desc = FALSE),
@@ -719,19 +724,23 @@ ggplot(
   scale_x_continuous(expand = c(0.01, 0)) +
   scale_colour_manual(values = c("Mean height (m)" = "black")) +
   theme_economist() +
-  scale_fill_manual(values = nature_6) +
+  scale_fill_manual(values = nature_11) +
   labs(
     x = NULL, y = NULL,
-    title = "Which region has the highest user rated Corbett?",
+    title = "User ratings by region",
     colour = NULL,
-    subtitle = "Top & bottom 3 (regions w/ 5+ Corbetts)"
+    subtitle = "Regions w/ 5+ Corbetts"
   ) +
   guides(fill = "none") +
   theme(
     legend.position = "inside",
-   legend.position.inside = c(0.87, 0.1),
+   legend.position.inside = c(0.87, 1.1),
     legend.text = element_text(size = 10)
-  )
+  )+
+  theme(
+    plot.title.position = "plot",                
+    plot.title = element_text(margin = margin(b = 10)))
+    
 
 ```
 
@@ -789,15 +798,17 @@ ggplotly(bothy_plot, tooltip = "text")
 Number of ascents (how many people have recorded on walkhighlands that they have bagged a particular Corbett ) by ratings
 
 ```{r}
-ggplot(route_dat, aes(x = route_ascents, y = route_rating)) +
-  geom_point(aes(text = first_route_url)) +
+p <- ggplot(route_dat, aes(x = route_ascents, y = route_rating)) +
+  geom_point(aes(text = first_route_title)) +
   theme_economist() +
   scale_y_continuous(breaks = seq(1:5)) +
   scale_x_continuous(breaks = seq(0, 12000, 2000))+
   coord_cartesian(ylim = c(1,5)) +
   labs(y = "User rating (1-5)",
        x = "Number of recorded ascents",
-       title = "Number of ascents by rating")+
+       title = "Number of ascents by rating")
+
+p +
   annotate(geom = "curve", 
           x = 10500, y = 3, 
           xend = 11437, yend = 4.4,
@@ -836,15 +847,18 @@ ggplot(route_dat, aes(x = route_ascents, y = route_rating)) +
            label = "Goat Fell")
 ```
 
+And here's that as an interactive map so you can see them all.
+
+```{r}
+ggplotly(p, text = first_route_title)
+```
+
+
 ## Rating by feature
 
 It's not a surprise to me that scrambling routes are higher rated, but it is a surprise that across the board, Corbett routes are rated higher than Munros. My suspicion is that it is a combination of more people rating the Munros, and the enthusiasm for hills of the people who are likely to walk them.
 
 ```{r}
-route_dat_combined |>
-  group_by(type, pathless) |>
-  summarise(rating = mean(route_rating))
-
 route_dat_combined |>
   group_by(type, scramble_exposed) |>
   summarise(rating = mean(route_rating)) |>
