@@ -22,7 +22,7 @@ b) For anything that refers to "routes that mention..." I am using text-mining. 
 
 ## Data sources
 
-As in my Munro adventure, the Corbett analysis combines two sources of data - the [Database of British and Irish Hills v18.2](https://www.hills-database.co.uk/) and [walkhighlands](https://www.walkhighlands.co.uk/). As before, I have walkhighlands permission and as before, if you use walkhighlands, you should give them [some money](https://www.walkhighlands.co.uk/donate.shtml). 
+As in my Munro adventure, the Corbett analysis combines two sources of data - the [Database of British and Irish Hills v18.2](https://www.hills-database.co.uk/) and [walkhighlands](https://www.walkhighlands.co.uk/). I previously obtained walkhighlands permission to use the data like this and as always, if you use walkhighlands, you should give them [some money](https://www.walkhighlands.co.uk/donate.shtml). 
 
 ```{r}
 library(tidyverse)
