@@ -107,9 +107,8 @@ get_first_route_link <- function(munro_page_url) {
 extract_flags_time_distance <- function(route_url) {
   if (is.na(route_url) || !nzchar(route_url)) {
     return(tibble(
-      scramble = NA, exposed = NA, spate = NA, river = NA, arete = NA, bog = NA,
+      scramble = NA, exposed = NA, spate = NA, river = NA, pathless = NA, bog = NA,
       toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
-      wood = NA,
       time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
       ascent = NA_real_
     ))
@@ -146,9 +145,8 @@ extract_flags_time_distance <- function(route_url) {
     exposed  = stringr::str_detect(txt, stringr::regex("\\bexposed\\b|\\bexposure\\b", ignore_case = TRUE)),
     spate    = stringr::str_detect(txt, stringr::regex("\\bspate\\b|\\bin\\s+spate\\b", ignore_case = TRUE)),
     river    = stringr::str_detect(txt, stringr::regex("\\brivers?\\b", ignore_case = TRUE)),
-    arete    = stringr::str_detect(txt, stringr::regex("\\bar(?:e|ê)te\\b", ignore_case = TRUE)),
-    bog      = bog_flag,
-    wood     = wood_flag,
+    bog       = bog_flag,
+    pathless  = stringr::str_detect(txt, stringr::regex("\\bpathless\\b", ignore_case = TRUE)),
     toilet     = stringr::str_detect(txt, stringr::regex("\\btoilet\\b", ignore_case = TRUE)),
     bothy      = stringr::str_detect(txt, stringr::regex("\\bbothy\\b", ignore_case = TRUE)),
     pub        = stringr::str_detect(txt, stringr::regex("\\bpub\\b", ignore_case = TRUE)),
@@ -186,13 +184,13 @@ walkhighlands <-
       ft <- tryCatch(
         extract_flags_time_distance(fr$first_route_url),
         error = \(e) tibble(
-          scramble = NA, exposed = NA, spate = NA, river = NA, arete = NA, bog = NA,
+          scramble = NA, exposed = NA, spate = NA, river = NA, pathless = NA, bog = NA,
           toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
-          wood = NA,
           time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
           ascent = NA_real_
         )
       )
+      
       
       tibble(
         munro              = m_name,
@@ -209,14 +207,14 @@ walkhighlands <-
         spate              = ft$spate,
         bog                = ft$bog,
         river              = ft$river,
-        arete              = ft$arete,
+        pathless           = ft$pathless,
         toilet             = ft$toilet,
         bothy              = ft$bothy,
         pub                = ft$pub,
         car_park           = ft$car_park,
-        deer_fence         = ft$deer_fence,
-        wood               = ft$wood
+        deer_fence         = ft$deer_fence
       )
+      
     }
   )
 
