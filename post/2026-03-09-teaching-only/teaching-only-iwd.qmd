@@ -32,13 +32,13 @@ set_flextable_defaults(
 
 *AI declaration: Claude Opus 4.6 was used heavily in the writing and coding of this blog. I have spent a lot of time shaping, editing, and verifying Claude's work, but Claude is primary author of everything except the conclusion. Which will be immediately obvious because that's where I start swearing*
 
-Women now make up around a third % of professors in UK higher education ([HESA, 2025](https://www.hesa.ac.uk/news/28-01-2025/sb270-higher-education-staff-statistics)). That figure has been rising steadily and we can celebrate moving in the right direction if not yet being at the destination. But if women professors are disproportionately concentrated in teaching-focused roles, there's an uncomfortable possiblity that women are being funneled into "less prestigious" teaching-focused roles. I don't think teaching-focused roles are less prestigious and I normally refuse to even give that suggestion any air time but in this post, acknowledging the rhetoric is unavoidable.
+Women now make up around a third of professors in UK higher education ([HESA, 2025](https://www.hesa.ac.uk/news/28-01-2025/sb270-higher-education-staff-statistics)). That figure has been rising steadily and we can celebrate moving in the right direction if not yet being at the destination. But if women professors are disproportionately concentrated in teaching-focused roles, there's an uncomfortable possiblity that women are being funneled into "less prestigious" teaching-focused roles. I don't think teaching-focused roles are less prestigious and I normally refuse to even give that suggestion any air time but in this post, acknowledging the rhetoric is unavoidable.
 
 This blog uses the [HESA Staff Record](https://www.hesa.ac.uk/data-and-analysis/staff) data to look at who makes it to professor overall, the gender balance among all academics, how feminised teaching-focused work is at every career level, and finally whether that pattern holds specifically among professors.
 
 Notes on the data are below but an important detail is that we have filtered the dataset to only include Open-ended/Permanent positions. The reason for this is that, arguably, there are more junior, fixed-term teaching assistant roles than R&T roles and then people leave these to progress to an open ended contract. By just including those who are open-ended, when we calculate the percent who make it Prof, we can get closer to the figures for people who are on junior teaching-only contracts as a career path, rather than as a stepping stone.
 
-What this does is make the numbers look better than they really are,so just keep in mind that everything you see here is actually a bit worse in reality.
+What this does is make the numbers look better than they really are, so just keep in mind that everything you see here is actually a bit worse in reality.
 
 ::: {.callout-note collapse="true"}
 ## Contract and seniority categories explained
@@ -312,7 +312,7 @@ pct_prof_by_function |>
 ::: {.callout-tip icon="false"}
 ## tl:dr
 
-On traditional R&T contracts, a meaningful share of staff reach professor, though the gender gap is still huge On teaching-focused contracts, professorships are very rare for everyone. Both women and men are much less likely to reach the top via a teaching-focused contract than a combined one.
+On traditional R&T contracts, a meaningful share of staff reach professor, though the gender gap is still huge. On teaching-focused contracts, professorships are very rare for everyone. Both women and men are much less likely to reach the top via a teaching-focused contract than a combined one.
 :::
 
 ## Women in UK academia
@@ -815,8 +815,8 @@ My most plausible explanations for these numbers are a combination of optimism -
 
 I find the story the data tell about gender and career track harder to turn into a coherent viewpoint. Perhaps if I keep writing one will emerge. Bear with me.
 
-Teaching-focused careers are a good thing. I feel very strongly that what is expected of both teaching and research by modern higher education mean that specialised tracks are necessary.I also feel very strongly that teaching-focused careers are not second-class in any way, shape, or form. I am a world-class Professor and my Professorship took just as much work and involves the same level of international standing and impact as an R&T Prof. I normally don't even acknowledge the "second class" thing, in the same way I don't acknowledge that some people think homosexuality is evil when I tell people I have a wife. Because it's utter nonsense and why would I give air to the opinions of trolls and prime the idea that I am less than I am?
+Teaching-focused careers are a good thing. I feel very strongly that what is expected of both teaching and research by modern higher education mean that specialised tracks are necessary. I also feel very strongly that teaching-focused careers are not second-class in any way, shape, or form. I am a world-class Professor and my Professorship took just as much work and involves the same level of international standing and impact as an R&T Prof. I normally don't even acknowledge the "second class" thing, in the same way I don't acknowledge that some people think homosexuality is evil when I tell people I have a wife. Because it's utter nonsense and why would I give air to the opinions of trolls and prime the idea that I am less than I am?
 
-But there is a tension here because teaching-focused positions are more likely to be undertaken by women and we know from the history of everything and the patriarchy, that when a job is done by women, it's undervalued. Except, this gets more complicated because whilst the majority of those on teaching-only contracts are women, the majority of teaching-only Profs are still men. So there is prestige associated with teaching-only roles and the system is still more likely to award it to men.
+But there is a tension here because teaching-focused positions are more likely to be undertaken by women and we know from the history of everything and the patriarchy, that when a job is done by women, it's undervalued. Except, this gets more complicated because whilst the majority of those on teaching-only contracts are women, the majority of teaching-only Profs are still men. So it turns out that there is prestige associated with teaching-only roles but the system is more likely to award it to men.
 
 My lack of a coherent viewpoint stems from the fact I don't know what I want these figures to show (aside from that 1.6% going up). I don't necessarily want there to be gender parity between tracks, what I want is for everyone to have the career they have *chosen* and for all career tracks to have equal recognition and support.
