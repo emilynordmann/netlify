@@ -317,7 +317,7 @@ On traditional R&T contracts, a meaningful share of staff reach professor, thoug
 
 ## Women in UK academia
 
-Too see whether there are too few or too many women in teaching-only roles, we first need to establish what proportion of academic staff are women overall and how that changes with seniority.
+To see whether there are too few or too many women in teaching-only roles, we first need to establish what proportion of academic staff are women overall and how that changes with seniority.
 
 ```{r}
 #| label: scene-setting
