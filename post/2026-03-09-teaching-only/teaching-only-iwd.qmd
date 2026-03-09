@@ -1,0 +1,822 @@
+---
+title: "Teaching-focused professors and the gender gap at the top"
+author: "Professor Emily Nordmann"
+date: today
+format:
+  html:
+    embed-resources: true
+code-fold: true
+code-summary: "Show code"
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| code-fold: true
+
+library(tidyverse)
+library(readxl)
+library(janitor)
+library(flextable)
+
+set_flextable_defaults(
+  font.family = "Arial",
+  font.size = 10,
+  border.color = "#003865",
+  padding = 4
+)
+```
+
+*AI declaration: Claude Opus 4.6 was used heavily in the writing and coding of this blog. I have spent a lot of time shaping, editing, and verifying Claude's work, but Claude is primary author of everything except the conclusion. Which will be immediately obvious because that's where I start swearing*
+
+Women now make up around a third % of professors in UK higher education ([HESA, 2025](https://www.hesa.ac.uk/news/28-01-2025/sb270-higher-education-staff-statistics)). That figure has been rising steadily and we can celebrate moving in the right direction if not yet being at the destination. But if women professors are disproportionately concentrated in teaching-focused roles, there's an uncomfortable possiblity that women are being funneled into "less prestigious" teaching-focused roles. I don't think teaching-focused roles are less prestigious and I normally refuse to even give that suggestion any air time but in this post, acknowledging the rhetoric is unavoidable.
+
+This blog uses the [HESA Staff Record](https://www.hesa.ac.uk/data-and-analysis/staff) data to look at who makes it to professor overall, the gender balance among all academics, how feminised teaching-focused work is at every career level, and finally whether that pattern holds specifically among professors.
+
+Notes on the data are below but an important detail is that we have filtered the dataset to only include Open-ended/Permanent positions. The reason for this is that, arguably, there are more junior, fixed-term teaching assistant roles than R&T roles and then people leave these to progress to an open ended contract. By just including those who are open-ended, when we calculate the percent who make it Prof, we can get closer to the figures for people who are on junior teaching-only contracts as a career path, rather than as a stepping stone.
+
+What this does is make the numbers look better than they really are,so just keep in mind that everything you see here is actually a bit worse in reality.
+
+::: {.callout-note collapse="true"}
+## Contract and seniority categories explained
+
+HESA classifies academic staff along two dimensions: their **academic employment function** (what kind of work they are contracted to do) and their **contract level** (their seniority).
+
+**Academic employment function** describes the primary purpose of the role.
+
+-   **Both teaching and research** is the most common category for permanent academic staff, expected to carry out teaching and research as core duties. This is the traditional academic contract most strongly associated with career progression to professor. At UofG we'd refer to these as R&T staff.
+-   **Teaching only** is the HESA label for posts whose primary contractual focus is teaching and teaching-related activities such as curriculum development, student support, and assessment. These posts are sometimes described as "teaching-focused" or "education-focused" roles. It is worth noting that the label is contentious in that staff on these contracts do not just do teaching, we are generally expected to engage in the scholarship of learning and teaching, and many of us produce research in educational contexts. The distinction from combined contracts is really one of emphasis and FTE allocation rather than an absolute absence of research activity. Teaching-focused roles have grown rapidly across the UK sector. At UofG we'd refer to these as LTS staff.
+-   **Research only** posts are contracted primarily for research. They are often externally funded and time-limited, and are common in laboratory sciences and large grant-funded projects.
+
+**Contract level** describes seniority within the institution.
+
+-   **Professor** (HESA code F1) is the highest academic grade. This analysis uses this definition throughout. It is worth noting that HESA's "Professor" category excludes individuals with the title of professor who are primarily in senior management roles.
+-   **Other senior academic** is broadly equivalent to associate professor, reader, or senior lecturer, depending on institutional conventions.
+-   **Other contract level** covers all remaining academic staff, including lecturer, research fellow, and postdoctoral grades.
+:::
+
+::: {.callout-note collapse="true"}
+## About the data
+
+This analysis draws on two HESA open datasets:
+
+-   **Table 9** (national-level): a single CSV covering all UK HE academic staff from 2014/15 to 2024/25. Each row is a count of staff for a particular combination of sex, academic employment function, contract level, salary source, mode of employment, terms, clinical status, and country. There is no aggregate row for salary source, so the code sums across all 23 categories.
+
+-   **Table 17** (institution-level): separate CSV files for each academic year from 2014/15 to 2024/25, with 12 metadata rows at the top. This table covers **full-time staff only** and includes a provider name column, which allows Russell Group vs non-Russell Group comparisons.
+
+Counts are Full-Person Equivalent (FPE), rounded to the nearest 5. "Professor" refers to HESA contract level F1, which excludes professors in senior management roles. From 2022/23, the definition of "sex" changed from self-identification to legal documents. All figures in this post refer to staff full-time and Open-ended/Permanent employment unless stated otherwise. Staff totals in this analysis include only Female and Male categories (excluding "Other" and "Not known") and only the three main academic functions (teaching only, research only, and both teaching and research), excluding staff with "Neither teaching nor research" function. This means totals will be slightly lower than HESA's headline figures.
+:::
+
+```{r}
+#| label: read-data
+#| code-fold: true
+#| code-summary: "Show data loading code"
+
+# ---- Read Table 9 ----
+
+t9_files <- list.files("table-9/", full.names = TRUE)
+
+read_t9 <- function(filepath) {
+  read_csv(filepath, skip = 12) |>
+    clean_names()
+}
+
+table9 <- map_dfr(t9_files, read_t9) |>
+  filter(
+    sex %in% c("Female", "Male"),
+    contract_levels %in% c("Professor", "Other senior academic",
+                           "Other contract level"),
+    academic_employment_function %in% c(
+      "Teaching only", "Research only", "Both teaching and research"
+    ),
+    mode_of_employment == "All",
+    country_of_he_provider == "All",
+    clinical_status == "All",
+    terms_of_employment != "Fixed-term"
+  ) 
+
+# ---- Read Table 17 (multiple Excel files) ----
+t17_files <- list.files("table-17/", full.names = TRUE)
+
+read_t17 <- function(filepath) {
+  read_csv(filepath, skip = 12) |>
+    clean_names()
+}
+
+table17 <- map_dfr(t17_files, read_t17)
+```
+
+```{r}
+#| label: helpers
+#| code-fold: true
+#| code-summary: "Show helper variables and theme"
+
+# ---- Russell Group ----
+russell_group <- c(
+  "The University of Birmingham",
+  "The University of Bristol",
+  "The University of Cambridge",
+  "Cardiff University",
+  "Durham University",
+  "The University of Edinburgh",
+  "The University of Exeter",
+  "The University of Glasgow",
+  "Imperial College of Science, Technology and Medicine",
+  "King's College London",
+  "The University of Leeds",
+  "The University of Liverpool",
+  "The London School of Economics and Political Science",
+  "The University of Manchester",
+  "Newcastle University",
+  "The University of Nottingham",
+  "The University of Oxford",
+  "Queen Mary University of London",
+  "Queen's University Belfast",
+  "The University of Sheffield",
+  "The University of Southampton",
+  "University College London",
+  "The University of Warwick",
+  "The University of York"
+)
+
+# ---- Glasgow colours ----
+uog_blue    <- "#003865"
+uog_pink    <- "#AE2573"
+uog_grey    <- "#7F7F7F"
+uog_green   <- "#007A4D"
+uog_black   <- "#000000"
+
+theme_uog <- function() {
+  theme_minimal(base_family = "Aptos", base_size = 12) +
+    theme(
+      plot.title = element_text(colour = uog_black, face = "bold", size = 14),
+      plot.subtitle = element_text(colour = uog_grey, size = 11),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      legend.position = "bottom",
+      panel.grid.minor = element_blank()
+    )
+}
+
+# ---- Flextable helper ----
+ft_uog <- function(ft) {
+  ft |>
+    bg(part = "header", bg = uog_blue) |>
+    color(part = "header", color = "white") |>
+    bold(part = "header") |>
+    align(align = "center", part = "all") |>
+    align(j = 1, align = "left", part = "body") |>
+    border_remove() |>
+    hline_top(part = "header", border = officer::fp_border(color = uog_blue, width = 2)) |>
+    hline_bottom(part = "header", border = officer::fp_border(color = uog_blue, width = 1)) |>
+    hline_bottom(part = "body", border = officer::fp_border(color = uog_blue, width = 2)) |>
+    autofit()
+}
+```
+
+## Who makes it to professor?
+
+Before getting into contract type, it is worth establishing the baseline of how many academics hold a professorship at all, and whether this differs by gender and academic employment function.
+
+```{r}
+#| label: who-makes-it
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
+# Total academics and professors, by sex and function
+# Sum across salary source, filter to national totals
+staff_totals <- table9 |>
+  group_by(academic_year, contract_levels, sex, academic_employment_function) |>
+  summarise(number = sum(number, na.rm = TRUE), .groups = "drop")
+
+latest_year <- staff_totals |>
+  pull(academic_year) |>
+  max()
+
+# --- Table 1: Overall % who are professors ---
+overall_pct_prof <- staff_totals |>
+  filter(academic_year == latest_year) |>
+  group_by(sex) |>
+  summarise(
+    total_staff = sum(number),
+    professors = sum(number[contract_levels == "Professor"]),
+    .groups = "drop"
+  ) |>
+  mutate(pct_professor = professors / total_staff * 100)
+
+overall_all <- staff_totals |>
+  filter(academic_year == latest_year) |>
+  summarise(
+    total_staff = sum(number),
+    professors = sum(number[contract_levels == "Professor"])
+  ) |>
+  mutate(sex = "All", pct_professor = professors / total_staff * 100)
+
+tbl_overall <- bind_rows(overall_all, overall_pct_prof) |>
+  select(sex, total_staff, professors, pct_professor) |>
+  mutate(pct_professor = round(pct_professor, 1))
+```
+
+```{r}
+#| label: tbl-overall-prof
+#| tbl-cap: !expr str_c("% of academic staff who are professors, by sex (", latest_year, ")")
+#| code-fold: true
+
+tbl_overall |>
+  rename(
+    Sex = sex,
+    `Total academic staff` = total_staff,
+    Professors = professors,
+    `% who are professors` = pct_professor
+  ) |>
+  flextable() |>
+  ft_uog() |>
+  colformat_num(j = c("Total academic staff", "Professors"), big.mark = ",", digits = 0)
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Just over one in ten academics is a professor. Men are considerably more likely than women to hold that title, and this is true before we even start to think about contract type. The pipeline narrows more sharply for women at the top.
+:::
+
+It is also worth examining whether the gap differs by contract type, since women on teaching-focused contracts may be even less likely to reach professor than women on combined contracts.
+
+```{r}
+#| label: who-makes-it-by-function
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
+# --- Table 2: % who are professors, by sex and academic function ---
+pct_prof_by_track <- staff_totals |>
+  filter(academic_year == latest_year) |>
+  group_by(academic_employment_function) |>
+  summarise(
+    total_staff = sum(number),
+    professors = sum(number[contract_levels == "Professor"]),
+    .groups = "drop"
+  ) |>
+  mutate(pct_professor = round(professors / total_staff * 100, 1))
+
+# --- Table 3: % who are professors, by sex and academic function ---
+pct_prof_by_function <- staff_totals |>
+  filter(academic_year == latest_year) |>
+  group_by(sex, academic_employment_function) |>
+  summarise(
+    total_staff = sum(number),
+    professors = sum(number[contract_levels == "Professor"]),
+    .groups = "drop"
+  ) |>
+  mutate(pct_professor = round(professors / total_staff * 100, 1))
+```
+
+```{r}
+#| label: tbl-prof-by-track
+#| code-fold: true
+
+pct_prof_by_track |>
+  select(academic_employment_function, total_staff, professors, pct_professor) |>
+  rename(
+    `Academic function` = academic_employment_function,
+    `Total staff` = total_staff,
+    Professors = professors,
+    `% who are professors` = pct_professor
+  ) |>
+  flextable() |>
+  ft_uog() |>
+  colformat_num(j = c("Total staff", "Professors"), big.mark = ",", digits = 0)
+```
+
+```{r}
+#| label: tbl-prof-by-function
+#| code-fold: true
+
+pct_prof_by_function |>
+  select(sex, academic_employment_function, total_staff, professors, pct_professor) |>
+  rename(
+    Sex = sex,
+    `Academic function` = academic_employment_function,
+    `Total staff` = total_staff,
+    Professors = professors,
+    `% who are professors` = pct_professor
+  ) |>
+  flextable() |>
+  merge_v(j = "Sex") |>
+  ft_uog() |>
+  colformat_num(j = c("Total staff", "Professors"), big.mark = ",", digits = 0) |>
+  valign(j = "Sex", valign = "top")
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+On traditional R&T contracts, a meaningful share of staff reach professor, though the gender gap is still huge On teaching-focused contracts, professorships are very rare for everyone. Both women and men are much less likely to reach the top via a teaching-focused contract than a combined one.
+:::
+
+## Women in UK academia
+
+Too see whether there are too few or too many women in teaching-only roles, we first need to establish what proportion of academic staff are women overall and how that changes with seniority.
+
+```{r}
+#| label: scene-setting
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
+# --- % female among all academic staff, by contract level, over time ---
+all_by_level <- table9 |>
+  group_by(academic_year, contract_levels, sex) |>
+  summarise(number = sum(number, na.rm = TRUE), .groups = "drop")
+
+pct_female_by_level <- all_by_level |>
+  group_by(academic_year, contract_levels) |>
+  mutate(total = sum(number), pct_female = number / total * 100) |>
+  filter(sex == "Female") |>
+  ungroup()
+```
+
+```{r}
+#| label: fig-baseline
+#| fig-cap: "% of academic staff who are female, by contract level, over time"
+#| code-fold: true
+
+ggplot(pct_female_by_level,
+       aes(x = academic_year, y = pct_female,
+           colour = contract_levels, group = contract_levels)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  geom_hline(yintercept = 50, linetype = "dashed", colour = uog_grey) +
+  scale_colour_manual(values = c(
+    "Professor" = uog_blue,
+    "Other senior academic" = uog_pink,
+    "Other contract level" = uog_grey
+  )) +
+  labs(
+    title = "% female by contract level",
+    subtitle = "UK HE sector over time (HESA Table 9)",
+    x = "Academic year", y = "% female", colour = "Contract level",
+    caption = "Dashed line = parity"
+  ) +
+  theme_uog()
+```
+
+```{r}
+#| label: tbl-baseline
+#| tbl-cap: !expr str_c("% female by contract level (", latest_year, ")")
+#| code-fold: true
+
+pct_female_by_level |>
+  filter(academic_year == latest_year) |>
+  mutate(pct_female = round(pct_female, 1)) |>
+  select(contract_levels, number, total, pct_female) |>
+  rename(
+    `Contract level` = contract_levels,
+    `Female staff (FPE)` = number,
+    `All staff (FPE)` = total,
+    `% female` = pct_female
+  ) |>
+  flextable() |>
+  ft_uog() |>
+  colformat_num(j = c("Female staff (FPE)", "All staff (FPE)"), big.mark = ",", digits = 0)
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Women make up a near-equal share of the most junior academic staff, but their representation falls steadily as seniority increases. By professor grade, women account for roughly a third. This gap has been closing, but slowly. The higher up the ladder, the fewer women there are.
+:::
+
+## Women are the majority of teaching-focused staff, but not the majority of teaching-focused professors
+
+Teaching-focused work across the sector is majority-female. This section examines whether that holds at every level of seniority.
+
+```{r}
+#| label: analysis-feminisation
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
+# All contract levels, by function and sex (summing across salary source)
+all_staff <- table9 |>
+  filter(
+    sex %in% c("Female", "Male"),
+    academic_employment_function %in% c(
+      "Teaching only", "Research only", "Both teaching and research"
+    ),
+    contract_levels %in% c("Professor", "Other senior academic",
+                           "Other contract level"),
+    mode_of_employment == "All",
+    country_of_he_provider == "All",
+    clinical_status == "All",
+    terms_of_employment == "All"
+  ) |>
+  group_by(academic_year, contract_levels, academic_employment_function, sex) |>
+  summarise(number = sum(number, na.rm = TRUE), .groups = "drop")
+
+# % female within each function x contract level
+pct_female <- all_staff |>
+  group_by(academic_year, contract_levels, academic_employment_function) |>
+  mutate(total = sum(number), pct_female = number / total * 100) |>
+  filter(sex == "Female") |>
+  ungroup()
+```
+
+```{r}
+#| label: fig-feminisation-snapshot
+#| fig-cap: "% female by academic function and contract level"
+#| code-fold: true
+
+pct_female |>
+  filter(academic_year == latest_year) |>
+  ggplot(aes(x = academic_employment_function, y = pct_female,
+             fill = contract_levels)) +
+  geom_col(position = "dodge") +
+  geom_hline(yintercept = 50, linetype = "dashed", colour = uog_grey) +
+  scale_fill_manual(values = c(
+    "Professor" = uog_blue,
+    "Other senior academic" = uog_pink,
+    "Other contract level" = uog_grey
+  )) +
+  labs(
+    title = "% female by academic function and contract level",
+    subtitle = str_c("UK HE, ", latest_year, " (HESA Table 9)"),
+    x = "Academic employment function", y = "% female",
+    fill = "Contract level", caption = "Dashed line = parity"
+  ) +
+  theme_uog() +
+  theme(legend.position = "right")
+```
+
+```{r}
+#| label: tbl-feminisation
+#| tbl-cap: !expr str_c("% female by academic function and contract level (", latest_year, ")")
+#| code-fold: true
+
+pct_female |>
+  filter(academic_year == latest_year) |>
+  mutate(pct_female = round(pct_female, 1)) |>
+  select(contract_levels, academic_employment_function, pct_female) |>
+  pivot_wider(names_from = academic_employment_function, values_from = pct_female) |>
+  rename(`Contract level` = contract_levels) |>
+  flextable() |>
+  ft_uog() |>
+  add_footer_lines("Figures show % of staff in each cell who are female.")
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+No matter which career level you look at, teaching-focused posts are more female-dominated than research-only or combined posts. At junior grades, women are the majority of teaching-focused staff. That majority does not hold at the top and among teaching-focused professors, women make up around 47%, which is notably higher than their share of all professors (32%), but they are no longer in the majority. Women dominate teaching-focused work at junior levels, yet still do not dominate it at the most senior level.
+:::
+
+```{r}
+#| label: fig-feminisation-trend
+#| fig-cap: "% female among teaching-only staff, by contract level, over time"
+#| code-fold: true
+
+pct_female |>
+  filter(academic_employment_function == "Teaching only") |>
+  ggplot(aes(x = academic_year, y = pct_female,
+             colour = contract_levels, group = contract_levels)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  geom_hline(yintercept = 50, linetype = "dashed", colour = uog_grey) +
+  scale_colour_manual(values = c(
+    "Professor" = uog_blue,
+    "Other senior academic" = uog_pink,
+    "Other contract level" = uog_grey
+  )) +
+  labs(
+    title = "% female among teaching-only staff, by contract level",
+    subtitle = "UK HE sector over time (HESA Table 9)",
+    x = "Academic year", y = "% female", colour = "Contract level",
+    caption = "Dashed line = parity"
+  ) +
+  theme_uog()
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Across every year in the data, teaching-focused academic staff at junior and mid-level grades have been majority female, while teaching-focused professors have remained below that threshold. The gap between the most junior and other senior grades is closing, so some work has been done on getting women to e.g., Senior Lecturer, but the gap to Prof is still very real, and very large.
+:::
+
+## Women professors are disproportionately teaching-focused
+
+The analysis above looks at what proportion of teaching-focused staff at each level are women. This section inverts that and looks at what proportion of professors of each sex are on teaching-focused contracts.
+
+If women professors are more likely than men to hold teaching-focused roles, it means the *type* of professorship women hold is systematically different, even at the same nominal level of seniority.
+
+```{r}
+#| label: analysis-professors
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
+# Table 9: professors by sex and function
+prof_national <- table9 |>
+  filter(contract_levels == "Professor") |>
+  group_by(academic_year, sex, academic_employment_function) |>
+  summarise(number = sum(number, na.rm = TRUE), .groups = "drop")
+
+# % of each sex's professors in each function
+prof_function_pct <- prof_national |>
+  group_by(academic_year, sex) |>
+  mutate(total = sum(number), pct = number / total * 100) |>
+  ungroup()
+```
+
+```{r}
+#| label: fig-prof-snapshot
+#| fig-cap: "Distribution of academic function among professors, by sex"
+#| code-fold: true
+
+prof_function_pct |>
+  filter(academic_year == latest_year) |>
+  ggplot(aes(x = academic_employment_function, y = pct, fill = sex)) +
+  geom_col(position = "dodge") +
+  scale_fill_manual(values = c("Female" = uog_pink, "Male" = uog_blue)) +
+  labs(
+    title = "Distribution of academic function among professors, by sex",
+    subtitle = str_c("UK HE, ", latest_year, " (HESA Table 9)"),
+    x = "Academic employment function",
+    y = "% of professors of that sex", fill = "Sex"
+  ) +
+  theme_uog()
+```
+
+```{r}
+#| label: tbl-prof-function
+#| tbl-cap: !expr str_c("How professors of each sex are distributed across academic functions (", latest_year, ")")
+#| code-fold: true
+
+prof_function_pct |>
+  filter(academic_year == latest_year) |>
+  mutate(pct = round(pct, 1)) |>
+  select(sex, academic_employment_function, number, pct) |>
+  rename(
+    Sex = sex,
+    `Academic function` = academic_employment_function,
+    `N (FPE)` = number,
+    `% of that sex's professors` = pct
+  ) |>
+  flextable() |>
+  merge_v(j = "Sex") |>
+  ft_uog() |>
+  colformat_num(j = "N (FPE)", big.mark = ",", digits = 0) |>
+  valign(j = "Sex", valign = "top")
+```
+
+In `r latest_year`, approximately 6.4% of women professors were on teaching-focused contracts, compared with around 3.5% of men. Women professors are roughly **1.8 times as likely** as their male counterparts to be teaching-focused.
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Around 1 in 16 female professors is on a teaching-focused contract, compared with around 1 in 28 male professors. A woman who has reached professor is nearly twice as likely as her male counterpart to be on a teaching-focused rather than a combined teaching-and-research contract. The headline figure of 32% female professors may therefore mask important nuances about how much progress has actually been made towards gender parity.
+:::
+
+```{r}
+#| label: fig-prof-trend
+#| fig-cap: "% of professors on teaching-only contracts, by sex, over time"
+#| code-fold: true
+
+prof_function_pct |>
+  filter(academic_employment_function == "Teaching only") |>
+  ggplot(aes(x = academic_year, y = pct, colour = sex, group = sex)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  scale_colour_manual(values = c("Female" = uog_pink, "Male" = uog_blue)) +
+  labs(
+    title = "% of professors on teaching-only contracts, by sex",
+    subtitle = "UK HE sector (HESA Table 9)",
+    x = "Academic year", y = "% teaching only", colour = "Sex"
+  ) +
+  theme_uog()
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Throughout the period covered by the data, women professors have consistently been more likely than men to hold teaching-focused contracts, and the lines move in parallel rather than converging. The gap has not closed over time, which points to something structural about how teaching-focused professorships are distributed by gender, rather than a transitional pattern that is gradually resolving itself. The decrease for both men and women in 2024-2025 is perhaps attributable to the financial crisis, redundancies, and changing hiring and promotion practic.es
+:::
+
+## The pattern holds across institution types
+
+One possible explanation for the overall gap is that it is driven by a particular type of institution. Using institution-level data (Table 17, full-time staff only), we can compare Russell Group universities with the rest of the sector. [Jenkins and Wolf (2023)](https://blogs.lse.ac.uk/highereducation/2023/01/20/precarious-times-how-the-uk-university-workforce-is-changing/) have noted that Russell Group institutions saw the fastest growth in teaching-focused staff between 2005/06 and 2018/19, despite historically having low starting points for such contracts, which makes this a reasonable place to look.
+
+```{r}
+#| label: analysis-rg
+#| code-fold: true
+#| code-summary: "Show analysis code"
+
+# Add Russell Group flag
+table17 <- table17 |>
+  mutate(
+    russell_group = if_else(he_provider %in% russell_group,
+                            "Russell Group", "Non-RG")
+  )
+
+# Filter to professors
+prof_by_group <- table17 |>
+  filter(
+    contract_levels == "Professor",
+    sex %in% c("Female", "Male"),
+    academic_employment_function %in% c(
+      "Teaching only", "Research only", "Both teaching and research"
+    )
+  ) |>
+  group_by(academic_year, russell_group, sex, academic_employment_function) |>
+  summarise(n = sum(number, na.rm = TRUE), .groups = "drop")
+
+# % of professors who are teaching-only, by sex and RG status
+prof_pct_teaching <- prof_by_group |>
+  group_by(academic_year, russell_group, sex) |>
+  mutate(total_profs = sum(n), pct = n / total_profs * 100) |>
+  ungroup() |>
+  filter(academic_employment_function == "Teaching only")
+```
+
+```{r}
+#| label: fig-rg-teaching
+#| fig-cap: "% of professors on teaching-only contracts: Russell Group vs non-RG, by sex"
+#| code-fold: true
+
+ggplot(prof_pct_teaching,
+       aes(x = academic_year, y = pct,
+           colour = sex, linetype = russell_group,
+           group = interaction(sex, russell_group))) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  scale_colour_manual(values = c("Female" = uog_pink, "Male" = uog_blue)) +
+  labs(
+    title = "% of professors on teaching-only contracts",
+    subtitle = "Russell Group vs non-RG, by sex (HESA Table 17, full-time only)",
+    x = "Academic year", y = "% teaching only",
+    colour = "Sex", linetype = "Institution group"
+  ) +
+  theme_uog()
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Whether looking at Russell Group universities or the rest of the sector, the pattern holds that women professors are more likely than men to be on teaching-focused contracts. The gap is not an artefact of institutional mix and it is not driven by a single type of university. It appears across both groups, which is consistent with something more systemic about who ends up in teaching-focused professorships.
+:::
+
+```{r}
+#| label: fig-rg-female
+#| fig-cap: "% of professors who are female: Russell Group vs non-RG"
+#| code-fold: true
+
+prof_pct_female_rg <- prof_by_group |>
+  group_by(academic_year, russell_group, sex) |>
+  summarise(n = sum(n), .groups = "drop") |>
+  group_by(academic_year, russell_group) |>
+  mutate(total = sum(n), pct = n / total * 100) |>
+  filter(sex == "Female")
+
+ggplot(prof_pct_female_rg,
+       aes(x = academic_year, y = pct,
+           colour = russell_group, group = russell_group)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  geom_hline(yintercept = 50, linetype = "dashed", colour = uog_grey) +
+  scale_colour_manual(values = c("Russell Group" = uog_blue, "Non-RG" = uog_pink)) +
+  labs(
+    title = "% of professors who are female",
+    subtitle = "Russell Group vs non-RG (HESA Table 17, full-time only)",
+    x = "Academic year", y = "% female",
+    colour = "Institution group"
+  ) +
+  theme_uog()
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Women make up a smaller share of all professors in Russell Group universities than in the rest of the sector, and this gap has been persistent throughout the period. The most research-intensive institutions have the lowest female representation at professor level. Bear in mind that these figures cover full-time staff only, so the full picture is likely somewhat worse — women working part-time are not counted here, and women are more likely than men to work part-time.
+:::
+
+## Summary
+
+```{r}
+#| label: summary-tables
+#| code-fold: true
+#| code-summary: "Show summary statistics"
+
+# --- Summary table 1: % teaching-only among professors, by sex ---
+summary_teaching_only <- prof_function_pct |>
+  filter(academic_year == latest_year,
+         academic_employment_function == "Teaching only") |>
+  mutate(pct = round(pct, 1)) |>
+  select(sex, number, total, pct) |>
+  rename(
+    Sex = sex,
+    `Teaching-only professors (FPE)` = number,
+    `All professors (FPE)` = total,
+    `% teaching-only` = pct
+  )
+
+# --- Summary table 2: of teaching-only professors, % female ---
+summary_composition <- prof_national |>
+  filter(academic_year == latest_year,
+         academic_employment_function == "Teaching only") |>
+  mutate(total = sum(number), pct = round(number / total * 100, 1)) |>
+  select(sex, number, pct) |>
+  rename(
+    Sex = sex,
+    `Teaching-only professors (FPE)` = number,
+    `% of teaching-only professors` = pct
+  )
+
+# --- Summary table 3: of ALL teaching-only staff, % female ---
+summary_all_to <- all_staff |>
+  filter(academic_year == latest_year,
+         academic_employment_function == "Teaching only") |>
+  group_by(sex) |>
+  summarise(n = sum(number), .groups = "drop") |>
+  mutate(total = sum(n), pct = round(n / total * 100, 1)) |>
+  select(sex, n, pct) |>
+  rename(
+    Sex = sex,
+    `Teaching-only staff (FPE)` = n,
+    `% of all teaching-only staff` = pct
+  )
+```
+
+```{r}
+#| label: tbl-summary1
+#| tbl-cap: !expr str_c("% of professors on teaching-only contracts, by sex (", latest_year, ")")
+#| code-fold: true
+
+summary_teaching_only |>
+  flextable() |>
+  ft_uog() |>
+  colformat_num(j = c("Teaching-only professors (FPE)", "All professors (FPE)"),
+                big.mark = ",", digits = 0)
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+This table shows what proportion of each sex's professors are on teaching-focused contracts. In the most recent year of data, around 1 in 16 female professors held a teaching-focused contract, compared with around 1 in 28 male professors. Both percentages are small, but the relative difference is substantial.
+:::
+
+```{r}
+#| label: tbl-summary2
+#| tbl-cap: !expr str_c("Gender composition of teaching-only professors (", latest_year, ")")
+#| code-fold: true
+
+summary_composition |>
+  flextable() |>
+  ft_uog() |>
+  colformat_num(j = "Teaching-only professors (FPE)", big.mark = ",", digits = 0)
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+Looked at from the other direction, women make up around 47% of teaching-focused professors across the sector. That is notably higher than their 32% share of all professors, confirming that teaching-focused professorships are disproportionately held by women. Women are not the majority of teaching-focused professors as they are of teaching-focused staff at junior grades, though — the feminisation is real but diminishes at the top.
+:::
+
+```{r}
+#| label: tbl-summary3
+#| tbl-cap: !expr str_c("Gender composition of all teaching-only academic staff (", latest_year, ")")
+#| code-fold: true
+
+summary_all_to |>
+  flextable() |>
+  ft_uog() |>
+  colformat_num(j = "Teaching-only staff (FPE)", big.mark = ",", digits = 0)
+```
+
+::: {.callout-tip icon="false"}
+## tl:dr
+
+For comparison, this table shows the gender breakdown of all teaching-focused academic staff, not just professors. Women account for around 55% of all teaching-focused staff across the sector — they are the majority. Taken alongside the previous table, this confirms that women are overrepresented in teaching-focused roles at every level, but the degree of overrepresentation shrinks as seniority increases. At junior grades, women are the majority; among professors, they are not.
+:::
+
+::: {.callout-warning collapse="true"}
+## Limitations and caveats
+
+-   **All staff vs professors**: this post distinguishes between figures for all academic staff and figures for professors specifically. Sector-wide statistics on the feminisation of teaching-focused contracts (such as those reported by Advance HE) typically refer to all academics, not just professors.
+-   **Subject area breakdown unavailable**: HESA's open data do not allow cross-tabulation of sex, academic function, contract level, and cost centre simultaneously. A bespoke HESA request or FOI would be needed to test whether particular disciplines drive the overall pattern.
+-   **Table 17 is full-time only**: this likely understates the true gender gap, since women are more likely to work part-time. The Russell Group comparison should be read with this in mind.
+-   **Small cell sizes**: teaching-focused professors are a relatively rare category. HESA rounds counts to the nearest 5 and suppresses small cells, so year-on-year fluctuations should be interpreted with caution.
+-   **Definition of "professor"**: HESA's "Professor" contract level (F1) does not capture all staff who hold the title of professor, particularly those in senior management roles.
+-   **Change in "sex" definition**: from 2022/23, HESA changed the basis for recording sex from self-identification to legal documents. This may introduce a small discontinuity in the time series.
+-   **Correlation, not causation**: this analysis describes patterns. It cannot establish why women are more likely to hold teaching-focused professorships.
+:::
+
+## Conclusions and musings
+
+So what does all this mean? For me, the biggest takeaway from this analysis isn't actually about gender, it's the fact that only 1.6% of people on teaching-only contracts have made it to Prof compared to 22.8% of those on R&T contracts. I say this with every bone of my Professorial teaching-track body: What. The Absolute. Fuck. For many years I've felt lucky to be at UofG and indeed in my inaugural lecture I made the point that I've always worked at institutions where LTS Prof was a possibility and something to aim for and I think that's had a clear impact on the work I have done and the pride I take in my career. But I did not realise just how lucky I am until I saw these figures.
+
+My most plausible explanations for these numbers are a combination of optimism - teaching-focused career tracks are still relatively new and so maybe people just haven't had the time to make it through to Prof yet - and pessimism and fury - many institutions still do not have a teaching-only route to Prof. My next adventure with Claude will be to see if the latter is true. Bear in mind that this analysis removed everyone on fixed-term contracts so the true picture is likely even worse. It is unacceptable to increase the number of people on teaching-only contracts and not provide the mechanism for full career progression. ESPECIALLY WHEN THOSE PEOPLE ARE MORE LIKELY TO BE WOMEN. If you work at an institution that does not have a route to Prof and you would like me to come and ~~shout at~~ have a robust conversation with your senior management, please let me know.
+
+I find the story the data tell about gender and career track harder to turn into a coherent viewpoint. Perhaps if I keep writing one will emerge. Bear with me.
+
+Teaching-focused careers are a good thing. I feel very strongly that what is expected of both teaching and research by modern higher education mean that specialised tracks are necessary.I also feel very strongly that teaching-focused careers are not second-class in any way, shape, or form. I am a world-class Professor and my Professorship took just as much work and involves the same level of international standing and impact as an R&T Prof. I normally don't even acknowledge the "second class" thing, in the same way I don't acknowledge that some people think homosexuality is evil when I tell people I have a wife. Because it's utter shite and why would I give air to the opinions of trolls and prime the idea that I am less than I am?
+
+But there is a tension here because teaching-focused positions are more likely to be undertaken by women and we know from the history of everything and the patriarchy, that when a job is done by women, it's undervalued. Except, this gets more complicated because whilst the majority of those on teaching-only contracts are women, the majority of teaching-only Profs are still men. So there is prestige associated with teaching-only roles and the system is still more likely to award it to men.
+
+My lack of a coherent viewpoint stems from the fact I don't know what I want these figures to show (aside from that 1.6% going up). I don't necessarily want there to be gender parity between tracks, what I want is for everyone to have the career they have *chosen* and for all career tracks to have equal recognition and support.
