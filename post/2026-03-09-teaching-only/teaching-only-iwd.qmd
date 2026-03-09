@@ -596,7 +596,7 @@ prof_function_pct |>
 ::: {.callout-tip icon="false"}
 ## tl:dr
 
-Throughout the period covered by the data, women professors have consistently been more likely than men to hold teaching-focused contracts, and the lines move in parallel rather than converging. The gap has not closed over time, which points to something structural about how teaching-focused professorships are distributed by gender, rather than a transitional pattern that is gradually resolving itself. The decrease for both men and women in 2024-2025 is perhaps attributable to the financial crisis, redundancies, and changing hiring and promotion practic.es
+Throughout the period covered by the data, women professors have consistently been more likely than men to hold teaching-focused contracts, and the lines move in parallel rather than converging. The gap has not closed over time, which points to something structural about how teaching-focused professorships are distributed by gender, rather than a transitional pattern that is gradually resolving itself. 
 :::
 
 ## The pattern holds across institution types
@@ -815,7 +815,7 @@ My most plausible explanations for these numbers are a combination of optimism -
 
 I find the story the data tell about gender and career track harder to turn into a coherent viewpoint. Perhaps if I keep writing one will emerge. Bear with me.
 
-Teaching-focused careers are a good thing. I feel very strongly that what is expected of both teaching and research by modern higher education mean that specialised tracks are necessary.I also feel very strongly that teaching-focused careers are not second-class in any way, shape, or form. I am a world-class Professor and my Professorship took just as much work and involves the same level of international standing and impact as an R&T Prof. I normally don't even acknowledge the "second class" thing, in the same way I don't acknowledge that some people think homosexuality is evil when I tell people I have a wife. Because it's utter shite and why would I give air to the opinions of trolls and prime the idea that I am less than I am?
+Teaching-focused careers are a good thing. I feel very strongly that what is expected of both teaching and research by modern higher education mean that specialised tracks are necessary.I also feel very strongly that teaching-focused careers are not second-class in any way, shape, or form. I am a world-class Professor and my Professorship took just as much work and involves the same level of international standing and impact as an R&T Prof. I normally don't even acknowledge the "second class" thing, in the same way I don't acknowledge that some people think homosexuality is evil when I tell people I have a wife. Because it's utter nonsense and why would I give air to the opinions of trolls and prime the idea that I am less than I am?
 
 But there is a tension here because teaching-focused positions are more likely to be undertaken by women and we know from the history of everything and the patriarchy, that when a job is done by women, it's undervalued. Except, this gets more complicated because whilst the majority of those on teaching-only contracts are women, the majority of teaching-only Profs are still men. So there is prestige associated with teaching-only roles and the system is still more likely to award it to men.
 
