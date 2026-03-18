@@ -1,0 +1,136 @@
+---
+title: "Journal club: What constitutes high quality higher education pedagogical research?"
+author: "Emily Nordmann"
+date: today
+format:
+  html:
+    embed-resources: true
+---
+
+This session is based on Evans, C., Kandiko Howson, C., Forsythe, A., & Edwards, C. (2021). What constitutes high quality higher education pedagogical research? *Assessment & Evaluation in Higher Education*, 46(4), 525--546. <https://doi.org/10.1080/02602938.2020.1790500>
+
+## The political and contextual realities shaping our scholarship
+
+The paper argues that "for the research to be relevant, researchers need to have a holistic understanding of issues impacting the field and an in-depth knowledge of the immediate context they are reporting on" (p. 526). This raises a question that is easy to overlook when we are focused on our own courses and programmes. Our scholarship does not exist in a vacuum. If it is going to have relevance and impact, it needs to engage with the broader forces shaping higher education.
+
+::: {.callout-tip}
+## Mentimeter 1: Open question
+What are the political and contextual realities that should be shaping our scholarship?
+
+[Link to Mentimeter](https://www.menti.com/alnqhcdtpkgd)
+:::
+
+## Using the language of research excellence
+
+The REF 4\* definitions (cited p. 530) describe world-leading research as demonstrating characteristics including:
+
+- being "outstandingly novel in developing concepts, paradigms, techniques or outcomes"
+- being "a primary or essential point of reference"
+- being "a formative influence on the intellectual agenda"
+- showing "application of exceptionally rigorous research design and techniques of investigation and analysis"
+
+Reading these definitions for the first time, my reaction was that our teaching innovations may already meet many of them. Think about PsyTeachR amongst our other work. We need to stop undervaluing ourselves. If we started describing our work using this language, it might help convince researchers and promotion panels to take it more seriously. The language of excellence is not reserved for REF-returned researchers. It describes qualities that our best work already demonstrates, and we should get comfortable using it.
+
+::: {.callout-tip}
+## Mentimeter 2: REF yourself
+Pick a piece of work from the School and try to map it onto these descriptors, even if it feels hyperbolic right now.
+
+[Link to Mentimeter](https://www.menti.com/alnqhcdtpkgd)
+:::
+
+
+## Reliability and validity
+
+The paper's account of validity and reliability (pp. 530-532) draws on a particular set of assumptions that not everyone in the room will share. For quantitative work, the authors focus on the reliability coefficient and the relationship between observed and true scores, which is a classical test theory framing. For qualitative work, they present saturation as the goal, stating that "additional participants are added to the study until no further perspectives or new information emerges" (p. 531), and recommend enhancing reliability through "refutational analysis, constant data comparison, comprehensive data use and use of deviant or negative case analysis" (p. 531).
+
+::: {.callout-tip}
+## Definitions of quality
+Do these definitions reflect how you think about quality in your own scholarship?
+:::
+
+## The research typology: where do we want to be?
+
+Evans et al. adapt Hodgkinson, Herriot, and Anderson's (2001) model (Figure 1, p. 534) into four quadrants based on rigour and relevance.
+
+| | Low rigour | High rigour |
+|---|---|---|
+| **High relevance** | **Popularist**: Well-intentioned but methodologically weak. Common entry point for LTS colleagues new to scholarship. | **Pragmatic**: World-leading applied research. Combines theoretical, methodological, and practitioner relevance. |
+| **Low relevance** | **Petty**: Wasteful of resource and damaging to the field. | **Pure**: Drives new conceptions and understandings. Valuable, but needs translation to impact practice. |
+
+: Pedagogical research typology, adapted from Hodgkinson, Herriot, & Anderson (2001) and Evans et al. (2021, Figure 1, p. 534) {.striped}
+
+"Popularist" work is characterised as demonstrating "a poor grasp of research principles and pedagogical research methodologies and methods" (p. 533), while "petty" (their replacement for Hodgkinson et al.'s original term "puerile") is described as "wasteful of resource and damaging to the field" (p. 533). These are strong judgements. 
+
+::: {.callout-tip}
+## Categories
+Do you think the boundaries between the quadrants are as clear as the typology implies? Could a piece of work be methodologically rigorous but still be popularist in how it is framed or disseminated? And is there a risk that labelling early-career or exploratory scholarship as "popularist" discourages people from starting at all?
+:::
+
+If we take their categories at face value, we probably want to be pragmatic. We probably do not mind pure. We definitely do not want petty, and we should be wary of popularist. The harder question is how we do that. 
+
+## Self-assessment: features of pragmatic research
+
+The seven domains are drawn from Table 1 (pp. 535--536) and the discussion of key features of pragmatic research (pp. 537--539). 
+
+::: {.callout-tip}
+## Mentimeter 3: Features of pragmatic research
+Rate how well you think we perform collectively on each of the seven features of pragmatic pedagogical research.
+
+[Link to Mentimeter](https://www.menti.com/alnqhcdtpkgd)
+:::
+
+**Pedagogical clarity.** The paper states that high-quality work "has a clearly defined pedagogical focus, with the central premise of the idea being clearly identified" and "demonstrates a comprehensive understanding of work within the field" (p. 537). This is where we may struggle. Are we always clear about the pedagogical idea and its theoretical basis, or do we sometimes jump to the method without articulating why the question matters?
+
+**Methodological transparency.** "The methodology and methods are clearly explained and justified" and "the ethical conduct of the study is highlighted" (p. 537). As psychologists, we are well trained for this.
+
+**Methodological congruence.** "Coherent research designs ensure the methodology and methods are aligned to the question being asked of the research" (p. 538). This is worth interrogating honestly. Do we default to surveys and focus groups because they are familiar, rather than choosing the best method for the question we are actually asking?
+
+**Strength of evidence base.** "The extent to which the data can be trusted" and whether "analysis of data is thorough" (p. 538).
+
+**Accessibility of findings.** "The ability to convey complex ideas simply is essential" and "writing is undertaken with the needs of a non-specialist audience in mind" (p. 538). Generally a strength for us.
+
+**Transferability.** "Maximised where there is a clarity about how ideas have been operationalised and what has informed decisions" (p. 538).
+
+**Impact and impact quality.** "Articles explicitly demonstrate the links between ideas/innovations and impacts" and "correlation is not confused with causality" (p. 539). This is where we may struggle. Are we measuring real change, or just counting downloads and attendees? The paper notes that high-scoring impact case studies "articulate significant and far-reaching benefits using specific phrases, not general language" (p. 539).
+
+## Self-assessment: the integrated academic
+
+The integrated academic model (Figure 2, pp. 541--542) identifies seven dimensions of expertise. 
+
+::: {.callout-tip}
+## Mentimeter 4: Expertise
+Rate where you think the School's collective expertise sits on each of the seven integrated academic dimensions.
+
+[Link to Mentimeter](https://www.menti.com/alnqhcdtpkgd)
+:::
+
+The seven dimensions are:
+
+**Disciplinary knowledge** -- "Capacity to utilise disciplinary research in practice" (p. 541).
+
+**Pedagogical expertise** -- "The ability to design and progress learning within the discipline with an awareness of relevant theory and interdisciplinary perspectives" (p. 541).
+
+**Academic practice (QA)** -- "Awareness of HE academic conventions to support learning and teaching, and regulations" (p. 541).
+
+**Contextual awareness** -- "Awareness of the requirements of the discipline, affordances of the environment, and individual differences in learning" (p. 541).
+
+**Data analytic competence** -- "The ability to design, collect, and analyse data to inform and evaluate practice" (p. 541).
+
+**Research methodology expertise** -- "Awareness of pedagogical/discipline research methodologies/methods conventions and quality standards" (p. 541).
+
+**Critical pedagogy** -- "Ability to critically evaluate practice to consider the impacts on all learners" (p. 541).
+
+## What next?
+The paper concludes that "developing and supporting research-informed communities of practice is key to enhancing quality and ensuring efficiency using an evidence-based approach to enable a focus on what matters" (p. 542). PERU is a concrete example of this kind of community, and we should be proud of it but what next? 
+
+::: {.callout-tip}
+## Mentimeter 6: What next?
+Where are our gaps? Should we be building collaborative scholarship teams that complement each other, rather than expecting every individual to cover all seven dimensions? And can the wider MVLS LTS Network help fill gaps that the School cannot address alone?
+
+
+[Link to Mentimeter](https://www.menti.com/alnqhcdtpkgd)
+:::
+
+
+
+

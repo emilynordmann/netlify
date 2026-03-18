@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog – Emily Nordmann</title>
+<title>Emily Nordmann - Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,21 +32,17 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-7e9717d9caa9b4d114d189eaeb260ada.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-bae33c85dea990b555726d9e885fc0e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -118,7 +114,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -137,183 +133,19 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Emily Nordmann</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -332,7 +164,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -345,7 +177,6 @@ window.Quarto = {
     
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -372,24 +203,27 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1773014400000" data-listing-file-modified-sort="1773075050836" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41" data-listing-word-count-sort="8101">
-<div class="thumbnail"><a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1773792000000" data-listing-file-modified-sort="1773075050000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41" data-listing-word-count-sort="8101">
+<div class="thumbnail">
+<p><a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external"></a></p><a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external">
 <p class="card-img-top"><img src="post\2026-03-09-teaching-only\data:image\png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAACiFBMVEUAAAAAADoAAGYAOGUAOjoAOmYAOpAAZmYAZrY6AAA6ADo6AGY6OgA6Ojo6OmY6Zjo6ZmY6ZpA6ZrY6kJA6kLY6kNtNTU1NTW5NTY5Nbm5Nbo5NbqtNjqtNjshmAABmOgBmOjpmZgBmZjpmZmZmZpBmkJBmkLZmkNtmtrZmtttmtv9uTU1uTW5ubk1ubm5ubo5ujo5ujqtujshuq8huq+R\f39\f5V\f6t\lZV\lat\lcF\q8F\q9aOTU2Obk2Obm6Ojk2Ojm6Ojo6OjquOq6uOq8iOq+SOyMiOyOSOyP+QOgCQOjqQZgCQZjqQZmaQZpCQkGaQkJCQkLaQtraQttuQ29uQ2\+Vf3+VlX+VlZWVlauVlcGVq6uVq8GVq9aVwcGVwdaVweurbk2rf3+rjm6rjo6rlX+rlZWrq26rq3+rq46rq6urwcGrwdarweuryMiryOSryP+r1uur1v+r5Mir5OSr5P+uJXO2ZgC2Zjq2kDq2kGa2kJC2tma2tpC2tra2ttu225C229u22\+2\7a2\9u2\BlX\Bq5XBq6vBwdbB1tbB1uvB6+vB6\Ijk3Ijm7Ijo7Iq27Iq47Iq6vIyMjIyP\I5KvI5OTI5P\I\+TI\Wq3\Wq5XWwZXWwavW1tbW6+vW6\W\bkDrbkGbbtmbbtpDbtrbbttvb25Db27bb29vb2\b\7bb\9vb\kq27kq47kyI7kyKvkyMjkyOTk5Kvk5Mjk5OTk5P\k\+Tk\rwZXr1qvr1sHr1tbr69br6+vr6\r\tmb\yI7\1qv\25D\27b\29v\5Kv\5Mj\5OT\68H\69b\6+v\7b\8j\9b\9v\+T\+v\86cnpVAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO29\4Mdx2HY9w4EWFxLoCIjHCgqBGhTpgIgpiNHYKRUlGI5SiikVJwIIeUkUkPIcdK4qd3IIY6mbTpkQzmta6i2mVoRbdfOGVBF0uGJYmMmpFJJPgBHUJJB3\H9O93Zmd2d3Z3dtztvZnZn3+fzA4m7e28\u3PvfW6\v9kcAACsmA09AwAAsUJAAQAsIaAAAJYQUAAASwgoAIAlBBQAwBICCgBgCQEFALCEgAIAWEJAAQAsIaAAAJYQUAAASwgoAIAlBBQAwBICCgBgCQEFALAkSECv3DObrd3+TP71zROz2eGWx87Wjt73skP\VjLJRqHVAz2w+7ef9TANZ0s05NAAjJUQAX1ilrJ2OvtG8mZce8T40L1z8rGzA8vXpCCCgO49ub70IpumQUABPBIgoDuzShRbVkC3ssfeulproFdOLv83wzgNAgrgEf8BFSuVyfqmeAMek9\psAKaPdQNow\o9fXlV7rN0yCgAB7xH1Dxxj4sVzvlamXLCqj4URrPPZcroAR0qQk7nhDAhPAf0B2VxHPZ27t5BVQGtOmH9hDQ5SGgAHXCB7TtEDwBdT0NAgrgkfABbV4BzY8g5ceQdh8WVThy30vqEek+0uRnL9yTfP9geqrT3pO3lc+Rmu9+6kh60L94WvnNX51odQ4Oz\cuJ9OcHT1fOPN9sulX9fnfe1KcfVWd6O6nxHQO3n6+NBiz0+JkLbEAd7xUfFOSzORm2sHdZHpr8lyu+vIYjOVp1JbIvOjlH6Z\vbIC1waJgALUCR7QYl9ojWpA9x7Ov75DPkMG9D9kh5oOPSvXu0qFK540W3u\NuHDtZ\fUZsN+cDrJ7PpP5N\M5vl1Feb\z9czydaHP3aPZl\81CWUBnQXCBn0BDQfyUneNq8PAZjl4DWFr280rpTPNQwSAQUoE7wg0hbsgsmKgGVR5S0b6iAHizacevl4t9yosVxfC1n2pvfMNHqHGjTT1c108xkK51bxVRz9jZ1ZRYZbdaKp6SRulf7yem5KaBrt6VfJW0zLo\B2CGghkXfLAZOmU43DRIBBagT+jSmlhXQSkAr6TicTasJOdWt8jfzw1bmCVSDUHm2fL6+DW\cgq88Sz5yZ9blu+lc1wNaPMe4PAbj4oCaFn0nm4W5vjpqHCQCClAn9In0LSug8\JBpPQdu3YqKWl6JVP6XfXWXku2iC9nBXpmvnuu8gCx2flm8SztzW+aqIYKk9h0Vxvgx+alzJi24OVehGQ+5lfW88jJlbh0L6b8rlSpsTj098rf1reli4AmPzMvj9G46CCSadFr432scZAIKECdwJdytq2Azktv6Np7W7x594pUqtCkb2ltI3vvqz9xpDjdVMU6f75xohoyoNrugmJfghbAyhb8ZqWvqXNL6\PNk7lqZ2Z6sCGgB9RRMePyGI0LAmpe9KKaxbp1yyMJKECJwDcTaV8BraXqsPbtYmta26bUYludrrZPL3\zGyeqoWdPy\JmnpnNWW21tXTq1ebB9336pfm8cui+mJIMqL67tiGg9UEqHm40LgqoedGLNeriX+ZHElCAOmFvZycicGu6PSrO4jlV+7mWBv1oTb52pHcpfZ\LYGgpynjzF08WIcrf\MaJapQOuBdTzbfh0\kzbcFXw1X+ZmVK6vvawtQCWltL15fHnMoFATUvevGv4niS+ZEEFKBO2IDuyDdpdu5RLRNaQEvHmbN26KXU9kxWAvrVT92mP0l78xsnqlGuRL7imc\WTv0ppQMxTd\Mm6QHVFuxrQW0VKrq8hiNiwLasOjZ6qa2Pm5+JAEFqBM0oGoFtPmWIQ4Cuvtw9UnLBzQP4KahUcacVXJT3pDOHtwSUO1s0vryuAxoFk5tu52AAnQlaEDVCqj43+GXd0\U3+\LB3RHrtyuHf27Lxr2gdoGVO0gTD3ViDSvgboIqGl5XAY023TfrHyHgAJ0IGRAsz2gmzKSm7V+1QJaXUNdGFB5OOmOl+bmg0jGiWo0BVTtCkwbVT28038TvkdAjctjH1DDoqdPO6zv3DU\koAC1AkZULUCml3UuVV\nzYcRMpZGFDtbW4KqHGiGg0HkbInbpkSVQrXztq7\u7T1W82ta9DQI3LYzT2OYhUG9IDv6T91PxIAgpQJ2BAsxXQLKA7rQE1rmYtDKi2JWo6D9S87lYgzwNV65j6JZxyDc20BV8+hyo7hJ7f2LQypb4BNS6P0djpNCbToqePuK1Y1IZHElCAOgEDqlZAOwZUT9DOf330vqdfnncNqHybP1HEsHw2eXWiGjKg+rlRpdhp3dLQzjsqpt92In09oPo5qfWA1pbHaDSd19pl0fML3w+XvlF9JAEFqBMuoNkKaMdNeBUzcRWjvC1HtvK6OKCzd7+cH7wuB9Q4UY3sUs7z+aWcWS+z61ENN+2UJ2UdSrajv3Yyf0jbpZwNAZ2dmu\9P6aA1panxSinUVmi9kXP\jacLj2n+kgCClAnXEB38vdop4NI5VsClS51bwlo7WYdxVlIh5smqlG7mcit1fU0U0I63UykNtO1g1TqR6WAmpfHaNSnUZm39kVXjuJPg\GRBBSgTrCAFh\p0e00puJ0+1okWgKq30jov12f6Stfh5smqpE+8Ejxc23+tirZ0THezq4cOf12dvWA5lNIhKWAmpfHbNSmUVmi9kVXDm0sTI8koAB1ggVU2+PZ6UT6eemOxGuntGe2nQeaT3vt\fL4cvU67vpENdIHns7Tp6\LXTdt8mcUtzfW7nms31A5W6SmgGYrfdWAmpfHbNSmUVmiBYteugNA0yMJKECdUAHVVkC7XcqZ8sLD6eHho+e1qSy6lFPcuUR+3Ed+CLv85q9OVEMGdP7mk9pHepTUTadA5R+wUVqi3Z8Qa7MHb386\05TQOUnk6TPr56GaVieBmMxjcoSLVh00z36ao8koAB1QgW0fMi96WYiI6bhw5AAYIUJezORiFl0CikArB4EtBvyhJ6Wi5gAYPUgoIvJDyot+cntADAxCOhi8pMxWQEFAB0Cupgd+gkAJgjoYq6fTE9Gembo+QCAkUFAAQAsIaAAAJYQUAAASwgoAIAlBBQAwBICCgBgCQEFALCEgAIAWEJAAQAsIaAAAJYQUAAASwgoAIAlBBQAwBICCgBgCQEFALCEgAIAWEJAAQAsCRDQ58\+lX+ff\Fnnz\7EfnNv\on2ffeOHv2gS8sfLyO9oDRoy9pX7736EfmvQbkW7\6meSrD\1Pf1CeA8MslJ9\9uxjdXuieqzynAWL8v1fffTs2b\a\KLd74Y068JwIYRBPSb5X76Dug3\4F1z6xESwT0zz6fLmjnAXnni\k3Plc4v5dE7YFfr07bR0C\+aic1of\vRLb\+kAiILhA3qt0k\PAV1mhdBKtITweRmwrgOi9fNsaQX\wz8tn1OetvOAXqvKnzdNFWBCDB7QWj8Xb\IvOTeBA2pPtgbXdUDErpB\8Z3kH3\6e8mqYDaoSVY\8kbTnxzxw0Z\z4AmDz\74T+Yz\LT2c5\t6jbMTDtBk6oNcerfaTgCqSuH1BTanTgCSP\yvZvs9ksz37cfLPL1wrelp7jrOAXsvWPJPnqRl+vmXqABNg4IB+r95PAqq4VmSo04BkP6k8R\wr+ZF5ZlwG9I18T2ve6+89Wt\5CjAhhg2oqZ\9A5oe+80P\qqvH\jsH5S+lj9+Q9vhV3qYWN0T254f+vXqhNUj8rlKHpnOSvvTC5Gc87RU4hEPiMM7\+WfJD\LZ7A6v\k4fKTXgJhjKB\huEwkuk530qH8if\ebYm+dg7v6MdV8+dxjl+Xl\pfSybPHtBYcoMGtDvPWratOwb0G9mhy7Uwd838iPR89LXn5uXApp9+4H\WTwoeav\TPXwVOkR2lpV6enSUnu6IaD\3fPZAZ\fUdP9deP8KsSmd78BSSb0j2qDJOc7T1qFckDf+Z3SUCaqz35ePyqUOc1zXAroR7JZ4kA8TJkhA2ruZ+34cP2gc2ltSuzuS1aF3vld9cg35Lrdn\6Oen8nXyc\F214LBOrb3\495NVrp+W8yCOYCeT\f6vFRMuPyLfnpUrcxWL4enlo\DpEfJk5VPMx4fOfvY76fymD6jOb8Y1bSO824CIozhn\+H\h3D6GerzVXKAX1Dnv70\Z+WjnR6ap71aDfMcfF7vnY2m+q1hjVfgGkwYEC\9fmzZ00bnT0D+kZ5V6G+9iMel+3+E4dY5EmV6Zf5XkH1fRG4csyrj3g+n45cdy5Z6k83BPQxNVn1VPP81p7fY0Cy85h+8p\nEc3G+w3zYaRSQPOdqGrRxazqfzSK\S7GOc6zKWbjI\kk2YaHCTNcQD8kz7o2bcL3DKi5pyoO+ab3NT0C2rPk1m3WV9N05SPU8+WWddVSf3o9oHnn8013uSpbnlKG9lWPAZH7MM\K84n0pSiqV6LkvKaFWMxUcTRd\dbkojTNseitWDMVq+zZ91sPUgFEz3ABFW\7a+ZrZHrtAxXT+OzvZ1\p79j0OdVTINWECok01Ldxq49I\itKnE6vZjFsItcCmp9drqab9qo2JW3BH8u\32dA3vn\s1n8qYatOUHmwP3fBbQouFiMtmimue42DX6wGe0gLITFCbMgAEVx99Nl2n3PYgkj3x8SG62\tnn9TWzZELVJ1Z7pv5ZK0ntEfKoeB7TssUQolpAq8fU04DWpqQtuF1A0zn+XTWt7z2qTd2wMV2f7z\91v8tAqwCWp6F1Nk4x3lBH\g\vlgpL8BECRDQN0xdeL44dlMvT89epCcFic3WX+sT0NoqZC2glRWt9KjOtWzH6qgDmu\zfEOfuuEJlfn+5mf0OVHr3HJyXQI6\9Y\Sc\TKs07AYUJEySg2mZ6dj5N9sYyHIm36cW30s3WZEqls8lNT7RfA\2zzyfL8Xx2eKU5txXxwoCadxL2D2j1YY9Vro43HRAvzbd89E\+zP\2nefb10AX7dYszsAioDBtAgT0mr7xmB0Nzt9Yb9Te2JZXIsnzgmo73fQT4IsDIaZ9oJUsVB8hvvOYakrNYh3Qxp2E\QNaOtCeHfgqhv6a6ZSH0ny\kd\EyRBQfR\ool9F6TATAYUJEyCgyfswT2TyvpbvrdJJOg3JU09ecMxE39+WbrJnMvnm1U+A\0IxoaI2MjL1AlYfIf7\V7+ppl61WAe0NqWm5Vo8IGJs82uD5C6S57U\TsUxdfPoaX710OICUJXSLKPmOc5P1teO+HMUHqZNiDvSiwNGnxOHeL4t7hKUnQSZvfWKEyPzh\daA31DO\lGnqGpHnktOwE+C9mC80Ar7\TqI9Lbc\6P6lFVi31Aq1OqPb\7gIgzG9LzEd4R14zKrW3tQc8bzhkzB\SNfB9ofjuT8nmgxjkWfyj\RfK35JvaXhnOA4VpEyKgpcMOH87Ohszf2tXdoB1uf6m\K9X7dv79L+bHTcTRpPxKn2vlK5FEb9\5Tuk6I7VRXi1g5RFqJr5Q\FCzGJ8uRQsCWpvfjOIinq4DUhpn8eTSzpPibkkapk349DzO\FDZP\qT+fd\tXwVV9McF0es8mlyJRJMmyCfiSSuDawcCa5+pIf2NusZUO1UneyymbJLvxZe3fX3I9q382vha9ua5UfI51Yvdj+bX59UfXomWhTQ2vwWS95+LXx9QLRjRh+Wl0fp41r5MvuediVS9mv67O9mK+\w+f1satdC18JcnYp\ee0Xy27QGHKBPpQOfVZPcUJ73pAxfu+tKnZL6Dzd37vJ8XEP5ddv\j9VFa5O1P+pdjC\MifZN9+QD3LuLOu9Ih5ZYO0ZDE9XYkWBrQ2v\k4VJ+xeEC+\2\EUDwgp6XdFDTljfqpoJWrn37vM\KqhPxsV3U3pt\PZkRNr2GO5Qllf\3iwlyNyaYNnwq52i5ZjjoExnckh4mDgEdLRNYfeNDkWDiENDxEv36W\QLALAAAjpiYl+Bi33+ARZBQEeM+lz4WOFz4WHyENAx871HI76O550vRp1\gA4QUAAASwgoAIAlBBQAwBICCgBgCQEFALCEgAIAWEJAAQAsIaAAAJYQUAAASwgoAIAlBBQAwBICCgBgCQEFALCEgAIAWEJAAQAsGX9Av\3tb2PDhg3bGG0EFBs2bNgsIaDYsGHDZgkBxYYNGzZLCCg2bNiwWUJAsWHDhs0SAooNGzZslhBQbNiwYbOEgGLDhg2bJQQUGzZs2CwhoNiwYcNmCQHFhg0bNksIKDZs2LBZQkCxYcOGzRICig0bNmyWEFBs2LBhs4SAYsOGDZslBBQbNmzYLCGg2LBhw2YJAcWGDdsq2M5K3E6UgGLDhm0FbGfP+igoAcWGDdv0bWfPeikoAcWGDdv0bQQUGzZs2HpztobDiRNQbNiwDWNz3bN6Ks04ExJQbNiwDWRbImhdU0lAp\vywYZtpW3dirZcKgnoZF8+2LCttq1aNB+pJKCTfflgwzY+m\vCNDoC59JPPwkoNmzYMpw1JnQkF891x4f1hYBiw4ZN0jMyofvYc\aa5tbiuc0QUGzYsEkMhQrfxgrOl87dBAUEFBs2bCmDhtLzjtcU7saEDRs2xwwVyqDtTCGg2LBhc0KYSHacAw\LZ4KAYsOGbQmCV7LTzLhYsi4QUGzYsPVmwEh2mS+vDh0Cig0bto4MunbZkThGsgUCig3blGzLtJKA9oaAYsM2Zlu3oDlaxQzdz\h\bwQUG7YR21qT5iib9Sm6X44Gov+92QZ0\8KG5L2vp1+\8sMbG+95yN18FUQ\xNiwWWNqn\ts6kx1JD3ZbAP69oOlgF6SX9ztcM4yoh9ibNis6R9Lu2wWTHUkPdlsA3rjjFr1TNneOP7QfP83NjY+6GSmSkQ\xNiw2RIsmwUTHUlfNtuAXtXXNpPV0bSc2xt3fsXBPJWJfoixYbMgbDYLpjeSXm22Ad3WVzavqnAmIf2kg3kqE\0QY8PWg2GyWTCdkQxisw3opeOPF19sZ6ujlzxsw0c\xNiwdWDYbBbEP5JBbZYBffvBO3\+Yxsbxz+hDiHlAXV\GCn6IcaGrYWxhDMj3pEcxGYZ0Btn1EH4u76SntKkVjy3N\RDSyn6K+DbGnyf7\N9O8Y2\6v0fUcBvZqsff7cfP7KGVFMAsr3+X7X75\tTtOjR7lcK\J9RwHNjrcna6KfJKB8n+93+X5fmp4\tuVape87CmiO2OvZGtCl+Xbse0mwrbbtbDcWPN3FbHdixCM5RtuyARXJJKDYsNVYMpw9bc7A1gsXAS3OXuIoPLbp27qtMi4fzozpjuQEbE4Cynmg2FbH1pRA5+HMmOxITsFmF9B8o13+gyuRsK2MrdbCjuG034s51ZGchG3Jo\BXN8QVSVwLj21lbF17uXw4M6Y6kpOw2Z9If9eX5\tfPyM33rc3NrgbE7bBbK5S1cERMJwZ0\29TcBmfTcmdSnS3elR933uB4ptOJuzZvWOpNdwZkz29zYFm\VBpLd+6ox+D3ruSI9tKFvPeDmpZIhwZkz19zYJG5+JhC12myFiviIZNJwZU\29TcJGQLFFbgsZy9DtTJno720aNgKKLTrboLEM3s\p\N6maCOg2CKwBY5kx1lxt3ytRPx7m76NgGIbpW3YSnaas2Un1JWofm+rZiOg2Hxg05gRRbLLfHp16Ez3VTIBGwHF5oGOJXMTy1DhLJjs7w1bXwgoNvc0J81NMrvafDHV3xu23hBQbO5pWD90lswmXZilm+7vDVtvCCg2lzjJZe8WBu7nBH9v2CwhoKticx0ZZ6m0a2aF6f7esI3aRkCHswVdb1oiU+5T6SKZZab7KsE2ahsBHczmISMdZK06f6n0vayTfZVgG7eNgA5lC1CVFpv\VAZcuPl0XyXYRm4joEPZlmlMuPz1Zflls2OqrxJsI7cR0GFsgxXOGR2XLshoTvVVgm30NgIaxjZY5xywzOI6H8gGpvEqwRadjYD6sQ3YuyVwsuj68rub4ALifJVgi95GQHXs3\ZDJc8W50NXI\q3BjZsiyGgGn3yMmD8ljyXs\+TrYj+rYEN22IIaEFrZJwnMGzSCCg2bCsY0JBv+qa+uQlmqy3gwoWQCaJ\a2DDtpiRB9T3295xJns1MXDSAvcz\rcGNmyLGXdAl1lL89ZGI0ssnc1TrYj+xYoN29hscQY0bByNOFm+6F8+2LCttm3UAR06kjpeFjD6lw82bKttI6Ahg1kl+pcPNmyrbRtzQENnMnQ+J\DywYZttW1jDuhyBV1K535ZjET\8sGGbbVtcQbUt8\T9GtE\LBhm21baMOaPB1wsD9jP\lgw3batsIaJnof6HYsGELZxt3QNmoxoYN24htIw8oG9XYsGEbr23sAZ3AEGPDhm2qNgKKDRs2bJYQUGzYsGGzhIBiw4YNmyUEFBs2bNgsIaDYsGHDZgkBxYYNGzZLCCg2bNiwWUJAsWHDhs0SAooNGzZslhBQbNiwYbOEgGLDhg2bJQQUGzZs2CwhoNiwYcNmCQHFhg0bNksIKDZs2LBZQkCxYcOGzRICig0bNmyWEFBs2LBhs4SAYsOGDZslBBQbNmzYLCGg2LBhw2YJAcWGDRs2SwgoNmzYsFlCQLFhw4bNEgKKDRs2bJYQUGzYsGGzhIBiw4YNmyUEFBs2bNgsIaDYsGHDZgkBxYYNGzZLCCg2bNiwWUJAsWHDhs0SAooNGzZslhBQbNiwYbOEgGLDhg2bJQQUGzZs2CwhoNiwYcNmCQHFhg0bNksIKDZs2LBZQkCxYcOGzRICig0bNmyWEFBs2LBhs4SAYsOGDZslBBQbNmzYLCGg2LBhWwXbRYnbiRJQbNiwrYDt4kUfBSWg2LBhm77t4kUvBSWg2LBhm76NgGLDhg2bHRcv+ikoAcWGDdu0bRcrOJw0AcWGDdtkbdV2ElBs2LBhW4gxnQQUGzZs2NpoSScBxYYNGzYzC9Ppup8EFBs2bPHbFiaTgGLDhg1bjY6rm176SUCxYcMWqa3flrqPfhJQbNiwRWfrl85lbS0QUGzYsMVjs0unrW0hBBQbNmwx2JZJZ39bRwgoNmzYRm5bvp19bH0goNiwYRutzVE6O9r6Q0CxYcM2QpvTdC602UJAsWHDNoytIYYe0ikhoNiwYZuKrd5Eb+mUEFBs2LBNxFZOo+d2phBQbNiwTcTWnky36ZQQUGzYsE3DFjSdEgKKDRu2adiCplNCQLFhwzYBW+h0SggoNmzYIrcN0s4UAooNG7aIbcOseWYQUGzYsMVqC7\TswIBxYYNW4y2lkNGBNQrk3j5YMO2uramZIbuJwHFhg1bXLa29c3A\SSg2LBhi8e2eGM93mVTEFBs2LC5t3Xb1RnnsmkQUGzYsDm2dT5OFOGylSGg2LBhc2jrdZA9smWrQ0CxYcPmyNZtu92VrTcEFBs2bCO19Y3ncjYbCCg2bNhGaLOJp73NFgKKDRu2kdl6b7cvZVsGAooNG7Yx2ZaIp4VtSQgoNmzYxmJbMp49bQ4goNiwYRuDbZnt9v42RxBQbNiwDW5zE8+uNncQUGzYsA1qcxfPLja3EFBs2LANZnO03d7R5h4Cig0btmFszuPZavMCAcWGDVt4m5d4Ntq8QUCxYcMW1uZ+u73N5hUCig0bNo9UA+kznoLoR5KAYsOGTVGqpO94CqIfSQKKDRs2iWlr3WM95xMYSQKKDRs2Sdh4CqIfSQKKDRu2lMDxFEQ\kgQUGzZsjSufnrXRjyQBxYZtpW3ht9s1oh9JAooN22rawh8yqhP9SBJQbNhWzdaeTgLaAwKKDdvK2LqUM2Q\4x3JDAKKDdsK2DoVk4D2hoBiwzZlW6+VzdD9jGokjRBQbNimabPZTA\cz0hGsgUCig3b1Gw26bS3LUP0NgKKDdtkbMuUs7\NAdHbCCg2bBOwOUhnD5szorcRUGzYYrY5K2cnm2uitxFQbNjGbGvOoOt0SqY7kgQUG7ZVs5lquLCcFxsm1oXJjqQfGwHFhm28tkoUfZZTMdWR9GRrDeibTz31Ky\P915yLe1F9EOMDZs1i1c23aVTMtWR9GRrCejl22az2YFn5zdPHHrGtbYH0Q8xNmy2hCynYqIj6cvWHNAnZrMsoLO1R1x7uxP9EGPDZkH4dEqmN5JebY0B3UrqeejvrCcB3Ts3m936smtxZ6IfYmzYejDASmeJ6YxkEFtTQK+vz2ankpXPJKBpQU+7Fncm+iHGhq0DXcIZ4iL1+EcyqK0poJuz2eG5Cuh8J\1iIKIfYmzYWugWzjDxFMQ7koPYGgKarHSK\Z4qoMnq6HDb8NEPMTZsBrqHM2g\IxzJQW0NAb15Qhw+ygKqvhqG6IcYGzaNfr0koCO3LRfQ7Y271b9e+eGNjfc85HruBNEPMTZsArsVzdD9jGEkx2RbahP+xpksoJc2Uu42PGhZoh9ibKttswtn9enLz3RHRjySY7S1HEQ6lgd0y3wQaf9ClsztjeMPzfd\Y2Pjg67nbwJDjG01bUuGs6fNGdh60RTQHXUOvQho8m\jaUzb2Trn2w\Kcm5v3PkV1zMY\xBjm5it2yrj8uHMmO5ITsDWFFBx7ufaeRHQvV+YmU+kf\vBO\+aDOhVFc4kpJ90PYPxDzG2admaEug8nBmTHckp2BqvRLp5YlZgvJTz0sYnL8mAbhe7Qt1vw0c\xNgmZau1sGM4L1obpzqSk7A1Xwsv1kEVxpuJXN147+sqoJeKgLo\jBT9EGOblK1rL5cPZ8ZUR3IStrbb2e0+LO7HtHb706Yfvv3g8cdVMPcvZCue20lUK4\7NsCE6B7OoecUfNAnoK2kW+sEFFYKwrnquAro1TSVBBRWBMIJAkcB3b+QbMB3CujSGGbaI9iwVVkQTm\ejOmM5ARttYCWjr4XVC7l3NaPHhFQbNO0LVrp9KA0MIWRnKzNLqA3zsgTP\Oj8CqgHIXHNhFbl72dbo2NRD6S07bVA3rPERNHSwHd3ihI1jk5DxTbdGwLmklAsWnY7QOtBJQrkYzJvzoAACAASURBVLBNwtZpdTN0P6McyZWxLfe58Je4Fh7bJGx9NtUD9zOykVwxm5OAijVS7saELU5bj3Q6sFmAbcS2rgF90fiRHllA97kfKLb4bH1WO5e3WYNtxLaWa+F\+d6MI7c13JH+EnekxxalzTaddrblwDZiW2NAd9bbzgMNSPRDjG1UNuvVTiubC7CN2Nb2ufA6t\OpnNhitzlIZw+bM7CN2NYU0C0RzV8+MVv7C0+enM3WTDekD0T0Q4xteJuL1c7uNsdgG7Gt+UPlxGcibaaf5bFlviN9IKIfYmyD2tymc5HNB9hGbGv+WGNxF\qtNKOipsOtgkY\xNi8Y+6h49VOjemOJLaetH8u\I78OM4d86dyhiH6Icbmm3oVvaVTMtmRxNaX9oCqD4RPvhpuGz76IcbmmVIc\a12akx1JLH1pnkfqAioKqfK6TBEP8TYPNPaTMfplEx1JLH1puko\Ga6D7ToKAHFNlJb2HamTHQksfWn5TQmsdtTHobfGfIwfPRDjM0jodMpmeJIYrOiKaDivspJNJN0Hnj6ayc4iIRtdLZh2pkysZHEZk\zpZzp5ZvZh8OL7fmBiH6IsblmwHRKJjOS2Jal+WYiV06muz9Ppv085drbneiHGJs7Fu3vvOheaWICI4nNDYtvZ3fl3nvve8m1tgfRDzE2FyxMZ8B+xj2S2Fyy3A2VQxD9EGNbjoXJJKDYBrMRUGzjtXVc3QzdzwhHEpsnGwHFNkZbvy31wP2MaiSxebW13JH+yqfuLXgf54FiC2Lrl85lbXZgw6ZoDOhl7kiPLazNLp22tmXAhk3RFNCd8g3pCSg2j7Zl0tnftjzYsCmar4WfzW7\lRdzhjuRKfohxtbG8u3sY3MENmyK5tvZiVspj4HohxibGUfp7GhzCjZsivb7gY6B6IcYWxWn6Vxo8wA2bIr2+4GOgeiHeCVtDTH0kE7JdEcS26ht7fcDHQPRD\Eq2upN9JZOyWRHEtu4bS23sxvuDnYloh\iFbSV0+i5nSlTHUlsI7c1ngd6fX12x3CfZawR\RCvoK09mW7TKZnqSGIbua35SqTdk7PZwSMZRzkPFFtXgqZTMtGRxDZ2W9saKCfSY7MiaDolEx1JbGO3NQW00k8Ciq0bwdMpmeBIYovB1nIl0tp9L3IlErYeDNPOlImNJLZYbC1XIp127bIj+iFeDdtAa54ZExpJbDHZuBIJ29KEPV5kZCIjiS02G1ciYVuKtngSUGxTtzXtA91iEx7bAlqKGbqfkY8ktmhtTQFNVkFvHcV59PEP8SRti1Y3A\cz4pHEFrWt8TzQpKCHnnZtsyH6IZ6crdu2epzLhg1bL5oOIt1z5Eh6\idXImHT6b6jM75lw4atNy2nMXEiPbYS\Y4SxbVs2LBZQUCxdaFXO5e29QcbtkFsfC48tkX0j+cyNjuwYRvERkCxtWEXT1ubPdiwDWIjoNiasI+njW05sGEbxNYa0DefeupXXp7vDXcjEUH0Qxylbbl49rUtDzZsg9haAnr5Nnnw6OaJQ8+41vYg+iGOzrZ8PPvY3IAN2yC25oA+kR19v3li0A+Yi36Io7K5iWdXmzuwYRvE1hjQraSeh\7OehLQvXOzIS\rjH6Io7G5i2cXm1uwYRvE1nZH+lPJyqc4\1MUdLg7i0Q\xDHYjO286MvmAWzYBrG13JH+8FwFdL4zG\AzjqMf4rHbPMSzxeYJbNgGsTXfD1Ts91QBTVZHh9uGj36Ix2zzFM8Gm0ewYRvE1n5HehXQQe9PH\0Qj8RWi6PHeAqmO5LYsOUQ0BWxlQvpOZ6CyY4kNmwFbMKvhs1cTE\tTJnqSGLDptFyEOlYHtAtDiLFbgsbT8FURxIbNo2mgO6oc+hFQJN\cxpT3LbA8RRMdCSxYdNp+Uyk2dp5EdC9X5hxIn2ctuCb7TqTGkls2Mw0XolUuqUyl3LGY1u0tzNEPAXxjyQ2bAtpvhZerIMquJnI2G3dqhksnoJIRxIbtj7UA7qX\2v3YXE\prXbn3Yt7UX0Q+zN1quaBBQbtgABTVY8hzvn00T0Q+zWZlvN0P0c\0hiw7Y8tYDKk+YHPXW+TPRD3Ej3oC2fSgKKDRsBnZJtUdGWr2Yfm3Mm+3vDhq3AFNDZaQLqn4Vrig6qafB5WRYTU\29YcOmUT+ItDmbzQ6Ko0cHj2gc5Vp4x1imsl81S0x1JLFhG8xWD+jOzAQ3E3FMqGpqTHQksWEbzmY4D\TKbQTUBwHXNc1MZiSxYRuLrf12dmMg4iFeIpnOqqkR8UhiwzZOGwF1alsumT6qqRHVSGLDFoOt6X6gn7r3fcPdP6TEOM\MrD1ntNksiP7Fig3b2GzN18KPhRGdmVl92FLNDN7P+F+s2LCNzUZAC5qT5iaZXW2+iP7Fig3b2GwEtKBh\dBZMpt0IZZNEP2LFRu2sdkIaI7\ZJqFXhbGRPQvVmzYxmYjoDkhmlkh+pcPNmyrbSOgKcGSWSb6lw82bKttI6Bd4ulLHf3LBxu21bateECDJ7NM9C8fbNhW27bCAR1ilbNC9C8fbNhW27aiAR1qm71C9C8fbNhW27YooHtffeqpXxn0ok7XC91SzND9jP\lgw3batvaA7r3sLyZ3e0DJtTlQi9a3Qzcz\hfPtiwrbatNaDi4z3UJ8MPd2smVwvdbVs9+l8oNmzYwtlaA7o5WzufrHvuXVmfHXMt7oyLhe6+ozP6Xyg2bNjC2doCundu7RH5r+vrtw62Eb\sQvc7ShT9LxQbNmzhbLWA7r2U\PmieymysW\wrPMQvdq59K2\mDDhi1qm+Fjje94Kf\n7LT8184svjXQ\vFcxmYHNmzYoraZPhd+7T5Vy83Z2qkX5\M3L6\PDrsWd8Zmoe3iaWuzBxs2bFHb6vtA956YJd1MExrlUXj7eNrYlgMbNmxR20wHkXYfTop5XvxLxDSm80CXi2df2\Jgw4Ytapv5KPzuySShT6f\fOGpp150Le1F14VePp59bG7Ahg1b1Lam05iuJAm9\RnXNhu6LLSbeHa1uQMbNmxR25rPA728Ppvd8VLjj4OxaKHdxbOLzS3YsGGL2tZyIv3ek+uztTsG\3T4loU2tvOiL5sHsGHDFrWt9VLOvSfWi3OahqJhoT3Es8XmCWzYsEVtMwb0hZ+4994fSo8hiQPyB0+5lvbCsNCe4tlg8wg2bNiithkCev2kOvczPYa0e092TtMg1OLoMZ6C6H+h2LBhC2erB\T6+my2duRIUlB1\bs4IH90oAPy5UJ6jqcg+l8oNmzYwtnqAd2c3SpXPc\l128mCR3mZiLmYnpqZ0r0v1Bs2LCFsxmuhS\uYZdXc+\yfzO6gPoxRv8LxYYNWzibIaBjuIedJHA8BdH\QrFhwxbOVr8f6Lkx3MNOEjieguh\odiwYQtnq+8D3ZrNbn\qxRe\+vBswM\xSAkdT0H0v1Bs2LCFsxluZ3cuu4fd0Cug88DxFET\C8WGDVs4m+lEenEV\Gz4S5AIKDZs2MZta7iU88Vhb2GXEbyf8f9CsWHDFs7Wei384BBQbNiwjdg27oDOQ\cz\l8oNmzYwtlGHtB54H7G\wvFhg1bONvYAzqBIcaGDdtUbQQUGzZs2CwhoNiwYcNmCQHFhg0bNksIKDZs2LBZQkCxYcOGzRICig0bNmyWEFBs2LBhs4SAYsOGbRVst0jcTpSAYsOGbQVst9zio6AEFBs2bNO33XKLl4ISUGzYsE3fRkCxYcOGzY5bbvFTUAKKDRu26dpuMeBw8gQUGzZsk7OZuklAsWHDhq2R1mwSUGzYsGGr0bGbBBQbNmzYFH276aGfBBQbNmxR2exqSUCxYcO2urZl1zK99JOAYsOGbSBbl6Itmc2ett4QUGzYsA1i67K6uHw3NTwsGwHFhg3bEDZDAf10M4eAYsOGbSK2frVcops5BBQbNmzTsIXrZg4BxYYN2wRsQbuZQ0CxYcMWtS18NgsIKDZs2CK1DdbNHAKKDRu22GzDl1NBQLFhwxaPrdv2eqh+ElBs2LBFYeuQTAIahChfPtiwraqt+9pm6H4SUGzYsI3W1ntDPXA\CSg2bNhGaOtbzuVs1hBQbNiwjclmnU4r25IQUGzYsI3DtmQ6e9qcQECxYcM2tM1JOjvbHEJAsWHDNphtQTktjgaNZ9ksIaDYsGHLaCqh+3RKoh9JAooNGzaFIYi+0imJfiQJKDZs2CTlLvpNpyT6kSSg2LBhkyxKpst0SqIfSQKKDRu2lJDlVEQ\kgQUGzZsTs9N6kH0I0lAsWFbcdsg6ZREP5IEFBu2lbUNmE5J9CNJQLFhW0Fb+N2dRqIfSQKKDdtK2RamM2A\4x5JAQHFhm1FbAuTSUB7Yx3Q\S+d2dj4kd\Ovnzlhzc23vOQm3kqE\0QY8M2uK3j6mbofkY4khVsA\rWgxspH5RfXpJf3e1svgqiH2Js2Aa09dtSD9zPqEbSiGVA9y9s3PXl+f5vbGx8Uny5vXH8ofSrD7qcN0n0Q4wN2yC2fulc1mZH9DbLgF7dOP64+P+ldKXz7QdlObc37vyKsznLiH6IsWELbLNLp61tGaK3WQb0ktpa39547+sipzKcSUg\6WzOMqIfYmzYgtmWSWd\2\JEb1vyKLwM6Ha28\OSh2346IcYG7YQtuXb2cfmiOhtywV0\0KazktFQN0fRop+iLFh82tzlM6ONqdEb1sqoG9dSLfdk4yqFU+5Qlri2wDgifZ0Dj13U8RhQK9ubGy8V+z7JKAAvmiIIekcBpcBfc\9Gxt3PU5AAbxRbyLpHBKHAU3YvyROZ2oN6NIYZtoj2LCNyVbel9neTjfGqY6kJ9uSR+HTo0gEFBs2P7Qn0206JVMdSU+2ZW8mkibzUnFFJ0fhsWFzRtB0SiY6kr5sTgLKeaDYsLkncDolkxxJfza7gBYb7ek6J1ciYcPmkkHSKZnYSPq2Wa6BZle93zgjSsq18NiwOWLAdqZMZySD2CwDmiTzri\P56+ckUeNtjc2uBsTNmxLEX5\p4kpjGRAm+0+0GTVM+WudJVzn\uBYsNmz6J2hutn7CMZ2mZ9EOm74o7073koO2uJO9Jjw2bBgmYS0JHb+EwkbNiGsXVa3QzdzyhHckAbAcWGLbStz6Z64H5GNpKD2wgoNmwBbRZ7OaNZtlW0EVBs2ILY+qx2Lm+zBlsvCCg2bL5ttum0sy0Htl4QUGzY\NmsVzutbC7A1gsCig2bF5uDdPawOQNbLwgoNmyObS5WO7vbHIOtFwQUGzZ3NrfpXGTzAbZeEFBs2Pph7qHj1U6N6Y7kBGwEFBu2XtSr6C2dksmO5BRsBBQbtj6U4uhvtVNjqiM5CRsBxYatD63NdJxOyVRHchI2AooNWw\CtjNloiM5DRsBxYZtMcFXOzWmNZITsxFQbNia6LK57rWdKVMYycnaCCg2bGW6ZtN\OiXxjuQK2AgoNmyCPtkMmc\4RnKlbAQU2yrbbLIZuJ+RjOSK2ggottWzLdNKAopNg4Bii9\WLWiOVjFD93PCv7cJ2AgotuhtrUlzlM36FN0vRwOT\b1NwUZAscVuM7XPfTZ1pjqS2HpDQLHFbusfS7tsFkx1JLH1hoBii9wWLJsFEx1JbP0hoNiitgXMZsEkRxKbDQQUW6y20NksmNpIYrOGgGKL0DZINgsmNJLYloOAYovLNmQ4M6YxktgcQECxRWMbZnvdQPQjic0VBBRbDLa2ZhJQbIPZCCi2kdsWr2+G7mesI4mNgGJbJVvXbfXA\YxwJLF5shFQbKO09dzPGdWyYZuOjYBiG5utZzuXtNmADZuCgGIbkc2mnfY2a7BhUxBQbOOwWbfTyrYc2LApCCi2wW3LtbOvzQHYsCkIKLYhbQ7a2cPmCmzYFAQU20A2V+3sZnMKNmwKAootvM1pOxfa3IMNm4KAYgtqc9\ONpsnsGFTEFBsPjBF0VM7U6Y7kthGbSOg2DxQTaPPdqZMdiSxjdtGQLG5Rw+k93amTHUksY3cRkCxuac5mh7amTLVkcQ2chsBxeacsO1MmehIYhu7jYBic0zodqZMciSxjd9GQLG5Y5B2pkxtJLFFYiOg2JwwXDtTJjSS2GKyEVBsSxL6eJGRSYwktvhsBBSbPQvaGa6f0Y8ktkhtBBSbFa3NJKDYVsRGQLH1pcP6Zuh+RjqS2KK3EVBs3em+rR64n9GNJLaJ2Agotk703s0Z0bJhw2YLAcW2iN7tXMpmBzZsg9gIKLYW7Nppa1sCbNgGsRFQbGaWaKeFbVmwYRvERkCxVVk2nf1sbsCGbRAbAcWm4aadXW0OwYZtEBsBxSZx2M4ONtdgwzaIjYBic97OdpsXsGEbxEZAV8VmLGJLOpc9CX66I4kNWw4BXRFbrYv+0imZ7Ehiw1ZAQFfDVsqj73amTHUksWHTIKCrYWvbVnfezpSpjiQ2bBoEdCVsYduZMtGRxIZNh4BO3hY8nZIJjiQ2bFUI6IRt4Vc7NSY1ktiwmSGgU7QF3t1pZBojiQ1bKwR0WrZF6QyVz\hHEhu2DhDQidi6lDNkP+MdSWzYukNAo7d1KiYBxYaNgGLT6LWyGbqfUY0kNmyWENAYbTab6YH7GclIYsO2FAQ0LptNOu1ty4AN2wrYCGgktmXK2d\mAGzYVsBGQEdvc5DOHjZnYMO2AjYCOl6bs3J2srkGG7YVsBHQ4WzNGXSdTsl0RxIbtoFsBHQwm6mGC8u5zFH0yY4kNmxD2QjoULZKFH2WUzHVkcSGbTAbAR3Ktnhl0106JVMdSWzYBrMR0IFsIcupmOhIYsM2nI2AhrYFXeksMbWRxIZtcBsBDWQLvLluYiIjiQ3beGwE1KutYzZ9p1MS9UhiwzZGGwH1YevRzUDxFMQ4ktiwjdpGQB3a+nYzbD9jGkls2OKwEdDlbXa1JKDYsEVvI6DWtmXXMkP3c7wjiQ1brDYCqtOlaEtms6fNJdG\WLFhG5uNgGp0WV1cvpsa0b98sGFbbRsBLTAU0E83c6J\+WDDtto2AlrQr5ZLdDMn+pcPNmyrbSOgOeG6mRP9ywcbttW2EVBB4G7mRP\ywYZttW0rHtBBslkQ\csHG7bVtq1qQAftZk70Lx9s2FbbtmoBHXaNs0r0Lx9s2FbbtjIB7byxHrCf8b98sGFbbdv0A9q9lwQUGzZsvZhuQC3WNEP3M\6XDzZsq22bYECX2EYP3M\4Xz7YsK22bUoBtQ+njc0F2LBhi9o2hYAuscppYXMJNmzYoraNPaBdtridlFMR\S8UGzZs4WwjD2hDBt2HMyP6Xyg2bNjC2cYd0GoPPaxyVoj+F4oNG7ZwtmgC6ruciuh\odiwYQtnG3VAA4YzI\pfKDZs2MLZog6oB2X0v1Bs2LCFs405oEHLqYj+F4oNG7ZwtjEHtF5Q\8rof6HYsGELZ4snoGGU0f9CsWHDFs426oByfyRs2LCN2UZAy0T\C8WGDVs427gDyg3msGHDNmLbyAPKDeawYcM2XtvYAzqBIcaGDdtUbQQUGzZs2CwhoNiwYcNmCQHFhg0bNksIKDZs2LBZQkCxYcOGzRICig0bNmyWEFBs2LBhs4SAYsOGDZslBBQbNmzYLCGg2LBhw2YJAcWGDRs2SwgoNmzYsFlCQLFhw4bNEgKKDRs2bJYQUGzYsGGzhIBiw4YNmyXjDygAwEghoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhDQQXn7x18fehYAwJoYAro\2ci8\dGNu4eeB4CVwX1KIgjo\oX3BivoWz91\0f+HIoW9LPjXDLtv+Nj\4b4eSJUP53HMBba8+91ywgXw16B\0737p\vt\5OeC6f444EAGx0NKxh\Q\Qsbxx8P5HrlzEbCnV8JYxP9DCZTyxaq1zfEsm0cfyiMTS7bXWH+8t04E+6PXrZoGz8axiZ\bYFk8\nVv\jJUCqBj5SMPqAh+3l14\gnXvvGxwLpkn4e\kHQy3c1Y2Nv\QzH9sItMsgsX3gZ3\zhwMFO7H9yMc\Jt75IWxvPxhws0EM5G9\I8lakNKkA5n81j4YQpZwaeN4wIJ6ScnYAxqyn4kr4K9T9PPxYMq3ZalfCTOaN86ki7X\pWS10P8adrJswvbWhTC93g\kEahFS0oTwnjjTPrquBRss2h7I2BB\aRk5AEN2c\k769aPdt\7TXvsrSf4sUa5q\9tly2QMHezkbyUoiC5rbtIGVL1kCDFXRbvTxU2sLY3g65WRSsoJ5SMu6A5gu9\+pv\az3PVzqjfiW2A90\BN+3yGqn4kzzFvxkgrnpeP\8lXvRwmKTIvYeF\A7fyPUJCCvv3gnf\XmTC\tnwgg\zh27+g3mwX7vx3zz0XYofyjTN\kKggvpKybgDmmwKpu+Nrwc5SCDXQG\Ivfae3yFfUr\OMKsW+Zpuuva0sfEBv+\+5MX6wexf7znjfbdrEVBRUO87ecVBpBthClp0M8SWSmYL8yKRpvf+50AF9ZWScQdUHNZ5XO4quV+sFvptzY0zd35FvIp+9PV0753Xd8j+P5bLUrTGL9vp4O1fUkcJPL\7L+U7Qy7cfdX7AZCr2j67bf+HW9INlUAFvVTsCwnwMlG2bfEiORNiZT5Z1\3Kviyo93PDPKVk5AFN954na2nidJhXfL9m05hlO0JfCXTgM9A2vDjycdePnZF\el854\ntmEfzxpkP+l\CZI2pWO30fwRkO122MAVN3vX\S\qPSyFejVfT0xiunklfJNshDsZfSkImCvpQgLeBn5SMPaDJm+OD2Yvnqu9fqfgjtZ39bQpz4DM7YO2d9KTTLC7bniuTvieS\7\1YLJwbz\ofxW0MPi3zX8rHbswBf0\8w0VuVT\r1fba7ozxBsg\WMk\rgHWF3xk5KRBrRYob+q7Y709SvNbcnqyz\N0pJu0Hu1ZU6vr9PC9t3X\uMZtabm7ThrZhO70Y5\KNyj6S3zc\8Ih39fMJtT3tBa1cEeS1oxZYFdNvPSe7Gq528vQE029X0pSH+uHtbNSpsXlIyzoDqF3tcKgbX06+0sKXv+8ezf\t5\VQvZPG7j7Bky4+2+ApoYdv\KXkBjfjyqqekFRfp7GtHIq76yZrhiiCPBa3a1C\M02a1+WonXwHVbTfSP+nbHs9m0m0+UjLOgOoXe4g1b\VPT79SzSYOwd+d\dPPu6N2IYvXVdCSbbtYNj\vDd321j\7+F\stJ6Wb3QL9JJxNllo35ybbwiyFtBazYZUE\9bLjaydNfopLt7QcTR7JYf9PXsfiKbVUCWrrY4+rfyL7t6Veq20RB5SD72vCsXchyw+chnfJIZu+RYMsmv+lldbd8kY7YCvzLr8uvPbwTG64I8vSrq9vSzSFP\Wy62snPi6RsE4fh0xMnPJ3mXlk2DykZZ0AbLvbw9L4v2cRp9Hf93Gt\FFf64X1ZfN56k3Jlh7beV1c8xhq2V59XZw65WULvnKRTnqaQfJ787NsTVcE3fgbxoc7t4mA+josXrd96RPpr83Li6Riu3T8x+Srf\+Cj4VrvJLLWUrGGtDKxR5f\4TH933Zpvbeeduurl\I4vN61bJNnSLt7fLK6rIl7\n7PdnqF+nIU6S92EJfEVSzJWtSP+apn3XbVY8vkqpt2+vxd9PvzXFKxhnQ6sUePn+ldZu4Kai\OzAaLmQRZ0uGsYkLBDxeplpdtnQPvp9bJBku0tn\zfs37veybMNcEaQvmjjTx9tul4pNvkjC\Nr8nnVmGEnXKRlnQKsXe\j8lYa9tGR422v\KaTtu95uyxL0Ip1BrgjSbZf8nehjWrbvenuRVG1v\VtfJpPNfUrGGtDaxR4eb5AU8tISbK4IepFO6CuCajaPGymDL1tom9OUjCyg+1+SOwPDXOyBLWZboIt0gsqabV7WH0aybDHbRhbQysmXnt+J2CZg83yRTlgZtthsIwtodcXe8zsRW\w2vxfphJZhi8w2toBWL6D0+07EFr\N60U6wWXYIrONLaC16\68XqeDLX6bz4t0BpBhi8s2uoDW7uHh52KPCdve\vHXA9py61A2nxfpDCDDFpdtdAH1du+eMvuvh7RlhLC9\dFMMr1lM9k8XqQziAxbVLbxBdTTvSeqErWHLoBNXNj0gS+Hsom7aoRbtv1vfPzHf3seyjZ\67nnajZvF+m8+lz26XshZPoRY+827Y6cAWzzPw45khohbCMJ6NW\WBwxu3HG+6qMdvW5d5u8IaHamPBuS288X9wTOsiyqV57t91Ib6qvbltX2PxcpPOK\uFjvmXlc26820r3\S\bB\Vbjbq3daQEm9Xco0koPotxf1fo1C6e4dn29WN45947Rsfy3SebeLTkn++uFuy92Xb+Es\87GN4nI537YP\Oxv5p+Il9u8XKRzVXyw2sfyK\n9yqo3ifVsq9z\078t\RxDNW3fI9mQEm9Xco0koNv6Lal93co4o3z3I7+26u17\NrST5vXlJ5tstSvZKPp16Y+PEpcy5zeCaKwebhIR91H8q3s\qZeZfPqjVT92qr3\Rry25bV2yD+R3JppT4uhJ8JAG9Wrqpv6dbmCuqd4\zasv3Y++rK3B92tJ+lm4K4XXZ1A3ui2CHsKVbY2lBfdpy2bYKm9+XZPVGqp4HsnKPzBC24kNkPI9k0JTMRxPQG2f+vHZTf18fR5SS93P\1d\62S\7tql3orhNs7yNnEeb6qf+OcJely3bPrp0\F++mh4l8GnT740pW+PTVrzvtv3L5rUbqQYZyPwffm3qzXbhzn\33HPe327zoCkRjCSgbz\43v+sLbbPvxvZGd5fz48S+LTJNdAbZ4qbNPuzfUn9ZdBvv+1z2S5lKxfpsn3A67KJt3t+b8z3nNmQn0Xmzbatr8T7ls3rN1L1O5DVe2QGsIV5kUhTsJQIRhJQu+G9xgAAHGxJREFU8dko6qMVX33d8ykxVzfUZV3H799IP4TTpy398KpkyX709XTvXfIO8Wfb\8f5rWfyF43PZdtOB3L\kjpK4HXZtFs77l+4W364k0fb1Y1ixWXbt2xuuAFuiIHUbtfs3bYtXiRnvL9I5mFTMh9NQJPNwMflR\bI7U+vZ2WLvefJWpo4HeaV9DXr0ZbGLJv+K+lb0f8Z59o2vOdl27jrx87Ic31eSVfsPdryT8QTB1R9v0qSFaZi0vIAiNdfW+1Gql4HsnaPTK82cR7D1TPpi0ReDOT5DRAyJeMJ6Lb8K7+RfUSKz1NixKebZtO\mv5KPdrE+u529kdQHvj0fpqWOmCdOf19Yt1HtVNct9N\+LOl74nk\2+JD4FQnwThz3ZV+6ge77K54UaqHm2Ge2R6tL2mO0O8AUKmZOCAapdfXJWfkPLR7HyxGz\ifN\vq9pa2Yb2Qk3+5dOWrL\80+LMdvEvr8umnNo5MT5t333tP2bnKsvjrB5tYjfa8Y9\VO6SlJuf7m35NTqXSody7\Yi068IkhQF9W\T75EZYtkE3t4Ami1ASjSGDKh+3qC8ZmC7dAqCP5t2XYL8lXq0pe977dNpPchqZ2Be9flRh2VbvpO+OFHFl019Xmp6arunDbPiGp197UCEsw8Rb7TleLwNYNXm946chmWbe3u3lWz+U6IzZED1yy\efjD5Z7LQf\OCr8Uu23wHVLOJQ\B3Z\09cHMlbedpw\1Nti2i2Xz897QbW\9s4\9S8rre9rdBKvumrUV60rVwRJvBW0ZvN6R07jsnn7U1Sy+U+JzpAB1S+\EMfO0sOd3j4kvXSxx9X8XmuefqW6TRRUvkh9faZj+UKWuee7cZZHsrgiMNCyyW\6eJGUr9ERG4F\uXwhp0dbjqdfXd3m846cDcvm6UVStvlPic7Aa6Davkhxv6n0Wr0Lft6IlYs9Mjy970s2cRr9XT\32h9\1Nd6YX3Ztj1uxJds6bGd18VFj6GW7dXXxalTPtYJK9fopGcZJL82T4tWuyJI4edGqnWbzzty1m1f+kT6awsxkt5TojNsQLXLL7Y3vO63q13sMZ9\RMe3\dlm9p75227urZsXv\6lm3qFGl5eaV3W\pCud+PrX6NjrzYws+i1W0+Mdg83pGzbrvq8UVStXlPic7QB5HyXT7qXJFAtrnfX2ndJm4KWjsm6c0293j7mZpNXCAgL1MNYZPHC37U026X6jU6+795\8b9fhbNYPOIadn83ZGzbpMvEi+\tprNe0p0hgxo+fKLt\5tSJvfX2nd5pehba\9p5C27\q6s079Gh2fDG7zdo9M87J919uLpGrznRKdYQNaufwitO01X+\EESwbtv4YrtGZss3jRsrgyxaMQU+kr11+gQ3bkDbDNTpTtvlbfxh+2UIxRECLD5uR+H1vYMPWU6Zfo4MNWxvhA1r6sBmJ98svsGHrIQtxjQ622Gxmgge08mEzEp+XX2DD1lPm+xodbBHaGggd0OqHzSj8Xn6BDVsfWYBrdLBFZmsidEBrHzaj8HX5BTZsvWV+r9HBFqOtifABrXzYDDZsw9rqMo\X6GCL1NbEcAHNPmwGG7ZBbXWZx2t0sEVqayJ0QOsfNoMN26A2g8zjNTrY4rQ1Ef4gUu3DZrBhG9JmkHm8RgdbnLYmhjiNqfphM9iwDWkzyDxeo4MtTlsDwQLa8mEz2LANYZvwomELRaiADvVhM9iwjUGGLVLbIgIFdLgPm8GGbXgZtkhtCwkT0CE\bAYbtqFl2CK1LSZMQAf9sBls2AaWYYvUtpggAR36w2awYRtShi1SWwfCBnSoD5vBhm1AGbZIbR0Iswk\+Me\YMM2oAxbpLbFhAnolD8iBVuUtgkvGraABDqNacofkYItStuEFw1bOMJeyhn2Q0uwYRuXDFuktmbCBjTsh5ZgwzYuGbZIbc0MEdBQC40N27hk2CK1NRM6oCE\tAQbtnHJsEVqayZ8QMMtNDZs45Jhi9TWTPBN+IAfWoIN27hk2CK1NRP8KHzAhcaGbVwybJHamgl8R\qwH1qCDdu4ZNgitTUSOKBhP7QEG7ZxybBFamsk9Gcihf3QEmzYxiXDFqmtieAfKgcAMBUIKACAJQQUAMASAgoAYAkBBQCwhIACAFhCQAEALCGgAACWEFAAAEsIKACAJQQUAMASAgpB2JnNbn3Z5ok3T\R+4t652YFnbVwAPSGgEIKkabPZaZtnElAYMQQUQnB9PQnoYZtnElAYMQQUQrA1W7tttvaIxTMtAgoQCgIKARAVvDybHbN8KgGFkUJAIQA7STyTEtpsWBNQGDEEFAKwKTbfN0uHkfYu3zabrd3+TPb1m08emSXfOHo++8buw8mXd7xcBHTvsnjE0fPyq\T76UQOiafsPbk+mx08JR+Y7wOtSlKur+dJ3lFrxeVJ1+dmM3nGlWRSR8tTgpWHgIJ\ZLJ29MNI10\OUtZUU7dmGSpu6hu3\lEW0PQ4lOBQWjER0P9wTn7n2HxXTS4V5AGtSiTJj7O9sZvyX5VJ1+dmM90DMbPbiwsThoCCf7bSFT0tXCJ\CvmtolhqnTD\xn+lAppHbibrKAL632fT+Hvnsp+JVGYBrUrKszPPdw9UJ12fm83ZwfW8zwA5BBS8k5VzqziMlGzOryXb22LFUURJpO6Ol5J\vHBSrvSJb4jVwcvrM+0b58XG9nrxlNmhp5NpnMjWHa+oH2UBrUhy8m14uQVvnHRpbsSUZrey+Q41CCh4JwnWYfV\tW8ySZRcKVT\KLbu1WO2ZtqGu\hXcSWTeoqoXJ7B4l\iHyqgVUnBZr6mqeTlSdfmRgSUI1lggICCd7KjR+JyJLk3skjUVuUCJXmsXtvaVyndLBpYrDeezp6ifqYO9KuANkt28k1946Src5Mugc0pWDB5CCj4pjh\KV\XqxZN8eZXP7We7ofUTnmS29v6yUxyhbZ4SO1fKqANEvm4w3JCx+aGSVfnZl45gQAgg4CCb3a0QzJqZW+zdjx778o968WBHC1q8p\F8aDs2PjigNYlOZuqsNm+gPKkq3PTOilYaQgoeGbvXClQ6qh2JUjagXCRLO1UTRlQ\ecOAppuw6st+Pqkq3NDQKEJAgqeqQTKGCS5Fnjw6Ps+\UcnjGugWlGLp9gHNN2Gl1vw5kmX5oaAQhMEFDyjnbyUH0aq7p7cys9hv3miaR9o5TrQZfaBym14uQVvmHR1bggoNEFAwS\lc4i28pOSihOFDusH3Xdm6ij87LT+DO0bxXQXBLQiKXF9XZx8L\d3ViddmxsCCk0QUPBL+Vb0ScpEitT\5uoEoSJZ4qz40nmg2emeyTcOFNdZHusS0IqkRPKQP3dCfbM66frcEFBogICCX8rxEqt7h+f5RUJ7T8zU7sp0ozm9I0h+aFxcZnRFvxJp7VTyjzefyB+xIKBVSYmt2cH14uzR8qRrc0NAoQECCl4prj6SqI1i7dyhY3PTmU75d\6cOp6kP0Q8pUNAK5LqfOn3ZFowNwQUzBBQ8MpW5Tr07AKi7PZJKm1PZLm6L9sjeVkevC\uxrSzrkeuS0CrEh2xKpx\tzLp+twQUDBDQMEn9YM\2WXl6a06ixtsXrlHnDl0n3bTu92H1yv3A03v0XnwvpfSr7oEtCopz4fWxPKk63NDQMEMAYWVhBvdgwsIKKwkW9weBBxAQGEVubJePzAP0BsCCivHTsOBJYC+EFBYOa5nJ5cCLAkBhZXj5snZ7A76CQ4goAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAkgkGdO\KPeuz2ezIfS\1etrueQtX5Ul752YHnrWYjO3zAGBQJhfQvSdFPSV3vNz9aU\MjvV3VZ9EQAFWiqkFNEmRxq2dC7ozswho7UnjC+gLD4u\J0fP5wOx+8xczLgXXTrt\g+9eWLtkR6Wng\vTsCx8rMM19e7TtXbGBaC7D24dvvTrY+8cjJ5jN+Z8cnEApr289B5sfH+wj3JPw93feI0A7p7Mn8Zy30NyTrz6bmnKKhp93\oOAIadKxWKKBiS7DlgTviARFvfk0soJszrWmXky+6vqVjCehZSbfJXl+frYk9wXvir3w6p8nr2mMUOo92+aG+AnpR0m2qYcfKD90Dasctki4PLX7Dbz7R+i7cnB3ovt0yQqYV0ORdoCdtq\tGfCQBPXu2R0GTF3G2+HvqVbxKAb14sUdBA4+VHzwH9JZbuhdU\w1vtr0LN7tvJY6SaQW0Uszkt6j+vO1duUfbvZX2au\J28QOmvTnO2pb47T8bV9JfnJU\ODNJ4+ITbqj+bH2vcvGJ+U\zkO4d\lIIdwqHpQkPp3D0s87B\Ts2T4FLb1w5RcrFNCLF\sUNPBY+cFvQG+5pUdB9d9w6wgS0BEh9oCW3sMvqjdFvn\r0DPqcQf+1brWv3JAL6c7wh5Jw1c+GnVdTWet8iRtBuRr5Xo29VSYfJW9SlRLyz\3E9DEcbry1WbqPJy+pMWfgkPqL0P6x+TgfelC3jxx4F8n62CHirfim08kc3v7M\WHliaTTVt7\q46KlOdTPZQRVZEbdJbec+20pX88gy6D6irsUp\mC9x41iZFtkw8E3jV\tROplD57OA6lO9vn7gWfHyP3gqeVKyFrH2ft1fmuYCrAMqZkFfOm32NvO3kD7P5WFsHtP6iIVnUgFNXvjGDml7tNOflw7Vi1dSKaAH19Xbe0t71LHydCpPyshCeL04lUp8ra2Yyn9Vft4W0LNdMD6z8odf\KnXovCD2szfVH8XDj2bLuSBH5jp+\XVzMpv7OoPTSbzA9rA5QFVz8\H747KZMwB1eciX5eSP6vMYFNAL3bB51jlL6zDtYeWxipbht3WgW8cv+qPMtG71msDKer1S\LLY5fV\wt\aZoGbumC8Zm1NdBi6fSFzgNamufSMJbHtH3EBmBSAd1p2OeZ\JrWkr9Z6Smi+e9k7dTL6e4u2cZ8d6b4ld6a\kkWubwjPZ5\Uk1XTOeU\CUeLj0pQ4VQPFOsaexdVsJ8G16ui9Z+7iWglY2jdKUu3yxNT5LdlTv+ErtYrK+dzLZcZ+9+eS8\9yT5OllNTh6qZlQco74sd0QUk1FLrXYdyucnyypOxE1GK22gPhnTJnxpLpIvDqtfqfyqNIPuA+porLbkEfzLs9oC1cYqe0QxmtWJtYxf+UeFyOAVjbz9pfnuOfm63j2n+UvTNOEkoPJ3mS9deaHVyJfnuTSMtTFtHrEhWIWAigOsj+j\EgFVwdqqtnAzn8ZOvpKk1myT35ecTvaPpoAW86EemW\Db6Ylrf3cU0BLM6fWA7IoqKWWq9L5Yp1O\3u49rzqQ+Umb3kyRUAPq6G99WX9sdpkTAEtz0W2SpguRHUGfQTUyViVOlxdoPJY1UezOrGW8av+qPSyLHuzl172mstc8pHaNE24COgL57JfefYnUV9oNWTleS4No3FMzSM2BFMLqGlAt4pvb6bJEwFVb5jsoI4e0Nrh+Jsnsi4ezqd4Wn9ShgrhZvGK3MmEqUVNyPRz5wFNptkShex1mPw\X9tLFkuuKpSep17AlZd2+o\SZLSAlgel9Mw8PNWA1udCTiyZ6dqPnAfU3VgV5+RUHlodK\Hf8mjWBq55\Iw\SlfWarOY7d3N\q\ETJOU2epgBbInQb5G0xfaPnfyjyXTm2qfNFlxEIytYCa1kA3SwfB5e8rew+aAlp+Nb351U+tyxXWreqPGgKqnRKTrQBs6aus9Z+HD6jUpV8W758dbcvVOJnii3QdqDQZLaDF8\de\GVxtON0ZW4MAa3MhXqr6DEtZjBwQDuPVbqdflDdg6Hy0OpYydTpo2nqWMP4NfwojXPFm+1Nzr5t9DfhIqBqPDJ\ZaHzEpbHqhjG0hcdRiw0kwpoVsMyWi7VI9oDWrw91W1Jsv3sm9VNneaA6qg9Ucfyidd\7uUofOt+vXIUcopuZJS+1F\oyUMXBHT34Wyyp2vJNAVUnws57WRcTs\rM+j+KLybsZrP\zB9vaRn5FceaghoZTRrE2sev9KP5CA1DWQR0NpukJ79WdTMErVplwOeL3Qe0NIvXxvG6pi2jtgATCqg+U7KjD3xG9DrJFf+OgZUO1beK6D681RA5Ta8WvWs\9xLQHfKf030P\VBArorpnvkXZ\+2rpNQNOHXF\PjhV4DqibsUrY+8X0MHF9gfoHtGX8Sj+aYEC1YayOKQH1SO080B1xnoftGqj8rR48+r5P\1Ft12U++YaA1laE02149fj6z71ciWRqVvtmqeFpS2zCZzuvrq\324RXyFOJjtXnyMeVSG7GSnHlYfFXsfKz\pvwLePX8KPKJnzxvbkxoIs34cv06GdzQBdswmvIYSx9wSa8Z6rXbsojQtpuTXkcqFtAt7LT3MUvquc+0FoO1bnZ8jy92s\9XAu\qU90Uz\VqPRurryP6u\jw8X\qweRWgKaT2dHnSaqTcYQ0Nq7+fr6gf9VvulrM9jxepvu\XQ1VhniOZWHGgJaPyRijHN9\Go\ys8bqQ9kS0DLv5MOdO9nc0CbDiKZUl46Ozf9onXEBmFaAa1cC7+TH\ypHYVfHFDtQTvZbjntvKbD88aA1laE5U8Oqy14w8\93I3p5sLru+WXW8U5XcYDIwfkScv6CUWlU2vaA6qWtjQZQ0Arc5E+7141\9UZ7BjQ4GOVd2BHXkegP9QU0NpJOaaAGsav8qPsALt6xZa9bQEt\U7c0hxQ42lMpXkuDWN5TFtHbBCmFdD0Co3ibkzr+SZz7TzQPgEVe5wOPKtPR53r1HQaUzIX2akXW9lDkpfIL2XdrP3c0+3sjHcYkjNeKZ84O1mFo\qqTObtUH4CdvVE+spk9A1usUzPyKsQxDdKkym\ZfOzurW5kEOj\lWdQQ8BdTNWW+nlGfMr6+qvhPZQU0Brp4VXatw0fpUfidfs+19Or++oD2RbQEu\E7c0B9R4In15nkvDWPqidcQGYWIBTa8xOijfCPfMsg16\Uqk7HKSekCzx2Y\2pSb8PIW9+k31ZVI4teszkCu7MzUrkRKf+viVl5Fu\Oz92s\9xRQ\R6Xp4rxOVx5NxcPM+xxzI95pdf\F5fS6fcalk9R086fnx0re\e57M9YPhn1UEXlukbtFN1sUCoz6COgTsYqv+wwfVmUHmoKaHk0qxNrGb\KjzLtD63XB7ItoOVfrVOaA1pe6GyjvDTPpWE0j6lxxIZgYgHNr6lVw1wES3FAXWtbDah8KZ3WA7qjTynbeZlxbK4\KSMLof7UY\mPimZUf+4roOou69rtpG7+LfFKrERhrt+Zqv6q3BN3nDjacDMR7Sly2to75R45UbWPTp+MfGg2T\qdNdbyW1sUZ1dXZ9BLQJ2MlbzJ1sFT9bk2BrRya4zKxFrGr\Kj+eX6zUSUtzWg5V+tS1oCWr5vSLZXs\TLLw2jYUybRmwAphZQeXm7Iv9MpPrdmKoBlX\njpUOtWdTWrsv22lZWUnKn5TLsxDu5Gcq5T8ttkjrP\cXUADwyOQCKm7iWf9Uzux+oOqrekDne+LU5DvK5yqlTxJ\7fLDR+n9QIs\2dmTck1x26X0TqIHtXko3yqq\HMCChAlEwwoAEAYCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAsISAAgBYQkABACwhoAAAlhBQAABLCCgAgCUEFADAEgIKAGAJAQUAN+ydmymO3PHSwkfvzA48u\BB19fXHsm\uHlCfCH\65lMsvtM++MIKAC4oQhowrFFj44goHtPzE63P46AAoAbkoDKbO698PDigtoGNCA3TxBQAAhDHtCErdmi2BFQAIAcPaDJvw+3P5qAAgDk6AFN+qgOwzy8PpvNjp6Xj3jytvwLEdDLyZeHzs+Lnx2872Xtq0PnG\eBtj+7BTHF3ZOz2Vr2WH0Gb5448K+fSCb6SCrZTHfmHs6WJPm6llMCCgBuKAVUrb1tZQeV7phrR5nEymmSwB+UX6VZunlSfnHoWf2rd7UE9Acany3J1aVDWklAf2Jde2xpBpOAiqkeeFYPaLYemvywtspMQAHADaWAyi+ur8\uSNb0klU+Ub2t2ZpY0bs8kwmciZ\tnpjd+nL68LVT8\nXTla+mjUGNHu2qFr52YqmgM7Subi8nj62PINJK2fvfnnv6VyVpnNT7o3YMeyUIKAA4IZSQGV2tlTRkk6dzksk2ZllXZJBlKWUzdK+ag5o47NbSebkwDPFLJVnMHn+4ZIqnZzaW2vYgiegAOAIQ0AzZIo2VbtSsuiluzmLY05b4h+bxVeNAW1+ditJKY81zmDy32MlVdrM7GeGg14EFADc0BDQvRd\WRynOS23uw\epy5Syo7Cp3kqVh13klXCYkKtB5Eant0+k8UUs5VPbQbzCZUCKhfFtAVPQAHAEYZ9oPPdh7PdkCJFf5gevllLG1pNYM6BZ5PnqiCWzlxqC6j27PaZvL6ePUJOojSDDQFNs7xlujSAgAKAGwxH4XdF2o6869NfW5cp2vvF9HD5ggS6CWjTQaRSQMsz2BBQ8dXeOdNJqAQUANxQOQ9UhGqzdMRGciVZ50vW6Bo2wssT6rsJr9N4GpO+CV+ewYaAJo86dn3dtHOAgAKAG+pXIuUF2pnpiUvrV0pgefdpEixVq53mg0jNz26lSLnYs1mZwaaAJtvwv2BUEFAAcEP9WvisQOIMeq1z9YAmj1db1ul6YVY5cX5nh4BWnt3K9XX1kLTN5RlsDKg4wd54GSkBBQA3aHdjukduNSffEVvIL5yUx2iSqp5K4nUlPZOonEBxxuf59AZy6tz1tfe\PN9tO5G+5dltiBPpDz2Tnkh\uDaD9YDmpzyZy0xAAcAN+v1A196ffuu6vGpy9u60rfkDRIzKCUxjWeyuzB75Q532gVaf3cb19bUfLGaiMoOVgKZzoc7XN0+ZgAKAG7Q70ud39dhN1kXXbn9G7dXcu3xEnAp6SvykkkB5OxDxUMnlxTcTaXl2M2KKV04WdyEpzWAloPObf0t1tulGUAQUAFaIUpJ7PMu8b5WAAsAKYRdQ41n0cwIKACuFVUCLs+8rEFAAWCEsArrZfHCKgALACmER0C15t2UTBBQAwBICCgBgCQEFALCEgAIAWEJAAQAsIaAAAJYQUAAASwgoAIAlBBQAwBICCgBgCQEFALCEgAIAWEJAAQAsIaAAAJYQUAAAS\5\X2iOyD5ZAUcAAAAASUVORK5CYII="  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external">Teaching-focused professors and the gender gap at the top</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external">
-<em>AI declaration: Claude Opus 4.6 was used heavily in the writing and coding of this blog. I have spent a lot of time shaping, editing, and verifying Claude’s work, but Claude…</em>
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external"><em>AI declaration: Claude Opus 4.6 was used heavily in the writing and coding of this blog. I have spent a lot of time shaping, editing, and verifying Claude’s work, but Claude…</em></a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2026-03-09-teaching-only/teaching-only-iwd.html" class="no-external">
 <div class="listing-date">
-March 9, 2026
+March 18, 2026
 </div>
 <div class="listing-author">
 Professor Emily Nordmann
@@ -397,19 +231,50 @@ Professor Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1767657600000" data-listing-file-modified-sort="1767700920248" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1684">
-<div class="thumbnail"><a href="./post/2026-01-06-email/email.html" class="no-external">
-
-<img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjzD4An2BLOtXxwQ1_y4Z3zEqiOQ4EyW86rFxpauNZaUaGkny4nhXhffQhfbJZNFvA2vw&amp;usqp=CAU" class="thumbnail-image">
-
-</a></div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1773792000000" data-listing-file-modified-sort="1773852063625" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1266">
+<div class="thumbnail">
+<p><a href="./post/2026-03-18-peru-journal-club/peru-journal.html" class="no-external"></a></p><a href="./post/2026-03-18-peru-journal-club/peru-journal.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./post/2026-03-18-peru-journal-club/peru-journal.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./post/2026-03-18-peru-journal-club/peru-journal.html" class="no-external">Journal club: What constitutes high quality higher education pedagogical research?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./post/2026-03-18-peru-journal-club/peru-journal.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2026-03-18-peru-journal-club/peru-journal.html" class="no-external">This session is based on Evans, C., Kandiko Howson, C., Forsythe, A., &amp; Edwards, C. (2021). What constitutes high quality higher education pedagogical research? <em>Assessment &amp;…</em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./post/2026-03-18-peru-journal-club/peru-journal.html" class="no-external">
+<div class="listing-date">
+March 18, 2026
+</div>
+<div class="listing-author">
+Emily Nordmann
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1767657600000" data-listing-file-modified-sort="1767700920000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1684">
+<div class="thumbnail">
+<p><a href="./post/2026-01-06-email/email.html" class="no-external"></a></p><a href="./post/2026-01-06-email/email.html" class="no-external">
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjzD4An2BLOtXxwQ1_y4Z3zEqiOQ4EyW86rFxpauNZaUaGkny4nhXhffQhfbJZNFvA2vw&amp;usqp=CAU" class="thumbnail-image"></p>
+</a><p><a href="./post/2026-01-06-email/email.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2026-01-06-email/email.html" class="no-external">Email management: Inbox Hero</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2026-01-06-email/email.html" class="no-external">
-I’ve been writing a workshop about time and workload management and one of the things that comes up again and again is the drain of managing your email. For reasons I…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2026-01-06-email/email.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2026-01-06-email/email.html" class="no-external">I’ve been writing a workshop about time and workload management and one of the things that comes up again and again is the drain of managing your email. For reasons I…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2026-01-06-email/email.html" class="no-external">
@@ -419,19 +284,22 @@ January 6, 2026
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1759532400000" data-listing-file-modified-sort="1759596478264" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="33" data-listing-word-count-sort="6595">
-<div class="thumbnail"><a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1759532400000" data-listing-file-modified-sort="1759596478000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="33" data-listing-word-count-sort="6595">
+<div class="thumbnail">
+<p><a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external"></a></p><a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external">
 <p class="card-img-top"><img src="post\2025-09-25-corbetts\corbetts_files\figure-html\unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external">Corbetts</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external">
-The nights are fair drawing in and finding Munros we can do in the available daylight and weather conditions becomes more and more difficult, particularly given we’re also…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external">The nights are fair drawing in and finding Munros we can do in the available daylight and weather conditions becomes more and more difficult, particularly given we’re also…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2025-09-25-corbetts/corbetts.html" class="no-external">
@@ -444,19 +312,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1758582000000" data-listing-file-modified-sort="1758659637562" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1486">
-<div class="thumbnail"><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1758582000000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1486">
+<div class="thumbnail">
+<p><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external"></a></p><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">
 <p class="card-img-top"><img src="post\2025-09-17-schools-behaviour\images\clipboard-3554642922.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">Supporting positive behaviour</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">
-I was grateful to have the opportunity to attend the Positive Relationships and Behaviour in Schools Scotland Conference in Edinburgh last week. My reason for attending is…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">I was grateful to have the opportunity to attend the Positive Relationships and Behaviour in Schools Scotland Conference in Edinburgh last week. My reason for attending is…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2025-09-17-schools-behaviour/index.html" class="no-external">
@@ -469,19 +340,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1756594800000" data-listing-file-modified-sort="1759581057177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="40" data-listing-word-count-sort="7986">
-<div class="thumbnail"><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1756594800000" data-listing-file-modified-sort="1759581057000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="40" data-listing-word-count-sort="7986">
+<div class="thumbnail">
+<p><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external"></a></p><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">
 <p class="card-img-top"><img src="post\2025-08-31-munro-tidy-tuesday\wh_grade.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">Munro Tidy Tuesday</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">
-I was immediately obsessed when I saw the Tidy Tuesday theme was Scottish Munros - we have climbed 58/282 so far. As I assume is the case for the majority of baggers, we use …
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">I was immediately obsessed when I saw the Tidy Tuesday theme was Scottish Munros - we have climbed 58/282 so far. As I assume is the case for the majority of baggers, we use …</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2025-08-31-munro-tidy-tuesday/index.en.html" class="no-external">
@@ -494,19 +368,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1742947200000" data-listing-file-modified-sort="1758659637522" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1840">
-<div class="thumbnail"><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1742947200000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1840">
+<div class="thumbnail">
+<p><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external"></a></p><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">
 <p class="card-img-top"><img src="post\2025-03-26-supporting-scholarship-in-yourself-and-others\images\291646002_10103756675309971_1065449788018260080_n.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">Supporting scholarship in yourself and others</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">
-Today I visited Queen Mary University London where I met with the Teaching and Scholarship staff at the School of Biological and Behavioural Sciences. I was asked to talk…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">Today I visited Queen Mary University London where I met with the Teaching and Scholarship staff at the School of Biological and Behavioural Sciences. I was asked to talk…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2025-03-26-supporting-scholarship-in-yourself-and-others/index.en.html" class="no-external">
@@ -519,19 +396,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1733875200000" data-listing-file-modified-sort="1758659637520" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1148">
-<div class="thumbnail"><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1733875200000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1148">
+<div class="thumbnail">
+<p><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external"></a></p><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">
 <p class="card-img-top"><img src="post\2024-12-11-from-peru-with-love\images\DSC00049.JPG"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">From PERU, with love</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">
-Today was my last official event as Centre Head for the Pedagogy and Education Research Unit (PERU), and I wanted to take the opportunity to talk about why I think…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">Today was my last official event as Centre Head for the Pedagogy and Education Research Unit (PERU), and I wanted to take the opportunity to talk about why I think…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2024-12-11-from-peru-with-love/index.en.html" class="no-external">
@@ -544,19 +424,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1729897200000" data-listing-file-modified-sort="1758659637484" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1438">
-<div class="thumbnail"><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1729897200000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1438">
+<div class="thumbnail">
+<p><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external"></a></p><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">MCQs in the age of AI</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">
-I shared this guide on Writing Good Multiple Choice Test Questions on social media and the first response I got on both LinkedIn and BlueSky was whether MCQs hold up in the…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">I shared this guide on Writing Good Multiple Choice Test Questions on social media and the first response I got on both LinkedIn and BlueSky was whether MCQs hold up in the…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2024-10-26-mcqs-in-the-age-of-ai/index.en.html" class="no-external">
@@ -569,19 +452,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1713308400000" data-listing-file-modified-sort="1758659637474" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="943">
-<div class="thumbnail"><a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1713308400000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="943">
+<div class="thumbnail">
+<p><a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external"></a></p><a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external">
 <p class="card-img-top"><img src="post\2024-04-17-psychology-of-swearing-uws\title.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external">Psychology of Swearing UWS</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external">
-This website accompanies the Psychology of Swearing talk held on Friday 19th April at UWS.
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external">This website accompanies the Psychology of Swearing talk held on Friday 19th April at UWS.</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2024-04-17-psychology-of-swearing-uws/index.html" class="no-external">
@@ -594,19 +480,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1690844400000" data-listing-file-modified-sort="1758659637470" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2243">
-<div class="thumbnail"><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1690844400000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2243">
+<div class="thumbnail">
+<p><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external"></a></p><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">ChatGPT: Student guidance for essays</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">
-Part 1: Using ChatGPT to create teaching materials: Data simulation &amp; MCQs
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">Part 1: Using ChatGPT to create teaching materials: Data simulation &amp; MCQs</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2023-08-01-chatgpt-student-guidance-for-essays/index.en.html" class="no-external">
@@ -619,19 +508,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1690066800000" data-listing-file-modified-sort="1758659637468" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2072">
-<div class="thumbnail"><a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1690066800000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2072">
+<div class="thumbnail">
+<p><a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external"></a></p><a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external">
 <p class="card-img-top"><img src="post\2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts\images\Screenshot 2023-07-23 172451.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external">Using ChatGPT for learning &amp; teaching: Correcting auto-transcripts</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external">
-Alongside Wil Tovio and Rachel O’Neill, I’ve written before in the Times Higher about the problems that requiring academics to produce corrected captions introduces. If you…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external">Alongside Wil Tovio and Rachel O’Neill, I’ve written before in the Times Higher about the problems that requiring academics to produce corrected captions introduces. If you…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2023-07-23-using-chatgpt-for-learning-teaching-correcting-auto-transcripts/index.html" class="no-external">
@@ -644,19 +536,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1689894000000" data-listing-file-modified-sort="1758659637459" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2257">
-<div class="thumbnail"><a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1689894000000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2257">
+<div class="thumbnail">
+<p><a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external"></a></p><a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external">ChatGPT: Student guidance for mulitple-choice assessments</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external">
-Part 1: Using ChatGPT to create teaching materials: Data simulation &amp; MCQs
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external">Part 1: Using ChatGPT to create teaching materials: Data simulation &amp; MCQs</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2023-07-21-chatgpt-student-guidance-for-mulitple-choice-assessments/index.html" class="no-external">
@@ -669,19 +564,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1688252400000" data-listing-file-modified-sort="1758659637452" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="70" data-listing-word-count-sort="13857">
-<div class="thumbnail"><a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="13" data-listing-date-sort="1688252400000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="70" data-listing-word-count-sort="13857">
+<div class="thumbnail">
+<p><a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external"></a></p><a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external">
 <p class="card-img-top"><img src="post\2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics\images\scheduleA.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external">Using ChatGPT to create teaching materials: marking criteria &amp; rubrics</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external">
-This is the second in a series of blog posts discussing how I’m using ChatGPT to create teaching materials (see here for part 1 on using it for data simulation and creating…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external">This is the second in a series of blog posts discussing how I’m using ChatGPT to create teaching materials (see here for part 1 on using it for data simulation and creating…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2023-07-02-using-chatgpt-for-teaching-marking-criteria-rubrics/index.html" class="no-external">
@@ -694,19 +592,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-listing-date-sort="1686524400000" data-listing-file-modified-sort="1758659637448" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1535">
-<div class="thumbnail"><a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1686524400000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1535">
+<div class="thumbnail">
+<p><a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external"></a></p><a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external">
 <p class="card-img-top"><img src="post\2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs\images\gpt1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+</a><p><a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external">Using ChatGPT to create teaching materials: Data simulation &amp; MCQs</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external">
-There’s an overwhelming amount of discussion about student uses of ChatGPT that is mainly concerned with academic misconduct. Whilst I understand that it’s a huge problem…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external">There’s an overwhelming amount of discussion about student uses of ChatGPT that is mainly concerned with academic misconduct. Whilst I understand that it’s a huge problem…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2023-06-12-using-chatgpt-to-create-teaching-materials-data-simulation-mcqs/index.html" class="no-external">
@@ -719,19 +620,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1661209200000" data-listing-file-modified-sort="1758659637424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="997">
-<div class="thumbnail"><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="15" data-listing-date-sort="1661209200000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="997">
+<div class="thumbnail">
+<p><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external"></a></p><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">Flexible Submission Windows</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">
-Like many, the number of extension requests on my course increased over the last two years. This is not a “OH THOSE BLOODY STUDENTS” post. I don’t blame students for any of…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">Like many, the number of extension requests on my course increased over the last two years. This is not a “OH THOSE BLOODY STUDENTS” post. I don’t blame students for any of…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2022-08-23-flexible-submission-windows/index.html" class="no-external">
@@ -744,19 +648,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-listing-date-sort="1598482800000" data-listing-file-modified-sort="1758659637417" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="928">
-<div class="thumbnail"><a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="16" data-listing-date-sort="1598482800000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="928">
+<div class="thumbnail">
+<p><a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external"></a></p><a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external">Pivot 7: Grief</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external">
-Last Saturday we were supposed to be in London for the West End production of Sister Act, with Whoopi Goldberg reprising the lead role and Jennifer Saunders as Mother…<sup></sup><sup></sup><em></em>
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external">Last Saturday we were supposed to be in London for the West End production of Sister Act, with Whoopi Goldberg reprising the lead role and Jennifer Saunders as Mother…<sup></sup><sup></sup><em></em></a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2020-08-27-pivot-7-grief/2020-08-27-pivot-7-grief.html" class="no-external">
@@ -769,19 +676,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-listing-date-sort="1597964400000" data-listing-file-modified-sort="1758659637413" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1006">
-<div class="thumbnail"><a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1597964400000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1006">
+<div class="thumbnail">
+<p><a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external"></a></p><a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external">Pivot 6: Human after all</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external">
-This week I continued recording my lectures and asynchronous lab videos. As I’ve already said on Twitter, I largely refuse to do any editing - there were a couple of moments…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external">This week I continued recording my lectures and asynchronous lab videos. As I’ve already said on Twitter, I largely refuse to do any editing - there were a couple of moments…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2020-08-21-pivot-6/2020-08-21-pivot-6.html" class="no-external">
@@ -794,19 +704,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1597100400000" data-listing-file-modified-sort="1758659637412" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="75">
-<div class="thumbnail"><a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="18" data-listing-date-sort="1597100400000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="75">
+<div class="thumbnail">
+<p><a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external"></a></p><a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external">Lec Rec impact</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external">
-List of institutions linking to lecture capture guides from Nordmann et al.&nbsp;(2020).
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external">List of institutions linking to lecture capture guides from Nordmann et al.&nbsp;(2020).</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2020-08-11-lec-rec-impact/2020-08-11-lec-rec-impact.html" class="no-external">
@@ -819,19 +732,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-listing-date-sort="1596150000000" data-listing-file-modified-sort="1758659637410" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1012">
-<div class="thumbnail"><a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="19" data-listing-date-sort="1596150000000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1012">
+<div class="thumbnail">
+<p><a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external"></a></p><a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external">Pivot 3: Party</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external">
-This week I finished working through the assessment information for both my Level 1 course and my MSc Research Methods courses. The latter was fairly quick as that course…
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external">This week I finished working through the assessment information for both my Level 1 course and my MSc Research Methods courses. The latter was fairly quick as that course…</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2020-07-31-pivot-3/2020-07-31-pivot-3.html" class="no-external">
@@ -844,19 +760,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-listing-date-sort="1595545200000" data-listing-file-modified-sort="1758659637407" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1042">
-<div class="thumbnail"><a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="20" data-listing-date-sort="1595545200000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1042">
+<div class="thumbnail">
+<p><a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external"></a></p><a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external">Pivot 2: Academic, heal thyself</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external">
-The problem with starting your first blog with a pithy quote is that you feel pressured to do it for every one.
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external">The problem with starting your first blog with a pithy quote is that you feel pressured to do it for every one.</a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2020-07-24-pivot-2/2020-07-24-pivot-2.html" class="no-external">
@@ -869,19 +788,22 @@ Emily Nordmann
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-listing-date-sort="1594594800000" data-listing-file-modified-sort="1758659637407" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1564">
-<div class="thumbnail"><a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external">
-
+<div class="quarto-post image-right" data-index="21" data-listing-date-sort="1594594800000" data-listing-file-modified-sort="1758659637000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1564">
+<div class="thumbnail">
+<p><a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external"></a></p><a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
+</a><p><a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external"></a></p>
+</div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external">Pivot 1: Academic Serenity</a>
 </h3>
-<div class="delink listing-description"><a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external">
-Grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference - <em>Reinhold Niebuhr</em>
-</a></div>
+<div class="listing-subtitle">
+<a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external">Grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference - <em>Reinhold Niebuhr</em></a>
+</div>
 </div>
 <div class="metadata">
 <a href="./post/2020-07-13-pivot-1-academic-serenity/2020-07-13-pivot-1-academic-serenity.html" class="no-external">
@@ -895,258 +817,377 @@ Emily Nordmann
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
         }
       }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
       return false;
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
     }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
     }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/www\.emilynordmann\.com\/");
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
+      return codeEl.innerText;
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.emilynordmann\.com\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1154,161 +1195,185 @@ Emily Nordmann
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 </div> <!-- /content -->
 
 
