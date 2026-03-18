@@ -1,7 +1,7 @@
 ---
 title: "Teaching-focused professors and the gender gap at the top"
 author: "Professor Emily Nordmann"
-date: today
+date: 2026-03-09
 format:
   html:
     embed-resources: true
