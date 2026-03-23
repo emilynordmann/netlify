@@ -235,6 +235,7 @@ function App(){
 
   const reset=()=>{if(!confirm("Clear your answers?"))return;setAns({});setDone(false);setAll([]);saveL({},false);setPage("exercise")};
   const clearAll=async()=>{if(!confirm("Delete ALL responses from all participants?"))return;if(db)try{await db.ref(DBPATH).remove()}catch(e){console.warn(e)};setAll([])};
+  const refreshResponses=async()=>{if(!db)return;try{const snap=await db.ref(DBPATH).once("value");const v=snap.val();setAll(v?Object.values(v):[])}catch(e){console.warn(e)}};
 
   const tot=QQ.length+CQ.length,ct=Object.keys(ans).length;
   const qS=new Set(),cS=new Set(),fS=new Set();
@@ -293,6 +294,7 @@ function App(){
 
       <div style={{textAlign:"center",marginBottom:"1rem"}}>
         <button onClick={reset} style={btnS}>Reset my answers</button>
+        {db&&<button onClick={refreshResponses} style={btnS}>Refresh responses</button>}
         {presenterMode&&<button onClick={clearAll} style={{...btnS,color:BU,borderColor:BU,fontSize:".8rem"}}>Clear all responses (presenter)</button>}
       </div>
       {!fbOk&&<div style={{textAlign:"center",marginTop:"1rem",padding:"1rem",background:"#fff8e1",border:"1px solid #ffe082",borderRadius:6,fontSize:".85rem",color:"#795548"}}><strong>Note:</strong> Firebase is not configured. Running in local-only mode. To enable shared data collection, add your Firebase config to this file.</div>}
