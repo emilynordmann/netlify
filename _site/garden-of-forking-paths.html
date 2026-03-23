@@ -205,9 +205,23 @@ function App(){
   const[all,setAll]=useState([]);
   const[busy,setBusy]=useState(false);
   const[page,setPage]=useState("exercise"); // exercise | prereg | resources
+  const[presenterMode,setPresenterMode]=useState(false);
   const listRef=useRef(null);
+  const pPressRef=useRef({count:0,timer:null});
 
   useEffect(()=>{const s=loadL();setAns(s.a);setDone(s.s)},[]);
+  useEffect(()=>{
+    const handler=(e)=>{
+      if(e.key!=="p"&&e.key!=="P")return;
+      const state=pPressRef.current;
+      state.count++;
+      if(state.timer)clearTimeout(state.timer);
+      if(state.count>=3){setPresenterMode(m=>!m);state.count=0}
+      else{state.timer=setTimeout(()=>{state.count=0},600)}
+    };
+    window.addEventListener("keydown",handler);
+    return()=>window.removeEventListener("keydown",handler);
+  },[]);
   useEffect(()=>{if(!done||!db)return;
     const ref=db.ref(DBPATH);const h=ref.on("value",snap=>{const v=snap.val();setAll(v?Object.values(v):[])});
     listRef.current={ref,h};return()=>ref.off("value",h)},[done]);
@@ -279,7 +293,7 @@ function App(){
 
       <div style={{textAlign:"center",marginBottom:"1rem"}}>
         <button onClick={reset} style={btnS}>Reset my answers</button>
-        <button onClick={clearAll} style={{...btnS,color:BU,borderColor:BU,fontSize:".8rem"}}>Clear all responses (presenter)</button>
+        {presenterMode&&<button onClick={clearAll} style={{...btnS,color:BU,borderColor:BU,fontSize:".8rem"}}>Clear all responses (presenter)</button>}
       </div>
       {!fbOk&&<div style={{textAlign:"center",marginTop:"1rem",padding:"1rem",background:"#fff8e1",border:"1px solid #ffe082",borderRadius:6,fontSize:".85rem",color:"#795548"}}><strong>Note:</strong> Firebase is not configured. Running in local-only mode. To enable shared data collection, add your Firebase config to this file.</div>}
     </>}
