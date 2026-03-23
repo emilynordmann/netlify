@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Garden of Forking Paths</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--ub:#003865;--dp:#951272;--co:#0075B0;--bu:#7D2239;--lp:#F5E6F0;--lb:#E8F0F6;--lg:#f7f7f7;--bg:#e0e0e0}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#fff;line-height:1.5}
+    #root{max-width:800px;margin:0 auto;padding:1.5rem 1rem 3rem}
+    a{color:var(--ub)}a:hover{color:var(--co)}
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+<script type="text/babel">
+const {useState,useEffect,useRef}=React;
+
+/* ── FIREBASE ── */
+const fbCfg={
+  apiKey: "AIzaSyB14cS8t1tDZrgeuZqzEAz6gIl6eq-BupM",
+  authDomain: "sotl-forking-paths.firebaseapp.com",
+  databaseURL: "https://sotl-forking-paths-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "sotl-forking-paths",
+  storageBucket: "sotl-forking-paths.firebasestorage.app",
+  messagingSenderId: "398928199321",
+  appId: "1:398928199321:web:ce98df95f3e01bd83ec208"
+};
+const fbOk=fbCfg.apiKey!=="YOUR_API_KEY";
+let db=null;
+if(fbOk){try{firebase.initializeApp(fbCfg);db=firebase.database()}catch(e){console.warn(e)}}
+const DBPATH="gfp_responses";const LKEY="gfp_local_v2";
+
+/* ── COLOURS ── */
+const UB="#003865",DP="#951272",CO="#0075B0",BU="#7D2239",LP="#F5E6F0",LB="#E8F0F6";
+
+/* ── QUESTIONS ── */
+const QQ=[
+{id:"Q1",t:"Which survey items do you analyse?",o:[
+{k:"a",t:"All 10 items as a single composite measure"},
+{k:"b",t:"Three subscale scores using the intended categories (perceived learning, engagement, satisfaction)"},
+{k:"c",t:"Peform a factor analysis and use the subscale groupings from that"}]},
+{id:"Q2",t:"How do you treat the Likert scale data?",o:[
+{k:"a",t:"Calculate the mean of selected items and treat as continuous"},
+{k:"b",t:"Calculate the median of selected items"},
+{k:"c",t:"Use the sum of selected items"},
+{k:"d",t:"Use raw item-level responses with an ordinal regression model"}]},
+{id:"Q3",t:"Who is included in your sample?",o:[
+{k:"a",t:"All 112 students who completed the survey"},
+{k:"b",t:"Exclude 14 who completed fewer than half the formative quizzes (didn't experience the intervention)"},
+{k:"c",t:"Exclude 9 students with extenuating circumstances or interruptions of study"},
+{k:"d",t:"Exclude both groups (drops n from 112 to 91)"}]},
+{id:"Q4",t:"How do you handle missing data within the survey?",o:[
+{k:"a",t:"Analyse only students who answered all items (complete cases, drops n by a further 19)"},
+{k:"b",t:"Calculate scores from whatever items each student completed (available case analysis)"},
+{k:"c",t:"Impute missing item responses using the student's mean on the other items"}]},
+{id:"Q5",t:"The internal consistency (Cronbach's alpha) of your composite measure is 0.64, below the commonly used 0.70 threshold. What do you do?",o:[
+{k:"a",t:"Report the alpha and proceed with the analysis as planned"},
+{k:"b",t:"Remove the two items with the lowest item-total correlations to improve alpha above 0.70"},
+{k:"c",t:"Abandon the composite and analyse items individually"},
+{k:"d",t:"Report the alpha but note that the 0.70 threshold is arbitrary and that the scale has few items"}]},
+{id:"Q6",t:"The attendance data shows the new-assessment cohort had significantly higher attednance. How do you handle this?",o:[
+{k:"a",t:"Report your survey findings without mentioning attendance (not part of the research question)"},
+{k:"b",t:"Add atendance as a covariate"},
+{k:"c",t:"Split the sample into high and low attenders and analyse separately"},
+{k:"d",t:"Reframe the study as being about the combined effect of assessment redesign and engagement"}]},
+{id:"Q7",t:"Before running your main analysis, do you conduct a power analysis?",o:[
+{k:"a",t:"No, the sample size is determined by whoever completed the survey, so a power analysis is not relevant"},
+{k:"b",t:"Yes, and it indicates you need 128 per group for 80% power to detect a medium effect, so note underpowered as a limitation"},
+{k:"c",t:"Yes, but use a sensitivity analysis to determine the smallest effect size detectable with your actual sample"},
+{k:"d",t:"Conduct a post-hoc power analysis using the observed effect size and report the achieved power"}]},
+{id:"Q8",t:"Your pre-analysis expectation was that the new assessment would improve perceived learning. In fact, perceived learning shows no significant difference, but assessment satisfaction is significantly higher. How do you write up the study?",o:[
+{k:"a",t:"Report as originally framed: the intervention did not improve perceived learning, with satisfaction noted as secondary"},
+{k:"b",t:"Reframe the study as being about assessment satisfaction and present it as the primary outcome"},
+{k:"c",t:"Report both outcomes equally without indicating which was the original focus"},
+{k:"d",t:"Report only the satisfaction finding as the main result and do not mention the perceived learning analysis"}]},
+];
+
+const CQ=[
+{id:"C1",t:"How do you approach the analysis?",o:[
+{k:"a",t:"Inductive thematic analysis (codes emerge from the data)"},
+{k:"b",t:"Deductive coding using a pre-existing framework (e.g., Biggs' constructive alignment)"},
+{k:"c",t:"Content analysis counting frequency of positive, negative, and neutral statements"}]},
+{id:"C2",t:"Which comments do you include?",o:[
+{k:"a",t:"All 68 comments regardless of length"},
+{k:"b",t:"Exclude comments shorter than one full sentence (removes 11 one-word or fragment responses)"},
+{k:"c",t:"Only comments that explicitly mention the assessment change (reduces to 43)"},
+{k:"d",t:"Sample purposively for diversity by grade band and gender (reduces to 30)"}]},
+{id:"C3",t:"You are coding alone. How do you establish the trustworthiness of your coding?",o:[
+{k:"a",t:"Ask a colleague to independently code a random 20% sample and calculate inter-rater reliability"},
+{k:"b",t:"Keep a reflexive journal documenting your coding decisions but do not involve a second coder"},
+{k:"c",t:"Present initial codes to a colleague for discussion and refine collaboratively (peer debriefing)"},
+{k:"d",t:"The sample is small enough that trustworthiness is self-evident from the transparency of reporting"}]},
+{id:"C4",t:"During coding, a strong theme emerges about workload anxiety that was not anticipated. What do you do?",o:[
+{k:"a",t:"Report only themes related to your original research question"},
+{k:"b",t:"Include the workload theme as an additional finding"},
+{k:"c",t:"Reframe the study around the workload theme as it appears more significant"}]},
+{id:"C5",t:"You have 68 comments. A reviewer later asks whether this is a sufficient sample for thematic analysis. How do you respond?",o:[
+{k:"a",t:"Argue that 68 exceeds commonly cited thresholds for thematic saturation (e.g., Guest et al.'s suggestion of 12 interviews)"},
+{k:"b",t:"Acknowledge that saturation was not formally assessed but note that no new codes were emerging in the final comments coded"},
+{k:"c",t:"Argue that sample size is not the right framework for qualitative research and that richness and depth matter more"},
+{k:"d",t:"Conduct a post-hoc saturation analysis showing at what point new codes stopped emerging"}]},
+{id:"C6",t:"One student's comment contains a direct criticism of a named colleague who taught some sessions on the course. How do you handle this?",o:[
+{k:"a",t:"Include the comment but remove the colleague's name"},
+{k:"b",t:"Exclude the comment entirely as it concerns a third party who did not consent"},
+{k:"c",t:"Paraphrase the comment to preserve the sentiment without the identifying detail"},
+{k:"d",t:"Include it as written since the survey was anonymous and the comment is relevant"}]},
+{id:"C7",t:"Your thematic analysis produces six themes. Two are supported by only 2-3 comments each. How do you handle them?",o:[
+{k:"a",t:"Report all six themes equally"},
+{k:"b",t:"Report the four well-supported themes and mention the other two briefly as tentative observations"},
+{k:"c",t:"Merge the two small themes into a broader related theme"},
+{k:"d",t:"Drop the two small themes as they lack sufficient evidence"}]},
+{id:"C8",t:"You are writing up the findings and need to select illustrative quotes. How do you approach this?",o:[
+{k:"a",t:"Select the quotes that most clearly and articulately represent each theme"},
+{k:"b",t:"Select quotes that show the range of expression within each theme, including less articulate ones"},
+{k:"c",t:"Select quotes ensuring demographic diversity (grade, gender) among the quoted students"},
+{k:"d",t:"Select only quotes that cannot be attributed to specific individuals even indirectly"}]},
+];
+
+const qPaths=QQ.reduce((a,q)=>a*q.o.length,1);
+const cPaths=CQ.reduce((a,q)=>a*q.o.length,1);
+const tPaths=qPaths*cPaths;
+
+/* ── PRE-REG GUIDANCE ── */
+const preregQ=[
+{id:"Q1",why:"The choice of items determines what construct you are measuring, which directly shapes your findings.",what:"Specify which items will form your measure and the rationale for their selection (e.g., theoretical alignment, prior validation). If you plan to use subscales, state which items belong to each subscale."},
+{id:"Q2",why:"The statistical treatment of Likert data is a long-standing methodological debate and different choices yield different results.",what:"Pre-register your intended approach and the justification. If you plan to treat ordinal data as continuous, state this explicitly and note the assumption."},
+{id:"Q3",why:"Exclusion criteria change both sample size and composition and are one of the most consequential forking paths.",what:"Pre-register all planned exclusions before data collection. Specify exactly who will be excluded and why, and state the expected sample size after exclusions."},
+{id:"Q4",why:"Different missing data strategies can change both sample size and the pattern of results.",what:"Pre-register your approach to incomplete responses: complete cases, available cases, or imputation. If imputation, specify the method."},
+{id:"Q5",why:"Decisions about scale reliability often happen after seeing the data, creating a path towards selectively retaining items that produce the desired result.",what:"Pre-register your minimum acceptable alpha and what you will do if it falls below that threshold (e.g., report anyway, remove items based on pre-specified criteria, analyse items individually)."},
+{id:"Q6",why:"Post-hoc inclusion of covariates is a common source of analytical flexibility.",what:"Pre-register all planned covariates. If you discover an unexpected confound, report a supplementary analysis but clearly label it as exploratory."},
+{id:"Q7",why:"Sample size justification is a core component of any pre-registration and determines what effects your study can reliably detect.",what:"For SoTL studies where the sample is constrained by the cohort, use a sensitivity power analysis to determine the smallest detectable effect rather than a post-hoc power analysis (which is mathematically circular). State your smallest effect size of interest and whether your sample can plausibly detect it."},
+{id:"Q8",why:"This is HARKing (Hypothesising After Results are Known), where an exploratory finding is presented as though it were the original hypothesis.",what:"Pre-register your primary outcome and hypothesis. If a different outcome is significant, report the primary analysis as confirmatory and the unexpected finding as exploratory, clearly labelled. Never reframe an exploratory finding as the original hypothesis."},
+];
+
+const preregC=[
+{id:"C1",why:"The analytical framework determines what you find. Different approaches to the same comments will produce different themes.",what:"Pre-registration for qualitative work does not mean locking in codes, but it does mean specifying your analytical approach (inductive, deductive, or content analysis), the epistemological position, and the rationale."},
+{id:"C2",why:"Inclusion and exclusion criteria apply to qualitative data just as they do to quantitative data and shape what themes are available to find.",what:"Pre-register your criteria for which data will be analysed: all responses, those meeting a minimum length, those relevant to the research question, or a purposive sample. State the rationale."},
+{id:"C3",why:"The credibility strategy is an analytical decision that should be planned in advance, not chosen after seeing whether your coding looks persuasive.",what:"Pre-register whether you will use inter-rater reliability, peer debriefing, member checking, an audit trail, or a reflexive journal. Specify the approach before data collection."},
+{id:"C4",why:"This is the qualitative equivalent of HARKing. Emergent themes are a strength of qualitative research, but they should be transparently labelled.",what:"Pre-register your research questions and expected areas of inquiry. Report emergent themes explicitly as such, clearly distinguishing them from themes that address your original questions."},
+{id:"C5",why:"The adequacy of a qualitative sample is contested, but the decision about how to justify it shapes the claims you can make.",what:"Pre-register the basis on which you will argue your sample is sufficient. If you plan to assess saturation, specify the method (e.g., a saturation grid, tracking new codes per unit of data). If arguing on the basis of richness, state this rationale in advance."},
+{id:"C6",why:"This is primarily an ethical decision, but it also affects your dataset and therefore your findings.",what:"Your ethics application should specify how data involving third parties will be handled. Pre-register your approach to comments that identify non-consenting individuals so the decision is not made after seeing whether such comments support your argument."},
+{id:"C7",why:"The threshold for what counts as a 'theme' is rarely stated in advance, allowing researchers to include or exclude themes based on narrative fit.",what:"Pre-register your criteria for sufficient support (e.g., minimum number of participants, minimum coded segments) or state that you will report all themes and indicate the strength of support for each."},
+{id:"C8",why:"Quote selection is one of the most subjective decisions in qualitative reporting and shapes how readers interpret your themes.",what:"Pre-register your selection criteria: clarity, range, demographic diversity, or anonymity. Without this, readers have no way of knowing whether you selected the most supportive quotes and omitted dissenting ones."},
+];
+
+/* ── HELPERS ── */
+function loadL(){try{const s=localStorage.getItem(LKEY);return s?JSON.parse(s):{a:{},s:false}}catch{return{a:{},s:false}}}
+function saveL(a,s){try{localStorage.setItem(LKEY,JSON.stringify({a,s}))}catch{}}
+
+/* ── COMPONENTS ── */
+function QCard({q,type,sel,onSel}){
+  const isQ=type==="qual",ac=isQ?DP:UB,bg=isQ?LP:LB;
+  return <div style={{background:"#fff",border:`1px solid ${sel?ac:"#e0e0e0"}`,borderRadius:8,padding:"1.25rem 1.5rem",marginBottom:"1.25rem"}}>
+    <div style={{fontSize:".8rem",fontWeight:700,color:"#888",textTransform:"uppercase",letterSpacing:".05em",marginBottom:".4rem"}}>{q.id}</div>
+    <div style={{fontSize:"1.05rem",fontWeight:600,marginBottom:"1rem",lineHeight:1.4}}>{q.t}</div>
+    <div style={{display:"flex",flexDirection:"column",gap:".5rem"}}>
+      {q.o.map(o=>{const s=sel===o.k;return <button key={o.k} onClick={()=>onSel(q.id,o.k)} style={{display:"flex",alignItems:"flex-start",gap:".75rem",padding:".75rem 1rem",background:s?bg:"#f7f7f7",border:`2px solid ${s?ac:"transparent"}`,borderRadius:6,cursor:"pointer",textAlign:"left",fontSize:".95rem",lineHeight:1.45,fontFamily:"inherit",color:"#1a1a1a",fontWeight:s?500:400}}>
+        <span style={{flexShrink:0,width:"1.6rem",height:"1.6rem",display:"flex",alignItems:"center",justifyContent:"center",background:s?ac:"#fff",border:`2px solid ${s?ac:"#e0e0e0"}`,borderRadius:"50%",fontWeight:700,fontSize:".8rem",color:s?"#fff":"#666"}}>{o.k}</span>
+        <span>{o.t}</span></button>})}
+    </div></div>
+}
+
+function Badge({type,children}){const q=type==="qual";return <div style={{display:"flex",alignItems:"center",gap:".75rem",margin:"2.5rem 0 1.25rem"}}>
+  <span style={{background:q?DP:UB,color:"#fff",padding:".3rem .9rem",borderRadius:4,fontWeight:700,fontSize:".85rem",letterSpacing:".03em",whiteSpace:"nowrap"}}>{q?"Qualitative":"Quantitative"}</span>
+  <h2 style={{margin:0,fontSize:"1.3rem",color:q?DP:UB}}>{children}</h2></div>}
+
+function Bar({q,type,res,my}){
+  const n=res.length,cts={};q.o.forEach(o=>cts[o.k]=0);res.forEach(r=>{if(r[q.id]&&r[q.id]in cts)cts[r[q.id]]++});
+  const mx=Math.max(...Object.values(cts),1),isQ=type==="qual",fl=isQ?DP:UB;
+  return <div style={{background:"#fff",border:"1px solid #e0e0e0",borderRadius:8,padding:"1.25rem 1.5rem",marginBottom:"1rem"}}>
+    <div style={{fontWeight:600,fontSize:".95rem",marginBottom:".75rem"}}>{q.id}: {q.t}</div>
+    {q.o.map(o=>{const c=cts[o.k],p=n>0?Math.round(c/n*100):0,w=mx>0?c/mx*100:0;
+      return <div key={o.k} style={{display:"flex",alignItems:"center",gap:".5rem",marginBottom:".4rem"}}>
+        <span style={{flexShrink:0,width:"1.5rem",fontWeight:700,fontSize:".85rem",color:"#666",textAlign:"center"}}>{o.k}</span>
+        <div style={{flex:1,height:"1.75rem",background:"#f7f7f7",borderRadius:4,overflow:"hidden"}}>
+          <div style={{height:"100%",borderRadius:4,background:fl,width:w+"%",transition:"width .6s ease"}}/></div>
+        <span style={{flexShrink:0,minWidth:"6rem",fontSize:".85rem",color:"#666",textAlign:"right"}}>{c} ({p}%){o.k===my?<strong></strong>:""}</span>
+      </div>})}</div>}
+
+function Stat({v,l,c}){return <div style={{textAlign:"center",padding:"1rem 1.25rem",background:"#fff",borderRadius:8,border:"1px solid #e0e0e0",minWidth:120,flex:"1 1 120px"}}>
+  <div style={{fontSize:"2rem",fontWeight:700,lineHeight:1,color:c}}>{v}</div>
+  <div style={{fontSize:".8rem",color:"#666",marginTop:".3rem"}}>{l}</div></div>}
+
+function PreRegCard({item,type}){const isQ=type==="qual",ac=isQ?DP:UB;
+  return <div style={{background:"#fff",border:"1px solid #e0e0e0",borderRadius:8,padding:"1.25rem 1.5rem",marginBottom:"1rem"}}>
+    <div style={{fontWeight:700,fontSize:".85rem",color:ac,marginBottom:".5rem"}}>{item.id}</div>
+    <div style={{fontSize:".95rem",marginBottom:".75rem"}}><strong>Why this is a forking path:</strong> {item.why}</div>
+    <div style={{fontSize:".95rem",background:isQ?LP:LB,padding:".75rem 1rem",borderRadius:6,lineHeight:1.55}}><strong>In a pre-registration:</strong> {item.what}</div>
+  </div>}
+
+const btnS={background:"none",border:"1px solid #ccc",padding:".5rem 1.25rem",borderRadius:4,cursor:"pointer",fontFamily:"inherit",fontSize:".9rem",color:"#666",margin:"0 .25rem"};
+
+/* ── MAIN ── */
+function App(){
+  const[ans,setAns]=useState({});
+  const[done,setDone]=useState(false);
+  const[all,setAll]=useState([]);
+  const[busy,setBusy]=useState(false);
+  const[page,setPage]=useState("exercise"); // exercise | prereg | resources
+  const listRef=useRef(null);
+
+  useEffect(()=>{const s=loadL();setAns(s.a);setDone(s.s)},[]);
+  useEffect(()=>{if(!done||!db)return;
+    const ref=db.ref(DBPATH);const h=ref.on("value",snap=>{const v=snap.val();setAll(v?Object.values(v):[])});
+    listRef.current={ref,h};return()=>ref.off("value",h)},[done]);
+  useEffect(()=>{if(done&&!db){setAll([ans])}},[done]);
+
+  const pick=(id,k)=>{if(done)return;const n={...ans,[id]:k};setAns(n);saveL(n,false)};
+
+  const submit=async()=>{setBusy(true);saveL(ans,true);
+    if(db){try{await db.ref(DBPATH).push({...ans,ts:Date.now()})}catch(e){console.warn(e)}}
+    setDone(true);setBusy(false)};
+
+  const reset=()=>{if(!confirm("Clear your answers?"))return;setAns({});setDone(false);setAll([]);saveL({},false);setPage("exercise")};
+  const clearAll=async()=>{if(!confirm("Delete ALL responses from all participants?"))return;if(db)try{await db.ref(DBPATH).remove()}catch(e){console.warn(e)};setAll([])};
+
+  const tot=QQ.length+CQ.length,ct=Object.keys(ans).length;
+  const qS=new Set(),cS=new Set(),fS=new Set();
+  all.forEach(r=>{const a=QQ.map(q=>r[q.id]||"?").join("-"),b=CQ.map(q=>r[q.id]||"?").join("-");qS.add(a);cS.add(b);fS.add(a+"|"+b)});
+
+  return <div>
+    <h1 style={{color:UB,fontSize:"1.8rem",marginBottom:".25rem"}}>The Garden of Forking Paths</h1>
+    <p style={{color:DP,fontStyle:"italic",marginTop:0,marginBottom:"1.5rem",fontSize:"1.05rem"}}>An interactive exercise on researcher degrees of freedom in SoTL</p>
+
+    {/* NAV */}
+    {done && <div style={{display:"flex",gap:".5rem",marginBottom:"1.5rem",flexWrap:"wrap"}}>
+      {[["exercise","Exercise"],["prereg","Pre-registration guide"],["resources","Resources"]].map(([k,l])=>
+        <button key={k} onClick={()=>setPage(k)} style={{...btnS,background:page===k?UB:"none",color:page===k?"#fff":"#666",borderColor:page===k?UB:"#ccc",fontWeight:page===k?600:400}}>{l}</button>)}
+    </div>}
+
+    {/* SCENARIO */}
+    <div style={{background:LB,borderLeft:`4px solid ${UB}`,padding:"1.25rem 1.5rem",marginBottom:"2rem",borderRadius:"0 6px 6px 0",lineHeight:1.65}}>
+      <p style={{margin:"0 0 .75rem"}}><strong>The scenario.</strong> A lecturer redesigned the assessment on a Level 2 course from a single end-of-semester exam to a combination of formative quizzes and a portfolio. The course is a core requirement and the exam-only format was used for the previous four years. The change was motivated by student feedback and the lecturer's reading of the literature on formative assessment and self-regulated learning.</p>
+      <p style={{margin:"0 0 .75rem"}}><strong>Available data:</strong> A 10-item end-of-course student experience survey using a 5-point Likert scale (1 = strongly disagree to 5 = strongly agree) covering perceived learning (4 items), engagement (3 items), and satisfaction with the assessment (3 items), completed by 112 of 145 enrolled students (77% response rate). Of the 33 non-respondents, 9 had extenuating circumstances and 14 completed fewer than half the formative quizzes. Optional free-text comments from the same survey, provided by 68 students (ranging from single words to detailed paragraphs). Attendance data for both the current cohort (n=145) and the previous year (n=132). Entry qualification data is available but missing for 37 students due to incomplete records.</p>
+      <p style={{margin:0}}>You will make ten decisions about the <strong style={{color:UB}}>quantitative analysis</strong> and ten about the <strong style={{color:DP}}>qualitative analysis</strong>. Every decision is potentially defensible. That's the point.</p>
+    </div>
+
+    {/* ── EXERCISE PAGE ── */}
+    {page==="exercise" && !done && <>
+      <Badge type="quant">Survey analysis decisions</Badge>
+      {QQ.map(q=><QCard key={q.id} q={q} type="quant" sel={ans[q.id]} onSel={pick}/>)}
+      <Badge type="qual">Free-text analysis decisions</Badge>
+      {CQ.map(q=><QCard key={q.id} q={q} type="qual" sel={ans[q.id]} onSel={pick}/>)}
+      <div style={{textAlign:"center",margin:"2.5rem 0",padding:"1.5rem",background:"#f7f7f7",borderRadius:8}}>
+        <button onClick={submit} disabled={ct<tot||busy} style={{background:ct<tot?"#bbb":UB,color:"#fff",border:"none",padding:".85rem 2.5rem",fontSize:"1.05rem",fontWeight:600,borderRadius:6,cursor:ct<tot?"not-allowed":"pointer",fontFamily:"inherit"}}>{busy?"Submitting...":"Submit my decisions"}</button>
+        <div style={{marginTop:".75rem",fontSize:".9rem",color:"#666"}}>{ct} of {tot} decisions made</div>
+      </div>
+    </>}
+
+    {page==="exercise" && done && <>
+      <Badge type="quant">The paths through the garden</Badge>
+      <div style={{display:"flex",gap:"1rem",justifyContent:"center",flexWrap:"wrap",marginBottom:"1.5rem"}}>
+        <Stat v={all.length} l="Responses" c={UB}/>
+        <Stat v={qS.size} l="Unique quant paths" c={UB}/>
+        <Stat v={cS.size} l="Unique qual paths" c={DP}/>
+        <Stat v={fS.size} l="Unique combined" c={BU}/>
+      </div>
+      <div style={{background:LB,border:`2px solid ${UB}`,borderRadius:8,padding:"1.5rem",textAlign:"center",margin:"1.5rem 0"}}>
+        <div style={{fontSize:"3rem",fontWeight:700,color:UB,lineHeight:1}}>{tPaths.toLocaleString()}</div>
+        <div style={{fontSize:"1rem",color:"#444",marginTop:".4rem"}}>possible paths through the same data ({qPaths.toLocaleString()} quant x {cPaths.toLocaleString()} qual)</div>
+      </div>
+
+      <Badge type="quant">Quantitative decision distributions</Badge>
+      {QQ.map(q=><Bar key={q.id} q={q} type="quant" res={all} my={ans[q.id]}/>)}
+      <Badge type="qual">Qualitative decision distributions</Badge>
+      {CQ.map(q=><Bar key={q.id} q={q} type="qual" res={all} my={ans[q.id]}/>)}
+
+      <div style={{background:LP,borderLeft:`4px solid ${DP}`,padding:"1.25rem 1.5rem",margin:"2rem 0",borderRadius:"0 6px 6px 0",lineHeight:1.65}}>
+        <strong>Every decision was potentially defensible (or at least, a decision we know many researchers make frequently).</strong> Yet from the same data and the same research question, {fS.size<=1?"only one analytical path has been recorded so far.":`this room produced ${fS.size} different analytical paths.`} When these decisions are made after seeing the data and only the final path is reported, readers have no way of knowing how many alternatives existed. <strong>Preregistration</strong> makes the planned path transparent. <strong>Registered reports</strong> get the path peer-reviewed before the data are seen. <strong>Open data and materials</strong> let others walk different paths and check whether the conclusions hold.
+      </div>
+
+      <div style={{textAlign:"center",marginBottom:"1rem"}}>
+        <button onClick={reset} style={btnS}>Reset my answers</button>
+        <button onClick={clearAll} style={{...btnS,color:BU,borderColor:BU,fontSize:".8rem"}}>Clear all responses (presenter)</button>
+      </div>
+      {!fbOk&&<div style={{textAlign:"center",marginTop:"1rem",padding:"1rem",background:"#fff8e1",border:"1px solid #ffe082",borderRadius:6,fontSize:".85rem",color:"#795548"}}><strong>Note:</strong> Firebase is not configured. Running in local-only mode. To enable shared data collection, add your Firebase config to this file.</div>}
+    </>}
+
+    {/* ── PRE-REG PAGE ── */}
+    {page==="prereg" && <>
+      <h2 style={{color:UB,fontSize:"1.4rem",marginBottom:".5rem"}}>From forking paths to pre-registration</h2>
+      <p style={{marginBottom:"1.5rem",lineHeight:1.6,color:"#444"}}>Each decision you made in the exercise is a forking path. Below, we explain why each is a source of analytical flexibility and what you would specify in a pre-registration to make that decision transparent. Pre-registration does not prevent you from making these decisions. It makes the decisions visible.</p>
+      <Badge type="quant">Quantitative decisions</Badge>
+      {preregQ.map(p=><PreRegCard key={p.id} item={p} type="quant"/>)}
+      <Badge type="qual">Qualitative decisions</Badge>
+      {preregC.map(p=><PreRegCard key={p.id} item={p} type="qual"/>)}
+    </>}
+
+    {/* ── RESOURCES PAGE ── */}
+    {page==="resources" && <>
+      <h2 style={{color:UB,fontSize:"1.4rem",marginBottom:"1.5rem"}}>Resources and further reading</h2>
+
+      <h3 style={{color:DP,fontSize:"1.1rem",marginTop:"1.5rem",marginBottom:".75rem"}}>Pre-registration templates</h3>
+      <ul style={{lineHeight:1.8,paddingLeft:"1.25rem"}}>
+        <li><a href="https://help.osf.io/article/330-welcome-to-registrations#Select-a-Registration-Template-1g4YO" target="_blank">OSF Pre-registration</a> (general purpose)</li>
+        <li><a href="https://osf.io/j7ghv/" target="_blank">Qualitative Pre-registration Template</a> (Haven &amp; Van Grootel)</li>
+        <li><a href="https://aspredicted.org/" target="_blank">AsPredicted</a> (quick, streamlined pre-registration)</li>
+        <li><a href="https://www.cos.io/blog/choosing-preregistration-template-guide-for-researchers" target="_blank">Guide to choosing a pre-registration template</a> (Center for Open Science)</li>
+      </ul>
+
+      <h3 style={{color:DP,fontSize:"1.1rem",marginTop:"1.5rem",marginBottom:".75rem"}}>Registered reports</h3>
+      <ul style={{lineHeight:1.8,paddingLeft:"1.25rem"}}>
+        <li><a href="https://www.cos.io/initiatives/registered-reports" target="_blank">Registered Reports</a> (information and participating journals, Center for Open Science)</li>
+        <li>Reich, J., Gehlbach, H., &amp; Albers, C. J. (2020). Registered reports in education research. <em>AERA Open, 6</em>(2). <a href="https://doi.org/10.1177/2332858420917640" target="_blank">doi.org/10.1177/2332858420917640</a></li>
+      </ul>
+
+      <h3 style={{color:DP,fontSize:"1.1rem",marginTop:"1.5rem",marginBottom:".75rem"}}>Preprints</h3>
+      <ul style={{lineHeight:1.8,paddingLeft:"1.25rem"}}>
+        <li><a href="https://osf.io/preprints/edarxiv" target="_blank">EdArXiv</a> (preprint server for education research)</li>
+        <li><a href="https://osf.io/preprints/psyarxiv" target="_blank">PsyArXiv</a> (preprint server for psychology)</li>
+      </ul>
+
+      <h3 style={{color:DP,fontSize:"1.1rem",marginTop:"1.5rem",marginBottom:".75rem"}}>Open data and materials</h3>
+      <ul style={{lineHeight:1.8,paddingLeft:"1.25rem"}}>
+        <li><a href="https://osf.io" target="_blank">Open Science Framework (OSF)</a></li>
+        <li><a href="https://zenodo.org" target="_blank">Zenodo</a> (general-purpose research data repository)</li>
+      </ul>
+
+      <h3 style={{color:DP,fontSize:"1.1rem",marginTop:"1.5rem",marginBottom:".75rem"}}>Key papers</h3>
+      <ul style={{lineHeight:1.8,paddingLeft:"1.25rem"}}>
+        <li>Haven, T. L., &amp; Van Grootel, L. (2019). Preregistering qualitative research. <em>Accountability in Research, 26</em>(3), 229-244. <a href="https://doi.org/10.1080/08989621.2019.1580147" target="_blank">doi.org/10.1080/08989621.2019.1580147</a></li>
+        <li>Pownall, M., Soicher, R. N., &amp; Nordmann, E. (2025). Open research as an ally to teaching and scholarship-track academics. <em>JPAAP, 13</em>(2). <a href="https://doi.org/10.56433/dxhss233" target="_blank">doi.org/10.56433/dxhss233</a></li>
+        <li>Simmons, J. P., Nelson, L. D., &amp; Simonsohn, U. (2011). False-positive psychology. <em>Psychological Science, 22</em>(11), 1359-1366. <a href="https://doi.org/10.1177/0956797611417632" target="_blank">doi.org/10.1177/0956797611417632</a></li>
+        <li>Pownall, M., et al. (2023). Teaching open and reproducible scholarship: A critical review. <em>Royal Society Open Science, 10</em>(5). <a href="https://doi.org/10.1098/rsos.221255" target="_blank">doi.org/10.1098/rsos.221255</a></li>
+        <li>Bartlett, J. E., Mahrholz, G., &amp; Nordmann, E. (2025). Practice what you preach: Designing student assignments that advance open and reproducible science. <a href="https://doi.org/10.31219/osf.io/jb72d_v1" target="_blank">doi.org/10.31219/osf.io/jb72d_v1</a></li>
+      </ul>
+
+      <h3 style={{color:DP,fontSize:"1.1rem",marginTop:"1.5rem",marginBottom:".75rem"}}>Open SoTL journals</h3>
+      <ul style={{lineHeight:1.8,paddingLeft:"1.25rem"}}>
+        <li><a href="https://osotl.org" target="_blank">oSoTL</a> (Open Scholarship of Teaching and Learning, open access and open peer review)</li>
+        <li><a href="https://journalhosting.ucalgary.ca/index.php/TLI" target="_blank">Teaching &amp; Learning Inquiry</a> (ISSOTL's journal)</li>
+      </ul>
+    </>}
+  </div>
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+
+<!--
+════════════════════════════════════════════════════════════════
+FIREBASE SETUP INSTRUCTIONS
+════════════════════════════════════════════════════════════════
+
+1. Go to https://console.firebase.google.com/ and sign in.
+2. Click "Create a project". Name it (e.g., "forking-paths").
+   Disable Google Analytics (not needed). Click Create.
+3. In the sidebar: Build > Realtime Database > Create Database.
+   Choose your region (europe-west1 for UK).
+   Select "Start in test mode". Click Enable.
+4. Sidebar > gear icon > Project settings > Your apps > web icon (</>).
+   Nickname: "forking-paths". Do NOT tick Firebase Hosting.
+   Click "Register app".
+5. Copy the firebaseConfig object and replace the placeholder
+   at the top of the <script> section in this file.
+6. Save. Open in two browsers to test shared responses.
+7. Before each session: click "Clear all responses (presenter)".
+8. After 30 days, test mode expires. Go to Realtime Database >
+   Rules tab, and set:
+   { "rules": { ".read": true, ".write": true } }
+
+ADDING TO YOUR QUARTO SITE
+════════════════════════════════════════════════════════════════
+
+Option A: Standalone page
+  1. Place this file in your Quarto site root directory.
+  2. In _quarto.yml add:
+       resources:
+         - garden-of-forking-paths.html
+  3. Link to it: [Start exercise](garden-of-forking-paths.html)
+
+Option B: Navbar item
+  In _quarto.yml:
+    website:
+      navbar:
+        right:
+          - text: "Forking Paths"
+            href: garden-of-forking-paths.html
+
+Option C: Embed in a .qmd page
+  ```
+  ---
+  title: "The Garden of Forking Paths"
+  ---
+  <iframe src="garden-of-forking-paths.html"
+          width="100%" height="3000px"
+          style="border: none;">
+  </iframe>
+  ```
+
+════════════════════════════════════════════════════════════════
+-->
+</body>
+</html>
