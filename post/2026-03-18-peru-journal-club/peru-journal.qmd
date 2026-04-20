@@ -1,10 +1,8 @@
 ---
 title: "Journal club: What constitutes high quality higher education pedagogical research?"
 author: "Emily Nordmann"
-date: today
-format:
-  html:
-    embed-resources: true
+date: '2026-03-25'
+format: html
 ---
 
 This session is based on Evans, C., Kandiko Howson, C., Forsythe, A., & Edwards, C. (2021). What constitutes high quality higher education pedagogical research? *Assessment & Evaluation in Higher Education*, 46(4), 525--546. <https://doi.org/10.1080/02602938.2020.1790500>

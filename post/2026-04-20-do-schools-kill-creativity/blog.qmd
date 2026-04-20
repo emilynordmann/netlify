@@ -1,7 +1,9 @@
 ---
 title: "Do Schools Kill Creativity? Some Thoughts on a Very Popular Talk"
+author: "Emily Nordmann"
 date: 2026-04-20
 categories: [education, learning and teaching, evidence-based practice]
+image: https://imgs.xkcd.com/comics/duty_calls.png
 ---
 
 Recently I asked for recommendations for interesting talks to watch, and [Prof Simon Thomson](https://www.linkedin.com/in/digisim/) shared the Ken Robinson ["Do Schools Kill Creativity?"](https://www.ted.com/talks/sir_ken_robinson_do_schools_kill_creativity) TED talk with me. I'll be honest, I have been avoiding it for years despite seeing it shared many times, because the clips I had seen made me fairly confident I wasn't going to enjoy it. But I should have an actual opinion than an assumed one. So I watched it. And I was right. But I'm glad I watched it.
