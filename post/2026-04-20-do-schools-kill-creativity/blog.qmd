@@ -1,0 +1,27 @@
+---
+title: "Do Schools Kill Creativity? Some Thoughts on a Very Popular Talk"
+date: 2026-04-20
+categories: [education, learning and teaching, evidence-based practice]
+---
+
+Recently I asked for recommendations for interesting talks to watch, and [Prof Simon Thomson](https://www.linkedin.com/in/digisim/) shared the Ken Robinson ["Do Schools Kill Creativity?"](https://www.ted.com/talks/sir_ken_robinson_do_schools_kill_creativity) TED talk with me. I'll be honest, I have been avoiding it for years despite seeing it shared many times, because the clips I had seen made me fairly confident I wasn't going to enjoy it. But I should have an actual opinion than an assumed one. So I watched it. And I was right. But I'm glad I watched it.
+
+I think there is genuinely good stuff in here. The argument that we should build space into education for students to be wrong without it costing them everything is important and feeds entirely into the modern discourse of learning through assessment and I am not here to be dismissive of the whole thing. But I do have some problems with it, and the first is about the evidence base.
+
+## Learning styles and left brain/right brain
+
+The section describing intelligence as visual, auditory and kinaesthetic does not explicitly claim to be making an argument for learning styles theory but the language maps closely enough onto it that a very legitimate interpretation is that it is. And given that the primary audience for this talk is largely teachers, and we know that in 2026 belief in learning styles remains widespread, including in teacher training, I think that matters. Learning styles theory, specifically the idea that people learn better when instruction is matched to their preferred style, [does not have credible evidence to support it](https://pubmed.ncbi.nlm.nih.gov/26162104/).
+
+The corpus callosum section in addition to a few other references imply a left brain/right brain division in how people think and learn and again [this is a neuromyth](https://doi.org/10.1371/journal.pone.0071275). Some functions show hemispheric specialisation, but that is a very different claim from the personality and cognitive style story Robinson is telling. And that particular argument arrives, in the talk, via a joke about women and multitasking that I am amazed landed even in 2006, because it absolutely does not land now.
+
+## The world has changed
+
+The bigger issue for me, though, is not the talk itself. It is how often I still see it shared. Robinson was speaking in 2006, at a time when the central question felt like whether children were being given enough creative freedom. In 2026, a rather more pressing question in many schools is whether children can read. Pandemic learning loss and the impact of technology such as, but certainly not limited to generativeAI, is a real problem, not just for schools but for universities too. Students are arriving increasingly without the ability to read and think critically in the ways we used to be able to assume.
+
+And from a cognitive science perspective, the case against minimally guided, knowledge light approaches to learning has only grown stronger in the intervening twenty years. [Kirschner, Sweller and Clark published an analysis of minimally guided instruction in the same year Robinson gave this talk](https://doi.org/10.1207/s15326985ep4102_1), and the evidence base has developed considerably since. You cannot connect ideas across disciplines if you do not have any knowledge to connect. That is not a conservative argument against creativity, it is just how memory and learning actually work.
+
+I am conscious I am critiquing someone who gave a talk in 2006 and is not here to update it and that's going to make me look like a right asshat. My frustration is not with Ken Robinson, it's with reaching for a twenty year old talk as though it settles debates about generative AI, authentic assessment, and curriculum design in the world we are actually living in now. It does not. Particularly when the talk has more jokes than academic content (and I say this as someone who literally styles themselves as an amateur comedian). It's a lovely piece of theater, but I don't think it's the solution to much of anything.
+
+Right, how shall I turn the internet against me next week?
+
+![](https://imgs.xkcd.com/comics/duty_calls.png)
