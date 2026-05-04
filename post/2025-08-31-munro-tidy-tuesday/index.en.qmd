@@ -224,6 +224,7 @@ munro_dat <- bind_rows(best_for_left, best_for_right) %>%
 
 
 
+
 rm(x,y, best_for_left, best_for_right, candidates, tol_m, walkhighlands, scottish_munros)
 
 write_csv(x = munro_dat, "munros_combined.csv")
@@ -252,10 +253,15 @@ nature_5 <- c(
 )
 
 nature_4 <- c(
-  "#355E3B",  
-  "#4B4F58",  
-  "#4682B4",  
-  "#E07B39"   
+  "#355E3B",
+  "#4B4F58",
+  "#4682B4",
+  "#E07B39"
+)
+
+nature_2 <- c(
+  "#355E3B",
+  "#4682B4"
 )
 
 nature_13 <- c(
@@ -286,7 +292,7 @@ Because the user ratings and number of ascents are done by individual Munro rath
 ```{r}
 route_dat <-munro_dat |>
   select(first_route_url, first_route_title,
-         region, time_hours_min:deer_fence, time, scramble_exposed, wet) |>
+         region, time_hours_min:cow, time, scramble_exposed, wet) |>
   unique()
 
 route_stats <- munro_dat |>
@@ -331,7 +337,7 @@ Have I mentioned that I dislike heights and exposure?
 
 ```{r}
 munros_map <- munro_dat %>%
-  select(munro, region, xcoord, ycoord, height_dobih, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park) %>%
+  select(munro, region, xcoord, ycoord, height_dobih, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park, cow) %>%
   na.omit()
 
 # Convert OSGB36 coordinates to sf object
@@ -353,9 +359,18 @@ munros_coords <- munros_lat_long %>%
   arrange(-height_dobih)
 
 
-uk_map <- rnaturalearth::ne_countries(scale = "large", 
-                                  country = "United Kingdom", 
-                                    returnclass = "sf")
+uk_map <- rnaturalearth::ne_countries(scale = "large",
+                                      country = "United Kingdom",
+                                      returnclass = "sf")
+
+# Convert to regular polygon data frame for ggplotly compatibility.
+# ggplotly cannot handle the sfc geometry list column that geom_sf carries,
+# so we use geom_polygon + coord_cartesian for all interactive maps.
+uk_map_df <- uk_map %>%
+  sf::st_transform(4326) %>%
+  sf::st_coordinates() %>%
+  as.data.frame() %>%
+  mutate(group = paste(L3, L2, L1, sep = "_"))
 
 # Step 2: Specify shape codes (16 = circle, 17 = triangle, etc.)
 shape_values <- c(
@@ -366,8 +381,9 @@ shape_values <- c(
 )
 
 p <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
   geom_jitter(data = munros_coords, 
              aes(x = longitude, 
                  y = latitude, 
@@ -407,8 +423,9 @@ Which Munros are in which region is taken from the [walkhighlands A-Z](https://w
 
 ```{r}
 p3 <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
   geom_jitter(data = munros_coords, 
              aes(x = longitude, 
                  y = latitude, 
@@ -494,7 +511,7 @@ ggplot(
   )
 ```
 
-And fere's the full list in table form:
+And here's the full list in table form:
 
 ```{r}
 munro_dat |>
@@ -689,11 +706,11 @@ ggplot(
   geom_density_ridges(
     quantile_lines = TRUE, quantile_fun = mean,
     vline_linetype = "dashed",
-    aes(colour = "Mean height (m)")
+    aes(colour = "Mean rating")
   ) +
   scale_y_discrete(expand = c(0.01, 0)) +
   scale_x_continuous(expand = c(0.01, 0)) +
-  scale_colour_manual(values = c("Mean height (m)" = "black")) +
+  scale_colour_manual(values = c("Mean rating" = "black")) +
   theme_economist() +
   scale_fill_manual(values = nature_6) +
   labs(
@@ -873,8 +890,9 @@ shape_values <- c(
 )
 
 p2 <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
   geom_jitter(data = munros_coords, 
              aes(x = longitude, 
                  y = latitude, 
@@ -905,16 +923,54 @@ p2 <- ggplot() +
 ggplotly(p2, tooltip = "text")
 ```
 
-## Non-natural features
+## Other features
 
-With the usual caveats about the limits of text mining, here's some maps showing route descriptions that mention non-natural features (bothy, deer fence (because they're scary), pub, toilet). Some of these are more useful than others. 
+With the usual caveats about the limits of text mining, here's some maps showing route descriptions that mention other features (cows (scary), bothy, deer fence (scary), pub, toilet). Some of these are more useful than others. 
+
+### Cows
+
+Which routes mention cows, cattle, or calves? With the usual caveats about text-mining: "cow" can appear in place names (Cow Hill, for instance) as well as route descriptions, so treat this as a rough guide rather than a definitive livestock census.
+
+```{r}
+p_cow <- ggplot() +
+  geom_polygon(data = uk_map_df, 
+               aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+    geom_jitter(data = filter(munros_coords, cow == TRUE),
+             aes(x = longitude,
+                 y = latitude,
+                 colour = cow,
+                 text = munro),
+             size = 1,
+             height = .05,
+             width = .05) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  scale_colour_manual(values = nature_2) +
+  labs(title = "Where are the cows?",
+       subtitle = "Route descriptions that mention cows, cattle, or calves",
+       colour = NULL) +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(p_cow, tooltip = "text")
+```
 
 ### Bothy
 
 ```{r}
 bothy_plot <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
   geom_jitter(data = filter(munros_coords, bothy == TRUE), 
              aes(x = longitude, 
                  y = latitude, 
@@ -944,8 +1000,9 @@ I really hate deer fences.
 
 ```{r}
 fence_plot <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
   geom_jitter(data = filter(munros_coords, deer_fence == TRUE), 
              aes(x = longitude, 
                  y = latitude, 
@@ -976,8 +1033,9 @@ What I learned making this plot is that I cannot spell toilet. I lost an hour of
 ```{r}
 
 toilet_plot <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
   geom_jitter(data = filter(munros_coords, toilet == TRUE), 
              aes(x = longitude, 
                  y = latitude, 
@@ -1007,8 +1065,9 @@ This one wasn't really worth doing given how few routes mention a pub, but for S
 
 ```{r}
 pub_plot <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
   geom_jitter(data = filter(munros_coords, pub == TRUE), 
              aes(x = longitude, 
                  y = latitude, 
@@ -1037,14 +1096,15 @@ ggplotly(pub_plot, tooltip = "text")
 
 ```{r}
 car_plot <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
-  geom_jitter(data = filter(munros_coords, car_park == TRUE), 
-             aes(x = longitude, 
-                 y = latitude, 
-                 colour = pub,
-                 text = munro), 
-             size = 1) + 
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_jitter(data = filter(munros_coords, car_park == TRUE),
+             aes(x = longitude,
+                 y = latitude,
+                 colour = car_park,
+                 text = munro),
+             size = 1) +
   scale_x_continuous(breaks = NULL) +
   scale_y_continuous(breaks = NULL) +
   labs(title = "Routes that mention a car park") +
@@ -1136,3 +1196,4 @@ I may have become a bit obsessed.
 I must stop.
 
 But if you have any other suggestions for analysis....just ask.
+

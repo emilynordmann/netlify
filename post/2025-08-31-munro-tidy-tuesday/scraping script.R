@@ -108,12 +108,12 @@ extract_flags_time_distance <- function(route_url) {
   if (is.na(route_url) || !nzchar(route_url)) {
     return(tibble(
       scramble = NA, exposed = NA, spate = NA, river = NA, pathless = NA, bog = NA,
-      toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
+      toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA, cow = NA,
       time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
       ascent = NA_real_
     ))
   }
-  
+
   pg  <- read_html_utf8(route_url)
   txt <- html_text2(pg)
   
@@ -134,12 +134,7 @@ extract_flags_time_distance <- function(route_url) {
   # --- flags ---
   bog_hits_total <- stringr::str_count(txt, stringr::regex("\\bbog\\w*", ignore_case = TRUE))
   bog_flag <- bog_hits_total > 1  # TRUE only if 'bog*' occurs more than once
-  
-  wood_flag <- stringr::str_detect(
-    txt,
-    stringr::regex("\\bforest\\b|\\bwoodland\\b|\\bwoods?\\b", ignore_case = TRUE)
-  )
-  
+
   tibble(
     scramble = stringr::str_detect(txt, stringr::regex("\\bscrambl\\w*", ignore_case = TRUE)),
     exposed  = stringr::str_detect(txt, stringr::regex("\\bexposed\\b|\\bexposure\\b", ignore_case = TRUE)),
@@ -152,6 +147,7 @@ extract_flags_time_distance <- function(route_url) {
     pub        = stringr::str_detect(txt, stringr::regex("\\bpub\\b", ignore_case = TRUE)),
     car_park   = stringr::str_detect(txt, stringr::regex("\\bcar park\\b", ignore_case = TRUE)),
     deer_fence = stringr::str_detect(txt, stringr::regex("\\bdeer fence\\b", ignore_case = TRUE)),
+    cow        = stringr::str_detect(txt, stringr::regex("\\bcows?\\b|\\bcattle\\b|\\bcalves?\\b|\\bcalf\\b|\\bbulls?\\b|\\blivestock\\b", ignore_case = TRUE)),
     time_hours_min = time_min,
     time_hours_max = time_max,
     distance_km    = km_val,
@@ -185,13 +181,13 @@ walkhighlands <-
         extract_flags_time_distance(fr$first_route_url),
         error = \(e) tibble(
           scramble = NA, exposed = NA, spate = NA, river = NA, pathless = NA, bog = NA,
-          toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
+          toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA, cow = NA,
           time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
           ascent = NA_real_
         )
       )
-      
-      
+
+
       tibble(
         munro              = m_name,
         region             = m_region,
@@ -212,7 +208,8 @@ walkhighlands <-
         bothy              = ft$bothy,
         pub                = ft$pub,
         car_park           = ft$car_park,
-        deer_fence         = ft$deer_fence
+        deer_fence         = ft$deer_fence,
+        cow                = ft$cow
       )
       
     }
@@ -244,7 +241,7 @@ most_climbed <-
     count_td  <- html_element(tr, "td:nth-child(3)")     # col 3 = Ascents
     tibble(
       munro   = name_node |> html_text2(),
-      ascents = count_td  |> html_text2() |> readr::parse_number()
+      ascents = suppressWarnings(count_td |> html_text2() |> readr::parse_number())
     )
   }) |>
   dplyr::filter(!is.na(munro), nzchar(munro)) |>
@@ -262,7 +259,7 @@ munro_ratings <-
     rate_td   <- html_element(tr, "td:nth-child(3)")     # col 3 = Rating
     tibble(
       munro  = name_node |> html_text2(),
-      rating = rate_td   |> html_text2() |> readr::parse_number()
+      rating = suppressWarnings(rate_td |> html_text2() |> readr::parse_number())
     )
   }) |>
   dplyr::filter(!is.na(munro), nzchar(munro)) |>

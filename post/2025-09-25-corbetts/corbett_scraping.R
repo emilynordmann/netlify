@@ -101,12 +101,12 @@ extract_flags_time_distance <- function(route_url) {
   if (is.na(route_url) || !nzchar(route_url)) {
     return(tibble(
       scramble = NA, exposed = NA, spate = NA, river = NA, pathless = NA, bog = NA,
-      toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
+      toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA, cow = NA,
       time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
       ascent = NA_real_
     ))
   }
-  
+
   pg  <- read_html_utf8(route_url)
   txt <- html_text2(pg)
   
@@ -142,6 +142,7 @@ extract_flags_time_distance <- function(route_url) {
     pub        = stringr::str_detect(txt, stringr::regex("\\bpub\\b", ignore_case = TRUE)),
     car_park   = stringr::str_detect(txt, stringr::regex("\\bcar park\\b", ignore_case = TRUE)),
     deer_fence = stringr::str_detect(txt, stringr::regex("\\bdeer fence\\b", ignore_case = TRUE)),
+    cow        = stringr::str_detect(txt, stringr::regex("\\bcows?\\b|\\bcattle\\b|\\bcalves?\\b|\\bcalf\\b|\\bbulls?\\b|\\blivestock\\b", ignore_case = TRUE)),
     time_hours_min = time_min,
     time_hours_max = time_max,
     distance_km    = km_val,
@@ -175,12 +176,12 @@ walkhighlands_corbetts <-
         extract_flags_time_distance(fr$first_route_url),
         error = \(e) tibble(
           scramble = NA, exposed = NA, spate = NA, river = NA, pathless = NA, bog = NA,
-          toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA,
+          toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA, cow = NA,
           time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
           ascent = NA_real_
         )
       )
-      
+
       tibble(
         corbett            = c_name,
         region             = c_region,
@@ -201,7 +202,8 @@ walkhighlands_corbetts <-
         bothy              = ft$bothy,
         pub                = ft$pub,
         car_park           = ft$car_park,
-        deer_fence         = ft$deer_fence
+        deer_fence         = ft$deer_fence,
+        cow                = ft$cow
       )
     }
   )
@@ -219,7 +221,7 @@ most_climbed <-
     count_td  <- html_element(tr, "td:nth-child(3)")
     tibble(
       corbett = name_node |> html_text2(),
-      ascents = count_td  |> html_text2() |> readr::parse_number()
+      ascents = suppressWarnings(count_td |> html_text2() |> readr::parse_number())
     )
   }) |>
   filter(!is.na(corbett), nzchar(corbett)) |>
@@ -236,7 +238,7 @@ corbett_ratings <-
     rate_td   <- html_element(tr, "td:nth-child(3)")
     tibble(
       corbett = name_node |> html_text2(),
-      rating  = rate_td   |> html_text2() |> readr::parse_number()
+      rating  = suppressWarnings(rate_td |> html_text2() |> readr::parse_number())
     )
   }) |>
   filter(!is.na(corbett), nzchar(corbett)) |>
@@ -247,3 +249,4 @@ walkhighlands_corbetts <- walkhighlands_corbetts |>
   left_join(corbett_ratings, by = "corbett")
 
 write_csv(walkhighlands_corbetts, file = "walkhighlands_corbetts.csv")
+

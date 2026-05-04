@@ -155,7 +155,7 @@ corbett_dat <- fuzzy_inner_join(
   select(type, "name" = "name_wh",
          region,
          height_wh, height_dobih, height_diff, time,
-         first_route_title,, everything(), -name_dobih, -corbett_key_wh, -corbett_key_dobih, -corbett)|>
+         first_route_title, everything(), -name_dobih, -corbett_key_wh, -corbett_key_dobih, -corbett)|>
   mutate(scramble_exposed = case_when(
     scramble & exposed ~ "Both",
     scramble & !exposed ~ "Scramble",
@@ -172,6 +172,7 @@ corbett_dat <- fuzzy_inner_join(
   )) |>
   mutate(wet = factor(wet,
                                    levels = c("Neither", "Large river", "Boggy", "Both")))
+
 
 
 # make some colour palettes
@@ -262,7 +263,7 @@ nature_19 <- c(
 # create route data
 route_dat <-corbett_dat |>
   select(first_route_url, first_route_title,
-         region, time_hours_min:deer_fence, time, scramble_exposed, wet, type) |>
+         region, time_hours_min:cow, time, scramble_exposed, wet, type) |>
   unique()
 
 route_stats <- corbett_dat |>
@@ -291,7 +292,7 @@ combined_dat <- bind_rows(corbett_dat, munro_dat)|>
 
 route_dat_combined <-combined_dat |>
   select(first_route_url, first_route_title,
-         region, time_hours_min:deer_fence, time, scramble_exposed, wet, type) |>
+         region, time_hours_min:cow, time, scramble_exposed, wet, type) |>
   unique()
 
 route_stats_combined <- combined_dat |>
@@ -354,7 +355,7 @@ First, I looked at what percent of route descriptions mention scrambling, exposu
 
 
 ```{r}
-#| tbl-cap: "Percent of route descruptions that contain scary words"
+#| tbl-cap: "Percent of route descriptions that contain scary words"
 
 combined_dat |>
   group_by(type) |>
@@ -395,7 +396,7 @@ Have I mentioned that I dislike heights and exposure?
 
 ```{r}
 corbett_map <- corbett_dat %>%
-  select(name, region, xcoord, ycoord, height_dobih, pathless, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park) %>%
+  select(name, region, xcoord, ycoord, height_dobih, pathless, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park, cow) %>%
   na.omit()
 
 # Convert OSGB36 coordinates to sf object
@@ -420,9 +421,18 @@ corbett_coords <- corbett_lat_long %>%
                            labels = c("Pathed", "Pathless")))
 
 
-uk_map <- rnaturalearth::ne_countries(scale = "large", 
-                                  country = "United Kingdom", 
-                                    returnclass = "sf")
+uk_map <- rnaturalearth::ne_countries(scale = "large",
+                                      country = "United Kingdom",
+                                      returnclass = "sf")
+
+# Convert to regular polygon data frame for ggplotly compatibility.
+# ggplotly cannot handle the sfc geometry list column that geom_sf carries,
+# so we use geom_polygon + coord_cartesian for all interactive maps.
+uk_map_df <- uk_map %>%
+  sf::st_transform(4326) %>%
+  sf::st_coordinates() %>%
+  as.data.frame() %>%
+  mutate(group = paste(L3, L2, L1, sep = "_"))
 
 # Step 2: Specify shape codes (16 = circle, 17 = triangle, etc.)
 shape_values <- c(
@@ -433,17 +443,18 @@ shape_values <- c(
 )
 
 p <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
-  geom_jitter(data = corbett_coords, 
-             aes(x = longitude, 
-                 y = latitude, 
-                 shape = scramble_exposed, 
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_jitter(data = corbett_coords,
+             aes(x = longitude,
+                 y = latitude,
+                 shape = scramble_exposed,
                  colour = scramble_exposed,
-                 text = name), 
+                 text = name),
              size = 1,
              height = .05,
-             width = .05) + 
+             width = .05) +
   scale_x_continuous(breaks = NULL) +
   scale_shape_manual(values = shape_values) +
   scale_y_continuous(breaks = NULL) +
@@ -453,10 +464,10 @@ p <- ggplot() +
        colour = "Route mentions", shape = "Route mentions") +
   theme_economist() +
   theme(
-    axis.text = element_blank(),      
-    axis.ticks = element_blank(),     
-    axis.title = element_blank(),     
-    panel.grid = element_blank(),     
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
     panel.border = element_blank(),
     legend.text = element_text(size = 10)
   )
@@ -489,7 +500,7 @@ combined_dat |>
   theme_economist() +
   scale_y_continuous(limits = c(0,100)) +
   scale_fill_manual(values = nature_2) +
-  labs(x = "Hll type", 
+  labs(x = "Hill type",
        y = "Percent", 
        fill = NULL, 
        title = "Percent of routes that mention pathless",
@@ -505,16 +516,17 @@ combined_dat |>
 
 ```{r}
 p <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
-  geom_jitter(data = corbett_coords, 
-             aes(x = longitude, 
-                 y = latitude, 
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_jitter(data = corbett_coords,
+             aes(x = longitude,
+                 y = latitude,
                  colour = pathless,
-                 text = name), 
+                 text = name),
              size = 1,
              height = .05,
-             width = .05) + 
+             width = .05) +
   scale_x_continuous(breaks = NULL) +
   scale_y_continuous(breaks = NULL) +
   scale_colour_manual(values = nature_2) +
@@ -523,10 +535,10 @@ p <- ggplot() +
        colour = NULL) +
   theme_economist() +
   theme(
-    axis.text = element_blank(),      
-    axis.ticks = element_blank(),     
-    axis.title = element_blank(),     
-    panel.grid = element_blank(),     
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
     panel.border = element_blank(),
     legend.text = element_text(size = 10)
   )
@@ -718,11 +730,11 @@ ggplot(
   geom_density_ridges(
     quantile_lines = TRUE, quantile_fun = mean,
     vline_linetype = "dashed",
-    aes(colour = "Mean height (m)")
+    aes(colour = "Mean rating")
   ) +
   scale_y_discrete(expand = c(0.01, 0)) +
   scale_x_continuous(expand = c(0.01, 0)) +
-  scale_colour_manual(values = c("Mean height (m)" = "black")) +
+  scale_colour_manual(values = c("Mean rating" = "black")) +
   theme_economist() +
   scale_fill_manual(values = nature_11) +
   labs(
@@ -747,7 +759,6 @@ ggplot(
 And here's the full list in table form (the graphs only have those regions with 5 or more Corbetts, they are a lot of regions that have fewer than this):
 
 ```{r}
-
 #| tbl-cap: "Mean Corbett user rating by region"
 
 corbett_dat |>
@@ -767,24 +778,25 @@ I didn't see the point in mapping all the non-natural features like I did for th
 
 ```{r}
 bothy_plot <- ggplot() +
-  geom_sf(data = uk_map, fill = "lightgray", color = "darkgrey", size = 0.3) +
-  coord_sf(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
-  geom_jitter(data = filter(corbett_coords, bothy == TRUE), 
-             aes(x = longitude, 
-                 y = latitude, 
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_jitter(data = filter(corbett_coords, bothy == TRUE),
+             aes(x = longitude,
+                 y = latitude,
                  colour = bothy,
-                 text = name), 
-             size = 1) + 
+                 text = name),
+             size = 1) +
   scale_x_continuous(breaks = NULL) +
   scale_y_continuous(breaks = NULL) +
   labs(title = "Corbett routes that mention a bothy") +
   guides(colour = "none") +
   theme_economist() +
   theme(
-    axis.text = element_blank(),      
-    axis.ticks = element_blank(),     
-    axis.title = element_blank(),     
-    panel.grid = element_blank(),     
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
     panel.border = element_blank(),
     legend.text = element_text(size = 10)
   )
@@ -866,9 +878,9 @@ route_dat_combined |>
   geom_col(position = "dodge") +
   scale_fill_manual(values = nature_2) +
   theme_economist() +
-  labs(x = NULL, 
-       y = NULL, 
-       fill = NULL, 
+  labs(x = NULL,
+       y = NULL,
+       fill = NULL,
        title = "User ratings by scary features") +
   coord_cartesian(ylim = c(0,5))+
     theme(
@@ -876,5 +888,41 @@ route_dat_combined |>
    legend.position.inside = c(0.1, 0.85),
     legend.text = element_text(size = 14)
   )
+```
+
+## Cows
+
+Cows are terrifying  - which Corbett routes mention cows, cattle, or calves? With the usual text-mining caveats: "cow" can appear in place names as well as route descriptions.
+
+```{r}
+p_cow <- ggplot() +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
+  geom_jitter(data = filter(corbett_coords, cow == TRUE),
+             aes(x = longitude,
+                 y = latitude,
+                 colour = cow,
+                 text = name),
+             size = 1,
+             height = .05,
+             width = .05) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  scale_colour_manual(values = nature_2) +
+  labs(title = "Where are the cows?",
+       subtitle = "Route descriptions that mention cows, cattle, or calves",
+       colour = NULL) +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(p_cow, tooltip = "text")
 ```
 
