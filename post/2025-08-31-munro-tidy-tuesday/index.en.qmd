@@ -292,7 +292,7 @@ Because the user ratings and number of ascents are done by individual Munro rath
 ```{r}
 route_dat <-munro_dat |>
   select(first_route_url, first_route_title,
-         region, time_hours_min:cow, time, scramble_exposed, wet) |>
+         region, time_hours_min:bike, time, scramble_exposed, wet) |>
   unique()
 
 route_stats <- munro_dat |>
@@ -337,7 +337,7 @@ Have I mentioned that I dislike heights and exposure?
 
 ```{r}
 munros_map <- munro_dat %>%
-  select(munro, region, xcoord, ycoord, height_dobih, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park, cow) %>%
+  select(munro, region, xcoord, ycoord, height_dobih, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park, cow, bike) %>%
   na.omit()
 
 # Convert OSGB36 coordinates to sf object
@@ -483,7 +483,7 @@ ggplot(
   semi_join(munro_dat, region_height, by = "region"),
   aes(
     x = height_dobih,
-    y = fct_reorder(region, height_dobih, .fun = mean, .desc = FALSE),
+    y = fct_reorder(region, height_dobih, .fun = \(x) mean(x, na.rm = TRUE), .desc = FALSE),
     fill = region
   )
 )  +
@@ -545,7 +545,7 @@ ggplot(
   top_dat,
   aes(
     x = distance_km,  # use the per-route variable here
-    y = fct_reorder(region, distance_km, .fun = mean, .desc = FALSE),
+    y = fct_reorder(region, distance_km, .fun = \(x) mean(x, na.rm = TRUE), .desc = FALSE),
     fill = region
   )
 ) +
@@ -606,7 +606,7 @@ ggplot(
   top_ascent,
   aes(
     x = ascent,  # use the per-route variable here
-    y = fct_reorder(region, ascent, .fun = mean, .desc = FALSE),
+    y = fct_reorder(region, ascent, .fun = \(x) mean(x, na.rm = TRUE), .desc = FALSE),
     fill = region
   )
 ) +
@@ -699,7 +699,7 @@ ggplot(
   semi_join(munro_dat, region_top_bottom, by = "region"),
   aes(
     x = rating,
-    y = fct_reorder(region, rating, .fun = mean, .desc = FALSE),
+    y = fct_reorder(region, rating, .fun = \(x) mean(x, na.rm = TRUE), .desc = FALSE),
     fill = region
   )
 )  +
@@ -962,6 +962,38 @@ p_cow <- ggplot() +
   )
 
 ggplotly(p_cow, tooltip = "text")
+```
+
+### Bikes
+
+Which routes mention bikes or cycling?
+
+```{r}
+bike_plot <- ggplot() +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_jitter(data = filter(munros_coords, bike == TRUE), 
+             aes(x = longitude, 
+                 y = latitude, 
+                 colour = bike,
+                 text = munro), 
+             size = 1) + 
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  labs(title = "Routes that mention a bike") +
+  guides(colour = "none") +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),      
+    axis.ticks = element_blank(),     
+    axis.title = element_blank(),     
+    panel.grid = element_blank(),     
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(bike_plot, tooltip = "text")
 ```
 
 ### Bothy

@@ -263,7 +263,7 @@ nature_19 <- c(
 # create route data
 route_dat <-corbett_dat |>
   select(first_route_url, first_route_title,
-         region, time_hours_min:cow, time, scramble_exposed, wet, type) |>
+         region, time_hours_min:bike, time, scramble_exposed, wet, type) |>
   unique()
 
 route_stats <- corbett_dat |>
@@ -292,7 +292,7 @@ combined_dat <- bind_rows(corbett_dat, munro_dat)|>
 
 route_dat_combined <-combined_dat |>
   select(first_route_url, first_route_title,
-         region, time_hours_min:cow, time, scramble_exposed, wet, type) |>
+         region, time_hours_min:bike, time, scramble_exposed, wet, type) |>
   unique()
 
 route_stats_combined <- combined_dat |>
@@ -396,7 +396,7 @@ Have I mentioned that I dislike heights and exposure?
 
 ```{r}
 corbett_map <- corbett_dat %>%
-  select(name, region, xcoord, ycoord, height_dobih, pathless, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park, cow) %>%
+  select(name, region, xcoord, ycoord, height_dobih, pathless, scramble_exposed, wet, toilet, pub, bothy, deer_fence, car_park, cow, bike) %>%
   na.omit()
 
 # Convert OSGB36 coordinates to sf object
@@ -802,6 +802,39 @@ bothy_plot <- ggplot() +
   )
 
 ggplotly(bothy_plot, tooltip = "text")
+```
+
+
+## Bike plot
+
+Routes that mention a bike or cycling
+
+```{r}
+bike_plot <- ggplot() +
+  geom_polygon(data = uk_map_df, aes(x = X, y = Y, group = group),
+               fill = "lightgray", color = "darkgrey", linewidth = 0.3) +
+  coord_cartesian(xlim = c(-8, -1.5), ylim = c(56, 58.6)) +
+  geom_jitter(data = filter(corbett_coords, bike == TRUE),
+             aes(x = longitude,
+                 y = latitude,
+                 colour = bike,
+                 text = name),
+             size = 1) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL) +
+  labs(title = "Corbett routes that mention a bike") +
+  guides(colour = "none") +
+  theme_economist() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+
+ggplotly(bike_plot, tooltip = "text")
 ```
 
 
