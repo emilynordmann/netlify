@@ -115,7 +115,7 @@
       </div>
       <div class="row">
         <div class="field">
-          <label>Earliest start <span class="sub">leave home</span></label>
+          <label>Leave home <span class="sub">when you set off</span></label>
           <input type="time" id="start" value="08:00">
         </div>
         <div class="field">
@@ -232,8 +232,8 @@
   <div>
     <div class="summary" id="summary"></div>
     <div class="legend">
-      <b>Off the hill</b> = back at the car (leave home + drive + walk), with that summit's <b>sunset</b> below it; <span style="color:var(--ok);font-weight:700">green</span> finishes before your buffer, <span style="color:var(--warn);font-weight:700">red</span> is too late.
-      <span class="dot">•</span> <b>Day length</b> = total time out (drive + walk + drive), ending <b>home</b> at the time shown.
+      <b>Start walk</b> = at the car park (leave home + drive). <b>Finish walk</b> = back at the car (leave home + drive + walk), with that summit's <b>sunset</b> below it; <span style="color:var(--ok);font-weight:700">green</span> finishes before your buffer, <span style="color:var(--warn);font-weight:700">red</span> is too late. <b>Back home</b> = finish walk + drive back.
+      <span class="dot">•</span> <b>Day length</b> = total time out (drive + walk + drive); the time you get home is in <b>Back home</b>.
       <span class="dot">•</span> <b>Weather</b> is rain chance, wind, temperature and visibility for the hours you'd be walking, from <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> at each summit (a general forecast, not a mountain one — check MWIS).
     </div>
     <div id="results"></div>
@@ -464,11 +464,13 @@ function sortRows(rows){
   const g=r=>{switch(sortKey){
     case "name":return r.m.n.toLowerCase();
     case "drive":return r.driveMin??1e9;
+    case "startwalk":return r.arrTrail??1e9;
     case "walk":return r.walkMin;
     case "day":return r.totalDay??1e9;
     case "height":return r.m.h;
     case "rating":return r.m.ra??0;
     case "finish":return r.finishWalk??1e9;
+    case "backhome":return r.arrHome??1e9;
     default:return 0;}};
   return rows.sort((a,b)=>{const x=g(a),y=g(b);if(x<y)return -1*sortDir;if(x>y)return 1*sortDir;return 0;});
 }
@@ -477,7 +479,7 @@ function tags(m){
   const map={sc:["Scramble","sc"],ex:["Exposure","ex"],sp:["Spate risk","sp"],bo:["Boggy","bo"],ri:["River","ri"],pa:["Pathless","pa"],cw:["Cattle","cw"]};
   let h="";for(const k in map){if(m[k])h+=`<span class="tag ${map[k][1]}">${map[k][0]}</span>`;}return h;
 }
-const TH=[["name","Summit"],["drive","Drive there"],["walk","Walk time"],["finish","Off the hill"],["day","Day length"],["wx","Weather"],["height","Height"],["rating","★"]];
+const TH=[["name","Summit"],["drive","Drive there"],["startwalk","Start walk"],["walk","Walk time"],["finish","Finish walk"],["backhome","Back home"],["day","Day length"],["wx","Weather"],["height","Height"],["rating","★"]];
 
 async function render(){
   const rowsAll=compute();
@@ -509,14 +511,16 @@ async function render(){
   for(const r of rows){
     const m=r.m;
     const drive=r.driveMin==null?"—":(r.est?'<span class="est">~'+dur(r.driveMin)+'</span>':dur(r.driveMin));
+    const startwalk=r.arrTrail==null?"—":hhmm(r.arrTrail);
     const walk=`${m.tn}–${m.tx}h`;
     let finish="—";
     if(r.finishWalk!=null){
       const cls=r.fits?"ontime":"late";
       const rel=r.fits?"before sunset":"after sunset!";
-      finish=`<span class="${cls}">back ${hhmm(r.finishWalk)}</span><span class="meta">${rel} ${hhmm(r.sunsetMin)}</span>`;
+      finish=`<span class="${cls}">${hhmm(r.finishWalk)}</span><span class="meta">${rel} ${hhmm(r.sunsetMin)}</span>`;
     }
-    const day=r.totalDay==null?"—":`<b>${dur(r.totalDay)}</b><span class="meta">home ${hhmm(r.arrHome)}</span>`;
+    const backhome=r.arrHome==null?"—":hhmm(r.arrHome);
+    const day=r.totalDay==null?"—":`<b>${dur(r.totalDay)}</b>`;
     let wx="—";
     if(r.wx&&r.wx.rain!=null){
       const vtxt=r.wx.vis!=null?`<br>Vis ${(r.wx.vis/1000).toFixed(1)} km`:"";
@@ -527,7 +531,7 @@ async function render(){
     h+=`<tr class="${r.done?'isdone':''}">
       <td class="name"><a href="${m.u}" target="_blank" rel="noopener">${m.n}</a> <span class="nh">${m.h} m</span>
         <span class="meta">${m.rg} · ${m.km} km · ${m.as} m ascent</span>${doneTag}<span class="tag ${m.ty==='corbett'?'co':'mu'}">${m.ty==='corbett'?'Corbett':'Munro'}</span>${tags(m)}</td>
-      <td>${drive}</td><td>${walk}</td><td>${finish}</td><td>${day}</td>
+      <td>${drive}</td><td>${startwalk}</td><td>${walk}</td><td>${finish}</td><td>${backhome}</td><td>${day}</td>
       <td>${wx}</td><td>${m.h} m</td><td>${m.ra??"–"}</td></tr>`;
   }
   h+="</tbody></table>";
