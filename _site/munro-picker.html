@@ -479,7 +479,7 @@ function tags(m){
   const map={sc:["Scramble","sc"],ex:["Exposure","ex"],sp:["Spate risk","sp"],bo:["Boggy","bo"],ri:["River","ri"],pa:["Pathless","pa"],cw:["Cattle","cw"]};
   let h="";for(const k in map){if(m[k])h+=`<span class="tag ${map[k][1]}">${map[k][0]}</span>`;}return h;
 }
-const TH=[["name","Summit"],["drive","Drive there"],["startwalk","Start walk"],["walk","Walk time"],["finish","Finish walk"],["backhome","Back home"],["day","Day length"],["wx","Weather"],["height","Height"],["rating","★"]];
+const TH=[["name","Summit"],["drive","Drive there"],["startwalk","Start walk"],["walk","Walk time"],["finish","Finish walk"],["backhome","Back home"],["day","Day length"],["wx","Weather"],["rating","★"]];
 
 async function render(){
   const rowsAll=compute();
@@ -532,7 +532,7 @@ async function render(){
       <td class="name"><a href="${m.u}" target="_blank" rel="noopener">${m.n}</a> <span class="nh">${m.h} m</span>
         <span class="meta">${m.rg} · ${m.km} km · ${m.as} m ascent</span>${doneTag}<span class="tag ${m.ty==='corbett'?'co':'mu'}">${m.ty==='corbett'?'Corbett':'Munro'}</span>${tags(m)}</td>
       <td>${drive}</td><td>${startwalk}</td><td>${walk}</td><td>${finish}</td><td>${backhome}</td><td>${day}</td>
-      <td>${wx}</td><td>${m.h} m</td><td>${m.ra??"–"}</td></tr>`;
+      <td>${wx}</td><td>${m.ra??"–"}</td></tr>`;
   }
   h+="</tbody></table>";
   res.innerHTML=h;
