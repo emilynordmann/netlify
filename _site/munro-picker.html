@@ -104,7 +104,7 @@
       <div class="field">
         <label>Home postcode</label>
         <div class="row">
-          <input type="text" id="postcode" placeholder="e.g. G13 1JW" style="flex:2">
+          <input type="text" id="postcode" placeholder="e.g. EH1 1RE" style="flex:2">
           <button class="btn" id="calcBtn" style="flex:1">Routes</button>
         </div>
         <div class="status" id="routeStatus"></div>
@@ -254,11 +254,10 @@ const MUNROS = MUNRO_DATA.concat(CORBETT_DATA);
 
 /* ---------- persistence ---------- */
 const LS="mp_state_v2";
-const DONE_DEFAULT=["A' Bhuidheanach Bheag", "An Caisteal", "Beinn a' Chochuill", "Beinn a' Chreachain", "Beinn a' Chròin", "Beinn Achaladair", "Beinn an Dòthaidh", "Beinn Bhuidhe", "Beinn Chabhair", "Beinn Dearg (Ullapool)", "Beinn Dubhchraig", "Beinn Dòrain", "Beinn Eunaich", "Beinn Ghlas", "Beinn Narnain", "Beinn Sgulaird", "Beinn Tulaichean", "Beinn Ìme", "Ben Chonzie", "Ben Cruachan", "Ben Klibreck", "Ben Lawers", "Ben Lomond", "Ben More", "Ben Nevis", "Ben Oss", "Ben Vane", "Ben Vorlich (Loch Earn)", "Ben Vorlich (Loch Lomond)", "Ben Wyvis", "Blà Bheinn", "Cona' Mheall", "Creag Mhòr (Meall na Aighean)", "Creise", "Cruach Àrdrain", "Càrn a' Ghèoidh", "Càrn Aosda", "Càrn Gorm", "Càrn Mairg", "Càrn na Caim", "Driesh", "Eididh nan Clach Geala", "Mayar", "Meall a' Bhùiridh", "Meall a' Choire Lèith", "Meall Buidhe (Glen Lyon)", "Meall Chuaich", "Meall Corranaich", "Meall Dearg (Aonach Eagach)", "Meall Garbh (Càrn Mairg)", "Meall Ghaordaidh", "Meall nan Ceapraichean", "Meall nan Tarmachan", "Schiehallion", "Sgòrr nam Fiannaidh (Aonach Eagach)", "Stob Binnein", "Stob Coire Raineach (Buachaille Etive Beag)", "Stob Daimh", "Stob Dearg (Buachaille Etive Mòr)", "Stob Dubh (Buachaille Etive Beag)", "Stob na Bròige (Buachaille Etive Mòr)", "Stùc a' Chròin", "The Cairnwell"];
-const DEFAULTS={postcode:"G13 1JW",date:"",start:"08:00",buffer:"30",estMode:"max",backByOn:false,backBy:"18:00",
+const DEFAULTS={postcode:"",date:"",start:"08:00",buffer:"30",estMode:"max",backByOn:false,backBy:"18:00",
   maxDrive:180,maxDay:14,fitSunset:true,hillType:"all",region:"",minH:"",maxH:"",showDone:false,
   terrain:{sc:"any",ex:"any",sp:"any",bo:"any",ri:"any",pa:"any",cw:"any"},
-  wxOn:true,maxRain:100,maxWind:80,maxVis:0,done:DONE_DEFAULT.slice(),routes:{key:"",t:{},e:{}}};
+  wxOn:true,maxRain:100,maxWind:80,maxVis:0,done:[],routes:{key:"",t:{},e:{}}};
 let S=load();
 function load(){try{const x=JSON.parse(localStorage.getItem(LS));return Object.assign(JSON.parse(JSON.stringify(DEFAULTS)),x||{});}catch(e){return JSON.parse(JSON.stringify(DEFAULTS));}}
 function save(){localStorage.setItem(LS,JSON.stringify(S));}
