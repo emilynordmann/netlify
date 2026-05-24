@@ -130,6 +130,10 @@
         </div>
       </div>
       <div class="field">
+        <label><input type="checkbox" id="backByOn" style="width:auto"> Must be home by <span class="sub">latest you want to be back</span></label>
+        <input type="time" id="backBy" value="18:00">
+      </div>
+      <div class="field">
         <label>Walk-time estimate</label>
         <select id="estMode">
           <option value="max" selected>Upper (slower / safer)</option>
@@ -251,7 +255,7 @@ const MUNROS = MUNRO_DATA.concat(CORBETT_DATA);
 /* ---------- persistence ---------- */
 const LS="mp_state_v2";
 const DONE_DEFAULT=["A' Bhuidheanach Bheag", "An Caisteal", "Beinn a' Chochuill", "Beinn a' Chreachain", "Beinn a' Chròin", "Beinn Achaladair", "Beinn an Dòthaidh", "Beinn Bhuidhe", "Beinn Chabhair", "Beinn Dearg (Ullapool)", "Beinn Dubhchraig", "Beinn Dòrain", "Beinn Eunaich", "Beinn Ghlas", "Beinn Narnain", "Beinn Sgulaird", "Beinn Tulaichean", "Beinn Ìme", "Ben Chonzie", "Ben Cruachan", "Ben Klibreck", "Ben Lawers", "Ben Lomond", "Ben More", "Ben Nevis", "Ben Oss", "Ben Vane", "Ben Vorlich (Loch Earn)", "Ben Vorlich (Loch Lomond)", "Ben Wyvis", "Blà Bheinn", "Cona' Mheall", "Creag Mhòr (Meall na Aighean)", "Creise", "Cruach Àrdrain", "Càrn a' Ghèoidh", "Càrn Aosda", "Càrn Gorm", "Càrn Mairg", "Càrn na Caim", "Driesh", "Eididh nan Clach Geala", "Mayar", "Meall a' Bhùiridh", "Meall a' Choire Lèith", "Meall Buidhe (Glen Lyon)", "Meall Chuaich", "Meall Corranaich", "Meall Dearg (Aonach Eagach)", "Meall Garbh (Càrn Mairg)", "Meall Ghaordaidh", "Meall nan Ceapraichean", "Meall nan Tarmachan", "Schiehallion", "Sgòrr nam Fiannaidh (Aonach Eagach)", "Stob Binnein", "Stob Coire Raineach (Buachaille Etive Beag)", "Stob Daimh", "Stob Dearg (Buachaille Etive Mòr)", "Stob Dubh (Buachaille Etive Beag)", "Stob na Bròige (Buachaille Etive Mòr)", "Stùc a' Chròin", "The Cairnwell"];
-const DEFAULTS={postcode:"G13 1JW",date:"",start:"08:00",buffer:"30",estMode:"max",
+const DEFAULTS={postcode:"G13 1JW",date:"",start:"08:00",buffer:"30",estMode:"max",backByOn:false,backBy:"18:00",
   maxDrive:180,maxDay:14,fitSunset:true,hillType:"all",region:"",minH:"",maxH:"",showDone:false,
   terrain:{sc:"any",ex:"any",sp:"any",bo:"any",ri:"any",pa:"any",cw:"any"},
   wxOn:true,maxRain:100,maxWind:80,maxVis:0,done:DONE_DEFAULT.slice(),routes:{key:"",t:{},e:{}}};
@@ -380,6 +384,8 @@ function readControls(){
   S.start=document.getElementById("start").value||"08:00";
   S.buffer=document.getElementById("buffer").value;
   S.estMode=document.getElementById("estMode").value;
+  S.backByOn=document.getElementById("backByOn").checked;
+  S.backBy=document.getElementById("backBy").value||"18:00";
   S.maxDrive=+document.getElementById("maxDrive").value;
   S.maxDay=+document.getElementById("maxDay").value;
   S.fitSunset=document.getElementById("fitSunset").checked;
@@ -401,6 +407,7 @@ function compute(){
   const dateParts=(S.date||todayStr()).split("-").map(Number);
   const noon=new Date(dateParts[0],dateParts[1]-1,dateParts[2],12,0,0);
   const [sh,sm]=S.start.split(":").map(Number);const startMin=sh*60+sm;
+  let backByMin=null;if(S.backBy){const [bh,bm]=S.backBy.split(":").map(Number);backByMin=bh*60+bm;}
   const buf=+S.buffer;
   const minH=S.minH?+S.minH:null,maxH=S.maxH?+S.maxH:null;
   const rows=[];
@@ -439,6 +446,7 @@ function compute(){
     if(r.driveMin!=null&&r.driveMin>S.maxDrive) return false;
     if(r.totalDay!=null&&r.totalDay>S.maxDay*60) return false;
     if(S.fitSunset&&r.fits===false) return false;
+    if(S.backByOn&&backByMin!=null&&r.arrHome!=null&&r.arrHome>backByMin) return false;
     return true;
   });
 }
@@ -470,7 +478,7 @@ function tags(m){
   const map={sc:["Scramble","sc"],ex:["Exposure","ex"],sp:["Spate risk","sp"],bo:["Boggy","bo"],ri:["River","ri"],pa:["Pathless","pa"],cw:["Cattle","cw"]};
   let h="";for(const k in map){if(m[k])h+=`<span class="tag ${map[k][1]}">${map[k][0]}</span>`;}return h;
 }
-const TH=[["name","Munro"],["drive","Drive there"],["walk","Walk time"],["finish","Off the hill"],["day","Day length"],["wx","Weather"],["height","Height"],["rating","★"]];
+const TH=[["name","Summit"],["drive","Drive there"],["walk","Walk time"],["finish","Off the hill"],["day","Day length"],["wx","Weather"],["height","Height"],["rating","★"]];
 
 async function render(){
   const rowsAll=compute();
@@ -611,6 +619,8 @@ function syncControls(){
   document.getElementById("start").value=S.start;
   document.getElementById("buffer").value=S.buffer;
   document.getElementById("estMode").value=S.estMode;
+  document.getElementById("backByOn").checked=S.backByOn;
+  document.getElementById("backBy").value=S.backBy;
   document.getElementById("maxDrive").value=S.maxDrive;
   document.getElementById("maxDay").value=S.maxDay;
   document.getElementById("fitSunset").checked=S.fitSunset;
@@ -633,7 +643,7 @@ function refreshRangeLabels(){
 }
 function wire(){
   document.getElementById("calcBtn").onclick=calcRoutes;
-  ["date","start","buffer","estMode","fitSunset","showDone","region","minH","maxH","wxOn"].forEach(id=>{
+  ["date","start","buffer","estMode","backByOn","backBy","fitSunset","showDone","region","minH","maxH","wxOn"].forEach(id=>{
     document.getElementById(id).addEventListener("change",()=>{readControls();render();});
   });
   ["maxDrive","maxDay","maxRain","maxWind","maxVis"].forEach(id=>{
