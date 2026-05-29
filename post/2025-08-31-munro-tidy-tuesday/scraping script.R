@@ -60,7 +60,7 @@ munros_az_links <-
 
 get_first_route_link <- function(munro_page_url) {
   pg <- read_html_utf8(munro_page_url)
-  
+
   # Helper: return first eligible link (title + absolute URL) from a node set
   pick_first <- function(nodes) {
     if (length(nodes) == 0) return(NULL)
@@ -70,35 +70,40 @@ get_first_route_link <- function(munro_page_url) {
     i <- which(keep)[1]
     list(title = html_text2(nodes[[i]]), url = hrefs[i])
   }
-  
-  # Primary: within the "Detailed route" section (between this h2 and the next h2)
+
+  # Primary: route links inside .boxbut divs (the distinctive route button styling)
+  boxbut_links <- html_elements(pg, xpath = "//a[.//div[contains(@class,'boxbut')]]")
+  cand <- pick_first(boxbut_links)
+  if (!is.null(cand)) return(tibble(first_route_title = cand$title, first_route_url = cand$url))
+
+  # Secondary: within the "Routes and maps" or "Detailed route" section
   h2 <- html_element(
     pg,
     xpath = "//h2[contains(translate(normalize-space(.),
             'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),
-            'detailed route')]"
+            'route')]"
   )
-  
+
   if (!inherits(h2, "xml_missing") && length(h2) > 0) {
     scope <- html_elements(
       h2,
       xpath = "following-sibling::*[preceding-sibling::h2[1]
               [contains(translate(normalize-space(.),
               'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),
-              'detailed route')]]"
+              'route')]]"
     )
     cand <- pick_first(html_elements(scope, xpath = ".//a[@href]"))
     if (!is.null(cand)) return(tibble(first_route_title = cand$title, first_route_url = cand$url))
-    
+
     # Fallback A: anywhere after the h2 in document order
     cand <- pick_first(html_elements(h2, xpath = "following::a[@href]"))
     if (!is.null(cand)) return(tibble(first_route_title = cand$title, first_route_url = cand$url))
   }
-  
-  # Fallback B: anywhere on the page
-  cand <- pick_first(html_elements(pg, xpath = "//a[@href]"))
+
+  # Fallback B: anywhere on the page (but NOT nav links)
+  cand <- pick_first(html_elements(pg, xpath = "//div[@id='walk_info']//a[@href] | //div[@role='main']//a[@href]"))
   if (!is.null(cand)) return(tibble(first_route_title = cand$title, first_route_url = cand$url))
-  
+
   tibble(first_route_title = NA_character_, first_route_url = NA_character_)
 }
 
@@ -111,12 +116,28 @@ extract_flags_time_distance <- function(route_url) {
       toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA, cow = NA,
       bike = NA,
       time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
-      ascent = NA_real_
+      ascent = NA_real_,
+      start_lat = NA_real_, start_lon = NA_real_
     ))
   }
 
   pg  <- read_html_utf8(route_url)
   txt <- html_text2(pg)
+
+  # --- start point coordinates from Google Maps link ---
+  # Format: <a href='https://www.google.com/maps/search/56.90890,-4.23660/'>
+  gm_link <- pg |>
+    html_elements("a[href*='google.com/maps/search']") |>
+    html_attr("href") |>
+    (\(x) x[1])()
+
+  start_lat <- NA_real_
+  start_lon <- NA_real_
+  if (!is.na(gm_link)) {
+    coords <- stringr::str_match(gm_link, "maps/search/([\\-0-9\\.]+),([\\-0-9\\.]+)")
+    start_lat <- suppressWarnings(as.numeric(coords[, 2]))
+    start_lon <- suppressWarnings(as.numeric(coords[, 3]))
+  }
   
   tm <- stringr::str_match(txt, "Time\\s*([0-9]+\\.?[0-9]*)\\s*(?:-|–|to)?\\s*([0-9]+\\.?[0-9]*)?")
   time_min <- suppressWarnings(as.numeric(tm[, 2]))
@@ -153,7 +174,9 @@ extract_flags_time_distance <- function(route_url) {
     time_hours_min = time_min,
     time_hours_max = time_max,
     distance_km    = km_val,
-    ascent         = ascent
+    ascent         = ascent,
+    start_lat      = start_lat,
+    start_lon      = start_lon
   )
 }
 
@@ -186,7 +209,8 @@ walkhighlands <-
           toilet = NA, bothy = NA, pub = NA, car_park = NA, deer_fence = NA, cow = NA,
           bike = NA,
           time_hours_min = NA_real_, time_hours_max = NA_real_, distance_km = NA_real_,
-          ascent = NA_real_
+          ascent = NA_real_,
+          start_lat = NA_real_, start_lon = NA_real_
         )
       )
 
@@ -213,7 +237,9 @@ walkhighlands <-
         car_park           = ft$car_park,
         deer_fence         = ft$deer_fence,
         cow                = ft$cow,
-        bike               = ft$bike
+        bike               = ft$bike,
+        start_lat          = ft$start_lat,
+        start_lon          = ft$start_lon
       )
       
     }
@@ -223,7 +249,7 @@ walkhighlands <-
 
 missing <- read_csv(
   "missing_routes.csv",
-  locale = readr::locale(encoding = "latin1")   # or "UTF-8" if you prefer
+  locale = readr::locale(encoding = "UTF-8")
 )
 
 walkhighlands <- dplyr::rows_patch(
