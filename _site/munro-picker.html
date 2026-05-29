@@ -102,7 +102,7 @@
     <div class="panel">
       <h2>Your day</h2>
       <div class="field">
-        <label>Home postcode</label>
+        <label>1st postcode</label>
         <div class="row">
           <input type="text" id="postcode" placeholder="e.g. EH1 1RE" style="flex:2">
           <button class="btn" id="calcBtn" style="flex:1">Routes</button>
@@ -110,7 +110,7 @@
         <div class="status" id="routeStatus"></div>
       </div>
       <div class="field">
-        <label>Friend's postcode <span class="sub">(optional)</span></label>
+        <label>2nd postcode <span class="sub">(optional — for meeting a friend)</span></label>
         <div class="row">
           <input type="text" id="postcode2" placeholder="e.g. AB10 1XG" style="flex:2">
         </div>
@@ -165,7 +165,7 @@
         <input type="range" id="maxDrive" min="15" max="360" step="15" value="180">
       </div>
       <div class="field" id="drive2Field" style="display:none">
-        <label>Max driving time for friend <span class="rangeval" id="driveVal2">3h 0m</span></label>
+        <label>Max driving time for 2nd person <span class="rangeval" id="driveVal2">3h 0m</span></label>
         <input type="range" id="maxDrive2" min="15" max="360" step="15" value="180">
       </div>
       <div class="field">
@@ -344,15 +344,13 @@ async function calcRoutes(){
   const res=await calcRoutesFrom(home,msg=>setRoute(msg));
   S.routes={key:pc.toUpperCase().replace(/\s+/g,""),t:res.t,e:res.e};save();
   setRoute(res.fellback? `Done. ${res.ok} routed, ${res.fellback} estimated (router busy — shown with ~).` : `Done — ${res.ok} driving times from ${pc}.`);
-
-  // Friend's postcode
   const pc2=document.getElementById("postcode2").value.trim();
   S.postcode2=pc2;save();
   if(pc2){
-    setRoute2("Looking up friend's postcode…");
+    setRoute2("Looking up 2nd postcode…");
     let home2;
-    try{home2=await lookupPostcode(pc2);}catch(e){setRoute2("Couldn't find that postcode.",true);render();return;}
-    setRoute2("Calculating friend's driving times…");
+    try{home2=await lookupPostcode(pc2);}catch(e){setRoute2("Couldn't find that postcode.",true);toggleDrive2();render();return;}
+    setRoute2("Calculating 2nd person's driving times…");
     const res2=await calcRoutesFrom(home2,msg=>setRoute2(msg));
     S.routes2={key:pc2.toUpperCase().replace(/\s+/g,""),t:res2.t,e:res2.e};save();
     setRoute2(res2.fellback? `Done. ${res2.ok} routed, ${res2.fellback} estimated.` : `Done — ${res2.ok} driving times from ${pc2}.`);
@@ -360,6 +358,7 @@ async function calcRoutes(){
     S.routes2={key:"",t:{},e:{}};save();
     setRoute2("");
   }
+  toggleDrive2();
   render();
 }
 function fallbackSec(home,m){const km=haversineKm(home.lat,home.lon,m.sla??m.la,m.slo??m.lo)*1.25;return km/65*3600;}
@@ -367,6 +366,7 @@ function setRoute(msg,err){const el=document.getElementById("routeStatus");el.te
 function setRoute2(msg,err){const el=document.getElementById("routeStatus2");el.textContent=msg;el.className="status"+(err?" err":"");}
 function haveRoutes(){return S.routes&&S.routes.key&&Object.keys(S.routes.t).length>0;}
 function haveRoutes2(){return S.routes2&&S.routes2.key&&Object.keys(S.routes2.t).length>0;}
+function toggleDrive2(){document.getElementById("drive2Field").style.display=haveRoutes2()?"":"none";}
 
 /* ---------- weather (Open-Meteo) ---------- */
 const wxCache={}; // key date -> {name:{rain,wind,temp}}
@@ -519,8 +519,12 @@ function tags(m){
   const map={sc:["Scramble","sc"],ex:["Exposure","ex"],sp:["Spate risk","sp"],bo:["Boggy","bo"],ri:["River","ri"],pa:["Pathless","pa"],cw:["Cattle","cw"]};
   let h="";for(const k in map){if(m[k])h+=`<span class="tag ${map[k][1]}">${map[k][0]}</span>`;}return h;
 }
-let TH=[["name","Summit"],["drive","Drive there"],["startwalk","Start walk"],["walk","Walk time"],["finish","Finish walk"],["backhome","Back home"],["day","Day length"],["wx","Weather"]];
-function updateTH(){TH=haveRoutes2()?[["name","Summit"],["drive","Your drive"],["drive2","Friend's drive"],["startwalk","Start walk"],["walk","Walk time"],["finish","Finish walk"],["backhome","Back home"],["day","Day length"],["wx","Weather"]]:[["name","Summit"],["drive","Drive there"],["startwalk","Start walk"],["walk","Walk time"],["finish","Finish walk"],["backhome","Back home"],["day","Day length"],["wx","Weather"]];}
+function getTH(){
+  const base=[["name","Summit"],["drive","Drive there"]];
+  if(haveRoutes2()) base.push(["drive2","2nd person"]);
+  base.push(["startwalk","Start walk"],["walk","Walk time"],["finish","Finish walk"],["backhome","Back home"],["day","Day length"],["wx","Weather"]);
+  return base;
+}
 
 async function render(){
   const rowsAll=compute();
@@ -546,9 +550,8 @@ async function render(){
       Until then, day length and sunset fit can't be worked out.</div>`;return;
   }
   if(!rows.length){res.innerHTML=`<div class="empty">No hills match these filters. Try a longer day, a wider drive, or fewer terrain restrictions.</div>`;return;}
-  updateTH();
   let h="<table><thead><tr>";
-  for(const [k,label] of TH){const arr=sortKey===k?`<span class="arr">${sortDir>0?"▲":"▼"}</span>`:"";h+=`<th data-k="${k}">${label} ${arr}</th>`;}
+  for(const [k,label] of getTH()){const arr=sortKey===k?`<span class="arr">${sortDir>0?"▲":"▼"}</span>`:"";h+=`<th data-k="${k}">${label} ${arr}</th>`;}
   h+="</tr></thead><tbody>";
   for(const r of rows){
     const m=r.m;
@@ -571,11 +574,10 @@ async function render(){
     }
     else if(S.wxOn&&!horizonOk){wx='<span class="est">no forecast</span>';}
     const doneTag=r.done?`<span class="tag done">✓ Done</span>`:"";
-    const drive2col=haveRoutes2()?`<td>${drive2}</td>`:"";
     h+=`<tr class="${r.done?'isdone':''}">
       <td class="name"><a href="${m.u}" target="_blank" rel="noopener">${m.n}</a> <span class="nh">${m.h} m</span>
         <span class="meta">${m.rg} · ${m.km} km · ${m.as} m ascent</span>${doneTag}<span class="tag ${m.ty==='corbett'?'co':'mu'}">${m.ty==='corbett'?'Corbett':'Munro'}</span>${tags(m)}</td>
-      <td>${drive}</td>${drive2col}<td>${startwalk}</td><td>${walk}</td><td>${finish}</td><td>${backhome}</td><td>${day}</td>
+      <td>${drive}</td>${haveRoutes2()?`<td>${drive2}</td>`:''}<td>${startwalk}</td><td>${walk}</td><td>${finish}</td><td>${backhome}</td><td>${day}</td>
       <td>${wx}</td></tr>`;
   }
   h+="</tbody></table>";
@@ -672,7 +674,6 @@ function syncControls(){
   document.getElementById("maxDrive").value=S.maxDrive;
   document.getElementById("maxDrive2").value=S.maxDrive2;
   document.getElementById("maxDay").value=S.maxDay;
-  toggleDrive2();
   document.getElementById("fitSunset").checked=S.fitSunset;
   document.getElementById("showDone").checked=S.showDone;
   document.getElementById("region").value=S.region;
@@ -683,9 +684,6 @@ function syncControls(){
   document.getElementById("maxWind").value=S.maxWind;
   document.getElementById("maxVis").value=S.maxVis;
   refreshRangeLabels();
-}
-function toggleDrive2(){
-  document.getElementById("drive2Field").style.display=haveRoutes2()?"":"none";
 }
 function refreshRangeLabels(){
   document.getElementById("driveVal").textContent=dur(+document.getElementById("maxDrive").value);
@@ -719,5 +717,8 @@ function wire(){
 fillRegions();buildTerrain();buildHillType();syncControls();wire();setupDoneSearch();renderDone();
 if(haveRoutes()&&S.routes.key===S.postcode.toUpperCase().replace(/\s+/g,"")){setRoute("Using saved driving times from "+S.postcode+".");}
 else if(haveRoutes()){setRoute("Postcode changed — press Routes to recalculate.");}
-if(haveRoutes2()&&S.routes2.key===S.postcode2.toUpperCase().replace(/\s+/g,"")){setRoute2("Using saved driving times from "+S.postcode2+".");toggleDrive2();}
-render()
+if(haveRoutes2()&&S.routes2.key===(S.postcode2||"").toUpperCase().replace(/\s+/g,"")){setRoute2("Using saved driving times from "+S.postcode2+".");toggleDrive2();}
+render();
+</script>
+</body>
+</html>
