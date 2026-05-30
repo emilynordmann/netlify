@@ -13,7 +13,6 @@ main.content { margin-top: 1rem; }
 }
 
 .profile-card { font-size: 1rem; }
-.profile-card .no-top { margin-top: 0; }
 
 .icons a {
   font-size: 1.4rem;
@@ -26,7 +25,7 @@ main.content { margin-top: 1rem; }
 
 /* Increase base font size for body text */
 body {
-  font-size: 18px; /* default ~16px, increase as needed */
+  font-size: 1.125rem; /* ~18px, scales with user zoom settings */
   line-height: 1.6;
 }
 

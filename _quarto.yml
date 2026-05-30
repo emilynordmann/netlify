@@ -5,6 +5,12 @@ project:
 website:
   title: "Emily Nordmann"
   site-url: "https://www.emilynordmann.com/"
+  description: "Professor Emily Nordmann, Associate Dean of Learning and Teaching at the University of Glasgow. Research on lecture capture, evidence-informed education, and open science."
+  favicon: images/headshot_2025.jpg
+  open-graph: true
+  twitter-card:
+    card-style: summary_large_image
+  image: images/headshot_2025.jpg
   navbar:
     left:
       - text: "Blog"
@@ -16,6 +22,7 @@ website:
 
 resources:
   - garden-of-forking-paths.html
+  - _redirects
   - "images/**"
   - "files/**"
 

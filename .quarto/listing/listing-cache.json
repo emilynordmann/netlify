@@ -1,8 +1,7 @@
 {
   "listingMap": {
     "post.qmd": [
-      "post",
-      "post/*/*/index.*"
+      "post"
     ]
   }
 }

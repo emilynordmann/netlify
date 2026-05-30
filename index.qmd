@@ -31,7 +31,7 @@ Professor of Evidence-Informed Education at the University of Glasgow. My resear
 
 My leadership roles have centred around supporting those on the learning, teaching, and scholarship track. I am currently lead of the College of MVLS LTS Network and previously founded and led the Pedagogy and Education Research Unit in the School of Psychology and Neuroscience.
 
-I am based in the School of Psychology and Neuroscience. My teaching is varied although centres on cognitive psychology and beginner data skills in R and I am a vocal advocate of open science and open educational resources where as a member of the PsyTeachR team I has authored several open-access data skills books and tutorials.
+I am based in the School of Psychology and Neuroscience. My teaching is varied although it centres on cognitive psychology and beginner data skills in R. I am a vocal advocate of open science and open educational resources, and as a member of the PsyTeachR team I have authored several open-access data skills books and tutorials.
 
 
 :::
