@@ -14,7 +14,7 @@ execute:
   message: false
 ---
 
-**This blog was written using Claude Opus 4.8**.
+*This blog was written using Claude Opus 4.8*
 
 A while back I [fell down a rabbit hole](../2025-08-31-munro-tidy-tuesday/) combining the Database of British and Irish Hills with route information scraped from [walkhighlands](https://www.walkhighlands.co.uk/). I've seen quite a few analyses of the most common Munro names and their meaning in Gaelic but I realised that the dataset from walkhighlands should allow me to go beyond what I've seen before.
 
@@ -247,7 +247,7 @@ The same caveat from the last post still applies that my "scary" flag comes from
 
 ## A linguistic map of Scotland
 
-If the words describe the hills, and the hills differ by region, then the words should cluster geographically. Here's every Munro mapped by its generic, highlighting the two opposites - the jagged *Sgùrr* and the rounded *Càrn* - and greying out the rest.
+If the words describe the hills, and the hills differ by region (see my previous post), then the words should cluster geographically. Here's every Munro mapped by its generic, highlighting the two opposites - the jagged *Sgùrr* and the rounded *Càrn* - and greying out the rest.
 
 ```{r map-prep}
 munros_coords <- munro_dat |>
@@ -343,7 +343,7 @@ munro_dat |>
   theme_munro()
 ```
 
-## Munros and Corbetts: grander words for grander hills?
+## Munros and Corbetts
 
 The Munros are hills over 3,000 ft whilst their smaller siblings are the Corbetts (2,500-3,000 ft). 
 
@@ -404,21 +404,21 @@ compare |>
                                "Corbett (n = 222)" = "#C9A227")) +
   labs(x = NULL, y = NULL,
        title = "Munros vs Corbetts",
-       subtitle = "Munros favour the pointed-peak words; Corbetts are more likely to use Beinn",
+       subtitle = "Munros favour pointed-peak words; Corbetts are more likely to use Beinn",
        caption = munro_cap) +
   theme_munro() +
   theme(axis.text.x = element_blank(),
         panel.grid.major.x = element_blank())
 ```
 
-The pointed, rocky, frightening words are much more Munro than Corbett - *Sgùrr* names 17% of Munros but only 10% of Corbetts, and across all the sharp-peak words together (*Sgùrr*, *Stob*, *Bidean*, *Stùc*) the Munros come to 28% against the Corbetts' 15%. The Corbetts, meanwhile, are much more likely to use *Beinn* - just "a hill" - which accounts for 36% of them against 24% of Munros, and they have a bigger "Other" pile of humbler, or more anglicised names. 
+The pointed, rocky words are much more Munro than Corbett - *Sgùrr* names 17% of Munros but only 10% of Corbetts, and across all the sharp-peak words together (*Sgùrr*, *Stob*, *Bidean*, *Stùc*) the Munros come to 28% against the Corbetts' 15%. The Corbetts, meanwhile, are much more likely to use *Beinn* - "a hill" - which accounts for 36% of them against 24% of Munros, and they have a bigger "Other" pile.
 
 ## Colour me Munro
 
 The generic tells you what kind of hill it is whilst the qualifier tells you what it looks like. By far the most common qualifier is *mòr* (big), which appears on 26 Munros, with its opposite *beag* (small) trailing on four. But the qualifiers I find interesting are the colours.
 
 ```{r colour-freq-polished}
-#| code-summary: "Show polished version"
+#| code-summary: "Show code"
 #| fig-width: 7
 #| fig-height: 7
 colour_words <- tribble(
@@ -452,14 +452,14 @@ ggplot(colour_counts, aes(n, fct_reorder(label, n), fill = colour)) +
         panel.grid.major.x = element_blank())
 ```
 
-Red wins - *dearg* and *ruadh* together name 15 Munros, more than any other colour. Then come the greys and grey-greens, *glas* and *liath*. What there is almost none of is *gorm*, blue. That surprised me until I found out that the Gaelic colour wheel doesn't map onto the English one: *glas* covers a slippery range from grey through to the green of grass and the grey-green of the sea, and *gorm* can shade into green too. The hills aren't painted in our colours, and translating them flattens something. A *Càrn Gorm* isn't quite a "blue cairn", and a *Beinn Ghlas* isn't quite a "grey mountain" because language is wonderous. 
+Red wins - *dearg* and *ruadh* together name 15 Munros, more than any other colour. Then come the greys and grey-greens, *glas* and *liath*. What there is almost none of is *gorm*, blue. The explanation is that the Gaelic colour wheel doesn't map onto the English one: *glas* covers a  range from grey through to the green of grass and the grey-green of the sea, and *gorm* can shade into green too. The hills aren't painted in our colours, and translating them flattens something. A *Càrn Gorm* isn't quite a "blue cairn", and a *Beinn Ghlas* isn't quite a "grey mountain" because language is wondrous. 
 
 ### Red for danger
 
-I then looked at whether certain colours were associated with scary features - the numbers for each group are so small that this isn't the most robust but there does seem to be some relationship with red hills and there's a reasonable sample size of 15. Rust-red names tend to mark bare, scree-covered rock, which is the terrain that scrambling tends to live with the most notorious example being *Sgùrr Dearg*, the red peak that carries the Inaccessible Pinnacle. The grey-greens, by contrast, are the colours of grass and vegetated slope, which is to say the colours of a nice walk. 
+I then looked at whether certain colours were associated with scary features - the numbers for each group are so small that this isn't the most robust but there does seem to be some relationship with red. Red names tend to mark bare, scree-covered rock which lends itself to scrambling - the most notorious example being *Sgùrr Dearg*, the red peak that carries the Inaccessible Pinnacle. The grey-greens, by contrast, are the colours of grass and vegetated slope, which is to say the colours of a nice walk. 
 
 ```{r colour-scary-polished}
-#| code-summary: "Show polished version"
+#| code-summary: "Show code"
 #| fig-width: 7
 #| fig-height: 7
 colour_scary <- colour_words |>
