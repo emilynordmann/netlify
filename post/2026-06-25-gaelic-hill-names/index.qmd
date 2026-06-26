@@ -94,7 +94,7 @@ tibble::tribble(
   ~Element, ~Meaning,
   "Beinn (Ben)", "The generic word for a mountain, especially a big one",
   "Sgùrr (Sgòrr, Sgòr)", "A jagged, pointed, rocky peak - mostly in the west",
-  "Càrn (Cairn)", "A heap of stones; by extension a rounded stony hill",
+  "Càrn (Cairn)", "A heap of stones; by extension a stony hill",
   "Stob", "A point or peak (literally a stake or stump)",
   "Meall", "A bare, rounded, lumpy hill",
   "Mullach", "A summit or top",
@@ -102,8 +102,8 @@ tibble::tribble(
   "Creag", "A crag or rockface",
   "Bidean (Spidean)", "A sharp pinnacle or peak",
   "Stùc", "A steep little peak or pinnacle",
-  "Binnein", "A conical peak",
-  "Maol", "A bald, bare, rounded hill"
+  "Binnein", "An especially conical peak",
+  "Maol", "A bare, bald hill"
 ) |>
   flextable() |>
   autofit()
@@ -218,8 +218,8 @@ scary_dat <- munro_dat |>
             scary_pct = mean(scary) * 100,
             .groups = "drop") |>
   mutate(family = case_when(
-    element %in% c("Sgùrr", "Bidean", "Stùc", "Stob", "Binnein") ~ "Pointed / rocky words",
-    element %in% c("Càrn", "Meall", "Mullach") ~ "Rounded words",
+    element %in% c("Sgùrr", "Bidean", "Stùc", "Stob", "Binnein") ~ "Pointed / rocky peaks",
+    element %in% c("Càrn", "Meall", "Maol", "Mullach") ~ "Rounded or stony hills",
     TRUE ~ "General / other"
   ))
 
@@ -228,8 +228,8 @@ ggplot(scary_dat, aes(scary_pct, fct_reorder(element, scary_pct), fill = family)
   geom_text(aes(label = paste0(round(scary_pct), "%")), hjust = -0.25,
             size = 4, fontface = "bold", colour = "#3A3A3A") +
   scale_x_continuous(expand = expansion(mult = c(0, 0.13))) +
-  scale_fill_manual(values = c("Pointed / rocky words" = "#E07B39",
-                               "Rounded words"          = "#355E3B",
+  scale_fill_manual(values = c("Pointed / rocky peaks" = "#E07B39",
+                               "Rounded or stony hills"  = "#355E3B",
                                "General / other"        = "#4B4F58")) +
   labs(x = NULL, y = NULL,
        title = "Does the name tell you if it's scary?",
@@ -240,16 +240,19 @@ ggplot(scary_dat, aes(scary_pct, fct_reorder(element, scary_pct), fill = family)
         panel.grid.major.x = element_blank())
 ```
 
-The words for sharp, pointed peaks - *Bidean* (83%), *Stùc* (80%) and *Sgùrr* (57%) - sit right at the top, while the words for rounded heaps - *Càrn* (31%) and *Meall* (32%) - sit at the bottom. *Beinn*, the generic catch-all, lands pleasingly in the middle.
+The words for sharp, pointed peaks - *Bidean* (83%), *Stùc* (80%) and *Sgùrr* (57%) - sit right at the top, while the words for rounded or stony hills - *Càrn* (31%) and *Meall* (32%) - sit at the bottom. *Beinn*, the generic catch-all, lands pleasingly in the middle.
 
 The same caveat from the last post still applies that my "scary" flag comes from text-mining one route description per Munro for words like *scramble* and *exposed*, which is a blunt instrument that can't tell "an exposed ridge" from "exposed to the weather". And some of these groups are small - *Bidean* and *Stùc* are six and five hills respectively but the broad pattern across the bigger groups is fairly consistent.
 
 
 ## A linguistic map of Scotland
 
-If the words describe the hills, and the hills differ by region (see my previous post), then the words should cluster geographically. Here's every Munro mapped by its generic, highlighting the two opposites - the jagged *Sgùrr* and the rounded *Càrn* - and greying out the rest.
+If the words describe the hills, and the hills differ by region (see my previous post), then the words should cluster geographically. Here's every Munro mapped by its generic, with pointed/rocky peak words highlighted in orange, rounded or stony hill words in green, and everything else greyed out.
 
 ```{r map-prep}
+pointed_words <- c("Sgùrr", "Bidean", "Stùc", "Stob", "Binnein")
+rounded_words  <- c("Càrn", "Meall", "Maol", "Mullach")
+
 munros_coords <- munro_dat |>
   select(munro, region, element, xcoord, ycoord, height_dobih) |>
   drop_na(xcoord, ycoord) |>
@@ -281,9 +284,9 @@ map_dat <- munros_coords |>
 #| fig-height: 7
 map_dat2 <- munros_coords |>
   mutate(grp = case_when(
-    element == "Sgùrr" ~ "Sgùrr (jagged peak)",
-    element == "Càrn"  ~ "Càrn (rounded heap)",
-    TRUE               ~ "Other words"))
+    element %in% pointed_words ~ "Pointed / rocky peaks",
+    element %in% rounded_words ~ "Rounded or stony hills",
+    TRUE                       ~ "Other words"))
 
 ggplot() +
   geom_polygon(data = uk_map_df, aes(X, Y, group = group),
@@ -293,52 +296,60 @@ ggplot() +
   geom_point(data = filter(map_dat2, grp != "Other words"),
              aes(longitude, latitude, colour = grp), size = 2.6) +
   coord_quickmap(xlim = c(-8, -1.5), ylim = c(56.5, 58.6)) +
-  scale_colour_manual(values = c("Sgùrr (jagged peak)" = "#E07B39",
-                                 "Càrn (rounded heap)" = "#355E3B")) +
-  labs(title = "Jagged west, rounded east",
-       subtitle = "Munros named for a pointed Sgùrr or a rounded Càrn",
+  scale_colour_manual(values = c("Pointed / rocky peaks"  = "#E07B39",
+                                 "Rounded or stony hills" = "#355E3B")) +
+  labs(title = "Jagged west, hilly east",
+       subtitle = "Pointed/rocky peak words (orange) vs rounded or stony hill words (green)",
        caption = munro_cap, colour = NULL) +
   theme_munro() +
   theme(axis.text = element_blank(), axis.title = element_blank(),
         panel.grid = element_blank())
 ```
 
-The best way to see the pattern is to take the two opposite words - *Sgùrr* (jagged) and *Càrn* (rounded) and see what share of each region's Munros they make up.
+The pattern becomes clearer when you break it down by region.
 
 ```{r region-shares}
 munro_dat |>
   group_by(region) |>
-  summarise(n = n(),
-            `Sgùrr %` = mean(element == "Sgùrr") * 100,
-            `Càrn %`  = mean(element == "Càrn") * 100,
-            .groups = "drop") |>
+  summarise(
+    n                   = n(),
+    `Pointed / rocky %` = mean(element %in% pointed_words) * 100,
+    `Rounded or stony %` = mean(element %in% rounded_words) * 100,
+    .groups = "drop"
+  ) |>
   filter(n >= 8) |>
-  arrange(desc(`Sgùrr %`)) |>
+  arrange(desc(`Pointed / rocky %`)) |>
   flextable() |>
-  colformat_double(j = c("Sgùrr %", "Càrn %"), digits = 0) |>
+  colformat_double(j = c("Pointed / rocky %", "Rounded or stony %"), digits = 0) |>
   set_header_labels(n = "Munros") |>
   autofit()
 ```
 
-The Isle of Skye is 67% *Sgùrr* and 0% *Càrn* - the Cuillin are jagged rock and the names reflect that. The Cairngorms are the mirror image: 4% *Sgùrr* and 41% *Càrn*. The rough north-west - Kintail, Torridon, Ullapool - leans *Sgùrr*; Perthshire has no *Sgùrr* at all. 
+The Isle of Skye is dominated by pointed/rocky peak words and has almost no rounded or stony hill names - the Cuillin are jagged rock and the names reflect that. The Cairngorms are the mirror image, with the highest share of rounded or stony words of any region. The rough north-west - Kintail, Torridon, Ullapool - leans pointed; Perthshire has almost none.
 
 ```{r region-bars-polished}
 #| code-summary: "Show polished version"
 #| fig-width: 7
 #| fig-height: 7
 munro_dat |>
-  filter(element %in% c("Sgùrr", "Càrn")) |>
-  count(region, element) |>
+  mutate(family = case_when(
+    element %in% pointed_words ~ "Pointed / rocky peaks",
+    element %in% rounded_words ~ "Rounded or stony hills",
+    TRUE                       ~ NA_character_
+  )) |>
+  filter(!is.na(family)) |>
+  count(region, family) |>
   group_by(region) |>
   filter(sum(n) >= 3) |>
   ungroup() |>
-  ggplot(aes(n, fct_reorder(region, n, sum), fill = element)) +
+  ggplot(aes(n, fct_reorder(region, n, sum), fill = family)) +
   geom_col(width = 0.74) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.05))) +
-  scale_fill_manual(values = c("Sgùrr" = "#E07B39", "Càrn" = "#355E3B")) +
+  scale_fill_manual(values = c("Pointed / rocky peaks"  = "#E07B39",
+                               "Rounded or stony hills" = "#355E3B")) +
   labs(x = "Number of Munros", y = NULL,
-       title = "Jagged west, rounded east",
-       subtitle = "Munros named Sgùrr (jagged) vs Càrn (rounded), by region",
+       title = "Jagged west, hilly east",
+       subtitle = "Pointed/rocky peak words vs rounded or stony hill words, by region",
        caption = munro_cap) +
   theme_munro()
 ```
