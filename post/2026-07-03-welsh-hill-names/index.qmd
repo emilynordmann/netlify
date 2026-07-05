@@ -173,18 +173,18 @@ ggplot(hills, aes(metres, country_name, fill = country_name)) +
   theme(panel.grid.major.x = element_line(colour = "#EDEDED", linewidth = 0.4))
 ```
 
-The fairest fight of all is to line up the best each country can muster. Here are the height distributions of the 300 highest hills in each.
+The fairest fight of all is to line up the best each country can muster. Here are the height distributions of the 100 highest hills in each.
 
-```{r top300}
+```{r top100}
 #| code-summary: "Show code"
 #| fig-width: 7
 #| fig-height: 5
-top300 <- hills |>
+top100 <- hills |>
   group_by(country_name) |>
-  slice_max(metres, n = 300, with_ties = FALSE) |>
+  slice_max(metres, n = 100, with_ties = FALSE) |>
   ungroup()
 
-ggplot(top300, aes(metres, fill = country_name, colour = country_name)) +
+ggplot(top100, aes(metres, fill = country_name, colour = country_name)) +
   geom_density(alpha = 0.5, linewidth = 0.7) +
   geom_vline(xintercept = 914.4, linetype = "dotted", colour = "grey45") +
   annotate("text", x = 914.4, y = Inf, label = "the Munro line (3,000 ft)",
@@ -193,8 +193,8 @@ ggplot(top300, aes(metres, fill = country_name, colour = country_name)) +
   scale_colour_manual(values = nature_2, name = NULL) +
   scale_x_continuous(expand = expansion(mult = c(0.01, 0.02))) +
   labs(x = "Height (m)", y = "Density",
-       title = "The 300 highest hills in each country",
-       subtitle = "Distribution of heights in each country's top 300; the two barely overlap",
+       title = "The 100 highest hills in each country",
+       subtitle = "Distribution of heights in each country's top 100",
        caption = hill_cap) +
   theme_munro() +
   theme(axis.title.y = element_text(size = rel(0.8), colour = "#5C5C5C",
@@ -203,7 +203,7 @@ ggplot(top300, aes(metres, fill = country_name, colour = country_name)) +
         panel.grid.major.y = element_blank())
 ```
 
-The two distributions barely touch. Scotland's 300 highest are packed into a narrow band above the 3,000 ft Munro line, its 300th-highest still clearing `r round(min(top300$metres[top300$country_name == "Scotland"]))` m. Wales's 300 are smeared all the way down to `r round(min(top300$metres[top300$country_name == "Wales"]))` m, because it only has `r sum(hills$country == "W")` classified hills in total and has to scrape the foothills to find 300 at all.
+The two distributions barely touch. Scotland's hundred highest are packed into a tight band above the 3,000 ft Munro line, its 100th-highest still clearing `r round(min(top100$metres[top100$country_name == "Scotland"]))` m. Wales's hundred run from Yr Wyddfa down to `r round(min(top100$metres[top100$country_name == "Wales"]))` m, so even the best hundred hills Wales can put forward would mostly rank as also-rans north of the border.
 
 The table shows the difference between Scotland and Wales for Simms (everything over 600 m with at least 30 m of drop).
 
@@ -276,7 +276,7 @@ tibble::tribble(
   autofit()
 ```
 
-### Mutation
+## Mutation
 
 In Gaelic, *beinn* becomes *bheinn*, which is annoying but manageable for coding purposes because the original letter is still there so `(beinn|bheinn)` catches both. Welsh mutation *replaces* the first consonant, so *moel* becomes *foel*, *carnedd* becomes *garnedd*, *pen* becomes *ben*, and *coch* (red) becomes *goch*. On top of that, Welsh names compound enthusiastically (Moelwyn, Penygadair) and several Welsh hills have English names (Black Mountain, Sugar Loaf). This analysis scans for the common generics and everything unrecognised goes in "Other". The first match also wins in the order below, so Pen y Fan counts as a *pen* rather than a *fan*.
 
@@ -417,7 +417,7 @@ ggplot(top_words, aes(pct, fct_reorder(element, pct), fill = list)) +
                                "Welsh (Nuttalls)" = "#4682B4"), guide = "none") +
   labs(x = "Share of names (%)", y = NULL,
        title = "The most common hill-words in each language",
-       subtitle = "Generic elements used at least five times (Other excluded); labels show the count",
+       subtitle = "Generic elements used at least five times",
        caption = hill_cap) +
   theme_munro() +
   theme(panel.grid.major.x = element_blank(),
@@ -426,7 +426,7 @@ ggplot(top_words, aes(pct, fct_reorder(element, pct), fill = list)) +
 
 Side by side, the two languages both rhyme and diverge. Welsh leans hardest on *moel*, bald, its single commonest word, where Gaelic leans on *beinn*, the all-purpose hill. Both keep the same word for a crag, Welsh *craig* and Gaelic *creag*, and both keep the cairn word, Welsh *carnedd* and Gaelic *càrn*, the family resemblance showing through. What Gaelic has and Welsh simply doesn't is the fistful of words for pointed rock, *sgùrr* and *stob* sitting high on its list with nothing equivalent across the water, which is the thread the next section pulls.
 
-I've left the *Other* pile off the chart because it swamps everything and isn't really a hill-word, but it deserves a mention because it is the largest group of all on the Welsh side, `r sum(welsh_nut$element == "Other")` names, and it is where the celebrities live. Yr Wyddfa (Snowdon) itself is in there, along with Tryfan, the Glyderau, Cnicht, Y Lliwedd and Elidir Fawr, names rather than descriptions, the Welsh equivalents of Schiehallion or Lochnagar. A good chunk of the rest are the subsidiary tops the database tags with an English label (*Arenig Fawr South Top* and friends). The most famous Welsh mountains mostly don't tell you what kind of hill they are, they just tell you their name.
+The largest group of all on the Welsh side is actually the ones not represented on this chart, of which there are, `r sum(welsh_nut$element == "Other")` names, and it is where the celebrities live. Yr Wyddfa (Snowdon), Tryfan, the Glyderau, Cnicht, Y Lliwedd and Elidir Fawr, names rather than descriptions, the Welsh equivalents of Schiehallion or Lochnagar. A good chunk of the rest are the subsidiary tops the database tags with an English label (*Arenig Fawr South Top* and friends). The most famous Welsh mountains mostly don't tell you what kind of hill they are, they just tell you their name.
 
 ## What is Welsh for sgùrr?
 
