@@ -213,7 +213,7 @@ hills |>
   autofit()
 ```
 
-Ireland has `r sum(hills$furth & hills$country == "I")` Furths, the SMC's word for 3,000-footers outside Scotland, and unlike Wales's they are not all in one corner, they're split between Kerry's Reeks and Brandon in the far south-west, Galtymore in the Galtees on the Limerick–Tipperary border, and the Wicklow outlier of Lugnaquilla in the east. Wales's `r sum(hills$furth & hills$country == "W")` Furths, by contrast, genuinely are all in one corner of Eryri, which is why some walkers do the [Welsh 3000s](https://en.wikipedia.org/wiki/Welsh_3000s) in a single day. Either way, still a long weekend's work rather than a decade's.
+Ireland has `r sum(hills$furth & hills$country == "I")` Furths, the SMC's word for 3,000-footers outside Scotland, and unlike Wales's they are not all in one corner, they're split between Kerry's Reeks and Brandon in the far south-west, Galtymore in the Galtees on the Limerick–Tipperary border, and the Wicklow outlier of Lugnaquilla in the east. Wales's `r sum(hills$furth & hills$country == "W")` Furths, by contrast, genuinely are all in one corner of Eryri, which is why some walkers do the [Welsh 3000s](https://en.wikipedia.org/wiki/Welsh_3000s) in a single day. 
 
 ## The language of the hills
 
@@ -377,7 +377,7 @@ ggplot(top_words, aes(pct, fct_reorder(element, pct), fill = list)) +
   geom_col(width = 0.76) +
   geom_text(aes(label = n), hjust = -0.35, size = 3.6,
             fontface = "bold", colour = "#3A3A3A") +
-  facet_wrap(~list, scales = "free_y", ncol = 1) +
+  facet_wrap(~list, ncol = 1) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.14))) +
   scale_fill_manual(values = c("Gaelic (Munros)"           = "#355E3B",
                                "Irish (Vandeleur-Lynams)"  = "#4682B4",
@@ -392,17 +392,11 @@ ggplot(top_words, aes(pct, fct_reorder(element, pct), fill = list)) +
         strip.text = element_text(face = "bold", hjust = 0))
 ```
 
-::: {.callout-note collapse="true"}
-## How to read this plot
-
-Each panel is one naming tradition (Gaelic, Irish, Welsh), and within a panel every bar is one hill-word, for example *sliabh* or *cnoc*. The length of the bar shows what share of that tradition's hill names contain the word, so a longer bar means a more common word, and the number at the end of each bar is the actual count of hills. Bars are sorted longest to shortest within each panel, and the panels use independent scales, so don't compare bar lengths across panels directly, compare the *shape*, whether one word dominates or several share the load fairly evenly.
-:::
-
 ## The sliabh problem
 
-One of the main differences is in the use of *Sliabh*. This is used often in Irish mountain names, e.g., Slieve Donard and Slieve League and half the ranges in Ulster, and it names `r sum(vls$element == "Sliabh")` of the `r nrow(vls)` Vandeleur-Lynams. Scottish Gaelic has exactly the same word but it names `r sum(str_detect(str_to_lower(stri_trans_general(munros$name, "Latin-ASCII")), "^slieve|\\bsliabh\\b"))` Munros. Not few, none ([Tempan makes this point too](https://mountainviews.ie/resourceitem/names/intnames2/TempanMtnNamesInter2.htm), so at least this regex agrees with the professionals). In Scotland *sliabh* came to mean moorland, and it survives in place names mainly on Jura and in Galloway, where it got anglicised as "slew". Same word, same language family, and in one country it names the highest mountains and in the other it names bog.
+One of the main differences is in the use of *Sliabh*. This is used often in Irish mountain names, e.g., Slieve Donard and Slieve League and half the ranges in Ulster, and it names `r sum(vls$element == "Sliabh")` of the `r nrow(vls)` Vandeleur-Lynams. Scottish Gaelic has exactly the same word but it names `r sum(str_detect(str_to_lower(stri_trans_general(munros$name, "Latin-ASCII")), "^slieve|\\bsliabh\\b"))` Munros. Not few, none ([Tempan makes this point too](https://mountainviews.ie/resourceitem/names/intnames2/TempanMtnNamesInter2.htm), so at least this regex agrees with the professionals). In Scotland *sliabh* came to mean moorland, and it survives in place names mainly on Jura and in Galloway, where it got anglicised as "slew".
 
-*Cnoc* does the same trick in reverse gear. In Scotland a *cnoc* is a bump; the word turns up on just `r sum(corbetts$element == "Cnoc", na.rm = TRUE) + sum(munros$element == "Cnoc", na.rm = TRUE)` hill in the Munro and Corbett lists combined, Cnoc Coinnich, a Corbett in the Arrochar Alps, and is otherwise confined to wee knolls in the north-west. In Munster it names serious mountains, Cnoc na Péiste in the Reeks is nearly a thousand metres. The Irish took their word for hill and promoted it, the Scots took their word for mountain and demoted it, and this is why you should never let two siblings share a vocabulary.
+*Cnoc* does the same trick in reverse. In Scotland a *cnoc* is a bump; the word turns up on just `r sum(corbetts$element == "Cnoc", na.rm = TRUE) + sum(munros$element == "Cnoc", na.rm = TRUE)` hill in the Munro and Corbett lists combined, Cnoc Coinnich, a Corbett in the Arrochar Alps, and is otherwise confined to wee knolls in the north-west. In Munster it names serious mountains, Cnoc na Péiste in the Reeks is nearly a thousand metres. 
 
 The cognates, for the record, since this time they're mostly just the same words wearing different accents. I've kept the Welsh column from last time so the whole family is in one place.
 
@@ -429,7 +423,7 @@ One of the more striking pairs in [Tempan's article](https://mountainviews.ie/re
 
 ## Colour me Éire
 
-The *glas* problem is now confirmed as a pan-Goidelic condition. Irish *glas* covers the same grey-green-blue smear as its Scottish twin, modern Irish uses it for green where Scottish Gaelic drifted blue, and the mountains of both countries use it for whatever colour wet upland grass is. Fifteen hundred years of divergence in Wales, a few hundred miles of sea here, and nobody in the entire Celtic world has ever committed to what colour a hillside actually is. Welsh even keeps a cognate of Irish *breac* (speckled), *brych*, both descending from the same Proto-Celtic root ([Wiktionary](https://en.wiktionary.org/wiki/breac)), so the chart below sets all three colour vocabularies side by side for the first time, Gaelic from the Munros and Corbetts, Irish from the Vandeleur-Lynams, and Welsh from the Nuttalls.
+The *glas* problem is now confirmed as a pan-Goidelic condition. Irish *glas* covers the same grey-green-blue smear as its Scottish twin, modern Irish uses it for green where Scottish Gaelic drifted blue, and the mountains of both countries use it for whatever colour wet upland grass is. Welsh even keeps a cognate of Irish *breac* (speckled), *brych*, both descending from the same Proto-Celtic root ([Wiktionary](https://en.wiktionary.org/wiki/breac)), so the chart below sets all three colour vocabularies side by side for the first time, Gaelic from the Munros and Corbetts, Irish from the Vandeleur-Lynams, and Welsh from the Nuttalls.
 
 The extra wrinkle for Ireland is anglicisation again, *dubh* hides as -duff and -doo, *bán* as -baun and -bane, *buí* as -boy (Barraboy is *Barr Buí*, yellow top, not a warning about local children), and *breac*, speckled, as -brack ([Tempan's glossary](https://mountainviews.ie/resourceitem/names/List2010/MVHillList09.pdf) again).
 
@@ -502,7 +496,7 @@ ggplot(colour_counts, aes(pct, fct_reorder(label, pct, .fun = max), fill = list)
         panel.grid.major.x = element_blank())
 ```
 
-One thing to keep in mind before reading this chart: bar *colour* here represents which nation a bar belongs to, in the same green/blue/gold coding as the rest of the post, not the colour the row is naming, which is a common source of confusion with charts like this. And one health warning, the anglicised Irish patterns are doing more guesswork than the Gaelic ones, because matching "doo" at the end of a glued-together word is riskier than matching *dubh* as a word in its own right, so treat the Irish bars as estimates. Also a disclaimer that every Seefin in Ireland contains *fionn*, but it's Fionn the giant rather than *fionn* the colour, which is exactly the kind of trap this analysis cannot see and a real Irish speaker would.
+A caveat there, the anglicised Irish patterns are doing more guesswork than the Gaelic ones, because matching "doo" at the end of a glued-together word is riskier than matching *dubh* as a word in its own right, so treat the Irish bars as estimates and if you spot any errors please get in touch. 
 
 One genuine absence is worth flagging: not a single Vandeleur-Lynam carries a word for red. *Dearg* and *rua* are perfectly ordinary Irish colour words, but across all `r nrow(vls)` hills on the list they turn up precisely nowhere, where Scotland has its *dearg* and *ruadh* summits and Wales its *coch*. The Irish hills run to black, white, yellow and the endless grey-green *glas*, but nobody, it seems, has ever looked at one and called it red.
 
