@@ -377,7 +377,7 @@ ggplot(top_words, aes(pct, fct_reorder(element, pct), fill = list)) +
   geom_col(width = 0.76) +
   geom_text(aes(label = n), hjust = -0.35, size = 3.6,
             fontface = "bold", colour = "#3A3A3A") +
-  facet_wrap(~list, ncol = 1) +
+  facet_wrap(~list, scales = "free_y", ncol = 1) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.14))) +
   scale_fill_manual(values = c("Gaelic (Munros)"           = "#355E3B",
                                "Irish (Vandeleur-Lynams)"  = "#4682B4",
@@ -409,8 +409,8 @@ tibble::tribble(
   "cruach", "cruach", "crug", "stack, rick, mound",
   "carraig / creig", "creag", "craig", "rock, crag",
   "maol", "maol", "moel", "bald, bare",
-  "mullach", "mullach", "(none)", "summit",
-  "sliabh", "sliabh", "(none)", "mountain / moor",
+  "mullach", "mullach", "no cognate", "summit",
+  "sliabh", "sliabh", "no cognate", "mountain / moor",
   "dubh", "dubh", "du", "black",
   "mór", "mòr", "mawr", "big",
   "beag", "beag", "bach", "small"
@@ -418,6 +418,8 @@ tibble::tribble(
   flextable() |>
   autofit()
 ```
+
+Those two "no cognate" entries need a word, because they don't mean Welsh has no way of naming a summit or a mountain. It has plenty: a summit is a *copa*, a mountain a *mynydd*, and moorland is *gwaun* or *rhos*. None of them is a cognate of the Goidelic word alongside, though, and none does the heavy lifting in Welsh hill names that *mullach* and *sliabh* do in Irish and Scottish ones, so there is simply nothing to put in the Welsh column here.
 
 One of the more striking pairs in [Tempan's article](https://mountainviews.ie/resourceitem/names/intnames2/TempanMtnNamesInter2.htm) is Beenkeragh, the second-highest mountain in Ireland, which is *Binn Chaorach*, the peak of the sheep, and which has an exact twin called Beinn Chaorach near Tyndrum, a Corbett near the West Highland Way. 
 
