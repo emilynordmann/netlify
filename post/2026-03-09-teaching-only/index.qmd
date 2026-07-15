@@ -65,9 +65,9 @@ HESA classifies academic staff along two dimensions: their **academic employment
 
 This analysis draws on two HESA open datasets:
 
--   **Table 9** (national-level): a single CSV covering all UK HE academic staff from 2014/15 to 2024/25. Each row is a count of staff for a particular combination of sex, academic employment function, contract level, salary source, mode of employment, terms, clinical status, and country. There is no aggregate row for salary source, so the code sums across all 23 categories.
+-   **Table 9** (national-level): a single CSV covering all UK HE academic staff from 2014/15 to 2024/25. Each row is a count of staff for a particular combination of sex, academic employment function, contract level, salary source, mode of employment, terms, clinical status, and country. The salary source column includes a "Total" aggregate row alongside the individual funding categories, so the code filters to that row to avoid double counting.
 
--   **Table 17** (institution-level): separate CSV files for each academic year from 2014/15 to 2024/25, with 12 metadata rows at the top. This table covers **full-time staff only** and includes a provider name column, which allows Russell Group vs non-Russell Group comparisons.
+-   **Table 17** (institution-level): separate CSV files for each academic year from 2014/15 to 2024/25, with 12 metadata rows at the top. This table covers **full-time staff only** and includes a provider name column, which allows Russell Group vs non-Russell Group comparisons. Counts are repeated across overlapping breakdowns (country and region of provider, and salary bands alongside a "Total" row), so the code filters to the aggregate rows only.
 
 Counts are Full-Person Equivalent (FPE), rounded to the nearest 5. "Professor" refers to HESA contract level F1, which excludes professors in senior management roles. From 2022/23, the definition of "sex" changed from self-identification to legal documents. All figures in this post refer to staff of all modes of employment and all terms of employment unless stated otherwise. Staff totals in this analysis include only Female and Male categories (excluding "Other" and "Not known") and only the three main academic functions (teaching only, research only, and both teaching and research), excluding staff with "Neither teaching nor research" function. This means totals will be slightly lower than HESA's headline figures.
 :::
@@ -83,7 +83,10 @@ t9_files <- list.files("table-9/", full.names = TRUE)
 
 read_t9 <- function(filepath) {
   read_csv(filepath, skip = 12) |>
-    clean_names()
+    clean_names() |>
+    # salary source has a "Total" aggregate row alongside the individual
+    # categories - keep only the Total to avoid double counting
+    filter(source_of_basic_salary == "Total")
 }
 
 table9 <- map_dfr(t9_files, read_t9) |>
@@ -105,7 +108,15 @@ t17_files <- list.files("table-17/", full.names = TRUE)
 
 read_t17 <- function(filepath) {
   read_csv(filepath, skip = 12) |>
-    clean_names()
+    clean_names() |>
+    # counts are repeated across country, region, and salary band
+    # breakdowns - keep only the aggregate rows to avoid counting
+    # each person 8 times
+    filter(
+      country_of_he_provider == "All",
+      region_of_he_provider == "All",
+      contract_salary == "Total"
+    )
 }
 
 table17 <- map_dfr(t17_files, read_t17)
@@ -188,7 +199,7 @@ Before getting into contract type, it is worth establishing the baseline of how 
 #| code-summary: "Show analysis code"
 
 # Total academics and professors, by sex and function
-# Sum across salary source, filter to national totals
+# (salary source already filtered to "Total" in read_t9)
 staff_totals <- table9 |>
   group_by(academic_year, contract_levels, sex, academic_employment_function) |>
   summarise(number = sum(number, na.rm = TRUE), .groups = "drop")
@@ -397,7 +408,7 @@ Teaching-focused work across the sector is majority-female. This section examine
 #| code-fold: true
 #| code-summary: "Show analysis code"
 
-# All contract levels, by function and sex (summing across salary source)
+# All contract levels, by function and sex
 all_staff <- table9 |>
   filter(
     sex %in% c("Female", "Male"),
