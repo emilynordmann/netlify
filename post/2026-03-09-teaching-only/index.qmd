@@ -111,11 +111,14 @@ read_t17 <- function(filepath) {
     clean_names() |>
     # counts are repeated across country, region, and salary band
     # breakdowns - keep only the aggregate rows to avoid counting
-    # each person 8 times
+    # each person 8 times. The provider column also contains a
+    # sector-wide "Total" row, which would double sector sums and
+    # be misclassified as Non-RG, so drop it.
     filter(
       country_of_he_provider == "All",
       region_of_he_provider == "All",
-      contract_salary == "Total"
+      contract_salary == "Total",
+      he_provider != "Total"
     )
 }
 
