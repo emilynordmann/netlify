@@ -1,12 +1,23 @@
 project:
   type: website
   output-dir: _site
+  # Only real pages: keeps AGENTS.md and other notes out of the site
+  render:
+    - "*.qmd"
+    - "post/*/index.qmd"
+    # Unfinished Aplotalypse posts: remove these lines (and draft: true) to publish
+    - "!post/2026-09-11-patchwork/"
+    - "!post/2026-09-11-carcassonne/"
+    - "!post/2026-09-11-duel/"
+    - "!post/2026-09-11-league-table/"
 
 website:
   title: "Emily Nordmann"
   site-url: "https://www.emilynordmann.com/"
   description: "Professor Emily Nordmann, Associate Dean of Learning and Teaching at the University of Glasgow. Research on lecture capture, evidence-informed education, and open science."
   favicon: images/headshot_2025.jpg
+  # Posts with draft: true are not rendered or listed until the flag is removed
+  draft-mode: gone
   open-graph: true
   twitter-card:
     card-style: summary_large_image
@@ -15,6 +26,10 @@ website:
     left:
       - text: "Blog"
         href: post.qmd
+      - text: "Talks"
+        href: talks.qmd
+      - text: "Resources"
+        href: resources.qmd
       - text: "Contact"
         href: contact.qmd
       - text: "CV"
@@ -22,6 +37,7 @@ website:
 
 resources:
   - garden-of-forking-paths.html
+  - munro-picker.html
   - _redirects
   - "images/**"
   - "files/**"

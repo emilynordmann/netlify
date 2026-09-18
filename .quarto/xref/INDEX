@@ -145,5 +145,32 @@
   },
   "post/2026-07-12-irish-hill-names/index.qmd": {
     "index.html": "840fe3d2"
+  },
+  "post/2026-09-11-patchwork/index.qmd": {
+    "index.html": "1b14ec4a"
+  },
+  "AGENTS.md": {
+    "AGENTS.html": "8c7a6522"
+  },
+  "post/2026-03-09-teaching-only/AGENTS.md": {
+    "AGENTS.html": "ca0c0523"
+  },
+  "resources.qmd": {
+    "resources.html": "035ce6d0"
+  },
+  "talks.qmd": {
+    "talks.html": "cc1082fb"
+  },
+  "post/2026-09-11-carcassonne/index.qmd": {
+    "index.html": "947096e0"
+  },
+  "post/2026-09-11-duel/index.qmd": {
+    "index.html": "d202dbec"
+  },
+  "post/2026-09-11-league-table/index.qmd": {
+    "index.html": "1858f4e1"
+  },
+  "post/2026-09-13-ben-lui/index.qmd": {
+    "index.html": "3e7c96df"
   }
 }

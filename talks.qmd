@@ -1,0 +1,50 @@
+---
+title: "Talks"
+---
+
+Slides from invited talks and keynotes, shared under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) --- please adapt and
+reuse them.
+
+::: {.callout-note appearance="simple"}
+This page starts from August 2026. Talks from 2023 to mid-2026 are archived on
+the [Open Science Framework](https://osf.io/cxryb/) and remain freely available
+there.
+:::
+
+<!-- ---------------------------------------------------------------------
+ADDING A TALK
+
+Copy the three lines between the markers below, paste them under the right
+year heading (newest year first, newest talk first within the year), and fill
+them in. Add a new `## Year` heading when the year turns over.
+
+The two spaces at the end of the first line are a markdown line break. They
+matter — without them the two lines run together.
+
+--- COPY FROM HERE ---
+
+**Title of the talk**
+Event or venue · 1 January 2027 · [Slides](https://doi.org/10.5281/zenodo.XXXXXXX)
+
+--- TO HERE ---
+
+If a talk is not on Zenodo yet, leave the link off entirely rather than pointing
+at a placeholder:
+
+**Title of the talk**
+Event or venue · 1 January 2027
+
+The `·` character is a middle dot. Copy it from an existing entry rather than
+typing it.
+---------------------------------------------------------------------- -->
+
+## 2026
+
+<!-- New talks go here. Add a `## 2027` heading above this one when the year turns. -->
+
+## Earlier talks
+
+Slides from talks given between 2023 and mid-2026 are archived on the
+[Open Science Framework](https://osf.io/cxryb/), where the collection has a DOI
+and will remain available and downloadable indefinitely.

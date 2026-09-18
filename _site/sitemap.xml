@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.emilynordmann.com/post.html</loc>
-    <lastmod>2025-09-23T20:33:57.405Z</lastmod>
+    <loc>https://www.emilynordmann.com/talks.html</loc>
+    <lastmod>2026-08-11T21:08:03.240Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.emilynordmann.com/post/2026-09-13-ben-lui/index.html</loc>
+    <lastmod>2026-09-18T13:51:00.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.emilynordmann.com/post/2026-07-03-welsh-hill-names/index.html</loc>
+    <lastmod>2026-07-05T06:58:24.872Z</lastmod>
   </url>
   <url>
     <loc>https://www.emilynordmann.com/post/2026-04-20-do-schools-kill-creativity/index.html</loc>
@@ -53,12 +61,16 @@
     <lastmod>2025-09-23T20:33:57.407Z</lastmod>
   </url>
   <url>
+    <loc>https://www.emilynordmann.com/index.html</loc>
+    <lastmod>2026-05-30T12:10:04.071Z</lastmod>
+  </url>
+  <url>
     <loc>https://www.emilynordmann.com/contact.html</loc>
     <lastmod>2025-09-23T20:33:57.395Z</lastmod>
   </url>
   <url>
-    <loc>https://www.emilynordmann.com/index.html</loc>
-    <lastmod>2026-05-30T12:10:04.071Z</lastmod>
+    <loc>https://www.emilynordmann.com/post.html</loc>
+    <lastmod>2025-09-23T20:33:57.405Z</lastmod>
   </url>
   <url>
     <loc>https://www.emilynordmann.com/post/2020-07-24-pivot-2/index.html</loc>
@@ -105,19 +117,15 @@
     <lastmod>2026-04-20T18:38:13.279Z</lastmod>
   </url>
   <url>
-    <loc>https://www.emilynordmann.com/post/2026-05-25-roh/index.html</loc>
-    <lastmod>2026-05-30T17:46:47.920Z</lastmod>
-  </url>
-  <url>
     <loc>https://www.emilynordmann.com/post/2026-06-25-gaelic-hill-names/index.html</loc>
     <lastmod>2026-06-26T19:14:47.214Z</lastmod>
   </url>
   <url>
-    <loc>https://www.emilynordmann.com/post/2026-07-03-welsh-hill-names/index.html</loc>
-    <lastmod>2026-07-05T06:58:24.872Z</lastmod>
-  </url>
-  <url>
     <loc>https://www.emilynordmann.com/post/2026-07-12-irish-hill-names/index.html</loc>
     <lastmod>2026-07-13T10:25:08.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.emilynordmann.com/resources.html</loc>
+    <lastmod>2026-09-11T21:12:18.504Z</lastmod>
   </url>
 </urlset>

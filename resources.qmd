@@ -1,0 +1,78 @@
+---
+title: "Open educational resources"
+---
+
+Teaching materials I share openly, all under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) --- adapt them,
+translate them, use them in your own teaching. Attribution is welcome; asking
+permission is not.
+
+::: {.callout-note appearance="simple"}
+Existing resources are archived on the
+[Open Science Framework](https://osf.io/nymkd/) and remain freely available
+there. New and updated versions will be deposited on Zenodo and listed here.
+:::
+
+<!-- ---------------------------------------------------------------------
+ADDING A RESOURCE
+
+Copy the block between the markers, paste it under the right heading, fill it
+in. Keep the newest or most-used resources near the top.
+
+For anything you update annually (how to study, and so on) use the CONCEPT DOI
+from Zenodo, not the version DOI. The concept DOI is the one on the record page
+labelled "Cite all versions". It never changes, and it always sends people to
+the newest year, so this page needs no edit when you deposit next year's version.
+
+--- COPY FROM HERE ---
+
+### Name of the resource
+
+One or two sentences on what it is and who it is for.
+
+*Current version: 2027* · [Download and cite](https://doi.org/10.5281/zenodo.XXXXXXX)
+
+--- TO HERE ---
+
+Drop the "Current version" part for anything that is not updated periodically.
+---------------------------------------------------------------------- -->
+
+## Study skills
+
+## Teaching and assessment
+
+## Lecture recording
+
+## Data skills
+
+Data skills materials are maintained by the
+[psyTeachR team](https://psyteachr.github.io/) at the University of Glasgow.
+
+## Applications and career
+
+My [Principal Fellowship application](https://osf.io/nymkd/) and my 2025
+application for promotion to Professor are available on OSF. People writing
+their own tend to find them useful, and there is no good reason for them to be
+hard to find.
+
+## Hillwalking
+
+### Munro and Corbett picker
+
+A stand-alone planning tool. Give it your postcode, the date and when you can
+leave the house, and it lists the Munros and Corbetts you could climb and get
+off the hill before sunset, with filters for driving time, region, height,
+terrain and the weather forecast. Walk data from
+[walkhighlands](https://www.walkhighlands.co.uk/), built alongside the
+[Munro](post/2025-08-31-munro-tidy-tuesday/) and
+[Corbett](post/2025-09-25-corbetts/) blog posts.
+
+[Open the picker](munro-picker.html)
+
+## Earlier resources
+
+Study skills sessions from 2019 to 2025, the student guides to using lecture
+recordings in five languages, and other teaching materials are archived on the
+Open Science Framework at [osf.io/nymkd](https://osf.io/nymkd/) and
+[osf.io/esd2q](https://osf.io/esd2q/). Both collections remain downloadable
+indefinitely.

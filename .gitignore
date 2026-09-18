@@ -6,3 +6,12 @@
 Thumbs.db
 /.quarto/
 **/*.quarto_ipynb
+
+# Archived pre-Quarto experiments (nested git repos, not part of the site)
+/_archive/
+
+# Quarto build intermediates next to post sources (the site keeps rendered copies in _site and _freeze)
+post/**/index_files/
+
+# Map tile cache for the Munro posts
+post/_tiles/
