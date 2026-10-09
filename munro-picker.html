@@ -53,6 +53,7 @@
   .note.err{color:var(--warn)}
   .note code{font-size:11px;background:var(--chip);padding:0 3px;border-radius:3px}
   .note a{color:var(--accent-d)}
+  .note a.bm{display:inline-block;background:var(--accent-l);border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-weight:600;text-decoration:none;cursor:grab}
   .summary{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
   .pill{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12.5px;color:var(--muted)}
   .pill b{color:var(--ink)}
@@ -242,6 +243,7 @@
           <button class="btn-sec" id="whImport" style="flex:1">Import</button>
         </div>
         <div class="note" id="whNote">Find the number after <code>u=</code> in the address of your <a href="https://www.walkhighlands.co.uk/Forum/munros.php" target="_blank" rel="noopener">Walkhighlands Munro map</a>. Your hills climbed must be set to public. Munros and Corbetts are both read; hills are added to the list below, never removed.</div>
+        <div class="note">If Walkhighlands blocks the import, use the bookmarklet instead: drag <a id="whBookmarklet" class="bm" href="#">Send to Munro Picker</a> to your bookmarks bar, open your Walkhighlands Munro map, and click it. It reads your Munro and Corbett maps in your own browser and brings you back here with the list.</div>
       </div>
       <details>
         <summary>Paste a list to import</summary>
@@ -840,17 +842,51 @@ async function importWalkhighlands(){
     note.textContent=location.protocol==="file:"?"Import only works on the live site (it needs the site's server function).":"Couldn't read Walkhighlands: "+e.message;
     return;
   }
-  S.whUser=u;
+  applyWH(j,u);
+}
+// Merge a {user, munros:[names], corbetts:[names]} payload into the done list.
+function applyWH(j,u){
+  const inp=document.getElementById("whUser"),note=document.getElementById("whNote");
+  if(u){S.whUser=u;inp.value=u;}
   let added=0,already=0,unknown=[];
-  const take=(names,ty)=>names.forEach(n=>{const m=matchWH(n,ty);if(!m){unknown.push(n);return;}if(addDone(m.id))added++;else already++;});
-  take(j.munros||[],"munro");take(j.corbetts||[],"corbett");
-  save();renderDone();render();inp.value=u;
+  const take=(names,ty)=>(names||[]).forEach(n=>{const m=matchWH(n,ty);if(!m){unknown.push(n);return;}if(addDone(m.id))added++;else already++;});
+  take(j.munros,"munro");take(j.corbetts,"corbett");
+  save();renderDone();render();
   const who=j.user?`${j.user}: `:"";
+  note.className="note";
   note.textContent=`${who}${(j.munros||[]).length} Munros and ${(j.corbetts||[]).length} Corbetts ticked on Walkhighlands. Added ${added} new, ${already} already listed.`+
     (unknown.length?` Not matched: ${unknown.join(", ")}.`:"");
 }
+// The bookmarklet runs on walkhighlands.co.uk, where the browser can read the
+// member's own maps, then sends the result here in the URL hash (#wh=...).
+function importFromHash(){
+  const m=location.hash.match(/^#wh=([A-Za-z0-9_-]+)/);if(!m)return;
+  history.replaceState(null,"",location.pathname+location.search);
+  try{
+    const b64=m[1].replace(/-/g,"+").replace(/_/g,"/");
+    const j=JSON.parse(decodeURIComponent(escape(atob(b64))));
+    applyWH(j,j.u?String(j.u):"");
+  }catch(e){const note=document.getElementById("whNote");note.className="note err";note.textContent="Couldn't read the list sent from Walkhighlands.";}
+}
+function buildBookmarklet(){
+  const target=location.origin+location.pathname;
+  const code=`(async()=>{try{if(!/walkhighlands\\.co\\.uk$/.test(location.hostname)){alert('Open your Walkhighlands Munro map first, then click this.');return;}
+var u=(location.search.match(/u=(\\d+)/)||[])[1];if(!u){var a=document.querySelector('a[href*="corbetts.php"]');u=a&&(a.href.match(/u=(\\d+)/)||[])[1];}
+var get=async function(p){var r=await fetch(p,{credentials:'same-origin'});return r.text();};
+var parse=function(h,k){var d=new DOMParser().parseFromString(h,'text/html');return Array.from(d.querySelectorAll('tr')).filter(function(t){return t.querySelector('img[src*="tick"]');}).map(function(t){var a=t.querySelector('a[href*="/'+k+'/"]');return a?a.textContent.trim():null;}).filter(Boolean);};
+var who=(document.title.split(' - ').pop()||'').replace(/•.*$/,'').trim();
+var q=u?'?u='+u:'';var qc=u?'?mode=map&u='+u:'?mode=map';
+var mh=await get('/Forum/munros.php'+q),ch=await get('/Forum/corbetts.php'+qc);
+var data={u:u||'',user:who,munros:parse(mh,'munros'),corbetts:parse(ch,'corbetts')};
+if(!data.munros.length&&!data.corbetts.length){alert('No ticked hills found on this map.');return;}
+var enc=btoa(unescape(encodeURIComponent(JSON.stringify(data)))).replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');
+location.href=${JSON.stringify(target)}+'#wh='+enc;}catch(e){alert('Could not read the maps: '+e.message);}})();`;
+  const a=document.getElementById("whBookmarklet");
+  a.href="javascript:"+encodeURIComponent(code);
+  a.onclick=e=>{e.preventDefault();alert("Drag this link to your bookmarks bar, then click it while viewing your Walkhighlands Munro map.");};
+}
 
-fillRegions();buildTerrain();buildHillType();syncControls();wire();setupDoneSearch();renderDone();
+fillRegions();buildTerrain();buildHillType();syncControls();wire();setupDoneSearch();renderDone();buildBookmarklet();importFromHash();
 if(haveRoutes()&&S.routes.key===S.postcode.toUpperCase().replace(/\s+/g,"")){setRoute("Using saved driving times from "+S.postcode+".");}
 else if(haveRoutes()){setRoute("Postcode changed — press Routes to recalculate.");}
 if(haveRoutes2()&&S.routes2.key===(S.postcode2||"").toUpperCase().replace(/\s+/g,"")){setRoute2("Using saved driving times from "+S.postcode2+".");toggleDrive2();}

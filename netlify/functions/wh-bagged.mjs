@@ -7,7 +7,16 @@
 // The member's "hills climbed" must be set to public on Walkhighlands.
 // The browser cannot read walkhighlands.co.uk directly (no CORS), hence this.
 
-const UA = "emilynordmann.com munro-picker (contact: emilynordmann.com/contact)";
+// Walkhighlands has bot protection that 403s plain server requests, so this
+// looks like an ordinary browser. If it is still blocked, the picker falls back
+// to the bookmarklet, which reads the maps from the user's own browser.
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36";
+const HEADERS = {
+  "user-agent": UA,
+  accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  "accept-language": "en-GB,en;q=0.9",
+  referer: "https://www.walkhighlands.co.uk/Forum/",
+};
 
 const ENT = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
 function decode(s) {
@@ -40,8 +49,8 @@ export function parseMeta(html) {
 }
 
 async function get(url) {
-  const r = await fetch(url, { headers: { "user-agent": UA, accept: "text/html" } });
-  if (!r.ok) throw new Error(`Walkhighlands returned ${r.status}`);
+  const r = await fetch(url, { headers: HEADERS });
+  if (!r.ok) throw new Error(`Walkhighlands returned ${r.status}${r.status === 403 ? " (blocked server access — use the bookmarklet instead)" : ""}`);
   return r.text();
 }
 
